@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: information/additional_resources.html 
+keywords:  
+summary:  
+---
+= その他のリソース
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ここでは、 NetApp クラウドサービスとサポート、および REST とクラウドの一般的な概念について、ヘルプや詳細情報を参照するためのリソースを提供しています。
+
+
+
+=== ネットアップのクラウドリソース
+
+* https://cloud.netapp.com/["ネットアップのクラウドソリューション"^]
++
+ネットアップのクラウドソリューションの中心的なサイト。
+
+* https://services.cloud.netapp.com/redirect-to-login?startOnSignup=false["NetApp Cloud Central コンソール"^]
++
+NetApp Cloud Central サービスコンソールにサインインします。
+
+* https://mysupport.netapp.com/["ネットアップサポート"^]
++
+トラブルシューティングツール、ドキュメント、およびテクニカルサポートにアクセスできます。
+
+
+
+
+
+=== REST の概念とクラウドテクノロジ
+
+* 博士 https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["失策"^] 著者 : Roy Fielding オリジナル版を読む
++
+本ドキュメントでは、 REST アプリケーション開発モデルを導入および確立しました。
+
+* https://auth0.com/["Auth0"^]
++
+これは、 Astra サービスが Web アクセスに使用する認証および認可プラットフォームサービスです。
+
+* https://www.rfc-editor.org/["RFC エディタ"^]
++
+独自に番号付けされた RFC 文書の集合として維持されている Web およびインターネット標準の信頼できるソース。
+
+

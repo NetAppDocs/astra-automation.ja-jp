@@ -1,0 +1,13 @@
+---
+section: rest-core
+title: コア REST の実装
+url: "/rest-core/rest_implementation.html"
+entries:
+- title: REST Web サービス
+  url: "/rest-core/rest_web_services.html"
+- title: リソースとコレクション
+  url: "/rest-core/resources_collections.html"
+- title: HTTP の詳細
+  url: "/rest-core/http_details.html"
+- title: URL 形式
+  url: "/rest-core/url_format.html"

@@ -1,0 +1,16 @@
+---
+sidebar: sidebar 
+permalink: additional/additional_considerations.html 
+keywords:  
+summary:  
+---
+= REST API を使用する場合のその他の考慮事項を次に示します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Astra REST API には、運用と使用に影響するいくつかの特性があります。API 呼び出しを発行する前に、それらの考慮事項を確認しておく必要があります。

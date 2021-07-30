@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: additional/security.html 
+keywords:  
+summary:  
+---
+= セキュリティ
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Astra REST API は、複数のセキュリティレイヤを提供します。
+
+
+NOTE: すべての HTTP ネットワークトラフィックは、 Transport Layer Security （ TLS ）標準を使用して保護されます。
+
+
+
+== Astra の API トークン
+
+Astra REST API を使用するには、すべての要求に対して「 Authorization 」要求ヘッダーで API トークンを指定する必要があります。次の点に注意してください。
+
+* Astra の Web ユーザインターフェイスで API トークンを生成できます。
+* トークンは作成後に期限切れになることはありません。
+* トークンは、 Astra Web ユーザインターフェイスでいつでも取り消すことができます。
+
+
+を参照してください link:../get-started/get_api_token.html["API アクセストークンを取得します"] を参照してください。
+
+
+
+== API アクセストークンの取り消し
+
+不要になった API トークンは、 Astra Web インターフェイスで取り消すことができます。
+
+Astra サービスのアカウントが必要です。また、取り消すトークンを特定する必要があります。
+
+トークンが取り消されると、そのトークンはただちに永続的に使用できなくなります。
+
+.手順
+. アカウントのクレデンシャルを使用して Astra サービスにサインインします。
++
+https://astra.netapp.io/["https://astra.netapp.io"^]
+
+. ページの右上にある図のアイコンをクリックし、 * API access * を選択します。
+. 取り消すトークンまたはトークンを選択します。
+. [* アクション * （ * Actions * ） ] ドロップダウンボックスで、 [ トークンの無効化 * （ * Revoke tokens * ） ] をクリック
+
+
+
+
+== ロールとアクセス制御
+
+各アストラユーザには 1 つのロールが割り当てられます。ロールは、 API 呼び出しへのアクセスを制限するために使用します。定義されているロールは次のとおりです
+
+* オーナー
+* 管理
+* メンバー
+* ビューアー（ Viewer ）
+

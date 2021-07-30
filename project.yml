@@ -1,0 +1,78 @@
+---
+sidebar:
+  entries:
+  - title: Astra 自動ドキュメント
+    url: "/index.html"
+  - section: intro
+  - section: get-started
+  - section: rest-core
+  - section: additional
+  - section: endpoints
+  - section: workflows
+  - section: python
+  - section: reference
+  - section: information
+  - title: 法的通知
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: はじめに
+    links:
+    - title: はじめに
+      summary: Astra REST API の概要を確認できます。
+      url: "/intro/introduction.html"
+    - title: 作業を開始する前に
+      summary: API の使用を開始する準備をします。
+      url: "/get-started/before_get_started.html"
+    - title: API トークンを取得します
+      summary: API アクセスに必要なトークンを生成します。
+      url: "/get-started/get_api_token.html"
+    - title: Hello world
+      summary: REST API への基本アクセスをテストする。
+      url: "/get-started/hello_world.html"
+  - title: コア REST の実装
+    links:
+    - title: REST Web サービス
+      summary: REST Web サービスのテクノロジ基盤を理解する。
+      url: "/rest-core/rest_web_services.html"
+    - title: HTTP の詳細
+      summary: HTTP 実装の詳細を確認します。
+      url: "/rest-core/http_details.html"
+    - title: URL 形式
+      summary: URL 形式と、その形式が複数の値で構成される仕組みを理解します。
+      url: "/rest-core/url_format.html"
+  - title: その他の使用に関する考慮事項
+    links:
+    - title: セキュリティ
+      summary: REST API のセキュリティについて説明します。
+      url: "/additional/security.html"
+    - title: コレクションの操作
+      summary: クエリパラメータを使用して、リソースコレクションにアクセスします。
+      url: "/additional/working_with_collections.html"
+    - title: 診断とサポート
+      summary: Astra アプリケーションをサポートする準備をします。
+      url: "/additional/diagnostics_support.html"
+  - title: リソース
+    links:
+    - title: リソースとコレクション
+      summary: REST リソースおよびコレクションの設計を理解する。
+      url: "/rest-core/resources_collections.html"
+    - title: Astra REST API のリソースの詳細
+      summary: さまざまな Astra リソースの概要をまとめて確認する。
+      url: "/endpoints/resources.html"
+  - title: ワークフロー
+    links:
+    - title: 準備
+      summary: Astra ワークフローを使用するための準備
+      url: "/get-started/prepare_to_use_workflows.html"
+    - title: カテゴリ別のワークフロー
+      summary: ワークフローはいくつかのカテゴリに分類されています。
+      url: "/workflows/workflows.html"
+  - title: Python
+    links:
+    - title: 作業を開始する前に
+      summary: サンプルの Python スクリプトを実行する準備をします。
+      url: "/python/python_before.html"
+    - title: 管理対象アプリケーションをリストします
+      summary: サンプルスクリプトを実行して、管理対象アプリケーションを一覧表示します。
+      url: "/python/py_list_man_apps.html"

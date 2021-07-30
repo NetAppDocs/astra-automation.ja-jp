@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: additional/diagnostics_support.html 
+keywords:  
+summary:  
+---
+= 診断とサポート
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+診断とデバッグに使用できる Astra REST API には、いくつかのサポート機能が用意されています。
+
+
+
+== API リソース
+
+API リソースからは、診断情報とサポート情報を提供する Astra 機能がいくつか提供されています。
+
+[cols="20,80"]
+|===
+| を入力します | 説明 
+
+
+| イベント | アストラ処理の一部として記録されるシステムアクティビティ。 
+
+
+| 通知 | ユーザに提供するのに十分な重要性があると見なされるイベントのサブセット。 
+
+
+| 未読通知 | ユーザがまだ読み取りまたは取得していない通知。 
+|===

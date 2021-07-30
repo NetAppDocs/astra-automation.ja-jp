@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_delete_failed_app.html 
+keywords:  
+summary:  
+---
+= 失敗したアプリを削除します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+バックアップまたはスナップショットが失敗した場合、管理アプリを削除できないことがあります。この場合、以下に説明するワークフローを使用して、アプリケーションを手動で削除できます。
+
+
+
+=== 1. 削除する管理アプリを選択します
+
+ワークフローを実行 link:wf_list_man_apps.html["管理対象アプリケーションをリストします"] をクリックし、削除するアプリケーションを選択します。
+
+
+
+=== 2. アプリケーションの既存のバックアップを一覧表示します
+
+ワークフローを実行 link:wf_list_backups.html["バックアップをリスト表示します"]。
+
+
+
+=== 3. すべてのバックアップを削除します
+
+ワークフローを実行して、すべてのアプリケーションバックアップを削除します link:wf_delete_backup.html["バックアップを削除します"] リスト内のバックアップごとに、
+
+
+
+=== 4. アプリケーションの既存のスナップショットを一覧表示します
+
+ワークフローを実行 link:wf_list_snapshots.html["Snapshot を一覧表示します"]。
+
+
+
+=== 5. すべてのスナップショットを削除します
+
+ワークフローを実行 link:wf_delete_snapshot.html["Snapshot を削除します"] リスト内の各 Snapshot から削除します。
+
+
+
+=== 6. アプリケーションを削除します
+
+ワークフローを実行 link:wf_unmanage_app.html["アプリの管理を解除します"] アプリケーションを削除します。

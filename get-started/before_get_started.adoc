@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: get-started/before_get_started.html 
+keywords:  
+summary:  
+---
+= 作業を開始する前に
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Astra REST API を使用するための準備として、いくつかの手順を実行する必要があります。
+
+
+
+===== REST の概念と実装を確認
+
+必ず確認してください link:../rest-core/rest_implementation.html["コア REST の実装"] REST の概念と、 Astra REST API の設計に関する詳細については、を参照してください。
+
+
+
+===== Cloud Central アカウントのクレデンシャルを用意します
+
+Astra Web ユーザインターフェイスにサインインして API トークンを生成するには、 * Auth0 * アカウントのクレデンシャルが必要です。
+
+
+
+===== 詳細はこちらをご覧ください
+
+に示す追加情報のリソースを確認しておく必要があります link:../information/additional_resources.html["その他のリソース"]。

@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_man_apps.html 
+keywords:  
+summary:  
+---
+= 管理対象アプリケーションをリストします
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Astra が現在管理しているアプリケーションをリストできます。特定のアプリケーションの Snapshot やバックアップを検索する際に、この操作を行うことができます。
+
+
+
+=== 1. アプリケーションを一覧表示します
+
+次の REST API 呼び出しを実行します。
+
+[cols="25,75"]
+|===
+| HTTP メソッド | パス 
+
+
+| 取得 | /account/{accountID}/k8s/v1/managedApps 
+|===
+
+
+===== 追加の入力パラメータ
+
+すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
+
+[cols="25,10,10,55"]
+|===
+| パラメータ | を入力します | 必須 | 説明 
+
+
+| 含める | クエリ | いいえ | 必要に応じて、応答で返す値を選択します。 
+|===
+
+
+===== curl の例：すべてのアプリケーションのすべてのデータを返します
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== curl の例：すべてのアプリケーションの名前、 ID 、および状態を返します
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps?include=name,id,state' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSON 出力例
+
+[source, json]
+----
+{
+  "items": [
+    [
+      "test-postgres-app",
+      "1ee6235b-cda1-45cb-8d4c-630bdb8b41a5",
+      "running"
+    ]
+  ],
+  "metadata": {}
+}
+----

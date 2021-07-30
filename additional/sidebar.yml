@@ -1,0 +1,11 @@
+---
+section: additional
+title: その他の使用に関する考慮事項
+url: "/additional/additional_considerations.html"
+entries:
+- title: セキュリティ
+  url: "/additional/security.html"
+- title: コレクションの操作
+  url: "/additional/working_with_collections.html"
+- title: 診断
+  url: "/additional/diagnostics_support.html"

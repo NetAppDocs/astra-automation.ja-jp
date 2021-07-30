@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: rest-core/rest_implementation.html 
+keywords:  
+summary:  
+---
+= コア REST の実装
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+REST では共通のテクノロジとベストプラクティスが確立されますが、各 API の詳細は開発時の選択内容によって異なる場合があります。ライブクラウド環境で使用する前に、 Astra REST API の設計上の特徴を理解しておく必要があります。
+
+
+NOTE: も参照してください link:../additional/additional_considerations.html["その他の考慮事項については"] Astra REST API の使用方法の詳細については、を参照してください。

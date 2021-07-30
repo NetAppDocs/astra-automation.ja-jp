@@ -1,0 +1,16 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_app_control.html 
+keywords:  
+summary:  
+---
+= アプリケーション制御
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+これらのワークフローでは、管理対象アプリケーションと管理対象外アプリケーションを制御できます。アプリをリスト表示したり、管理アプリを作成および削除したりできます。

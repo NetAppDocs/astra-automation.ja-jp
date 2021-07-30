@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_clone_app_backup.html 
+keywords:  
+summary:  
+---
+= バックアップから管理対象アプリケーションをクローニングする
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+アプリケーションバックアップからクローニングすることで、新しい管理対象アプリケーションを作成できます。
+
+
+
+=== 作業を開始する前に
+
+このワークフローについては、次の点に注意してください。
+
+* アプリケーションのバックアップが使用されます
+* クローニング処理は同じクラスタ内で実行されます
+
+
+
+NOTE: アプリケーションを別のクラスタにクローニングするには、 JSON 入力の「 clusterId 」パラメータを環境に応じて更新する必要があります。
+
+
+
+=== 1. クローンを作成する管理アプリを選択します
+
+ワークフローを実行 link:wf_list_man_apps.html["管理対象アプリケーションをリストします"] をクリックし、クローニングするアプリケーションを選択します。アプリケーションのクローニングに使用される REST 呼び出しには、いくつかのリソース値が必要です。
+
+
+
+=== 2. 使用するバックアップを選択します
+
+ワークフローを実行 link:wf_list_backups.html["バックアップをリスト表示します"] 使用するバックアップを選択します。
+
+
+
+=== 3. アプリを複製します
+
+次の REST API 呼び出しを実行します。
+
+[cols="25,75"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /account/{accountID}/k8s/v1/managedApps 
+|===
+
+
+===== 追加の入力パラメータ
+
+すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
+
+[cols="25,10,10,55"]
+|===
+| パラメータ | を入力します | 必須 | 説明 
+
+
+| JSON | ボディ（ Body ） | はい。 | クローニングされたアプリケーションのパラメーターを提供します。以下の例を参照してください。 
+|===
+
+
+===== JSON の入力例
+
+[source, json]
+----
+{
+  "type": "application/astra-managedApp",
+  "version": "1.0",
+  "name": "postgres1-postgresql-clone",
+  "clusterID": "30880586-d579-4d27-930f-a9633e59173b",
+  "sourceClusterID": "30880586-d579-4d27-930f-a9633e59173b",
+  "namespace": "davidns-postgres-app",
+  "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb",
+  "sourceAppID": "e591ee59-ea90-4a9f-8e6c-d2b6e8647096"
+}
+----
+
+
+===== curl の例：バックアップからアプリケーションをクローニングします
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps' --header 'Content-Type: application/astra-managedApp+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --d @JSONinput
+----

@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: get-started/get_api_token.html 
+keywords:  
+summary:  
+---
+= API トークンを取得します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Astra REST API にアクセスするには、 API アクセストークンが必要です。
+
+
+NOTE: Astra API トークンの有効期限は切れませんが、トークンが不要になった場合は無効にできます。
+
+Astra サービスのアカウントが必要です。
+
+このタスクは、 Astra Web インターフェイスで API トークンを生成します。また、アカウント ID を取得する必要があります。
+
+.手順
+. アカウントのクレデンシャルを使用して Astra サービスにサインインします。
++
+https://astra.netapp.io/["https://astra.netapp.io"^]
+
+. ページの右上にある図のアイコンをクリックし、 * API access * を選択します。
+. ページで [API トークンの生成 ] をクリックし、ポップアップウィンドウで [API トークンの生成 ] をクリックします。
+. アイコンをクリックしてトークン文字列をクリップボードにコピーし、エディタに保存します。
+. 同じページにあるアカウント ID をコピーして保存します。
+
+
+Curl またはプログラミング言語を使用して Astra REST API にアクセスする場合は、 API ベアラトークンに「 Authorization 」要求ヘッダーを含める必要があります。トークンを取り消すには、を参照してください link:../additional/security.html["セキュリティ"]。

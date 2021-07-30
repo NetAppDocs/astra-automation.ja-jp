@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: python/python_before.html 
+keywords:  
+summary:  
+---
+= 作業を開始する前に
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+サンプルの Python スクリプトを実行する前に、環境と必要な入力ファイルを準備する必要があります。
+
+
+
+== 環境を準備
+
+以下に、 Python スクリプトを実行するための基本的な設定要件を示します。
+
+
+
+===== Python 3.
+
+最新バージョンの Python 3 がインストールされている必要があります。
+
+
+
+===== 追加ライブラリ
+
+*Requests * および *ullib3 * ライブラリがインストールされている必要があります。環境に応じて、 pip などの Python 管理ツールを使用できます。
+
+
+
+===== ネットワークアクセス
+
+スクリプトを実行するクライアントワークステーションは、インターネットにネットワークでアクセスし、 Astra サイト https://astra.netapp.io` にアクセスできる必要があります。
+
+
+
+===== ID 情報
+
+アカウント ID と API トークンを持つ有効な Astra アカウントが必要です。を参照してください link:../get-started/get_api_token.html["API トークンを取得します"] を参照してください。
+
+
+
+== JSON 入力ファイルを作成します
+
+Python スクリプトは、 JSON 入力ファイルに含まれている設定情報に依存します。サンプルファイルは以下のとおりです。
+
+
+NOTE: 環境に応じて、サンプルを更新する必要があります。
+
+
+
+===== ID 情報
+
+次のファイルに、 API トークンと Astra アカウントが含まれています。このファイルは '-i ( または --identity') CLI パラメータを使用して Python スクリプトに渡す必要があります
+
+[source, json]
+----
+{
+  "api_token": "kH4CA_uVIa8q9UuPzhJaAHaGlaR7-no901DkkrVjIXk=",
+  "account_id": "5131dfdf-03a4-5218-ad4b-fe84442b9786"
+}
+----

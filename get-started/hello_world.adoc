@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: get-started/hello_world.html 
+keywords:  
+summary:  
+---
+= Hello world
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ワークステーションの CLI でシンプルな Curl コマンドを問題して、 Astra REST API の使用を開始し、利用可能かどうかを確認できます。
+
+Curl ユーティリティがローカルワークステーションで使用可能である必要があります。また、 API トークンと関連付けられているアカウント識別子も必要です。を参照してください link:get_api_token.html["API アクセストークンを取得します"] を参照してください。
+
+次の Curl コマンドは、 Astra ユーザのリストを取得します。図に示すように、適切な <account_ID> と <api_ctoken> を指定します。
+
+[source, curl]
+----
+curl --location --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/json' --header 'Authorization: Bearer <API_TOKEN>'
+----

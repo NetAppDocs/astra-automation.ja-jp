@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_create_snapshot.html 
+keywords:  
+summary:  
+---
+= 管理アプリのスナップショットを作成します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+特定の管理対象アプリケーションのスナップショットを作成できます。
+
+
+
+=== 作業を開始する前に
+
+スナップショットを作成する管理対象アプリケーションの ID が必要です。必要に応じて、ワークフローを使用できます link:wf_list_man_apps.html["管理対象アプリケーションをリストします"] アプリケーションを検索します。
+
+
+
+=== 1. スナップショットを作成します
+
+次の REST API 呼び出しを実行します。
+
+[cols="25,75"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /accounts / ｛ account_id ｝ /k8s/v1/managedApps/｛ managedApp_id ｝ /appSnaps 
+|===
+
+
+===== 追加の入力パラメータ
+
+すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
+
+[cols="25,10,10,55"]
+|===
+| パラメータ | を入力します | 必須 | 説明 
+
+
+| 管理アプリ ID | パス | はい。 | Snapshot を作成する管理対象アプリケーションを指定します。 
+
+
+| JSON | ボディ（ Body ） | はい。 | Snapshot のパラメータを提供します。以下の例を参照してください。 
+|===
+
+
+===== JSON の入力例
+
+[source, json]
+----
+{
+  "type": "application/astra-appSnap",
+  "version": "1.0",
+  "name": "snapshot-david-1"
+}
+----
+
+
+===== curl の例：アプリケーションのスナップショットを作成します
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>/appSnaps' --header 'Content-Type: application/astra-appSnap+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --d @JSONinput
+----
