@@ -1,10 +1,10 @@
 ---
 section: workflows
-title: ワークフロー
-url: "/workflows/workflows.html"
+title: 管理ワークフロー
 entries:
+- title: 作業を開始する前に
+  url: "/workflows/workflows_before.html"
 - title: アプリコントロール
-  url: "/workflows/wf_app_control.html"
   entries:
   - title: 管理対象外アプリをリスト表示します
     url: "/workflows/wf_list_unman_apps.html"
@@ -17,7 +17,6 @@ entries:
   - title: アプリの管理を解除します
     url: "/workflows/wf_unmanage_app.html"
 - title: アプリケーションの保護
-  url: "/workflows/wf_app_protection.html"
   entries:
   - title: Snapshot をリストします
     url: "/workflows/wf_list_snapshots.html"
@@ -32,7 +31,6 @@ entries:
   - title: バックアップを削除します
     url: "/workflows/wf_delete_backup.html"
 - title: アプリケーションのクローニングとリストア
-  url: "/workflows/wf_app_cloning.html"
   entries:
   - title: アプリケーションのクローンを作成します
     url: "/workflows/wf_clone_app.html"
@@ -43,7 +41,6 @@ entries:
   - title: バックアップからアプリケーションをリストアする
     url: "/workflows/wf_restore_app_backup.html"
 - title: サポート
-  url: "/workflows/wf_support.html"
   entries:
   - title: 通知をリストします
     url: "/workflows/wf_list_notifications.html"

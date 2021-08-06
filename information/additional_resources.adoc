@@ -17,6 +17,20 @@ summary:
 
 
 
+=== アストラ
+
+* https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center のドキュメント"^]
++
+お客様の施設に導入された Astra Control Center ソフトウェアのドキュメント。
+
+* https://docs.netapp.com/us-en/astra/["Astra Control Service のマニュアル"^]
++
+パブリッククラウドで利用可能な Astra Control Service ソフトウェアのドキュメント。
+
+
+
+
+
 === ネットアップのクラウドリソース
 
 * https://cloud.netapp.com/["ネットアップのクラウドソリューション"^]

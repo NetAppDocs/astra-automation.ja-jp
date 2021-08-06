@@ -3,11 +3,13 @@ sidebar:
   entries:
   - title: Astra 自動ドキュメント
     url: "/index.html"
+  - section: rn
   - section: intro
   - section: get-started
   - section: rest-core
   - section: additional
   - section: endpoints
+  - section: workflows_infra
   - section: workflows
   - section: python
   - section: reference
@@ -22,10 +24,10 @@ homepage:
       summary: Astra REST API の概要を確認できます。
       url: "/intro/introduction.html"
     - title: 作業を開始する前に
-      summary: API の使用を開始する準備をします。
+      summary: REST API の使用を開始する準備をします。
       url: "/get-started/before_get_started.html"
     - title: API トークンを取得します
-      summary: API アクセスに必要なトークンを生成します。
+      summary: API にアクセスするために必要なトークンを生成します。
       url: "/get-started/get_api_token.html"
     - title: Hello world
       summary: REST API への基本アクセスをテストする。
@@ -41,7 +43,7 @@ homepage:
     - title: URL 形式
       summary: URL 形式と、その形式が複数の値で構成される仕組みを理解します。
       url: "/rest-core/url_format.html"
-  - title: その他の使用に関する考慮事項
+  - title: その他の考慮事項については
     links:
     - title: セキュリティ
       summary: REST API のセキュリティについて説明します。
@@ -65,9 +67,12 @@ homepage:
     - title: 準備
       summary: Astra ワークフローを使用するための準備
       url: "/get-started/prepare_to_use_workflows.html"
-    - title: カテゴリ別のワークフロー
-      summary: ワークフローはいくつかのカテゴリに分類されています。
-      url: "/workflows/workflows.html"
+    - title: インフラワークフロー
+      summary: Astra ランタイムインフラストラクチャの保守に必要なワークフロー。
+      url: "/workflows_infra/workflows_infra_before.html"
+    - title: 管理ワークフロー
+      summary: 管理対象アプリケーションの管理に使用される一般的なワークフロー。
+      url: "/workflows/workflows_before.html"
   - title: Python
     links:
     - title: 作業を開始する前に

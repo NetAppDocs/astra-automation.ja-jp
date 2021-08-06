@@ -16,14 +16,14 @@ summary:
 HTTP メソッド、入力パラメータ、応答など、 Astra REST API のすべての呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。
 
 
-NOTE: REST API リファレンスドキュメントは、現在、ネットアップの Astra サービスから入手できます。
+NOTE: REST API のリファレンスドキュメントは、現在のところ Astra から提供されており、オンラインで入手できます。
 
-Astra サービスのアカウントが必要です。
+Astra Control Center または Astra Control Service のアカウントが必要です。
 
 .手順
-. アカウントのクレデンシャルを使用して Astra サービスにサインインします。
+. アカウントのクレデンシャルを使用して Astra にサインインします。
 +
-link:https://astra.netapp.io["https://astra.netapp.io"^]
+Astra Control Service の次のサイトにアクセスします。 link:https://astra.netapp.io["https://astra.netapp.io"^]
 
 . ページの右上にある図のアイコンをクリックし、 * API access * を選択します。
 . ページの上部で、 * API ドキュメント * の下に表示される URL をクリックします。

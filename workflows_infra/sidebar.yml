@@ -1,0 +1,22 @@
+---
+section: workflows_infra
+title: インフラワークフロー
+entries:
+- title: 作業を開始する前に
+  url: "/workflows_infra/workflows_infra_before.html"
+- title: ID とアクセス
+  entries:
+  - title: ユーザをリストします
+    url: "/workflows_infra/wf_list_users.html"
+- title: バケット
+  entries:
+  - title: バケットをリストします
+    url: "/workflows_infra/wf_list_buckets.html"
+- title: ストレージ
+  entries:
+  - title: ストレージバックエンドをリストします
+    url: "/workflows_infra/wf_list_storage_backends.html"
+- title: クラスタ
+  entries:
+  - title: 管理対象クラスタをリストします
+    url: "/workflows_infra/wf_list_man_clusters.html"

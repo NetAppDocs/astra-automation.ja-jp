@@ -1,0 +1,16 @@
+---
+sidebar: sidebar 
+permalink: rn/known_issues.html 
+keywords:  
+summary:  
+---
+= 既知の問題
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ここでは、このリリースの REST API を正常に使用できない場合がある既知の問題について記載します。

@@ -1,7 +1,6 @@
 ---
 section: python
 title: Python を使用する
-url: "/python/python.html"
 entries:
 - title: 作業を開始する前に
   url: "/python/python_before.html"

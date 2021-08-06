@@ -13,19 +13,19 @@ summary:
 
 
 [role="lead"]
-Astra REST API にアクセスするには、 API アクセストークンが必要です。
+Astra REST API を使用するには、 API アクセストークンが必要です。
 
 
 NOTE: Astra API トークンの有効期限は切れませんが、トークンが不要になった場合は無効にできます。
 
-Astra サービスのアカウントが必要です。
+Astra アカウントのクレデンシャルが必要です。
 
-このタスクは、 Astra Web インターフェイスで API トークンを生成します。また、アカウント ID を取得する必要があります。
+このタスクは、 Astra Web インターフェイスで API トークンを生成します。また、 API 呼び出しにも必要なアカウント ID を取得する必要があります。
 
 .手順
-. アカウントのクレデンシャルを使用して Astra サービスにサインインします。
+. アカウントのクレデンシャルを使用して Astra にサインインします。
 +
-https://astra.netapp.io/["https://astra.netapp.io"^]
+Astra Control Service の次のサイトにアクセスします。 https://astra.netapp.io/["https://astra.netapp.io"^]
 
 . ページの右上にある図のアイコンをクリックし、 * API access * を選択します。
 . ページで [API トークンの生成 ] をクリックし、ポップアップウィンドウで [API トークンの生成 ] をクリックします。
