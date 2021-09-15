@@ -744,4 +744,6 @@
   <block id="35ddd64ed03dd1579ce39e6e82ff721f" category="sidebar">その他の REST に関する考慮事項</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">リリースノート</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
+  <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
+  <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API ライセンス</block>
 </blocks>
