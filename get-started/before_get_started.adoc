@@ -19,7 +19,7 @@ summary:
 
 ===== REST の概念と実装を確認
 
-必ず確認してください link:../rest-core/rest_implementation.html["コア REST の実装"] REST の概念と、 Astra REST API の設計に関する詳細については、を参照してください。
+必ず確認してください link:../rest-core/rest_web_services.html["コア REST の実装"] REST の概念と、 Astra REST API の設計に関する詳細については、を参照してください。
 
 
 
