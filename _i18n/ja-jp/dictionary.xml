@@ -745,4 +745,8 @@
   <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API ライセンス</block>
   <block id="9c54608eb3a6fa74fe3dfd79d4cb5bb7" category="paragraph">必ず確認してください <block ref="533ba43849291e761802432633424684" category="inline-link-macro-rx"></block> REST の概念と、 Astra REST API の設計に関する詳細については、を参照してください。</block>
   <block id="4c7aee6e8d40dfdf7713e4a924264d5a" category="paragraph">特定のアストラアカウントに対して定義されているユーザをリストできます。</block>
+  <block id="e6c08d334ddcc8f5824e2eb3371f9b4f" category="admonition">障害が発生したバックアップは、次に示すオプションの要求ヘッダーを使用して強制的に削除できます。</block>
+  <block id="24d522ed56286396130064a0fbfa76f1" category="cell">強制的に削除します</block>
+  <block id="7fbc2bc01923d084eec8be7efd48837b" category="cell">失敗したバックアップを強制的に削除する場合に使用します。</block>
+  <block id="58f00e9fb9c0fb6247e6c188b96d901b" category="section-title">curl の例： force オプションを使用して、アプリケーションのバックアップを 1 つ削除します</block>
 </blocks>
