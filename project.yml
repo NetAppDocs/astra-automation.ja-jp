@@ -32,7 +32,7 @@ homepage:
     - title: Hello world
       summary: REST API への基本アクセスをテストする。
       url: "/get-started/hello_world.html"
-  - title: コア REST の実装
+  - title: REST 実装
     links:
     - title: REST Web サービス
       summary: REST Web サービスのテクノロジ基盤を理解する。

@@ -749,4 +749,5 @@
   <block id="24d522ed56286396130064a0fbfa76f1" category="cell">強制的に削除します</block>
   <block id="7fbc2bc01923d084eec8be7efd48837b" category="cell">失敗したバックアップを強制的に削除する場合に使用します。</block>
   <block id="58f00e9fb9c0fb6247e6c188b96d901b" category="section-title">curl の例： force オプションを使用して、アプリケーションのバックアップを 1 つ削除します</block>
+  <block id="d58b759501469292f5d0464d265c376c" category="sidebar">REST 実装</block>
 </blocks>
