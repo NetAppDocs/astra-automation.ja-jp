@@ -135,7 +135,7 @@ NOTE: を参照してください https://www.rfc-editor.org/rfc/rfc7232.txt["RF
 Astra Control REST API で使用される HTTP ステータスコードを次に示します。
 
 
-NOTE: Astra REST API は、 HTTP API * 標準の問題の詳細も使用します。を参照してください link:diagnostics_support.html["診断とサポート"] を参照してください。
+NOTE: Astra Control REST API は、 HTTP API * 標準の * 問題の詳細も使用します。を参照してください link:diagnostics_support.html["診断とサポート"] を参照してください。
 
 [cols="15,20,65"]
 |===

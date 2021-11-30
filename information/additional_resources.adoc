@@ -27,6 +27,10 @@ summary:
 +
 パブリッククラウドで利用可能な Astra Control Service ソフトウェアのドキュメント。
 
+* https://docs.netapp.com/us-en/trident/["Astra Trident のドキュメント"^]
++
+ネットアップが管理している Astra Trident オープンソースストレージオーケストレーションツールのドキュメント
+
 
 
 

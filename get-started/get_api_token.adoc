@@ -33,4 +33,4 @@ Astra Control Service の次のサイトにアクセスします。 https://astr
 . 同じページにあるアカウント ID をコピーして保存します。
 
 
-Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンに「 Authorization 」要求ヘッダーを含める必要があります。トークンを取り消すには、を参照してください link:../additional/security.html["セキュリティ"]。
+Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンを 'Authorization' 要求ヘッダーに含める必要があります。トークンを取り消すには、を参照してください link:../additional/security.html["セキュリティ"]。
