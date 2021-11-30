@@ -13,13 +13,13 @@ summary:
 
 
 [role="lead"]
-Astra REST API は、 HTTP および関連パラメータを使用して、リソースとコレクションに対して操作を行います。Astra HTTP 実装の詳細を以下に示します。
+Astra Control REST API は、 HTTP および関連パラメータを使用して、リソースとコレクションに対して操作を行います。HTTP 実装の詳細を以下に示します。
 
 
 
 == API トランザクションと CRUD モデル
 
-Astra REST API は、明確に定義された処理と状態の移行を含むトランザクションモデルを実装します。
+Astra Control REST API は、明確に定義された操作と状態の移行を伴うトランザクションモデルを実装します。
 
 
 
@@ -31,7 +31,7 @@ Astra REST API は、明確に定義された処理と状態の移行を含む�
 
 ===== CRUD 操作モデルのサポート
 
-Astra REST API で使用できる各リソースインスタンスとコレクションには、 *CRUD * モデルに基づいてアクセスします。4 つの操作があり、それぞれが単一の HTTP メソッドにマッピングされます。処理は次のとおりです。
+Astra Control REST API で使用できる各リソースインスタンスとコレクションには、 *CRUD * モデルに基づいてアクセスします。4 つの操作があり、それぞれが単一の HTTP メソッドにマッピングされます。処理は次のとおりです。
 
 * 作成
 * 読み取り
@@ -67,7 +67,7 @@ Astra REST API で使用できる各リソースインスタンスとコレク�
 
 === 要求と応答のヘッダー
 
-次の表に、 Astra REST API で使用される HTTP ヘッダーを示します。
+次の表に、 Astra Control REST API で使用される HTTP ヘッダーを示します。
 
 
 NOTE: を参照してください https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232"^] および を参照してください。
@@ -132,7 +132,7 @@ NOTE: を参照してください https://www.rfc-editor.org/rfc/rfc7232.txt["RF
 
 === HTTP ステータスコード
 
-Astra REST API で使用される HTTP ステータスコードを次に示します。
+Astra Control REST API で使用される HTTP ステータスコードを次に示します。
 
 
 NOTE: Astra REST API は、 HTTP API * 標準の問題の詳細も使用します。を参照してください link:diagnostics_support.html["診断とサポート"] を参照してください。

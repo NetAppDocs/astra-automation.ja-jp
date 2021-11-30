@@ -23,7 +23,7 @@ summary:
 +
 お客様の施設に導入された Astra Control Center ソフトウェアのドキュメント。
 
-* https://docs.netapp.com/us-en/astra/["Astra Control Service のマニュアル"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service のマニュアル"^]
 +
 パブリッククラウドで利用可能な Astra Control Service ソフトウェアのドキュメント。
 

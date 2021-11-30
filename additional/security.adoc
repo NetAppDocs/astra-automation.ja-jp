@@ -13,7 +13,7 @@ summary:
 
 
 [role="lead"]
-Astra REST API は、複数のセキュリティレイヤを提供します。
+Astra Control REST API は、複数のセキュリティレイヤを提供します。
 
 
 NOTE: すべての HTTP ネットワークトラフィックは、 Transport Layer Security （ TLS ）標準を使用して保護されます。
@@ -22,7 +22,7 @@ NOTE: すべての HTTP ネットワークトラフィックは、 Transport Lay
 
 == Astra の API トークン
 
-Astra REST API を使用するには、すべての要求に対して「 Authorization 」要求ヘッダーで API トークンを指定する必要があります。次の点に注意してください。
+Astra Control REST API を使用するには、すべての要求に対して「 Authorization 」要求ヘッダーで API トークンを指定する必要があります。次の点に注意してください。
 
 * Astra の Web ユーザインターフェイスで API トークンを生成できます。
 * トークンは作成後に期限切れになることはありません。

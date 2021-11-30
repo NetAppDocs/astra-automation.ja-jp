@@ -4,7 +4,7 @@ permalink: rn/whats_new.html
 keywords:  
 summary:  
 ---
-= Astra REST API の新機能
+= Astra Control REST API の新機能
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -13,7 +13,7 @@ summary:
 
 
 [role="lead"]
-ネットアップでは、 Astra REST API を定期的に更新して、新機能、拡張機能、およびバグ修正を提供しています。
+ネットアップでは、 Astra Control REST API を定期的に更新して、新機能、拡張機能、およびバグ修正を提供しています。
 
 
 
@@ -25,19 +25,19 @@ summary:
 
 === Astra Control Center 導入モデル
 
-このリリースには、パブリッククラウドサービスとして提供される既存の Astra Control Service に加えて、 Astra Control Center オンプレミス導入モデルも含まれています。Astra Control Center をサイトにインストールして、ローカルの Kubernetes 環境を管理できます。2 つの導入モデルは同じ REST API を共有しますが、ドキュメントで必要に応じて多少の違いがあります。
+このリリースには、パブリッククラウドサービスとして提供される既存の Astra Control Service に加えて、 Astra Control Center オンプレミス導入モデルも含まれています。Astra Control Center をサイトにインストールして、ローカルの Kubernetes 環境を管理できます。2 つの Astra Control 導入モデルは同じ REST API を共有しますが、ドキュメントで必要とされるわずかな違いがあります。
 
 
 
 === REST リソースタイプの拡張
 
-Astra REST API からアクセス可能なリソースの数が大幅に増え、多くの新しいリソースがオンプレミスの Astra Control Center の基盤として提供されるようになりました。新しいリソースには、 ASUP 、使用権、機能、ライセンス、設定、 サブスクリプション、バケット、クラウド、クラスタ、管理対象クラスタ、 ストレージバックエンド、およびストレージクラス。を参照してください link:../endpoints/resources.html["リソース"] を参照してください。
+Astra Control REST API からアクセス可能なリソースの数が大幅に増え、多くの新しいリソースがオンプレミスの Astra Control Center の基盤となりました。新しいリソースには、 ASUP 、使用権、機能、ライセンス、設定、 サブスクリプション、バケット、クラウド、クラスタ、管理対象クラスタ、 ストレージバックエンド、およびストレージクラス。を参照してください link:../endpoints/resources.html["リソース"] を参照してください。
 
 
 
 === Astra 環境をサポートする追加のエンドポイント
 
-拡張された Astra REST リソースに加えて、 Astra 環境をサポートするための新しい API エンドポイントがいくつか追加されました。
+REST リソースの拡張に加えて、 Astra Control 環境をサポートするための新しい API エンドポイントがいくつか追加されました。
 
 OpenAPI のサポート:: OpenAPI エンドポイントは、現在の OpenAPI JSON ドキュメントおよびその他の関連リソースへのアクセスを提供します。
 OpenMetrics のサポート:: OpenMetrics エンドポイントは、 OpenMetrics リソースを介してアカウントメトリックへのアクセスを提供します。
@@ -53,7 +53,7 @@ OpenMetrics のサポート:: OpenMetrics エンドポイントは、 OpenMetric
 
 === REST API の導入
 
-Astra REST API は、 Astra Control Service と組み合わせて使用できます。REST テクノロジと現在のベストプラクティスに基づいて作成されています。この API は、 Astra 環境を自動化するための基盤となり、次の機能とメリットが含まれています。
+Astra Control REST API は、 Astra Control Service と組み合わせて使用できます。REST テクノロジと現在のベストプラクティスに基づいて作成されています。この API は、 Astra 環境を自動化するための基盤となり、次の機能とメリットが含まれています。
 
 リソース:: REST リソースには 14 種類あります。
 API トークンアクセス:: REST API には、 Astra Web ユーザインターフェイスで生成できる API アクセストークンを使用してアクセスできます。API トークンを使用して、 API に安全にアクセスできます。

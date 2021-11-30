@@ -13,7 +13,7 @@ summary:
 
 
 [role="lead"]
-Astra REST API を使用するには、 API アクセストークンが必要です。
+Astra Control REST API を使用するには、 API アクセストークンが必要です。
 
 
 NOTE: Astra API トークンの有効期限は切れませんが、トークンが不要になった場合は無効にできます。
@@ -33,4 +33,4 @@ Astra Control Service の次のサイトにアクセスします。 https://astr
 . 同じページにあるアカウント ID をコピーして保存します。
 
 
-Curl またはプログラミング言語を使用して Astra REST API にアクセスする場合は、 API ベアラトークンに「 Authorization 」要求ヘッダーを含める必要があります。トークンを取り消すには、を参照してください link:../additional/security.html["セキュリティ"]。
+Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンに「 Authorization 」要求ヘッダーを含める必要があります。トークンを取り消すには、を参照してください link:../additional/security.html["セキュリティ"]。

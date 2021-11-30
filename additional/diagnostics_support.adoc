@@ -13,7 +13,7 @@ summary:
 
 
 [role="lead"]
-診断とデバッグに使用できる Astra REST API には、いくつかのサポート機能が用意されています。
+診断とデバッグに使用できる Astra Control REST API には、いくつかのサポート機能が用意されています。
 
 
 

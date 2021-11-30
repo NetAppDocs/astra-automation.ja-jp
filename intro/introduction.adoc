@@ -4,7 +4,7 @@ permalink: intro/introduction.html
 keywords: introduction, Astra REST API 
 summary:  
 ---
-= Astra REST API の概要
+= Astra Control REST API の概要
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -22,13 +22,13 @@ NOTE: REST API にアクセスするには、最初に Astra Web ユーザイン
 
 === REST テクノロジを基盤として構築
 
-REST テクノロジを使用して Astra API が作成され、最新のベストプラクティスが適用されている。中核となるテクノロジは、 HTTP 、 JSON 、 RBAC です。
+REST テクノロジを使用して Astra Control API が作成され、最新のベストプラクティスが適用されている。中核となるテクノロジは、 HTTP 、 JSON 、 RBAC です。
 
 
 
-=== 2 つの Astra 導入モデルをサポート
+=== 2 つの Astra Control 導入モデルをサポート
 
-Astra Control Service はパブリッククラウド環境で使用され、 Astra Control Center はオンプレミス環境に使用されます。この 2 つの導入モデルをどちらもサポートする Astra REST API が 1 つ用意されています。
+Astra Control Service はパブリッククラウド環境で使用され、 Astra Control Center はオンプレミス環境に使用されます。これらの両方の導入モデルをサポートする REST API が 1 つあります。
 
 
 
@@ -44,7 +44,7 @@ REST API には、リソースコレクションへのアクセスに使用で�
 
 
 
-=== Astra Web UI とのアライメント
+=== Astra Control Web UI とのアライメント
 
 設計された Astra Web ユーザインターフェイスは REST API に対応しているため、 2 つのアクセスパスとユーザエクスペリエンスの間で一貫性があります。
 
@@ -52,7 +52,7 @@ REST API には、リソースコレクションへのアクセスに使用で�
 
 === 堅牢なデバッグおよび問題の特定データ
 
-Astra REST API は、システムイベントやユーザ通知など、堅牢なデバッグ機能と問題の特定機能を提供します。
+Astra Control REST API は、システムイベントやユーザ通知など、堅牢なデバッグおよび問題の特定機能を提供します。
 
 
 

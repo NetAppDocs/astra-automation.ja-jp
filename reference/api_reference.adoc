@@ -13,10 +13,10 @@ summary:
 
 
 [role="lead"]
-HTTP メソッド、入力パラメータ、応答など、 Astra REST API のすべての呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。
+HTTP メソッド、入力パラメータ、応答など、 Astra Control REST API のすべての呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。
 
 
-NOTE: REST API のリファレンスドキュメントは、現在のところ Astra から提供されており、オンラインで入手できます。
+NOTE: REST API のリファレンスドキュメントは、現在のところ Astra Control に付属しており、オンラインで入手できます。
 
 Astra Control Center または Astra Control Service のアカウントが必要です。
 

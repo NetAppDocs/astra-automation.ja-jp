@@ -67,7 +67,7 @@ homepage:
     - title: リソースとコレクション
       summary: REST リソースおよびコレクションの設計を理解する。
       url: "/rest-core/resources_collections.html"
-    - title: Astra REST API のリソースの詳細
+    - title: Astra Control REST API リソース
       summary: さまざまな Astra リソースの概要をまとめて確認する。
       url: "/endpoints/resources.html"
   - title: ワークフロー
