@@ -65,7 +65,6 @@
   <block id="19ec08da81a826d919d64ab860845c04" category="inline-link-macro">API リファレンス</block>
   <block id="7dbea29c80effd84223267932eaa1d82" category="section-title">コアリソース</block>
   <block id="03bc142e6422dbb9b288ad2cabee08c7" category="list-text">クレデンシャル</block>
-  <block id="31539113d1f24f50fd650a5084e246e7" category="list-text">ロールのバインド</block>
   <block id="459a6f79ad9b13cbcb5f692d2cc7a94d" category="list-text">トークン</block>
   <block id="8f9bfe9d1345237cb3b2b205864da075" category="list-text">ユーザ</block>
   <block id="cc32566cda71be962f99357b3002c8db" category="section-title">アプリケーションリソースの管理</block>
@@ -213,7 +212,6 @@
   <block id="a6678bfaa94621c04bacbb0514f6d9d4" category="section-title">curl の例：アプリケーションのすべてのスナップショットとカウントを返します</block>
   <block id="3d8174b7a5e7e2c2f19aa676ce494658" category="doc">アンマネージアプリケーションをリストします</block>
   <block id="563a0b5f6c4efcacd5b8847d1eee9649" category="paragraph">Astra で現在管理されていないアプリケーションをリストできます。これは、管理対象のアプリケーションを選択する際に行うことができます。</block>
-  <block id="eb646550499781d051cdd47a82fd97de" category="admonition">このワークフローは、すべての Astra アプリケーションをリストします。「管理状態」フィールドを調べると、どのアプリケーションが管理されていないかを調べることができます。</block>
   <block id="5a7e60861a502dc956f007273373ee29" category="cell">/account/{accountID}/topology/v1/apps の順で指定します</block>
   <block id="e2c473c218d9b4c045f316cd4af94e1c" category="section-title">curl の例：すべてのアプリケーションの名前、 ID 、 managedState を返します</block>
   <block id="d12275e5ed9a0bebaad289f16e74c1e3" category="doc">スナップショットから管理アプリのクローンを作成します</block>
@@ -475,7 +473,6 @@
   <block id="d92a4a4962077027ebae61f4c351e303" category="section-title">堅牢なデバッグおよび問題の特定データ</block>
   <block id="fcf3c3d757005a8b62346f06f3b393ff" category="section-title">高度なオートメーション技術の基盤</block>
   <block id="c6c51849eeb1ac322baa3a99b7cd7e43" category="summary">Astra Automation の概要です。</block>
-  <block id="b7c9edd2e46b359df3e102d497901244" category="doc">Astra の自動化に関するドキュメント</block>
   <block id="e61ad2d01a2692e9ed29c90c0c413101" category="paragraph">次のスクリプトを使用して、 Astra アカウントの管理対象アプリケーションを一覧表示できます。</block>
   <block id="365c8dec8255a8a164436c71a2611920" category="doc">Python を使用する</block>
   <block id="0998ed5beee28345ae02fc586e2414f2" category="section-title">環境を準備</block>
@@ -512,7 +509,6 @@
   <block id="fa862ec81357f8907a8b75f4d969c590" category="inline-link">RFC エディタ</block>
   <block id="6763d4dfc2fa6c04b08ba1e1b7751f5f" category="list-text"><block ref="6763d4dfc2fa6c04b08ba1e1b7751f5f" category="inline-link-rx"></block></block>
   <block id="ba793efaa4293b35388d140ee9308a68" category="paragraph">独自に番号付けされた RFC 文書の集合として維持されている Web およびインターネット標準の信頼できるソース。</block>
-  <block id="27cf840321d17e56b1aa845077c2a75a" category="sidebar">Astra 自動ドキュメント</block>
   <block id="8a72d09dc95b3b91b5b0e50e2855c7df" category="sidebar">Astra REST API の概要を確認できます。</block>
   <block id="18500a8a0b71e0c523540a041898f20e" category="sidebar">REST API への基本アクセスをテストする。</block>
   <block id="5a8acee56ec6e869519f734e2088df5f" category="sidebar">REST Web サービスのテクノロジ基盤を理解する。</block>
@@ -601,7 +597,6 @@
   <block id="3568b4ed2338901078928983e029bbba" category="list-text">OpenAPI エンドポイントは、現在の OpenAPI JSON ドキュメントおよびその他の関連リソースへのアクセスを提供します。</block>
   <block id="4f48af1c326e720124a79cc1f9216ecb" category="list-text">OpenMetrics</block>
   <block id="27ee1c661b70f7b369179a81dd12721d" category="list-text">OpenMetrics エンドポイントは、 OpenMetrics リソースを介してアカウントメトリックへのアクセスを提供します。サポートは、 Astra Control Center 導入モデルで利用できます。</block>
-  <block id="bf2952986042f5403c53bded609c0d9b" category="section-title">2021 年 8 月 5 日</block>
   <block id="adbf11dd6ee196fa62d94a4c1d8e03f2" category="paragraph">このリリースには、新しい Astra 導入モデルの導入と REST API のメジャー拡張が含まれています。</block>
   <block id="95550f34187aaccfb0a17b770c43f0d6" category="section-title">Astra Control Center 導入モデル</block>
   <block id="ebafbad4787b0e1e6e07c722454234fb" category="section-title">REST リソースタイプの拡張</block>
@@ -609,7 +604,6 @@
   <block id="8cf4055911ae05ed7dc35f98a193f09e" category="list-text">OpenAPI のサポート</block>
   <block id="13c89442e2b2eedafc42714812ad8c6b" category="list-text">OpenMetrics のサポート</block>
   <block id="22221689a6b4fc342456938de9f79725" category="list-text">OpenMetrics エンドポイントは、 OpenMetrics リソースを介してアカウントメトリックへのアクセスを提供します。</block>
-  <block id="12b25d2d9c1a5b6acd85bf6a54697871" category="section-title">2021 年 4 月 15 日</block>
   <block id="40bde2f2e0e627e3fcf147169d6d315a" category="paragraph">このリリースには、次の新機能と機能拡張が含まれています。</block>
   <block id="1b232d16c3766a50978710492ba942a2" category="section-title">REST API の導入</block>
   <block id="0ef8b3f579af1cdc8418626db265a1ce" category="list-text">REST リソースには 14 種類あります。</block>
@@ -618,10 +612,6 @@
   <block id="affb0039f4c476ad568439a171c9db0c" category="list-text">収集のサポート</block>
   <block id="39fc3040b9fe64cf202ce4de80bf7f69" category="list-text">リソースコレクションへのアクセスに使用できる豊富なクエリパラメータセットがあります。フィルタ、ソート、ページ付けなどの処理がサポートされます。</block>
   <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="doc">既知の問題</block>
-  <block id="5d1913165f16cc0ae673ddaea1f155d5" category="paragraph">ここでは、このリリースの REST API を正常に使用できない場合がある既知の問題について記載します。</block>
-  <block id="482723983a4f2af954e36ff41e567451" category="doc">既知の制限</block>
-  <block id="478b776fc28a60e8545a858eb7ca9a3e" category="paragraph">既知の制限事項は、このリリースの製品でサポートされていないプラットフォーム、デバイス、機能、または製品と正しく相互運用できない機能を特定します。</block>
-  <block id="bfb3ffb75e2fb799264b44821188458b" category="admonition">これらの制限事項をよく確認してください。</block>
   <block id="1a615153bb2bd3389942d44023a8f4bb" category="section-title">Astra アカウントのクレデンシャルが必要</block>
   <block id="11b7e523e4dba4e9a9499492d8f958a2" category="paragraph">Astra のクレデンシャルが必要になるのは、 Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する場合です。Astra Control Center を使用すると、これらの資格情報をローカルで管理できます。Astra Control Service では、アカウントの資格情報は *Auth0* サービスによって維持されます。</block>
   <block id="646fd3c3d22d826a188a59c1bba8854b" category="paragraph">Astra アカウントのクレデンシャルが必要です。</block>
@@ -651,13 +641,10 @@
   <block id="04bff76b57babc7298f6780f4f20901e" category="section-title">ワークフロープロセス</block>
   <block id="b6c92126e042e664395830549916fde8" category="paragraph">自動化コードの開発を支援する一連のワークフローが用意されています。ワークフローは、インフラと管理の 2 つの主要なカテゴリに分類されています。</block>
   <block id="e252a713c9e65fd0bb92dbc65b6b0610" category="paragraph">REST API に直接アクセスするだけでなく、 REST API をベースとするその他の自動化テクノロジも使用できます。</block>
-  <block id="90dedefe8625c03190325424b88ee195" category="doc">NetApp Astra ツールキット</block>
   <block id="3cce5f3eaf76e098ba8e28f7bbba3f92" category="section-title">アストラ</block>
   <block id="3a4b2c66d4bdac6ce0e3340c71a39eda" category="inline-link">Astra Control Center のドキュメント</block>
   <block id="281db70ca8dfcac9ebe6166029058548" category="list-text"><block ref="281db70ca8dfcac9ebe6166029058548" category="inline-link-rx"></block></block>
-  <block id="42abfef9c7eb8e9eddef8ed7d36fe034" category="paragraph">お客様の施設に導入された Astra Control Center ソフトウェアのドキュメント。</block>
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="inline-link">Astra Control Service のマニュアル</block>
-  <block id="11fca7f10569dec655ac235663e76427" category="paragraph">パブリッククラウドで利用可能な Astra Control Service ソフトウェアのドキュメント。</block>
   <block id="49d7482cad2dac48b0f0e77473d3a249" category="doc">管理対象クラスタをリストします</block>
   <block id="1b382a88a3817dcba16a81ec9e5cf1c5" category="paragraph">Astra が現在管理している Kubernetes クラスタをリストできます。</block>
   <block id="c58119ccc549e36f20a93873ead75956" category="section-title">1. クラスタを表示します</block>
@@ -715,7 +702,6 @@
   <block id="175b29f6f8dd1aa8a166427b6bcd061c" category="paragraph">Astra Control REST API で使用される HTTP ステータスコードを次に示します。</block>
   <block id="8af1f604c2ddb0ae53e02227ab1ca1da" category="paragraph">Representational State Transfer （ REST ）は、分散 Web アプリケーションの作成に使用される形式です。Web サービス API の設計に適用されることで、サーバベースのリソースを公開し、その状態を管理するための一連の主流テクノロジとベストプラクティスが確立されます。REST はアプリケーション開発のための一貫した基盤を提供しますが、各 API の詳細は設計内容に応じて異なる場合があります。ライブ環境で使用する前に、 Astra Control REST API の特性を理解しておく必要があります。</block>
   <block id="352836aad17f0db4217873eb0a9524b3" category="paragraph">Web サービスのクライアントとサーバの間で情報を構造化して転送する方法は複数ありますが、最も広く使用されているのは JavaScript Object Notation （ JSON ）です。JSON は、単純なデータ構造をプレーンテキストで表すための業界標準であり、リソースについての状態情報の転送に使用されます。Astra Control REST API では、 JSON を使用して、各 HTTP 要求と応答の本文で伝送されるデータをフォーマットします。</block>
-  <block id="ac21a3146a66cb0350efda681b416574" category="paragraph">Python は、特にデータセンターの自動化に広く使用されている開発言語です。Python を使用して Astra Control REST API にアクセスする前に、環境と必要な入力ファイルを準備する必要があります。</block>
   <block id="67a1ee90ebb7f60d74dc1baee961de03" category="paragraph">スクリプトを実行するワークステーションは、ネットワークにアクセスし、 Astra Control にアクセスできる必要があります。Astra Control Service を使用する場合は、インターネットに接続し、 https://astra.netapp.io` でサービスに接続できる必要があります。</block>
   <block id="2d5a5fa8a82d5c201cb1e33457f8b169" category="doc">Astra Control REST API の新機能</block>
   <block id="b0c0f8ac8f671541655d3d0e2beb2ce8" category="paragraph">ネットアップでは、 Astra Control REST API を定期的に更新して、新機能、拡張機能、およびバグ修正を提供しています。</block>
@@ -732,7 +718,6 @@
   <block id="e2cfa1b12557ae7ad3c2bb28c8b77d7c" category="paragraph">HTTP メソッド、入力パラメータ、応答など、 Astra Control REST API のすべての呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。</block>
   <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">REST API のリファレンスドキュメントは、現在のところ Astra Control に付属しており、オンラインで入手できます。</block>
   <block id="b5e893215efc14b056461f3d72a24170" category="paragraph">Astra Control REST API のリソースを使用すると、 Astra の導入を自動化できます。各リソースは、 1 つ以上のエンドポイントを介してアクセスされます。ここでは、自動化の導入計画の一環として使用できる REST リソースの概要を示します。</block>
-  <block id="e0d6a2d78d72729fadfd056ea5b00739" category="admonition">Astra Control リソースへのアクセスに使用されるパスと完全な URL の形式は、いくつかの値に基づいています。を参照してください <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> を参照してください。も参照してください <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> Astra のリソースとエンドポイントの使用方法の詳細については、を参照してください。</block>
   <block id="248846079d127e0a82d697f25c33991f" category="section-title">Astra Control REST のリソースとエンドポイント</block>
   <block id="0f879b71f480ca631ac007cea8270eb9" category="paragraph">Astra Control REST API に用意されているプライマリリソースエンドポイントは、 3 つのカテゴリに分類されています。各リソースは、特定の場所を除いて、すべての CRUD 操作（作成、読み取り、更新、削除）を使用してアクセスできます。</block>
   <block id="a3fb339c1c586b61a4747f75e3e18873" category="list-text"><block ref="a3fb339c1c586b61a4747f75e3e18873" category="inline-link-rx"></block></block>
@@ -751,7 +736,130 @@
   <block id="55fcf9a6a46c69408785dcd2e3a82522" category="admonition">これらのリソースとエンドポイントは、現在のところ、 Astra Control REST API リファレンスドキュメントに含まれていません。</block>
   <block id="14d9b10c6196045941347a9e85704b50" category="inline-link">Astra Trident のドキュメント</block>
   <block id="b886ef3e400bd69f357f6981475b14e1" category="list-text"><block ref="b886ef3e400bd69f357f6981475b14e1" category="inline-link-rx"></block></block>
-  <block id="6ab6ba8e185f765dc8c0114487dd8a3a" category="paragraph">ネットアップが管理している Astra Trident オープンソースストレージオーケストレーションツールのドキュメント</block>
   <block id="43c6f73174a98f1fd36eac3fee0c20ab" category="paragraph">Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンを 'Authorization' 要求ヘッダーに含める必要があります。トークンを取り消すには、を参照してください <block ref="63fd24300d4159b871bba5cd675e33b6" category="inline-link-macro-rx"></block>。</block>
   <block id="e0da47631d6f2648f3a36bde7e269c3b" category="section-title">カールの例</block>
+  <block id="1966cbc7987b76acf54312ed4c9007ec" category="paragraph">Python は、特にデータセンターの自動化に広く使用されている開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。</block>
+  <block id="0e8625d3981b9d26e0866da357d318c8" category="inline-link-macro">NetApp Astra Control Python SDK</block>
+  <block id="a048c98daf24dc4c378ae4a226190097" category="admonition">ネットアップは、 Python を使用して Astra Control REST API に直接アクセスするだけでなく、 API を抽象化して複雑さを排除するツールキットパッケージも提供しています。を参照してください <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="0dca49fc2e144253162b8cbd94b3b83c" category="admonition">を参照してください <block ref="471a805638f43cfd34206d9398385425" category="inline-link-macro-rx"></block> 必要な JSON 入力ファイルの例を次に示します。</block>
+  <block id="a64509d450efa26111a7b1e6db3baf74" category="paragraph">NetApp Astra Control Python SDK は、 Astra Control の導入を自動化するために使用できるオープンソースパッケージです。また、このパッケージは、独自の自動化プラットフォームを作成する際に、おそらく Astra Control REST API について学ぶ際の貴重な資料となります。</block>
+  <block id="20f4f585bd60497ac5129e3cac5ce9f3" category="admonition">簡単にするために、このページの以降の部分では、 NetApp Astra Control Python SDK を * SDK と呼びます。</block>
+  <block id="583a49db5f92162fc0bd14c90e6dfd12" category="section-title">関連する 2 つのソフトウェアツール</block>
+  <block id="6185cd9749993dbef93bbd9484213c5d" category="paragraph">SDK には、 Astra Control REST API にアクセスするときに異なる抽象化レベルで動作する 2 つの異なる関連ツールが含まれています。</block>
+  <block id="7a947a0e78de7f2a4b74b7420db98fc3" category="section-title">Astra SDK</block>
+  <block id="ad7e7ea46900019430506e34b6c4ad49" category="paragraph">Astra SDK は、コアプラットフォーム機能を提供します。基盤となる REST API 呼び出しを抽象化する一連の Python クラスが含まれています。このクラスは、アプリケーション、バックアップ、 Snapshot 、クラスタなど、さまざまな Astra Control リソースに対する管理操作をサポートしています。</block>
+  <block id="6dbbc40c6449ca3fda5f8c356b6b0376" category="paragraph">Astra SDK はパッケージの一部であり、単一の「 astrasdk.py 」ファイルで提供されています。このファイルを環境にインポートし、クラスを直接使用できます。</block>
+  <block id="5e5df168638042d7a718b1e5462bfb24" category="admonition">NetApp Astra Control Python SDK * （または SDK のみ）は、パッケージ全体の名前です。*Astra SDK* は、単一ファイル「 astrasdk.py 」の中核的な Python クラスを指します。</block>
+  <block id="042f2f95117cad397f19ae8bda1b2bbf" category="section-title">Toolkit スクリプト</block>
+  <block id="56b26fd2ed2c36f5045eb36cf77c7948" category="paragraph">Astra SDK ファイルに加えて 'toolkit.py スクリプトも利用できますこのスクリプトは、 Python 関数として内部的に定義されている個別の管理アクションにアクセスできるようにすることで、抽象化のレベルを高めて動作します。このスクリプトは、 Astra SDK をインポートし、必要に応じてクラスに呼び出します。</block>
+  <block id="c1fa54c7b9d3166a56b9afe8d178025e" category="section-title">にアクセスする方法</block>
+  <block id="caf8d9c274d92761873c194de7fd847e" category="paragraph">SDK には、次の方法でアクセスできます。</block>
+  <block id="f789019254e2d94578114761c04bb180" category="section-title">Python パッケージ</block>
+  <block id="0b0321c50e2a79cdce826f0c8f5f7f20" category="inline-link">Python パッケージインデックス</block>
+  <block id="a65d831b17fd79d3bf54336b2ed84e31" category="paragraph">SDK は、から入手できます<block ref="8410061c73ca21d204619a04c32c035c" category="inline-link-rx"></block> 名前の下にある * NetApp-Astra - ツールキット * 。パッケージにはバージョン番号が割り当てられており、必要に応じて更新が続行されます。パッケージを環境にインストールするには、 * PIP * パッケージ管理ユーティリティを使用する必要があります。</block>
+  <block id="cc255a90b5e22a79adcc253fd5643c0e" category="inline-link">PyPi ： NetApp Astra Control Python SDK</block>
+  <block id="5101ad75321ce3f01dd0612c22b9fa44" category="paragraph">を参照してください<block ref="b0ae7ae3e90ea984094ad8df5b6a65f5" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="0c9b6306d32fc8f44ff469ab235c5104" category="section-title">GitHub ソースコード</block>
+  <block id="e8c4206b0f47aa117169255eaa08c5eb" category="paragraph">SDK ソースコードは GitHub からも入手できます。リポジトリには次のものが含まれます。</block>
+  <block id="674eb3a9ec8ac34ddaaf6ea44b7eb422" category="list-text">`astrasdk.py (Python クラスを含む Astra SDK)</block>
+  <block id="f2af4f364548b21864e1b7b7bd176f6c" category="list-text">`toolkit.py ( より高度な関数ベースのスクリプト )</block>
+  <block id="63eaa893bb8e1f738d6a4c1c1447da78" category="list-text">インストール要件と手順の詳細</block>
+  <block id="463554d1311a014b3fde6d3323ae338f" category="list-text">インストールスクリプト</block>
+  <block id="01d954fb2edbf283d121f0651b04de83" category="list-text">その他のドキュメント</block>
+  <block id="c9a3d674846b5861ee3ca1771cb3fe5e" category="inline-link">GitHub ： NetApp / NetApp-Astra - ツールキット</block>
+  <block id="6a3e1686f161e74193cdf5b583396b8c" category="paragraph">のクローンを作成できます<block ref="722f7e844f39c6d237353116706890c9" category="inline-link-rx"></block> ローカル環境へのリポジトリ。</block>
+  <block id="6343ba741cd1ee396593580192d07224" category="section-title">インストールと基本的な要件</block>
+  <block id="7e5ad59a792bdfb61631a29cbadd4216" category="paragraph">パッケージのインストールおよび使用準備の一環として、いくつかのオプションと要件を考慮する必要があります。</block>
+  <block id="a2c5d7f1ae59d7e25522b6b34ea1f27f" category="section-title">インストールオプションの概要</block>
+  <block id="9fcb3e0ffb2078377dcce5ceb342f1b1" category="paragraph">次のいずれかの方法で SDK をインストールできます。</block>
+  <block id="658d546fab60a55bbf70f000f63ee91c" category="list-text">Pip を使用して、 PyPI のパッケージを Python 環境にインストールします</block>
+  <block id="144f4cb6f91591a4b697a30ebcf1ab07" category="list-text">Git Hub リポジトリをクローニングし、次のいずれかを実行します。</block>
+  <block id="32ffd39c439ea17f73e4f5036abb3944" category="list-text">パッケージを Docker コンテナとして導入（必要なものをすべて含む）</block>
+  <block id="a09f9226f893c1dac534e03b85311d73" category="list-text">Python クライアントコードにアクセスできるように、 2 つのコア Python ファイルをコピーします</block>
+  <block id="acb730b2d5158050dc822b6dc8c932e2" category="paragraph">詳細については、 PyPi および GitHub のページを参照してください。</block>
+  <block id="1737ce95b71a7983a78611220c00300c" category="section-title">Astra Control 環境の要件</block>
+  <block id="20cb526cb438c874dbc67eaf9ded63f0" category="paragraph">Astra SDK の Python クラスを直接使用する場合も、「 toolkit.py 」スクリプトの関数を使用する場合も、最終的には Astra Control 配置で REST API にアクセスすることになります。そのため、 API トークンを持つ Astra アカウントが必要になります。を参照してください <block ref="6790e3b8b21e3717c59b764a5b68d086" category="inline-link-macro-rx"></block> 詳細については、このドキュメントの「 * はじめに * 」セクションの他のページを参照してください。</block>
+  <block id="dfbe44cf1815fe1873dd8a7c434bcda9" category="section-title">NetApp Astra Control Python SDK の要件</block>
+  <block id="d53f4bad554105d2379ba7cf28728467" category="paragraph">SDK には、ローカル Python 環境に関連するいくつかの前提条件があります。たとえば、 Python 3.5 以降を使用する必要があります。また、必要な Python パッケージもいくつかあります。詳細については、 GitHub リポジトリページまたは PyPI パッケージページを参照してください。</block>
+  <block id="2c3632f4f9feb6a54026be6d9c946d20" category="section-title">役立つリソースの概要</block>
+  <block id="9d287cbd5a950094749c49fb0370b01c" category="paragraph">ここでは、開始するために必要なリソースの概要を示します。</block>
+  <block id="ba24114401f0d96a4086faa5796f3079" category="list-text"><block ref="ba24114401f0d96a4086faa5796f3079" category="inline-link-rx"></block></block>
+  <block id="b455f4010eda9452a921d32bfc7e1318" category="list-text"><block ref="b455f4010eda9452a921d32bfc7e1318" category="inline-link-rx"></block></block>
+  <block id="78ceba6718263592394adb03dc11471c" category="paragraph">Astra Control REST API に関連する現在のリリースの既知の問題をすべて確認しておく必要があります。ここでは、この製品の正常な使用を妨げる可能性のある既知の問題について記載します。</block>
+  <block id="f977fda19bbfe49b9346f60f532f0704" category="section-title">バックエンドストレージノード内の一部のストレージデバイスが検出されていません</block>
+  <block id="13595bcf3f8022567de41bcd09ef92b2" category="paragraph">ストレージノードに定義されているストレージデバイスを取得する REST API 呼び出しを発行すると、 Astra データストアデバイスのみが検出される。すべてのデバイスが返されるわけではありません。</block>
+  <block id="fd341dfea170932946910997510c48e8" category="section-title">Astra データストアストレージバックエンドが不明な状態です</block>
+  <block id="e1c83179f57e62cb00fbb2646ef58e6e" category="paragraph">Astra Data Store ストレージバックエンドは ' ストレージバックエンドを取得するための API 呼び出しを発行した後 ' 不明な状態になりますこの場合、ストレージバックエンドは実際には使用可能な状態であり、と通信できます。ただし ' ストレージ・バックエンド内のコンポーネントは正常な状態ではない可能性があり ' ストレージ・バックエンドが利用可能と表示されるためには正常な状態に戻す必要があります</block>
+  <block id="a1be4875b5bb7cb5ecf7bdcde9034c85" category="section-title">2021 年 12 月 14 日（ 21.12 ）</block>
+  <block id="09709048ce6033b774d7c044c1d718a2" category="paragraph">このリリースでは、 REST API の拡張に加え、今後のリリース更新で Astra Control の進化をサポートするためのドキュメント構造の変更が追加されています。</block>
+  <block id="ac36e7b65e4f6ad43be3f12f0d0799df" category="section-title">Astra Control の各リリースに対応した、別個の Astra Automation のドキュメント</block>
+  <block id="9a96b1cd085b9e8e259f701ed2e8edbc" category="inline-link-macro">旧バージョンの Astra Control Automation のドキュメント</block>
+  <block id="b0d9341a86886d085ea7727cabd2ea40" category="inline-link">Astra Control Automation の略</block>
+  <block id="0a389878c5dc68edba73dd8e0e98c145" category="paragraph">Astra Control の各リリースには、特定のリリースの機能に合わせて拡張およびカスタマイズされた独自の REST API が含まれています。Astra Control REST API の各リリースのドキュメントが、関連する GitHub コンテンツリポジトリに加え、独自の専用 Web サイトで入手できるようになりました。メインのドキュメントサイト<block ref="528bb65c82e5ff834ab031d8d81cba09" category="inline-link-rx"></block> 最新リリースのドキュメントは必ず含まれています。を参照してください <block ref="c9bb9dcf44e030eb56e66a1e24e585e6" category="inline-link-macro-rx"></block> 以前のリリースについては、を参照してください。</block>
+  <block id="4d1c4b6bfa2aac0ebe38d861ab737e79" category="paragraph">REST リソースタイプの数は、実行フックとストレージバックエンドを重視して拡張が続けられています。新しいリソースには、アカウント、実行フック、フックソース、実行フックオーバーライド、クラスタノード、 管理対象のストレージバックエンド、ネームスペース、ストレージデバイス、およびストレージノード。を参照してください <block ref="f79c22f30a5c9f960ce998adee5739fa" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="736ac6ee210a91c2f1a6638cc6127fd4" category="paragraph">NetApp Astra Control Python SDK は、 Astra Control 環境用の自動化コードを簡単に開発できるようにするオープンソースパッケージです。中核となるのは Astra SDK で、 REST API 呼び出しの複雑さを抽象化する一連のクラスが含まれています。また、 Python クラスをラッピングして抽象化することで、特定の管理タスクを実行するツールキットスクリプトもあります。を参照してください <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="b179356a4d80ff3c8707972005712b2f" category="section-title">2021 年 8 月 5 日（ 21.08 ）</block>
+  <block id="b090a7e9d0299b1a0c16321ebfd1f755" category="section-title">2021 年 4 月 15 日（ 21.04 ）</block>
+  <block id="d71331c5ce470b093ebf6c996f4ed88a" category="doc">このリリースについて</block>
+  <block id="4ed4c272d833a45163ae23ce2c927305" category="paragraph">このサイトのドキュメントでは、 Astra Control REST API 、および 2021 年 12 月（ 21.12 ）にリリースされる関連する自動化テクノロジについて説明しています。特に、このリリースの REST API は、対応する 21.12 リリースの Astra Control Center と Astra Control Service に含まれています。</block>
+  <block id="ea68f7ff6b79a550f669d752f15bd5da" category="paragraph">このリリースおよび以前のリリースの詳細については、次のページとサイトを参照してください。</block>
+  <block id="89d597c4d411409065b7e48fe97b7327" category="inline-link-macro">Astra Control REST API の新機能</block>
+  <block id="55d1aec576bc2fa5929c487a67f4f1fe" category="list-text"><block ref="55d1aec576bc2fa5929c487a67f4f1fe" category="inline-link-macro-rx"></block></block>
+  <block id="39b20ec9ac87283be93addb7db493125" category="list-text"><block ref="39b20ec9ac87283be93addb7db493125" category="inline-link-macro-rx"></block></block>
+  <block id="c95deb0b38b91727ae70217b718c15b6" category="inline-link">Astra Control Center 21.12 ドキュメント</block>
+  <block id="6bac7a3afd0fae5fb87d4c318c88b8d7" category="list-text"><block ref="6bac7a3afd0fae5fb87d4c318c88b8d7" category="inline-link-rx"></block></block>
+  <block id="0129349d759b45f11e9ff68b2e3fdf84" category="inline-link">Astra Control Service 21.12 のマニュアル</block>
+  <block id="453379871ec9a52d3f4e6f4bc5e6f3d8" category="list-text"><block ref="453379871ec9a52d3f4e6f4bc5e6f3d8" category="inline-link-rx"></block></block>
+  <block id="fdd081f1598a50889ba0720484271938" category="inline-link-macro">旧バージョンの Astra Automation ドキュメント</block>
+  <block id="0cc206202c15e68cf39519791ed593a1" category="list-text"><block ref="0cc206202c15e68cf39519791ed593a1" category="inline-link-macro-rx"></block></block>
+  <block id="4bddbc6d61b2586c05f9efdf9aa7b5cd" category="paragraph">以前の Astra Control リリースの自動化に関するドキュメントには、次のリンクからアクセスできます。</block>
+  <block id="832210201d55f5c764a32c055a00b726" category="inline-link">Astra Control Automation 21.08 ドキュメント</block>
+  <block id="025fa2688359a439d7fa215fbbbaf287" category="list-text"><block ref="025fa2688359a439d7fa215fbbbaf287" category="inline-link-rx"></block></block>
+  <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Astra Control Automation のドキュメント</block>
+  <block id="f13263898a2cd18c9ee7843dc1459aba" category="admonition">これらのワークフローで使用されている REST エンドポイントは、すべての Astra アプリケーションをデフォルトで返します。API 呼び出しで「 filter 」クエリーパラメータを使用して、アンマネージアプリケーションのみを返すように要求できます。代わりに、フィルタパラメータを省略してすべてのアプリケーションを返し、出力の「 anagedState 」フィールドを調べて、「 unmanaged 」状態のアプリケーションを判別することもできます。</block>
+  <block id="b6a35c94f854cd740168a0764638d0df" category="section-title">managedState が unmanaged のアプリケーションのみをリストします</block>
+  <block id="bc9eb7d967c0a164260a3a3362df3173" category="paragraph">このワークフローでは 'filter' クエリー・パラメータを使用して ' 管理対象外のアプリケーションのみを返します</block>
+  <block id="b778c76d47db062e719ea97fffdb251e" category="section-title">1. 管理対象外のアプリケーションを一覧表示します</block>
+  <block id="225ff177d2b3ca52f452571419d65f70" category="cell">フィルタを使用して、どのアプリケーションを返すかを指定します。</block>
+  <block id="b27c8e443cc3570cdff9e631ba1485fa" category="section-title">curl の例：アンマネージアプリケーションの名前、 ID 、および managedState を返します</block>
+  <block id="3a340585a0931b07ac9b6627082689c8" category="section-title">すべてのアプリケーションをリストし、管理対象外のアプリケーションを選択します</block>
+  <block id="f370302c742b824210b358edece7e15d" category="paragraph">このワークフローはすべてのアプリケーションを返します。出力を調べて、どちらが管理対象外であるかを確認する必要があります。</block>
+  <block id="0f17193d6bf995f16caf5e86bc3ded83" category="section-title">1. すべてのアプリケーションを一覧表示します</block>
+  <block id="3640a41cdbb2456f459491fd8672e6cb" category="section-title">2. 管理されていないアプリケーションを選択します</block>
+  <block id="a2fee71d053291b11da659df7d22ce18" category="paragraph">API 呼び出しの出力を確認し、「 unmanaged 」に等しい「 anagedState 」を持つアプリケーションを手動で選択します。</block>
+  <block id="08d7f360c94a906d3639173599184943" category="paragraph">次の REST API 呼び出しを実行します。バックアップ（以下を参照）または Snapshot の ID を指定する必要があります。</block>
+  <block id="51cd01a5a6a691746293ce972056d4c1" category="cell">/account/{accountID}/k8s/v1/managedApps/{appID}</block>
+  <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">curl の例：バックアップからアプリを所定の場所にリストアします</block>
+  <block id="98904826ae5cef8716020180473276c8" category="admonition">Astra Control リソースへのアクセスに使用されるパスと完全な URL の形式は、いくつかの値に基づいています。を参照してください <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> を参照してください。も参照してください <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> Astra のリソースとエンドポイントの使用方法の詳細については、を参照してください。</block>
+  <block id="5814e35bd932d85c35c92f3c990f80c0" category="paragraph">[* リリース *] 列は、リソースが最初に導入されたときのアストラリリースを示します。このフィールドは、現在のリリースで新しく追加されたリソースに対して太字で表示されます。</block>
+  <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">リソース</block>
+  <block id="b8e7b465df7c5979dc731d06e84ce2cf" category="cell">リリース。</block>
+  <block id="08bd40c7543007ad06e4fce31618f6ec" category="cell">アカウント：</block>
+  <block id="5b0653f11dfe407c7afac43ce74c43cf" category="cell">* 21.12 *</block>
+  <block id="39a70d60ad1f39618d1dd601b341a2f6" category="cell">アカウントリソースを使用すると、マルチテナント Astra Control 導入環境内の分離されたテナントを管理できます。</block>
+  <block id="8ff5110ebae476ca35aeb20b14a75693" category="cell">21.08</block>
+  <block id="af08b45fa44807ac1852671e6fc59d44" category="cell">21.04</block>
+  <block id="b9ab083ebcf27029a022bf2e308555ab" category="cell">実行フック</block>
+  <block id="54d57faf98d4bfad6eed40ece793dce5" category="cell">実行フックリソースは、管理対象アプリケーションのスナップショットの実行前または実行後に実行できるカスタムスクリプトを表します。</block>
+  <block id="f42562a6ae551c35216254ce200afcc8" category="cell">フックソース</block>
+  <block id="fba14cda608976c44a49d623666f37c7" category="cell">フックソースリソースは、実行フックで使用される実際のソースコードを表します。ソースコードを実行コントロールから分離すると、スクリプトを共有できるようにするなど、いくつかの利点があります。</block>
+  <block id="fd2bd51169cf1622d8afc842b6c7fae9" category="cell">ロールのバインド</block>
+  <block id="9f9b94351efdd20bfec97ae027bdd1de" category="cell">実行フックのオーバーライド</block>
+  <block id="d20b671eee65b07689030c1a810243c7" category="cell">実行フックの上書きリソースを使用すると、特定のアプリケーションにプリインストールされているネットアップのデフォルトの実行フックを必要に応じて無効にできます。</block>
+  <block id="db6b0e60fc01fe1efd233929dea252ca" category="cell">クラスタノード</block>
+  <block id="46f255d802b6381149870692736dad56" category="cell">クラスタノードリソースは、 Kubernetes クラスタ内の個々のノードにアクセスできるようにすることで、解決策を提供します。</block>
+  <block id="129be99fc591453941e189ee076a0290" category="cell">管理対象のストレージバックエンド</block>
+  <block id="3e96a7fa7d0e1d88d70912b8a5d80908" category="cell">管理対象のストレージバックエンドリソースを使用して、バックエンドストレージプロバイダの抽象化された表現にアクセスできます。これらのストレージバックエンドは、管理対象のクラスタやアプリケーションで使用できます。</block>
+  <block id="b3ba0fe968ce39dcfc6fe8cc0f1b02da" category="cell">ネームスペース</block>
+  <block id="08dafbbeceed7e340c9625fd30927d83" category="cell">ネームスペースリソースは、 Kubernetes クラスタ内で使用されるネームスペースへのアクセスを提供します。</block>
+  <block id="ec0f2a3052ae80ccfcad8020e8680088" category="cell">ストレージデバイス</block>
+  <block id="5482e18b728d9af600694261c0650975" category="cell">ストレージデバイスリソースは、 Astra Data Store （ ADS ）タイプのストレージバックエンドの特定のストレージノードに関連付けられたディスクへのアクセスを提供します。ADS ストレージバックエンドは Kubernetes クラスタとして導入されます。</block>
+  <block id="fe171fe0421ac266ac1285e64b1311d2" category="cell">ストレージノード</block>
+  <block id="2c0709150edcf4371b39572b109c04c3" category="cell">ストレージノードリソースは、 ADS クラスタを構成するノードです。</block>
+  <block id="01d5e4ec3cb4b0c1971b9e8a5199a107" category="paragraph">お客様の施設に導入されている Astra Control Center ソフトウェアの最新リリースのドキュメント。</block>
+  <block id="9533b0dcff191d66f9ea3fe447bffddc" category="paragraph">パブリッククラウドで利用可能な最新リリースの Astra Control Service ソフトウェアのドキュメント。</block>
+  <block id="5b9e0257ebcdde10e1d11e75a9a03336" category="paragraph">ネットアップが保守しているオープンソースのストレージオーケストレーションツールである Astra Trident ソフトウェアの最新リリースのドキュメント。</block>
+  <block id="1045f2798351223896fdab281a8307eb" category="sidebar">Astra Control Automation のドキュメント</block>
+  <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">以前のバージョン</block>
+  <block id="35bcd8d33247c44923eb71df2f2f0a2d" category="sidebar">ネイティブ Python</block>
 </blocks>

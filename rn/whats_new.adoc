@@ -17,7 +17,31 @@ summary:
 
 
 
-== 2021 年 8 月 5 日
+== 2021 年 12 月 14 日（ 21.12 ）
+
+このリリースでは、 REST API の拡張に加え、今後のリリース更新で Astra Control の進化をサポートするためのドキュメント構造の変更が追加されています。
+
+
+
+=== Astra Control の各リリースに対応した、別個の Astra Automation のドキュメント
+
+Astra Control の各リリースには、特定のリリースの機能に合わせて拡張およびカスタマイズされた独自の REST API が含まれています。Astra Control REST API の各リリースのドキュメントが、関連する GitHub コンテンツリポジトリに加え、独自の専用 Web サイトで入手できるようになりました。メインのドキュメントサイト https://docs.netapp.com/us-en/astra-automation/["Astra Control Automation の略"^] 最新リリースのドキュメントは必ず含まれています。を参照してください link:../aa-earlier-versions.html["旧バージョンの Astra Control Automation のドキュメント"] 以前のリリースについては、を参照してください。
+
+
+
+=== REST リソースタイプの拡張
+
+REST リソースタイプの数は、実行フックとストレージバックエンドを重視して拡張が続けられています。新しいリソースには、アカウント、実行フック、フックソース、実行フックオーバーライド、クラスタノード、 管理対象のストレージバックエンド、ネームスペース、ストレージデバイス、およびストレージノード。を参照してください link:../endpoints/resources.html["リソース"] を参照してください。
+
+
+
+=== NetApp Astra Control Python SDK
+
+NetApp Astra Control Python SDK は、 Astra Control 環境用の自動化コードを簡単に開発できるようにするオープンソースパッケージです。中核となるのは Astra SDK で、 REST API 呼び出しの複雑さを抽象化する一連のクラスが含まれています。また、 Python クラスをラッピングして抽象化することで、特定の管理タスクを実行するツールキットスクリプトもあります。を参照してください link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] を参照してください。
+
+
+
+== 2021 年 8 月 5 日（ 21.08 ）
 
 このリリースには、新しい Astra 導入モデルの導入と REST API のメジャー拡張が含まれています。
 
@@ -45,7 +69,7 @@ OpenMetrics のサポート:: OpenMetrics エンドポイントは、 OpenMetric
 
 
 
-== 2021 年 4 月 15 日
+== 2021 年 4 月 15 日（ 21.04 ）
 
 このリリースには、次の新機能と機能拡張が含まれています。
 

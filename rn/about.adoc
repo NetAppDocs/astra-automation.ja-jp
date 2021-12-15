@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: rn/about.html 
+keywords:  
+summary:  
+---
+= このリリースについて
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+このサイトのドキュメントでは、 Astra Control REST API 、および 2021 年 12 月（ 21.12 ）にリリースされる関連する自動化テクノロジについて説明しています。特に、このリリースの REST API は、対応する 21.12 リリースの Astra Control Center と Astra Control Service に含まれています。
+
+このリリースおよび以前のリリースの詳細については、次のページとサイトを参照してください。
+
+* link:../rn/whats_new.html["Astra Control REST API の新機能"]
+* link:../endpoints/resources.html["リソースとエンドポイント"]
+* https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center 21.12 ドキュメント"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 21.12 のマニュアル"^]
+* link:../aa-earlier-versions.html["旧バージョンの Astra Automation ドキュメント"]
+

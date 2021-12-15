@@ -2,5 +2,9 @@
 section: rn
 title: リリースノート
 entries:
+- title: このリリースについて
+  url: "/rn/about.html"
 - title: 新機能
   url: "/rn/whats_new.html"
+- title: 既知の問題
+  url: "/rn/known_issues.html"

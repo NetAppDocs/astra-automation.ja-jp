@@ -31,14 +31,14 @@ summary:
 
 === 3. アプリを復元します
 
-次の REST API 呼び出しを実行します。
+次の REST API 呼び出しを実行します。バックアップ（以下を参照）または Snapshot の ID を指定する必要があります。
 
 [cols="25,75"]
 |===
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{accountID}/k8s/v1/managedApps 
+| PUT | /account/{accountID}/k8s/v1/managedApps/{appID} 
 |===
 
 
@@ -61,20 +61,15 @@ summary:
 ----
 {
   "type": "application/astra-managedApp",
-  "version": "1.0",
-  "name": "postgres1-postgresql-clone",
-  "clusterID": "30880586-d579-4d27-930f-a9633e59173b",
-  "sourceClusterID": "30880586-d579-4d27-930f-a9633e59173b",
-  "namespace": "davidns-postgres-app",
-  "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb",
-  "sourceAppID": "e591ee59-ea90-4a9f-8e6c-d2b6e8647096"
+  "version": "1.2",
+  "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
 }
 ----
 
 
-===== curl の例：バックアップからアプリケーションをクローニングします
+===== curl の例：バックアップからアプリを所定の場所にリストアします
 
 [source, curl]
 ----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps' --header 'Content-Type: application/astra-managedApp+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --d @JSONinput
+curl --location -i --request PUT 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<APP_ID>' --header 'Content-Type: application/astra-managedApp+json' --header '*/*' --header 'ForceUpdate: true' --header 'Authorization: Bearer <API_TOKEN>' --d @JSONinput
 ----

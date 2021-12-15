@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: aa-earlier-versions.html 
+keywords:  
+summary:  
+---
+= 旧バージョンの Astra Control Automation のドキュメント
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+以前の Astra Control リリースの自動化に関するドキュメントには、次のリンクからアクセスできます。
+
+* https://docs.netapp.com/us-en/astra-automation-2108/["Astra Control Automation 21.08 ドキュメント"^]
+

@@ -21,15 +21,15 @@ summary:
 
 * https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center のドキュメント"^]
 +
-お客様の施設に導入された Astra Control Center ソフトウェアのドキュメント。
+お客様の施設に導入されている Astra Control Center ソフトウェアの最新リリースのドキュメント。
 
 * https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service のマニュアル"^]
 +
-パブリッククラウドで利用可能な Astra Control Service ソフトウェアのドキュメント。
+パブリッククラウドで利用可能な最新リリースの Astra Control Service ソフトウェアのドキュメント。
 
 * https://docs.netapp.com/us-en/trident/["Astra Trident のドキュメント"^]
 +
-ネットアップが管理している Astra Trident オープンソースストレージオーケストレーションツールのドキュメント
+ネットアップが保守しているオープンソースのストレージオーケストレーションツールである Astra Trident ソフトウェアの最新リリースのドキュメント。
 
 
 

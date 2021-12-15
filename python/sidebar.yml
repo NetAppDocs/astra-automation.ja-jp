@@ -2,7 +2,11 @@
 section: python
 title: Python を使用する
 entries:
-- title: 作業を開始する前に
-  url: "/python/python_before.html"
-- title: 管理対象アプリケーションをリストします
-  url: "/python/py_list_man_apps.html"
+- title: NetApp Astra Control Python SDK
+  url: "/python/astra_toolkits.html"
+- title: ネイティブ Python
+  entries:
+  - title: 作業を開始する前に
+    url: "/python/python_before.html"
+  - title: 管理対象アプリケーションをリストします
+    url: "/python/py_list_man_apps.html"
