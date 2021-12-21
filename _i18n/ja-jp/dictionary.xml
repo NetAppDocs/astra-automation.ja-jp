@@ -862,4 +862,7 @@
   <block id="1045f2798351223896fdab281a8307eb" category="sidebar">Astra Control Automation のドキュメント</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">以前のバージョン</block>
   <block id="35bcd8d33247c44923eb71df2f2f0a2d" category="sidebar">ネイティブ Python</block>
+  <block id="be1c3d3113c4023e29e8dd947523c711" category="inline-link">Astra データストアのドキュメント</block>
+  <block id="c1f6a45da7b5911a5f35093ae72bfc7a" category="list-text"><block ref="c1f6a45da7b5911a5f35093ae72bfc7a" category="inline-link-rx"></block></block>
+  <block id="f1078b605bb76543a5137c04c286382d" category="paragraph">お客様のオンプレミスに導入されている Astra Data Store ソフトウェアの最新リリースのドキュメント。</block>
 </blocks>
