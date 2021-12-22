@@ -65,3 +65,9 @@ Astra Control REST API は、システムイベントやユーザ通知など、
 === 高度なオートメーション技術の基盤
 
 REST API に直接アクセスするだけでなく、 REST API をベースとするその他の自動化テクノロジも使用できます。
+
+
+
+=== Astra ファミリーのドキュメントの一部
+
+Astra Control Automation のドキュメントは、 Astra ファミリーの大きなドキュメントの一部です。を参照してください https://docs.netapp.com/us-en/astra-family/["Astra のドキュメント"^] を参照してください。
