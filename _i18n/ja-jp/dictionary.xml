@@ -703,7 +703,6 @@
   <block id="8af1f604c2ddb0ae53e02227ab1ca1da" category="paragraph">Representational State Transfer （ REST ）は、分散 Web アプリケーションの作成に使用される形式です。Web サービス API の設計に適用されることで、サーバベースのリソースを公開し、その状態を管理するための一連の主流テクノロジとベストプラクティスが確立されます。REST はアプリケーション開発のための一貫した基盤を提供しますが、各 API の詳細は設計内容に応じて異なる場合があります。ライブ環境で使用する前に、 Astra Control REST API の特性を理解しておく必要があります。</block>
   <block id="352836aad17f0db4217873eb0a9524b3" category="paragraph">Web サービスのクライアントとサーバの間で情報を構造化して転送する方法は複数ありますが、最も広く使用されているのは JavaScript Object Notation （ JSON ）です。JSON は、単純なデータ構造をプレーンテキストで表すための業界標準であり、リソースについての状態情報の転送に使用されます。Astra Control REST API では、 JSON を使用して、各 HTTP 要求と応答の本文で伝送されるデータをフォーマットします。</block>
   <block id="67a1ee90ebb7f60d74dc1baee961de03" category="paragraph">スクリプトを実行するワークステーションは、ネットワークにアクセスし、 Astra Control にアクセスできる必要があります。Astra Control Service を使用する場合は、インターネットに接続し、 https://astra.netapp.io` でサービスに接続できる必要があります。</block>
-  <block id="2d5a5fa8a82d5c201cb1e33457f8b169" category="doc">Astra Control REST API の新機能</block>
   <block id="b0c0f8ac8f671541655d3d0e2beb2ce8" category="paragraph">ネットアップでは、 Astra Control REST API を定期的に更新して、新機能、拡張機能、およびバグ修正を提供しています。</block>
   <block id="2ccd65a5a6a4e8a5f8ce16d83c39361b" category="paragraph">このリリースには、パブリッククラウドサービスとして提供される既存の Astra Control Service に加えて、 Astra Control Center オンプレミス導入モデルも含まれています。Astra Control Center をサイトにインストールして、ローカルの Kubernetes 環境を管理できます。2 つの Astra Control 導入モデルは同じ REST API を共有しますが、ドキュメントで必要とされるわずかな違いがあります。</block>
   <block id="e83314a43cc3f59ae86485142dc33671" category="paragraph">Astra Control REST API からアクセス可能なリソースの数が大幅に増え、多くの新しいリソースがオンプレミスの Astra Control Center の基盤となりました。新しいリソースには、 ASUP 、使用権、機能、ライセンス、設定、 サブスクリプション、バケット、クラウド、クラスタ、管理対象クラスタ、 ストレージバックエンド、およびストレージクラス。を参照してください <block ref="f79c22f30a5c9f960ce998adee5739fa" category="inline-link-macro-rx"></block> を参照してください。</block>
@@ -871,4 +870,5 @@
   <block id="c2c4dd027136447874b3a5d1dbac4ae0" category="inline-link">Astra ファミリーのドキュメント</block>
   <block id="d718eacc67f8b74e62fa7298041adf60" category="list-text"><block ref="d718eacc67f8b74e62fa7298041adf60" category="inline-link-rx"></block></block>
   <block id="2c3489a3234e45e6f5946c26c4cb7d5e" category="paragraph">オンプレミス環境とパブリッククラウド環境の両方で、すべての Astra ドキュメントに一元的にアクセスできます。</block>
+  <block id="c93cc787737ceea532bea714170e32cf" category="doc">Astra Control REST API の新機能</block>
 </blocks>
