@@ -6,6 +6,7 @@ summary:
 ---
 = 管理アプリを取得します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

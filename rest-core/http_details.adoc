@@ -6,6 +6,7 @@ summary:
 ---
 = HTTP の詳細
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -70,7 +71,7 @@ Astra Control REST API で使用できる各リソースインスタンスとコ
 次の表に、 Astra Control REST API で使用される HTTP ヘッダーを示します。
 
 
-NOTE: を参照してください https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232"^] および を参照してください。
+NOTE: を参照してください https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232"^] および https://www.rfc-editor.org/rfc/rfc7233.txt["RFC 7233"^] を参照してください。
 
 [cols="30,15,55"]
 |===

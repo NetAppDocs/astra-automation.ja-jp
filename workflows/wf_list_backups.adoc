@@ -6,6 +6,7 @@ summary:
 ---
 = バックアップをリスト表示します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

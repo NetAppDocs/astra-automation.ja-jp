@@ -41,22 +41,14 @@
   <block id="b4a49af66f4e673d029ee977129248ee" category="paragraph">制限パラメータを使用して ' 要求に対して返されるリソース・インスタンスの数を制限することにより ' ページ付けを強制できます</block>
   <block id="e93f994f01c537c4e2f7d8528c3eb5e9" category="section-title">カウント</block>
   <block id="6a7d4ae9b8c0f0a303422357fd399580" category="paragraph">ブール値パラメータ「 count 」を「 true 」に設定した場合、返された応答の配列内のリソースの数がメタデータセクションに表示されます。</block>
-  <block id="2fae32629d4ef4fc6341f1751b405e45" category="doc">セキュリティ</block>
-  <block id="e9fd08421726dfc597425b72cb749048" category="admonition">すべての HTTP ネットワークトラフィックは、 Transport Layer Security （ TLS ）標準を使用して保護されます。</block>
-  <block id="020fc1c1709865f47cf581e3063ef365" category="section-title">Astra の API トークン</block>
-  <block id="4c24942ab40abc662728ad39b3e7853f" category="list-text">Astra の Web ユーザインターフェイスで API トークンを生成できます。</block>
   <block id="261bfb4842abd90ac7080375e1e3a342" category="list-text">トークンは作成後に期限切れになることはありません。</block>
-  <block id="0e8786f274c7ef1712747fb88e9cd3b3" category="list-text">トークンは、 Astra Web ユーザインターフェイスでいつでも取り消すことができます。</block>
-  <block id="d0d1091dbfd376acefa9234b27bf00d3" category="section-title">API アクセストークンの取り消し</block>
   <block id="0f20f78dc9e61210d9143c555c8e2db8" category="paragraph">不要になった API トークンは、 Astra Web インターフェイスで取り消すことができます。</block>
-  <block id="68a90746d8aa2fddfaf501b26970b07b" category="paragraph">Astra サービスのアカウントが必要です。また、取り消すトークンを特定する必要があります。</block>
   <block id="c4f78d9edffd445c660b4325747b976a" category="paragraph">トークンが取り消されると、そのトークンはただちに永続的に使用できなくなります。</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
   <block id="c3cd4b6e8352817aeaab7114fc20ee4d" category="inline-link"><block ref="c3cd4b6e8352817aeaab7114fc20ee4d" category="inline-link-rx"></block></block>
   <block id="7d88293618d45c51062ebb23f7a5777d" category="list-text">ページの右上にある図のアイコンをクリックし、 * API access * を選択します。</block>
   <block id="6aec476981db1f529613506dbaf170dd" category="list-text">取り消すトークンまたはトークンを選択します。</block>
   <block id="ae4a6c751a5ef4ed21296977cde2b309" category="list-text">[* アクション * （ * Actions * ） ] ドロップダウンボックスで、 [ トークンの無効化 * （ * Revoke tokens * ） ] をクリック</block>
-  <block id="0ca5961f07dff9845784a6a15a8010d0" category="section-title">ロールとアクセス制御</block>
   <block id="b6f4a2ec6356bbd56d49f2096bf9d3d3" category="list-text">オーナー</block>
   <block id="e3afed0047b08059d0fada10f400c1e5" category="list-text">管理</block>
   <block id="858ba4765e53c712ef672a9570474b1d" category="list-text">メンバー</block>
@@ -84,7 +76,6 @@
   <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="inline-link-macro">その他のリソース</block>
   <block id="1975d27c17bd745494bde5176f3687d2" category="paragraph">に示す追加情報のリソースを確認しておく必要があります <block ref="d9232e9ba333ee728d29f8228e038c57" category="inline-link-macro-rx"></block>。</block>
   <block id="6e567afb3c0582569592264335e77063" category="doc">API トークンを取得します</block>
-  <block id="3831398789fa13daf694eec5e5b8b586" category="admonition">Astra API トークンの有効期限は切れませんが、トークンが不要になった場合は無効にできます。</block>
   <block id="b329e0b224bc672c7032902e91459644" category="list-text">ページで [API トークンの生成 ] をクリックし、ポップアップウィンドウで [API トークンの生成 ] をクリックします。</block>
   <block id="3040c02566f3d35a3b86a6ca9472dadd" category="list-text">アイコンをクリックしてトークン文字列をクリップボードにコピーし、エディタに保存します。</block>
   <block id="df98c0b39730eeb3f14749ea1c0684c2" category="list-text">同じページにあるアカウント ID をコピーして保存します。</block>
@@ -499,7 +490,6 @@
   <block id="09ea0908fbfc4cde85bf416e35dc55c8" category="inline-link">ネットアップサポート</block>
   <block id="4e3ffaad45a8ae63f200119be8101498" category="list-text"><block ref="4e3ffaad45a8ae63f200119be8101498" category="inline-link-rx"></block></block>
   <block id="3d32fc1a126e880a8ed715ad4b9c42f5" category="paragraph">トラブルシューティングツール、ドキュメント、およびテクニカルサポートにアクセスできます。</block>
-  <block id="9908fe61d53709e616ab0ca94767db29" category="section-title">REST の概念とクラウドテクノロジ</block>
   <block id="e9c4f861f257833ba2ec75155047b6ed" category="inline-link">失策</block>
   <block id="b9e9e4c00e500b7ab02ea023fdde7644" category="list-text">博士<block ref="f64b654d7799e22745330f1f41a344ae" category="inline-link-rx"></block> 著者 : Roy Fielding オリジナル版を読む</block>
   <block id="fc0386108cb3bd212c4e2b1402e8cdc9" category="paragraph">本ドキュメントでは、 REST アプリケーション開発モデルを導入および確立しました。</block>
@@ -509,23 +499,9 @@
   <block id="fa862ec81357f8907a8b75f4d969c590" category="inline-link">RFC エディタ</block>
   <block id="6763d4dfc2fa6c04b08ba1e1b7751f5f" category="list-text"><block ref="6763d4dfc2fa6c04b08ba1e1b7751f5f" category="inline-link-rx"></block></block>
   <block id="ba793efaa4293b35388d140ee9308a68" category="paragraph">独自に番号付けされた RFC 文書の集合として維持されている Web およびインターネット標準の信頼できるソース。</block>
-  <block id="8a72d09dc95b3b91b5b0e50e2855c7df" category="sidebar">Astra REST API の概要を確認できます。</block>
-  <block id="18500a8a0b71e0c523540a041898f20e" category="sidebar">REST API への基本アクセスをテストする。</block>
-  <block id="5a8acee56ec6e869519f734e2088df5f" category="sidebar">REST Web サービスのテクノロジ基盤を理解する。</block>
-  <block id="ffffaf26e2c2db4b739b56890328e4fc" category="sidebar">HTTP 実装の詳細を確認します。</block>
-  <block id="b48b16eddb41e4fa6195a15600ab9357" category="sidebar">URL 形式と、その形式が複数の値で構成される仕組みを理解します。</block>
-  <block id="9755f42ebf56e17cf5975e86f758625f" category="sidebar">REST API のセキュリティについて説明します。</block>
-  <block id="10dbdee8ec3b04e3bbc3cf0d5107272d" category="sidebar">クエリパラメータを使用して、リソースコレクションにアクセスします。</block>
-  <block id="0d94de5cabf3777edbb39575a23997f0" category="sidebar">Astra アプリケーションをサポートする準備をします。</block>
-  <block id="a4d53babcc4593ce136c41558903e411" category="sidebar">REST リソースおよびコレクションの設計を理解する。</block>
-  <block id="115b4cdc499a3cd389a6ef30356ff6ef" category="sidebar">さまざまな Astra リソースの概要をまとめて確認する。</block>
   <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="sidebar">準備</block>
-  <block id="5e8f36bd36829d3772c20b89480e3105" category="sidebar">Astra ワークフローを使用するための準備</block>
   <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
-  <block id="4916981f03660e03cc80dd62c59eae32" category="sidebar">サンプルの Python スクリプトを実行する準備をします。</block>
-  <block id="b601ee4ab1a336d55b2570d122e0acd8" category="sidebar">サンプルスクリプトを実行して、管理対象アプリケーションを一覧表示します。</block>
   <block id="36b64aad8a26246fe3ad4116a2b6f289" category="sidebar">診断</block>
-  <block id="f05754a1ff0413a18fba9fcecbf43b4d" category="sidebar">API トークンを取得しています</block>
   <block id="824ee32982b0cc1ac1aca8447c9cb3cf" category="sidebar">アプリコントロール</block>
   <block id="0990e289177ad252ad62d3e723123f2d" category="sidebar">管理対象外アプリをリスト表示します</block>
   <block id="6e401175b804a895ba134912540780f9" category="sidebar">管理対象アプリを表示します</block>
@@ -541,10 +517,8 @@
   <block id="879ad4bddb82a977b90643c7b33a4e49" category="sidebar">バックアップからアプリケーションをクローニングする</block>
   <block id="dc299aaf3e84eb3627f50d2d2484cf17" category="sidebar">バックアップからアプリケーションをリストアする</block>
   <block id="999e0dcec594b55111b1ede61b4409f5" category="sidebar">通知をリストします</block>
-  <block id="30ab6f0fd2f051c07baddb1c7c702733" category="paragraph">を参照してください <block ref="949977ec887dbf77cf703083221524dc" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="c7937dcfe6d6141d399008b7df375246" category="list-text">アカウントのクレデンシャルを使用して Astra にサインインします。</block>
   <block id="6f38ef059f4b592ce26b99012c9d756d" category="paragraph">Astra Control Service の次のサイトにアクセスします。<block ref="0045c0d6f22ad59c53fc1e6d3b91c771" category="inline-link-rx"></block></block>
-  <block id="c2ec1ffa08cff38a8aecac49aed91311" category="paragraph">各アストラユーザには、実行可能なアクションを決定する 1 つのロールが割り当てられます。役割は、次の表に示すように階層構造になっています。</block>
   <block id="bbbabdbe1b262f75d99d62880b953be1" category="cell">ロール</block>
   <block id="40923151202a4a1da433572b776bb7ae" category="cell">admin ロールのすべての権限が割り当てられており、 Astra アカウントを削除することもできます。</block>
   <block id="7bd88b6f5fdbbacda32d9f1f4588445c" category="cell">メンバーの役割のすべての権限を持ち、ユーザーをアカウントに招待することもできます。</block>
@@ -613,9 +587,7 @@
   <block id="39fc3040b9fe64cf202ce4de80bf7f69" category="list-text">リソースコレクションへのアクセスに使用できる豊富なクエリパラメータセットがあります。フィルタ、ソート、ページ付けなどの処理がサポートされます。</block>
   <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="doc">既知の問題</block>
   <block id="1a615153bb2bd3389942d44023a8f4bb" category="section-title">Astra アカウントのクレデンシャルが必要</block>
-  <block id="11b7e523e4dba4e9a9499492d8f958a2" category="paragraph">Astra のクレデンシャルが必要になるのは、 Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する場合です。Astra Control Center を使用すると、これらの資格情報をローカルで管理できます。Astra Control Service では、アカウントの資格情報は *Auth0* サービスによって維持されます。</block>
   <block id="646fd3c3d22d826a188a59c1bba8854b" category="paragraph">Astra アカウントのクレデンシャルが必要です。</block>
-  <block id="99f3096a06344ccb634a49e5cd253955" category="paragraph">このタスクは、 Astra Web インターフェイスで API トークンを生成します。また、 API 呼び出しにも必要なアカウント ID を取得する必要があります。</block>
   <block id="ec34ea1038c99109c93f6776a16e2be8" category="section-title">ワークフローのカテゴリ</block>
   <block id="20d2410ae6d60054698fdb2241648ec0" category="paragraph">導入モデルに応じて、幅広い種類の Astra ワークフローが用意されています。Astra Control Center を使用している場合は、インフラワークフローから始めて、管理ワークフローに進みます。Astra Control Service を使用すると、通常は管理ワークフローに直接移動できます。</block>
   <block id="3968c3333db40e7d3ec4d8fb2fc30853" category="admonition">ワークフロー内の cURL のサンプルでは、 Astra Control Service の URL を使用します。オンプレミスの Astra Control Center を使用している場合は、環境に応じて URL を変更する必要があります。</block>
@@ -674,14 +646,8 @@
   <block id="b16682201ded465cc3160dbc12de687f" category="cell">/account/{accountID}/core/v1/users</block>
   <block id="d5eaca06185acdad8b69d18d2b7d8a07" category="section-title">curl の例：すべてのユーザのすべてのデータを返します</block>
   <block id="6f0f5a995f8609d334baee54a5b0c773" category="section-title">curl の例：すべてのユーザの名前、姓、および ID を返します</block>
-  <block id="ac765f2f54ea73e1526cf01bac4a309b" category="sidebar">REST API の使用を開始する準備をします。</block>
-  <block id="cb6fea8e773da9ef213dc1af8650d291" category="sidebar">API にアクセスするために必要なトークンを生成します。</block>
-  <block id="1a1f080e8f2136b11ff08f602e4ed1a3" category="sidebar">Astra ランタイムインフラストラクチャの保守に必要なワークフロー。</block>
-  <block id="25443fd74e95acec2509e7d76d37861d" category="sidebar">管理対象アプリケーションの管理に使用される一般的なワークフロー。</block>
-  <block id="35ddd64ed03dd1579ce39e6e82ff721f" category="sidebar">その他の REST に関する考慮事項</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">リリースノート</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新機能</block>
-  <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
   <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API ライセンス</block>
   <block id="4c7aee6e8d40dfdf7713e4a924264d5a" category="paragraph">特定のアストラアカウントに対して定義されているユーザをリストできます。</block>
   <block id="e6c08d334ddcc8f5824e2eb3371f9b4f" category="admonition">障害が発生したバックアップは、次に示すオプションの要求ヘッダーを使用して強制的に削除できます。</block>
@@ -716,26 +682,18 @@
   <block id="973e2c06fdb700a27ccfb70fe4627261" category="paragraph">Astra Control REST API は、システムイベントやユーザ通知など、堅牢なデバッグおよび問題の特定機能を提供します。</block>
   <block id="e2cfa1b12557ae7ad3c2bb28c8b77d7c" category="paragraph">HTTP メソッド、入力パラメータ、応答など、 Astra Control REST API のすべての呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。</block>
   <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">REST API のリファレンスドキュメントは、現在のところ Astra Control に付属しており、オンラインで入手できます。</block>
-  <block id="b5e893215efc14b056461f3d72a24170" category="paragraph">Astra Control REST API のリソースを使用すると、 Astra の導入を自動化できます。各リソースは、 1 つ以上のエンドポイントを介してアクセスされます。ここでは、自動化の導入計画の一環として使用できる REST リソースの概要を示します。</block>
-  <block id="248846079d127e0a82d697f25c33991f" category="section-title">Astra Control REST のリソースとエンドポイント</block>
   <block id="0f879b71f480ca631ac007cea8270eb9" category="paragraph">Astra Control REST API に用意されているプライマリリソースエンドポイントは、 3 つのカテゴリに分類されています。各リソースは、特定の場所を除いて、すべての CRUD 操作（作成、読み取り、更新、削除）を使用してアクセスできます。</block>
   <block id="a3fb339c1c586b61a4747f75e3e18873" category="list-text"><block ref="a3fb339c1c586b61a4747f75e3e18873" category="inline-link-rx"></block></block>
   <block id="8814863051032c96890d514b89b4519c" category="paragraph">Astra Control REST API には、定義されたクエリパラメータを使用してリソースコレクションにアクセスするためのさまざまな方法があります。</block>
   <block id="d5def2c7a33c06df000ce3ff88f44d5e" category="paragraph">診断とデバッグに使用できる Astra Control REST API には、いくつかのサポート機能が用意されています。</block>
-  <block id="b38e88eda86454f4be23da84305cd6a9" category="paragraph">Astra Control REST API は、複数のセキュリティレイヤを提供します。</block>
-  <block id="3c4ec4a11a6b65eadf33041e30d96199" category="paragraph">Astra Control REST API を使用するには、すべての要求に対して「 Authorization 」要求ヘッダーで API トークンを指定する必要があります。次の点に注意してください。</block>
-  <block id="d5fa8b444f3de5587d549b76d16aa7b5" category="paragraph">Astra Control REST API を使用するには、 API アクセストークンが必要です。</block>
   <block id="fcc723c942724132893726738da56aeb" category="paragraph">ワークステーションの CLI でシンプルな Curl コマンドを問題して、 Astra Control REST API の使用を開始し、利用可能かどうかを確認できます。</block>
   <block id="b3433e01f10e1e1369d819f420b2a8a7" category="paragraph">a_workflow_ は、特定の管理タスクまたは目標を達成するために必要な 1 つ以上のステップのシーケンスです。Astra Control ワークフローの各手順は、次のいずれかです。</block>
-  <block id="bcfb4ff2a5e78e411d4f8304902a5b0f" category="paragraph">次の手順を確認して、 Astra Control REST API の使用を開始するための準備を簡単に行うことができます。</block>
   <block id="0c59027cf761af16d5101de509ed5ef7" category="paragraph">必ず確認してください <block ref="533ba43849291e761802432633424684" category="inline-link-macro-rx"></block> REST の概念と、 Astra Control REST API の設計に関する詳細については、を参照してください。</block>
-  <block id="6a408a175b27a07dcdc920140f5043a1" category="sidebar">Astra Control REST API リソース</block>
   <block id="ef69df9e80d5e1591d22bfe189aa737e" category="admonition">Astra Control REST API は、 HTTP API * 標準の * 問題の詳細も使用します。を参照してください <block ref="d9c154af7dec160f41ead610ccb970e9" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="de89d8750ec160e779ccfc4acb253798" category="list-text">トークンリソースとは、プログラムによって Astra Control REST API にアクセスできるトークンのことです。</block>
   <block id="55fcf9a6a46c69408785dcd2e3a82522" category="admonition">これらのリソースとエンドポイントは、現在のところ、 Astra Control REST API リファレンスドキュメントに含まれていません。</block>
   <block id="14d9b10c6196045941347a9e85704b50" category="inline-link">Astra Trident のドキュメント</block>
   <block id="b886ef3e400bd69f357f6981475b14e1" category="list-text"><block ref="b886ef3e400bd69f357f6981475b14e1" category="inline-link-rx"></block></block>
-  <block id="43c6f73174a98f1fd36eac3fee0c20ab" category="paragraph">Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンを 'Authorization' 要求ヘッダーに含める必要があります。トークンを取り消すには、を参照してください <block ref="63fd24300d4159b871bba5cd675e33b6" category="inline-link-macro-rx"></block>。</block>
   <block id="e0da47631d6f2648f3a36bde7e269c3b" category="section-title">カールの例</block>
   <block id="1966cbc7987b76acf54312ed4c9007ec" category="paragraph">Python は、特にデータセンターの自動化に広く使用されている開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。</block>
   <block id="0e8625d3981b9d26e0866da357d318c8" category="inline-link-macro">NetApp Astra Control Python SDK</block>
@@ -800,15 +758,9 @@
   <block id="b179356a4d80ff3c8707972005712b2f" category="section-title">2021 年 8 月 5 日（ 21.08 ）</block>
   <block id="b090a7e9d0299b1a0c16321ebfd1f755" category="section-title">2021 年 4 月 15 日（ 21.04 ）</block>
   <block id="d71331c5ce470b093ebf6c996f4ed88a" category="doc">このリリースについて</block>
-  <block id="4ed4c272d833a45163ae23ce2c927305" category="paragraph">このサイトのドキュメントでは、 Astra Control REST API 、および 2021 年 12 月（ 21.12 ）にリリースされる関連する自動化テクノロジについて説明しています。特に、このリリースの REST API は、対応する 21.12 リリースの Astra Control Center と Astra Control Service に含まれています。</block>
   <block id="ea68f7ff6b79a550f669d752f15bd5da" category="paragraph">このリリースおよび以前のリリースの詳細については、次のページとサイトを参照してください。</block>
   <block id="89d597c4d411409065b7e48fe97b7327" category="inline-link-macro">Astra Control REST API の新機能</block>
   <block id="55d1aec576bc2fa5929c487a67f4f1fe" category="list-text"><block ref="55d1aec576bc2fa5929c487a67f4f1fe" category="inline-link-macro-rx"></block></block>
-  <block id="39b20ec9ac87283be93addb7db493125" category="list-text"><block ref="39b20ec9ac87283be93addb7db493125" category="inline-link-macro-rx"></block></block>
-  <block id="c95deb0b38b91727ae70217b718c15b6" category="inline-link">Astra Control Center 21.12 ドキュメント</block>
-  <block id="6bac7a3afd0fae5fb87d4c318c88b8d7" category="list-text"><block ref="6bac7a3afd0fae5fb87d4c318c88b8d7" category="inline-link-rx"></block></block>
-  <block id="0129349d759b45f11e9ff68b2e3fdf84" category="inline-link">Astra Control Service 21.12 のマニュアル</block>
-  <block id="453379871ec9a52d3f4e6f4bc5e6f3d8" category="list-text"><block ref="453379871ec9a52d3f4e6f4bc5e6f3d8" category="inline-link-rx"></block></block>
   <block id="fdd081f1598a50889ba0720484271938" category="inline-link-macro">旧バージョンの Astra Automation ドキュメント</block>
   <block id="0cc206202c15e68cf39519791ed593a1" category="list-text"><block ref="0cc206202c15e68cf39519791ed593a1" category="inline-link-macro-rx"></block></block>
   <block id="4bddbc6d61b2586c05f9efdf9aa7b5cd" category="paragraph">以前の Astra Control リリースの自動化に関するドキュメントには、次のリンクからアクセスできます。</block>
@@ -834,7 +786,6 @@
   <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">リソース</block>
   <block id="b8e7b465df7c5979dc731d06e84ce2cf" category="cell">リリース。</block>
   <block id="08bd40c7543007ad06e4fce31618f6ec" category="cell">アカウント：</block>
-  <block id="5b0653f11dfe407c7afac43ce74c43cf" category="cell">* 21.12 *</block>
   <block id="39a70d60ad1f39618d1dd601b341a2f6" category="cell">アカウントリソースを使用すると、マルチテナント Astra Control 導入環境内の分離されたテナントを管理できます。</block>
   <block id="8ff5110ebae476ca35aeb20b14a75693" category="cell">21.08</block>
   <block id="af08b45fa44807ac1852671e6fc59d44" category="cell">21.04</block>
@@ -871,4 +822,102 @@
   <block id="d718eacc67f8b74e62fa7298041adf60" category="list-text"><block ref="d718eacc67f8b74e62fa7298041adf60" category="inline-link-rx"></block></block>
   <block id="2c3489a3234e45e6f5946c26c4cb7d5e" category="paragraph">オンプレミス環境とパブリッククラウド環境の両方で、すべての Astra ドキュメントに一元的にアクセスできます。</block>
   <block id="c93cc787737ceea532bea714170e32cf" category="doc">Astra Control REST API の新機能</block>
+  <block id="d61b1a26306fd2300000d407ac76b0ca" category="inline-link">Astra Control Automation 21.12 ドキュメント</block>
+  <block id="f7fb8efb01216bddc5505f64c4c92bae" category="list-text"><block ref="f7fb8efb01216bddc5505f64c4c92bae" category="inline-link-rx"></block></block>
+  <block id="30c6c6906b4bf69f566ac699b562cb7d" category="section-title">REST とクラウドの概念</block>
+  <block id="2ed9c00506ccdd2b103717bce2773b16" category="paragraph">このサイトのドキュメントでは、 Astra Control REST API 、および Astra Control の 4 月 2022 （ 22.04 ）リリースで利用可能な関連自動化テクノロジについて説明しています。特に、このリリースの REST API は、対応する 22.04 リリースの Astra Control Center と Astra Control Service に含まれています。</block>
+  <block id="c4fabb35d8b386aaa673c94aee7e69f2" category="inline-link-macro">REST のリソースとエンドポイント</block>
+  <block id="d8c5d8ee32fcd828c5197ddcb0a431b2" category="list-text"><block ref="d8c5d8ee32fcd828c5197ddcb0a431b2" category="inline-link-macro-rx"></block></block>
+  <block id="74456513b7ca75af96c4b1316688791f" category="inline-link">Astra Control Center 22.04 のドキュメント</block>
+  <block id="468721780732e23fa637324968cd2783" category="list-text"><block ref="468721780732e23fa637324968cd2783" category="inline-link-rx"></block></block>
+  <block id="a6e9ae9fa8a8d65b930fd7704e4863bb" category="inline-link">Astra Control Service 22.04 の文書</block>
+  <block id="fa979f157aaf36a8653ce9ba1d7433ac" category="list-text"><block ref="fa979f157aaf36a8653ce9ba1d7433ac" category="inline-link-rx"></block></block>
+  <block id="186b5474f8ff952677455ef8c6479620" category="admonition">Astra Control REST API の 22.04 リリースでは、新しい既知の問題はありません。以下に記載する問題は以前のリリースで見つかったもので、現在のリリースにも該当します。</block>
+  <block id="638191aa40b01d59e16da3223262a2ae" category="section-title">2022 年 4 月 26 日（ 2004 年 4 月 22 日）</block>
+  <block id="0e7874b5c73e32ebc1ff07cc0f74f4d2" category="paragraph">このリリースでは、 REST API の拡張と更新に加え、セキュリティと管理に関する高度な機能が実装されています。</block>
+  <block id="b2e7eefe39dff61bfe224d948a6b01f1" category="section-title">Astra の新しいリソース</block>
+  <block id="4bde032aca792c950934ec7109889309" category="paragraph">2 つの新しいリソースタイプが追加されました。 * パッケージ * と * アップグレード * です。また、いくつかの既存リソースのバージョンもアップグレードされています。</block>
+  <block id="e34439ebb43a7db679d765747385c74b" category="section-title">ネームスペース単位で強化された RBAC</block>
+  <block id="2496b3f288a81c8c923f8c9c19fe6ed4" category="inline-link-macro">RBAC セキュリティ</block>
+  <block id="ce130d685ca26589024445539bb4a112" category="paragraph">ロールを関連付けられたユーザにバインドする場合は、ユーザがアクセスできるネームスペースを制限できます。詳しくは、 * Role Binding API * のリファレンスおよびを参照してください <block ref="7771c01373e5c08e3b1e2d74687ada1b" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="32a38a631a3c644b9305586dfbe4c946" category="section-title">バケットの取り外し</block>
+  <block id="abe9507eaf1545e513b2bda0f13294b6" category="paragraph">不要になったバケットや、正常に機能していないバケットは削除できます。</block>
+  <block id="aa702244278ce9224bdf493dbd836fcf" category="section-title">Cloud Volumes ONTAP のサポート</block>
+  <block id="e7bb002985d166e3cf6e1ddc4e4393b2" category="paragraph">Cloud Volumes ONTAP がストレージバックエンドとしてサポートされるようになりました。</block>
+  <block id="2db9f7bc36bbde906d13641387315f23" category="section-title">その他の機能強化</block>
+  <block id="5fe6ed1138cf9586db6e448abda4c52c" category="paragraph">2 つの Astra Control 製品の実装には、次のような機能強化が追加されています。</block>
+  <block id="268713e23997ec1f8e0973dd7e0f9dd0" category="list-text">Astra Control Center への一般的な入力</block>
+  <block id="201f9ff2e7c358be8d5de91222827154" category="list-text">AKS のプライベートクラスタ</block>
+  <block id="c947068eab1ac219cdd1ae261b1673a0" category="list-text">Kubernetes 1.22 のサポート</block>
+  <block id="0afb329986521efa00ad1d41bb8a946f" category="list-text">VMware Tanzu ポートフォリオのサポート</block>
+  <block id="f1ba17f787cb31c4e5cc9082051b3c0e" category="paragraph">Astra Control Center および Astra Control Service のドキュメントサイトの「新機能 * 」ページを参照してください。</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="list-title">関連情報</block>
+  <block id="b7fbb6594679af1b038dd55956fa1042" category="inline-link">Astra Control Center ：新機能</block>
+  <block id="971f691a78e3ee1f19fb4b8c587dce95" category="list-text"><block ref="971f691a78e3ee1f19fb4b8c587dce95" category="inline-link-rx"></block></block>
+  <block id="efb9cca3b55227a8ebbaffd837df76fe" category="inline-link">Astra Control Service ：新機能</block>
+  <block id="77f722ff3432ad425822aea915cbea34" category="list-text"><block ref="77f722ff3432ad425822aea915cbea34" category="inline-link-rx"></block></block>
+  <block id="3d9217d4e4ef94c56689e548b5186591" category="doc">コレクションを操作する</block>
+  <block id="99910604d292e8754daf25a401bb8857" category="doc">API トークンを取り消します</block>
+  <block id="1e035d8ab99dbf14a530ceac5ef93e74" category="paragraph">Astra アカウントが必要。また、取り消すトークンを特定する必要があります。</block>
+  <block id="220c398b098026c9c6d51b8c5eed3f89" category="paragraph">Astra REST API は、ロールベースアクセス制御（ RBAC ）をサポートしているため、システム機能へのアクセスを制限できます。</block>
+  <block id="93f59591ef6394ec20a0c8c92e574665" category="section-title">Astra の役割</block>
+  <block id="1dfeab1980c9d1053325319ee410d098" category="paragraph">すべての Astra ユーザには、実行可能なアクションを決定する 1 つのロールが割り当てられます。役割は、次の表に示すように階層構造になっています。</block>
+  <block id="ca9f95dba864c02ec48ffa894954ce17" category="admonition">この機能は、 Astra REST API の 22.04 リリースで導入されました。</block>
+  <block id="a9d9517c68a53b1205519361f2ca686a" category="paragraph">特定のユーザに対してロールバインドが確立されている場合は、制約を適用して、ユーザがアクセスできるネームスペースを制限できます。次の表に示すように、この制約を定義する方法はいくつかあります。詳細については ' ロールバインド API の roleContraints パラメータを参照してください</block>
+  <block id="b1c94ca2fbc3e78fc30069c8d0f01680" category="cell">すべて</block>
+  <block id="2314ef5c1b30435a1b1cc4653755e483" category="cell">ユーザは、ワイルドカードパラメータ「 * 」を使用してすべてのネームスペースにアクセスできます。これは、下位互換性を維持するためのデフォルト値です。</block>
+  <block id="6adf97f83acf6453d4a6a4b1070f3754" category="cell">なし</block>
+  <block id="d199198d4707ccee0eda9f48caa1d5a2" category="cell">拘束リストは指定されますが、空です。これは、ユーザがどのネームスペースにもアクセスできないことを示します。</block>
+  <block id="b3a4cc1061fd85ffd3c83cd8e72944d9" category="cell">ネームスペースリスト</block>
+  <block id="20ff3ae26f36cff01131b324696db602" category="cell">ユーザを 1 つのネームスペースに制限するネームスペースの UUID が含まれています。カンマで区切ったリストを使用して、複数のネームスペースへのアクセスを許可することもできます。</block>
+  <block id="b021df6aac4654c454f46c77646e745f" category="cell">ラベル</block>
+  <block id="18ea4b625687c7be99c38ace25c075e1" category="cell">ラベルが指定され、一致するすべてのネームスペースへのアクセスが許可されます。</block>
+  <block id="35e431c9f5b342b3021d74196ba6d0ca" category="doc">Kubernetes の基本概念</block>
+  <block id="4086ad8bc58a79384e2abed3e4c7b4f1" category="paragraph">Kubernetes の概念については、 Astra REST API の使用時にいくつか関連するものがあります。</block>
+  <block id="c8308b1eba7ba926a61b8fd802194386" category="section-title">オブジェクト</block>
+  <block id="f1cc005117a5cbfdc746b09fc2740ce3" category="paragraph">Kubernetes 環境で管理されるオブジェクトは、クラスタの構成を表す永続的なエンティティです。これらのオブジェクトのことから、クラスタワークロードを含むシステムの状態がわかります。</block>
+  <block id="e4bf9ae863cd1aefddf2b696b955f449" category="paragraph">ネームスペースは、単一のクラスタ内でリソースを分離する手法を提供します。この組織構造は、作業、ユーザ、およびリソースのタイプを分割する場合に便利です。namespace scope_を 持つオブジェクトはネームスペース内で一意である必要があり、 _cluster scope_を 持つオブジェクトはクラスタ全体で一意である必要があります。</block>
+  <block id="3ad6cb6100190c8f81e99fd52debf7ef" category="section-title">ラベル</block>
+  <block id="3430bf151db09278950b5545d1433fc0" category="paragraph">ラベルは Kubernetes オブジェクトに関連付けることができます。キーと値のペアを使用して属性を記述します。また、 Kubernetes の中核的な処理には含まれない、組織には役立つ任意の組織をクラスタに適用できます。</block>
+  <block id="f2082cbd04c532123c4a60b265595268" category="paragraph">Astra Control REST API を使用するには、 Astra API トークンを取得する必要があります。</block>
+  <block id="e18812059a8d09f0f17ebcad797930df" category="paragraph">API トークンは、 Astra の呼び出し元を識別し、すべての REST API 呼び出しに含める必要があります。</block>
+  <block id="0e2c9374186101782c17c706d964b6ab" category="list-text">Astra Web ユーザインターフェイスを使用して、 API トークンを生成できます。</block>
+  <block id="dd1c8bab333b87721ef3d1780c9d2744" category="list-text">トークンを使用して伝送されるユーザ ID は、トークンを作成するユーザによって決まります。</block>
+  <block id="80c4d1da0ffc63fa594010f5c5541b4b" category="list-text">トークンは 'Authorization'HTTP 要求ヘッダーに含める必要があります</block>
+  <block id="7d3bb36b2de41ab91073fa12ad3242f6" category="list-text">トークンは、 Astra の Web ユーザインターフェイスから取り消すことができます。</block>
+  <block id="344fcf1ffe13f47b7e084c95c8926ec6" category="list-text"><block ref="344fcf1ffe13f47b7e084c95c8926ec6" category="inline-link-macro-rx"></block></block>
+  <block id="1ac36aa6ca00de5e76a5920ca6368fa6" category="section-title">Astra API トークンを作成</block>
+  <block id="8d4eb0217153cb37c8687158d7067cfb" category="paragraph">Astra API トークンを作成する手順を次に示します。</block>
+  <block id="af02d3e1ad157f1839fbba3f7e1fc763" category="paragraph">このタスクは、 Astra Web インターフェイスで API トークンを生成します。また、 API 呼び出しの際にも必要なアカウント ID を取得する必要があります。</block>
+  <block id="38ed0da570fd8c0b212e0f8dc6cdb8fc" category="paragraph">Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンを HTTP'Authorization' 要求ヘッダーに含める必要があります。</block>
+  <block id="ff187555434d269d1d36dedf48955cdb" category="paragraph">次の手順を確認して、 Astra Control REST API の使用を開始するための準備を簡単に行うことができます。</block>
+  <block id="2f4e21e17441a71f2d731b0fdb15fc17" category="paragraph">Astra のクレデンシャルが必要になるのは、 Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する場合です。Astra Control Center を使用すると、これらの資格情報をローカルで管理できます。Astra Control Service を使用すると、アカウントの資格情報に * Auth0 * サービスからアクセスできます。</block>
+  <block id="7e8def8db3d7d1cc38b119879791cb9b" category="section-title">Kubernetes の基本概念を理解する</block>
+  <block id="4b96d62533ac6ea29ddc9891a6776a3b" category="paragraph">Kubernetes のいくつかの基本概念を理解しておく必要があります。を参照してください <block ref="e274b8e6d2e2ed892d318b3b2d0764db" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="8e9b0300da42294f8690b8db105eb132" category="paragraph">Astra Control REST API のリソースを使用すると、 Astra の導入を自動化できます。各リソースは、 1 つ以上のエンドポイントを介してアクセスされます。以下に、自動化導入の一環として使用できる REST リソースの概要を示します。</block>
+  <block id="94076f0e9f9b57b9bc636dff06dec4be" category="section-title">Astra Control REST リソースの要約</block>
+  <block id="b9afcd2399096c529c7bdb5fde05df0e" category="cell">21.12</block>
+  <block id="209802fb858e2c83205027dbbb5d9e6c" category="cell">パッケージ</block>
+  <block id="6777d9fcfed4364226ace710a3a4ebbb" category="cell">*22.04 *</block>
+  <block id="d340d1aca9540d03d5dbc3a841480388" category="cell">パッケージリソースは、パッケージ定義の登録とアクセスを提供します。ソフトウェアパッケージは、ファイル、イメージ、その他のアーティファクトなどのさまざまなコンポーネントで構成されます。</block>
+  <block id="f683581d3e75f05f9d9215f9b4696cef" category="cell">アップグレード</block>
+  <block id="2d90c29fa077bbff5b5b4c8a523efa88" category="cell">アップグレードリソースを使用して、ソフトウェアコンポーネントにアクセスしたり、アップグレードを開始したりできます。</block>
+  <block id="a4defd5be5a64ad7db7bf34bbb2d7bd5" category="section-title">現在のリリースの新しいエンドポイント</block>
+  <block id="1472c716e11246059bd5bad85258d4fa" category="paragraph">現行の 22.04 Astra Control リリースでは、次の REST エンドポイントが追加されています。また、いくつかの既存リソースのバージョンもアップグレードされています。</block>
+  <block id="60f19edaba62296afaacba509d2b225c" category="list-text">/accounts / ｛ account_id ｝ /core/v1/packages</block>
+  <block id="7a7c91988c5a19469d8334fad1ec5c38" category="list-text">/accounts / ｛ account_id ｝ /core/v1/packages/｛ package_id ｝</block>
+  <block id="7a15e41858611250b2b43df48995251e" category="list-text">/accounts / ｛ account_id ｝ /core/v1/upgrades</block>
+  <block id="6e1712f69f618f74a5e744bc9fea885b" category="list-text">/accounts / ｛ account_id ｝ /core/v1/upgrades/｛ upgrade_id ｝</block>
+  <block id="30ab72a33c39ac472d4fcdb91ef0a504" category="list-text">/accounts/{account_id}/topology/v1/appBackups を指定します</block>
+  <block id="e340612c1a39b19881ab28cb164d3767" category="list-text">/accounts / ｛ account_id ｝ /topology/v1/appBackups / ｛ appBackup_id ｝</block>
+  <block id="c0484da53699af19f1945268b462f2d0" category="list-text">/accounts / ｛ account_id ｝ /topology/v1/clouds/｛ cloud_id ｝ /clusters/｛ cluster_id ｝ /clusterNodes</block>
+  <block id="09b7193670ee8eaefdf2ad50fef6a76d" category="list-text">/accounts / ｛ account_id ｝ /topology/v1/clouds/｛ cloud_id ｝ /clusters/｛ cluster_id ｝ /clusterNodes / ｛ clusternode_id ｝</block>
+  <block id="d3f25c248c7a0c122bc45b3a69071627" category="list-text">/accounts / ｛ account_id ｝ /topology/v1/managedClusters / ｛ managedCluster_id ｝ /apps/｛ app_id ｝ /appAssets</block>
+  <block id="300f9968ddf97bc0ecebcc8be8ed5ac2" category="list-text">/accounts / ｛ account_id ｝ /topology/v1/managedClusters / ｛ managedCluster_id ｝ /apps/｛ APP_id ｝ /appAssets/｛ appAsset_id ｝</block>
+  <block id="38edf6fb6f3379336c180aaa2a4ed5c4" category="list-text">/accounts / ｛ account_id ｝ /topology/v1/managedClusters / ｛ managedCluster_id ｝ / clusterNodes</block>
+  <block id="9c66bb701e33b6862773eeb2967c6548" category="list-text">/accounts / ｛ account_id ｝ /topology/v1/managedClusters / ｛ managedCluster_id ｝ /clusterNodes / ｛ clusternode_id ｝</block>
+  <block id="b4ec6b7393a41bf5e5870f1ce48009e5" category="sidebar">REST のリソースとコレクション</block>
+  <block id="f38713c0367843938a57ef219a3bfbfc" category="sidebar">Astra API リソースの要約</block>
+  <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">Python をネイティブに使用する</block>
+  <block id="d75a5043a76ca76174481f399b106691" category="sidebar">その他の使用に関する考慮事項</block>
 </blocks>

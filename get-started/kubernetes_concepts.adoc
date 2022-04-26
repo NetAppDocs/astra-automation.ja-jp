@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: get-started/kubernetes_concepts.html 
+keywords:  
+summary:  
+---
+= Kubernetes の基本概念
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Kubernetes の概念については、 Astra REST API の使用時にいくつか関連するものがあります。
+
+
+
+=== オブジェクト
+
+Kubernetes 環境で管理されるオブジェクトは、クラスタの構成を表す永続的なエンティティです。これらのオブジェクトのことから、クラスタワークロードを含むシステムの状態がわかります。
+
+
+
+=== ネームスペース
+
+ネームスペースは、単一のクラスタ内でリソースを分離する手法を提供します。この組織構造は、作業、ユーザ、およびリソースのタイプを分割する場合に便利です。namespace scope_を 持つオブジェクトはネームスペース内で一意である必要があり、 _cluster scope_を 持つオブジェクトはクラスタ全体で一意である必要があります。
+
+
+
+=== ラベル
+
+ラベルは Kubernetes オブジェクトに関連付けることができます。キーと値のペアを使用して属性を記述します。また、 Kubernetes の中核的な処理には含まれない、組織には役立つ任意の組織をクラスタに適用できます。

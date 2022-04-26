@@ -6,6 +6,7 @@ summary:
 ---
 = その他のリソース
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -61,7 +62,7 @@ NetApp Cloud Central サービスコンソールにサインインします。
 
 
 
-=== REST の概念とクラウドテクノロジ
+=== REST とクラウドの概念
 
 * 博士 https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["失策"^] 著者 : Roy Fielding オリジナル版を読む
 +

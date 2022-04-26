@@ -6,6 +6,7 @@ summary:
 ---
 = API トークンを取得します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -13,14 +14,34 @@ summary:
 
 
 [role="lead"]
-Astra Control REST API を使用するには、 API アクセストークンが必要です。
+Astra Control REST API を使用するには、 Astra API トークンを取得する必要があります。
 
 
-NOTE: Astra API トークンの有効期限は切れませんが、トークンが不要になった場合は無効にできます。
+
+== はじめに
+
+API トークンは、 Astra の呼び出し元を識別し、すべての REST API 呼び出しに含める必要があります。
+
+* Astra Web ユーザインターフェイスを使用して、 API トークンを生成できます。
+* トークンを使用して伝送されるユーザ ID は、トークンを作成するユーザによって決まります。
+* トークンは 'Authorization'HTTP 要求ヘッダーに含める必要があります
+* トークンは作成後に期限切れになることはありません。
+* トークンは、 Astra の Web ユーザインターフェイスから取り消すことができます。
+
+
+.関連情報
+* link:../additional/revoke_token.html["API トークンを取り消します"]
+
+
+
+
+== Astra API トークンを作成
+
+Astra API トークンを作成する手順を次に示します。
 
 Astra アカウントのクレデンシャルが必要です。
 
-このタスクは、 Astra Web インターフェイスで API トークンを生成します。また、 API 呼び出しにも必要なアカウント ID を取得する必要があります。
+このタスクは、 Astra Web インターフェイスで API トークンを生成します。また、 API 呼び出しの際にも必要なアカウント ID を取得する必要があります。
 
 .手順
 . アカウントのクレデンシャルを使用して Astra にサインインします。
@@ -33,4 +54,4 @@ Astra Control Service の次のサイトにアクセスします。 https://astr
 . 同じページにあるアカウント ID をコピーして保存します。
 
 
-Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンを 'Authorization' 要求ヘッダーに含める必要があります。トークンを取り消すには、を参照してください link:../additional/security.html["セキュリティ"]。
+Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンを HTTP'Authorization' 要求ヘッダーに含める必要があります。

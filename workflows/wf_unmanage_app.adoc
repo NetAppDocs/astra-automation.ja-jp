@@ -6,6 +6,7 @@ summary:
 ---
 = アプリの管理を解除します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

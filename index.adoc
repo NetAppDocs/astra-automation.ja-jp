@@ -7,6 +7,7 @@ summary: Astra Automation の概要です。
 ---
 = Astra Control Automation のドキュメント
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

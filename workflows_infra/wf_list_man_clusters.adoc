@@ -6,6 +6,7 @@ summary:
 ---
 = 管理対象クラスタをリストします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary:
 ---
 = 作業を開始する前に
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -17,15 +18,21 @@ summary:
 
 
 
+===== Astra アカウントのクレデンシャルが必要
+
+Astra のクレデンシャルが必要になるのは、 Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する場合です。Astra Control Center を使用すると、これらの資格情報をローカルで管理できます。Astra Control Service を使用すると、アカウントの資格情報に * Auth0 * サービスからアクセスできます。
+
+
+
+===== Kubernetes の基本概念を理解する
+
+Kubernetes のいくつかの基本概念を理解しておく必要があります。を参照してください link:kubernetes_concepts.html["Kubernetes の基本概念"] を参照してください。
+
+
+
 ===== REST の概念と実装を確認
 
 必ず確認してください link:../rest-core/rest_web_services.html["コア REST の実装"] REST の概念と、 Astra Control REST API の設計に関する詳細については、を参照してください。
-
-
-
-===== Astra アカウントのクレデンシャルが必要
-
-Astra のクレデンシャルが必要になるのは、 Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する場合です。Astra Control Center を使用すると、これらの資格情報をローカルで管理できます。Astra Control Service では、アカウントの資格情報は *Auth0* サービスによって維持されます。
 
 
 

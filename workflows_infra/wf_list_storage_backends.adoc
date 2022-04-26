@@ -6,6 +6,7 @@ summary:
 ---
 = ストレージバックエンドをリストします
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

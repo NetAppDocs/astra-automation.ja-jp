@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: additional/revoke_token.html 
+keywords:  
+summary:  
+---
+= API トークンを取り消します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+不要になった API トークンは、 Astra Web インターフェイスで取り消すことができます。
+
+Astra アカウントが必要。また、取り消すトークンを特定する必要があります。
+
+トークンが取り消されると、そのトークンはただちに永続的に使用できなくなります。
+
+.手順
+. アカウントのクレデンシャルを使用して Astra にサインインします。
++
+Astra Control Service の次のサイトにアクセスします。 https://astra.netapp.io/["https://astra.netapp.io"^]
+
+. ページの右上にある図のアイコンをクリックし、 * API access * を選択します。
+. 取り消すトークンまたはトークンを選択します。
+. [* アクション * （ * Actions * ） ] ドロップダウンボックスで、 [ トークンの無効化 * （ * Revoke tokens * ） ] をクリック
+

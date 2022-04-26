@@ -1,10 +1,12 @@
 ---
 section: additional
-title: その他の REST に関する考慮事項
+title: その他の使用に関する考慮事項
 entries:
-- title: セキュリティ
-  url: "/additional/security.html"
-- title: コレクションの操作
-  url: "/additional/working_with_collections.html"
+- title: RBAC セキュリティ
+  url: "/additional/rbac.html"
+- title: コレクションを操作する
+  url: "/additional/work_with_collections.html"
 - title: 診断
   url: "/additional/diagnostics_support.html"
+- title: API トークンを取り消します
+  url: "/additional/revoke_token.html"

@@ -6,6 +6,7 @@ summary:
 ---
 = 旧バージョンの Astra Control Automation のドキュメント
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -15,5 +16,6 @@ summary:
 [role="lead"]
 以前の Astra Control リリースの自動化に関するドキュメントには、次のリンクからアクセスできます。
 
+* https://docs.netapp.com/us-en/astra-automation-2112/["Astra Control Automation 21.12 ドキュメント"^]
 * https://docs.netapp.com/us-en/astra-automation-2108/["Astra Control Automation 21.08 ドキュメント"^]
 

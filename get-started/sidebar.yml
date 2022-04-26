@@ -4,9 +4,11 @@ title: はじめに
 entries:
 - title: 作業を開始する前に
   url: "/get-started/before_get_started.html"
-- title: API トークンを取得しています
+- title: API トークンを取得します
   url: "/get-started/get_api_token.html"
 - title: Hello world
   url: "/get-started/hello_world.html"
 - title: ワークフローを使用する準備をします
   url: "/get-started/prepare_to_use_workflows.html"
+- title: Kubernetes の基本概念
+  url: "/get-started/kubernetes_concepts.html"

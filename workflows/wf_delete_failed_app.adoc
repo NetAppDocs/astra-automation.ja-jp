@@ -6,6 +6,7 @@ summary:
 ---
 = 失敗したアプリを削除します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
