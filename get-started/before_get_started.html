@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">日本語</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">日本語</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/astra-automation/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-automation/get-started/before_get_started.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-automation/get-started/before_get_started.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-automation/get-started/before_get_started.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/astra-automation/get-started/before_get_started.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ja-jp/astra-automation/get-started/before_get_started.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/astra-automation/get-started/before_get_started.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/astra-automation/get-started/before_get_started.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/astra-automation/get-started/before_get_started.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -903,7 +895,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-automation/index.html">
         Astra Control Automation のドキュメント
       </a></li><li class="subfolders "><a href="#">
@@ -1078,6 +1070,10 @@
         
 
         
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/ja-jp/astra-family/">Astra</a>
+        </li>
+        
 
         <li class="n-breadcrumb__list-item">
           <a href="/ja-jp/astra-automation/">Astra&nbsp;Automation</a>
@@ -1111,43 +1107,27 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-26 17:26:47 +0000">04/26/2022</time>
+    <time datetime="2022-06-07 17:51:15 +0000">06/07/2022</time>
     
   
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>次の手順を確認して、 Astra Control REST API の使用を開始するための準備を簡単に行うことができます。</p>
 </div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="astra-アカウントのクレデンシャルが必要">Astra アカウントのクレデンシャルが必要</h5>
 <div class="paragraph">
 <p>Astra のクレデンシャルが必要になるのは、 Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する場合です。Astra Control Center を使用すると、これらの資格情報をローカルで管理できます。Astra Control Service を使用すると、アカウントの資格情報に * Auth0 * サービスからアクセスできます。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="kubernetes-の基本概念を理解する">Kubernetes の基本概念を理解する</h5>
 <div class="paragraph">
 <p>Kubernetes のいくつかの基本概念を理解しておく必要があります。を参照してください <a href="kubernetes_concepts.html">"Kubernetes の基本概念"</a> を参照してください。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="rest-の概念と実装を確認">REST の概念と実装を確認</h5>
 <div class="paragraph">
 <p>必ず確認してください <a href="../rest-core/rest_web_services.html">"コア REST の実装"</a> REST の概念と、 Astra Control REST API の設計に関する詳細については、を参照してください。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="詳細はこちらをご覧ください">詳細はこちらをご覧ください</h5>
 <div class="paragraph">
 <p>に示す追加情報のリソースを確認しておく必要があります <a href="../information/additional_resources.html">"その他のリソース"</a>。</p>
-</div>
 </div>
 
     </article>
@@ -1295,4 +1275,5 @@
     </script>
     <script src='/ja-jp/astra-automation/js/www-ntap.js'></script>
     <script src='/ja-jp/astra-automation/js/tabbed-blocks.js'></script>
+    <script src='/ja-jp/astra-automation/js/sidebar.js'></script>
   </body></html>

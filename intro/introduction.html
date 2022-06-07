@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">日本語</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">日本語</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/astra-automation/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-automation/intro/introduction.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-automation/intro/introduction.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-automation/intro/introduction.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-automation/intro/introduction.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/astra-automation/intro/introduction.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ja-jp/astra-automation/intro/introduction.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/astra-automation/intro/introduction.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/astra-automation/intro/introduction.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/astra-automation/intro/introduction.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/astra-automation/intro/introduction.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -903,7 +895,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-automation/index.html">
         Astra Control Automation のドキュメント
       </a></li><li class="subfolders "><a href="#">
@@ -1078,6 +1070,10 @@
         
 
         
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/ja-jp/astra-family/">Astra</a>
+        </li>
+        
 
         <li class="n-breadcrumb__list-item">
           <a href="/ja-jp/astra-automation/">Astra&nbsp;Automation</a>
@@ -1111,15 +1107,13 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-26 17:26:47 +0000">04/26/2022</time>
+    <time datetime="2022-06-07 17:51:15 +0000">06/07/2022</time>
     
   
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>Astra Control Center と Astra Control Service は、 Curl などのプログラミング言語やユーティリティを使用して直接アクセスできる共通の REST API を提供します。API の主な特長とメリットを以下に示します。</p>
 </div>
@@ -1135,61 +1129,32 @@ REST API にアクセスするには、最初に Astra Web ユーザインター
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="rest-テクノロジを基盤として構築">REST テクノロジを基盤として構築</h3>
 <div class="paragraph">
 <p>REST テクノロジを使用して Astra Control API が作成され、最新のベストプラクティスが適用されている。中核となるテクノロジは、 HTTP 、 JSON 、 RBAC です。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="2-つの-astra-control-導入モデルをサポート">2 つの Astra Control 導入モデルをサポート</h3>
 <div class="paragraph">
 <p>Astra Control Service はパブリッククラウド環境で使用され、 Astra Control Center はオンプレミス環境に使用されます。これらの両方の導入モデルをサポートする REST API が 1 つあります。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="rest-エンドポイントリソースとオブジェクトモデルの間のマッピングをクリアします">REST エンドポイントリソースとオブジェクトモデルの間のマッピングをクリアします</h3>
 <div class="paragraph">
 <p>リソースへのアクセスに使用される外部の REST エンドポイントは、 Astra サービスによって内部的に管理されている整合性のあるオブジェクトモデルにマッピングされます。オブジェクトモデルは、エンティティと関係（ ER ）のモデリングを使用して設計され、 API のアクションと応答を明確に定義できます。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="豊富なクエリパラメータ">豊富なクエリパラメータ</h3>
 <div class="paragraph">
 <p>REST API には、リソースコレクションへのアクセスに使用できる豊富なクエリパラメータが用意されています。フィルタ、ソート、ページ付けなどの処理がサポートされます。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="astra-control-web-ui-とのアライメント">Astra Control Web UI とのアライメント</h3>
 <div class="paragraph">
 <p>設計された Astra Web ユーザインターフェイスは REST API に対応しているため、 2 つのアクセスパスとユーザエクスペリエンスの間で一貫性があります。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="堅牢なデバッグおよび問題の特定データ">堅牢なデバッグおよび問題の特定データ</h3>
 <div class="paragraph">
 <p>Astra Control REST API は、システムイベントやユーザ通知など、堅牢なデバッグおよび問題の特定機能を提供します。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="ワークフロープロセス">ワークフロープロセス</h3>
 <div class="paragraph">
 <p>自動化コードの開発を支援する一連のワークフローが用意されています。ワークフローは、インフラと管理の 2 つの主要なカテゴリに分類されています。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="高度なオートメーション技術の基盤">高度なオートメーション技術の基盤</h3>
 <div class="paragraph">
 <p>REST API に直接アクセスするだけでなく、 REST API をベースとするその他の自動化テクノロジも使用できます。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="astra-ファミリーのドキュメントの一部">Astra ファミリーのドキュメントの一部</h3>
 <div class="paragraph">
 <p>Astra Control Automation のドキュメントは、 Astra ファミリーの大きなドキュメントの一部です。を参照してください <a href="https://docs.netapp.com/us-en/astra-family/" target="_blank" rel="noopener">"Astra のドキュメント"</a> を参照してください。</p>
-</div>
 </div>
 
     </article>
@@ -1337,4 +1302,5 @@ REST API にアクセスするには、最初に Astra Web ユーザインター
     </script>
     <script src='/ja-jp/astra-automation/js/www-ntap.js'></script>
     <script src='/ja-jp/astra-automation/js/tabbed-blocks.js'></script>
+    <script src='/ja-jp/astra-automation/js/sidebar.js'></script>
   </body></html>
