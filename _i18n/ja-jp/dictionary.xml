@@ -31,15 +31,10 @@
   <block id="3d74270bce6df5c461068acd3992d1bd" category="cell">未読通知</block>
   <block id="0f15555c27239decf2cb19f7c4f55045" category="cell">ユーザがまだ読み取りまたは取得していない通知。</block>
   <block id="7fec4843ebac2572cb7aba56b67d7ddb" category="doc">コレクションの操作</block>
-  <block id="bf14a6bb5484aa858662864c8b0d062f" category="section-title">値の選択</block>
   <block id="70aa5e2062c38998b012ec6ad0a58b47" category="paragraph">各リソース・インスタンスに対して 'include' パラメータを使用して ' どのキーと値のペアを返すかを指定できますすべてのインスタンスが応答の本文で返されます。</block>
-  <block id="9a588db8471730dbfebac65cd5467ad8" category="section-title">フィルタリング</block>
   <block id="9ef1f99668081dc49f2b7578a58a3eb0" category="paragraph">収集リソースのフィルタリングを使用すると、 API ユーザは、応答の本文でリソースが返されるかどうかを決定する条件を指定できます。「 filter 」パラメータは、フィルタリング条件を示すために使用されます。</block>
-  <block id="2808a34767e19b842d906ab8ab6264c6" category="section-title">並べ替え</block>
   <block id="46a94c0bcecf335769bbfabb72514b44" category="paragraph">収集リソースのソートを使用すると、 API ユーザは応答の本文でリソースが返される順序を指定できます。「 orderBy 」パラメータは、フィルタリング条件を示します。</block>
-  <block id="cbb81506a7fe3ef03f7a89c76c52131a" category="section-title">ページ付け</block>
   <block id="b4a49af66f4e673d029ee977129248ee" category="paragraph">制限パラメータを使用して ' 要求に対して返されるリソース・インスタンスの数を制限することにより ' ページ付けを強制できます</block>
-  <block id="e93f994f01c537c4e2f7d8528c3eb5e9" category="section-title">カウント</block>
   <block id="6a7d4ae9b8c0f0a303422357fd399580" category="paragraph">ブール値パラメータ「 count 」を「 true 」に設定した場合、返された応答の配列内のリソースの数がメタデータセクションに表示されます。</block>
   <block id="261bfb4842abd90ac7080375e1e3a342" category="list-text">トークンは作成後に期限切れになることはありません。</block>
   <block id="0f20f78dc9e61210d9143c555c8e2db8" category="paragraph">不要になった API トークンは、 Astra Web インターフェイスで取り消すことができます。</block>
@@ -70,9 +65,7 @@
   <block id="bd7a9717d29c5ddcab1bc175eda1e298" category="list-text">ボリューム</block>
   <block id="916bff7b68625feaff0fa92152a8c4f0" category="inline-link-macro">URL 形式</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="doc">作業を開始する前に</block>
-  <block id="0182974655f974e8429fb64bb3d15eb2" category="section-title">REST の概念と実装を確認</block>
   <block id="67d003f4d71c424d95442bd22e4d9b35" category="inline-link-macro">コア REST の実装</block>
-  <block id="bf07f432276ee2fe7e55f9ea12c2ba5a" category="section-title">詳細はこちらをご覧ください</block>
   <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="inline-link-macro">その他のリソース</block>
   <block id="1975d27c17bd745494bde5176f3687d2" category="paragraph">に示す追加情報のリソースを確認しておく必要があります <block ref="d9232e9ba333ee728d29f8228e038c57" category="inline-link-macro-rx"></block>。</block>
   <block id="6e567afb3c0582569592264335e77063" category="doc">API トークンを取得します</block>
@@ -299,9 +292,7 @@
   <block id="015f8c34f52b6ef8a3361958660f5e88" category="inline-link-macro">その他の考慮事項については</block>
   <block id="7ab91fd48b58ce1ea4cada1f1a4e1808" category="doc">HTTP の詳細</block>
   <block id="deaf360f123e9392f769c7ceb4e01747" category="section-title">API トランザクションと CRUD モデル</block>
-  <block id="fc068ae597c9019f5d61b19badc39991" category="section-title">要求と応答の API トランザクション</block>
   <block id="1f5760bedf7c68291dfd4d306c189bc8" category="paragraph">すべての REST API 呼び出しは、 Astra サービスへの HTTP 要求として実行されます。要求ごとに、関連付けられた応答がクライアントに生成されます。この要求と応答のペアで API トランザクションを使用できます。</block>
-  <block id="54ba5d4469f49d79d837dd2472a96c36" category="section-title">CRUD 操作モデルのサポート</block>
   <block id="686e697538050e4664636337cc3b834f" category="list-text">作成</block>
   <block id="7a1a5f3e79fdc91edf2f5ead9d66abb4" category="list-text">読み取り</block>
   <block id="06933067aafd48425d67bcb01bba5cb6" category="list-text">更新</block>
@@ -382,19 +373,13 @@
   <block id="9ed1d9418efab93ff8b4b1793913fabe" category="cell">サービスを利用できません</block>
   <block id="a6613dcc5c4d971acabeae88baf14cb7" category="cell">サービスは何らかの理由で要求を処理する準備ができていません。</block>
   <block id="94fd56b370187429c8fbd312f50f5c1b" category="paragraph">REST API を使用したリソースインスタンスまたはコレクションへのアクセスに使用される URL の一般的な構造は、いくつかの値で構成されます。この構造は、基礎となるオブジェクトモデルとシステム設計を反映しています。</block>
-  <block id="04af7c5cae35340b12ac2ff18f2993fb" category="section-title">URL の形式</block>
-  <block id="3e0ab85384ebe4f846202e772b341dc5" category="paragraph">URL の形式と例を次に示します。</block>
-  <block id="6e84a7dae5ae82dd22a0ec6f456dbc8d" category="section-title">root としてアカウントを作成します</block>
   <block id="e166d573b25ce4160633b91145d1eae5" category="paragraph">すべての REST エンドポイントへのリソースパスのルートは Astra アカウントです。そして、 URL 内のすべてのパスは「 /account/{account_id} 」で始まります。ここで、「 account_id 」はアカウントの一意の UUIDv4 値です。内部構造：すべてのリソースアクセスが特定のアカウントに基づいている設計を反映します。</block>
-  <block id="faf17fd8415851163c880ffe0eee8b37" category="section-title">エンドポイントリソースカテゴリ</block>
   <block id="c96943fca3fb4769805adeaadbfa2a4c" category="paragraph">Astra リソースエンドポイントは、次の 3 つのカテゴリに分類されます。</block>
   <block id="f5eee40efb177a56f7f47f4e9ae88fc0" category="list-text">コア (`/core')</block>
   <block id="e82590686de294a35499703d86b3864d" category="list-text">管理対象アプリケーション (`/k8s')</block>
   <block id="339ca9edd021d342e12ce488d3083b7b" category="list-text">トポロジ (`/topology')</block>
   <block id="2598572d1690c4e8c484f3411842c6ed" category="paragraph">を参照してください <block ref="f79c22f30a5c9f960ce998adee5739fa" category="inline-link-macro-rx"></block> を参照してください。</block>
-  <block id="1a13e0be61ce3aab0376745ec89773a0" category="section-title">カテゴリバージョン</block>
   <block id="807911da3f02747e900f1cbb28978d93" category="paragraph">3 つのリソースカテゴリのそれぞれに、アクセスされるリソースのバージョンを制御するグローバルバージョンがあります。規則と定義により ' リソース・カテゴリの新しいメジャー・バージョン (/v1' から /v2') に移行すると 'API の変更が破壊されます</block>
-  <block id="b59579c5294990b3465d2a6e5a853fc0" category="section-title">リソースインスタンスまたはコレクション</block>
   <block id="a759694558fdad138d8e71cc88a58b5b" category="paragraph">リソースインスタンスまたはコレクションにアクセスするかどうかに基づいて、パスでリソースタイプと識別子の組み合わせを使用できます。</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="section-title">例</block>
   <block id="2fc537b9f7b2c95f698a1e045c1ca8c7" category="list-text">リソースパス</block>
@@ -404,24 +389,19 @@
   <block id="0ef9d205b3c12ed04d4b22391e87afc8" category="doc">リソースとコレクション</block>
   <block id="a1da6a69dc3621a153be0d63ad955397" category="admonition">概念的には REST * リソース * は、オブジェクト指向プログラミング（ OOP ）言語およびシステムで定義される * オブジェクト * に似ています。これらの用語が同じ意味で使用されることもあります。ただし一般には、外部 REST API のコンテキストで使用する場合は「リソース」が推奨され、サーバに格納される対応するステートフルインスタンスデータには「オブジェクト」が使用されます。</block>
   <block id="10522d991ba47cf052332e37b93638f3" category="section-title">Astra リソースの属性</block>
-  <block id="b6af2b8fdca63591236d48930018b8db" category="section-title">リソースタイプ</block>
   <block id="1462bc4396a7f92c2a40fdb70353c11b" category="list-text">すべてのリソースタイプはスキーマを使用して定義されます（通常は JSON 形式）。</block>
   <block id="6a7693b24adc0a8f49972d3c9fa44aa7" category="list-text">すべてのリソーススキーマには、リソースタイプとバージョンが含まれています</block>
   <block id="3a5bb03daf09a5f9ee7c38abedb79438" category="list-text">リソースタイプはグローバルに一意です</block>
-  <block id="515fc3276bd3187a4917ddf7d57db2be" category="section-title">リソースインスタンス</block>
   <block id="ad12b03bd967f6232973db6e1e8d54e8" category="list-text">リソースインスタンスは、単一のリソースタイプに基づいて作成されます</block>
   <block id="a8ae0ec6707984a7a25ae5d6d872a26e" category="list-text">リソースタイプは、 ［ メディアタイプ ］ の値を使用して示されます</block>
   <block id="32add7a750dbbb025d0ec6c3b8058890" category="list-text">インスタンスは、アストラサービスによって管理されるステートフルデータで構成されます</block>
   <block id="e53d478a862931c0d5d839bc35228be1" category="list-text">各インスタンスには、一意で長く存続する URL を使用してアクセスできます</block>
   <block id="60c8f94b742e229bdac6f65b26abd188" category="list-text">リソースインスタンスが複数のリプレゼンテーションを持つことができる場合は、異なるメディアタイプを使用して必要なリプレゼンテーションを要求できます</block>
-  <block id="c63467857ced87bca573cc84332ea38e" category="section-title">リソースコレクション</block>
   <block id="4ed370961773751cbf665ad3ec9bbe7d" category="list-text">単一のリソースタイプの一連のリソースインスタンスをコレクションと呼びます</block>
   <block id="8bb3319f4df785fb5e6ac6a323cc692e" category="list-text">一連のリソースには、一意で一時的な URL があります</block>
-  <block id="55920bcaefa36a6964fdc7020a835d5f" category="section-title">インスタンス ID</block>
   <block id="7b37fb297bfca9ad91bb761c9ecdb3e0" category="paragraph">すべてのリソースインスタンスには、作成時に識別子が割り当てられます。この識別子は 128 ビットの UUIDv4 値です。割り当てられた UUIDv4 の値は、グローバルに一意で変更できません。新しいインスタンスを作成する API 呼び出しを発行すると、関連付けられた ID を持つ URL が HTTP 応答の「 Location 」ヘッダーで呼び出し元に返されます。リソースインスタンスを以降の呼び出しで参照する際には、この識別子を抽出して使用できます。</block>
   <block id="bf5096ce255d57836c10f7a02fbd117d" category="admonition">リソース識別子は、コレクションで使用される主キーです。</block>
   <block id="052550c93dde25614a02e3e525606762" category="section-title">Astra のリソースに共通の構造</block>
-  <block id="2ed6f74fc82a2206a6fa7ea55363656c" category="section-title">共通のデータ</block>
   <block id="d691a99f89ba35430c2ae2930698e2f3" category="paragraph">すべてのアストラリソースには、次の表に示すキーと値が含まれています。</block>
   <block id="897356954c2cd3d41b221e3f24f99bba" category="cell">キーを押します</block>
   <block id="599dcce2998a6b40b1e38e8c6006cb0a" category="cell">を入力します</block>
@@ -432,7 +412,6 @@
   <block id="679eeb2f006a684ca3bde51d5ee04c65" category="cell">グローバル一意識別子。 * リソース識別子 * と呼ばれます。</block>
   <block id="9f81f3c07476a0d97f6793673dd8e475" category="cell">メタデータ</block>
   <block id="e4cf899c2773024506ffc1cf5118b130" category="cell">ユーザラベルやシステムラベルなどのさまざまな情報を含む JSON オブジェクト。</block>
-  <block id="647f6448e005296f7ac5b882aa71a868" category="section-title">メタデータオブジェクト</block>
   <block id="743dff21ad3d768ffb79a4dc0d853b4a" category="paragraph">各アストラリソースに含まれるメタデータ JSON オブジェクトには、次の表に示すキーと値が含まれています。</block>
   <block id="42cecfeff00cc916fef4f64e7b921079" category="cell">ラベル</block>
   <block id="d7aefd81a0396b4a6170af899b6ba156" category="cell">リソースに関連付けられているクライアント指定のラベルの JSON 配列。</block>
@@ -442,7 +421,6 @@
   <block id="a2a12fff7c0c1ad7aa7d6ec9894d7dfd" category="cell">リソースの最終変更日時を示す ISO-8601 形式のタイムスタンプを含む JSON 文字列。</block>
   <block id="34998857f537140306898d54d4b970dc" category="cell">作成者</block>
   <block id="af7c4c7bd30238dcb53e639cf7a50996" category="cell">リソースを作成したユーザ ID の UUIDv4 識別子を含む JSON 文字列。リソースが内部システムコンポーネントによって作成され、作成するエンティティに関連付けられている UUID がない場合は、「 * null * UUID 」が使用されます。</block>
-  <block id="6cb8b958a36383ed1b7bacc626d0a5dd" category="section-title">リソースの状態</block>
   <block id="b7aa38141b9dd3f7e78cd09e7f60ce0c" category="paragraph">選択されたリソースは ' ライフサイクルの移行とアクセス制御のオーケストレーションに使用される価値を示します</block>
   <block id="c0471368cdc5da09455ecd80f16c96c7" category="doc">REST Web サービス</block>
   <block id="b0fcdfb2c58efafaace08609d3e95f6d" category="section-title">リソースと状態の表示</block>
@@ -456,24 +434,15 @@
   <block id="34d23bd6dd51b3238872241264de74bf" category="section-title">HTTP メッセージ</block>
   <block id="19f05b47f4b958662678fc11fd0ce414" category="paragraph">Hypertext Transfer Protocol （ HTTP ）は、 Web サービスのクライアントとサーバがリソースに関する要求と応答のメッセージを交換する際に使用するプロトコルです。Web サービスアプリケーションの設計の一環として、 HTTP メソッドはリソースおよび対応する状態管理アクションにマッピングされます。HTTP はステートレスです。したがって、関連する一連の要求と応答を 1 つのトランザクションの一部として関連付けるには、要求と応答のデータフローで伝送される HTTP ヘッダーに追加情報を含める必要があります。</block>
   <block id="bd4c8bbdccbcb7826a3bc4ae421c0604" category="section-title">JSON 形式</block>
-  <block id="305f82eee427805e1142e3f58b3e6aff" category="section-title">REST テクノロジを基盤として構築</block>
-  <block id="308e494b1e26dffecccd3503e87801ab" category="section-title">REST エンドポイントリソースとオブジェクトモデルの間のマッピングをクリアします</block>
   <block id="8538dfe988aff949d5dd74e2d6c12949" category="paragraph">リソースへのアクセスに使用される外部の REST エンドポイントは、 Astra サービスによって内部的に管理されている整合性のあるオブジェクトモデルにマッピングされます。オブジェクトモデルは、エンティティと関係（ ER ）のモデリングを使用して設計され、 API のアクションと応答を明確に定義できます。</block>
-  <block id="5c4c20c54ea821de85f6857e32e28368" category="section-title">豊富なクエリパラメータ</block>
   <block id="bdc2516aa5546e7df819a07cd9385485" category="paragraph">設計された Astra Web ユーザインターフェイスは REST API に対応しているため、 2 つのアクセスパスとユーザエクスペリエンスの間で一貫性があります。</block>
-  <block id="d92a4a4962077027ebae61f4c351e303" category="section-title">堅牢なデバッグおよび問題の特定データ</block>
-  <block id="fcf3c3d757005a8b62346f06f3b393ff" category="section-title">高度なオートメーション技術の基盤</block>
   <block id="c6c51849eeb1ac322baa3a99b7cd7e43" category="summary">Astra Automation の概要です。</block>
   <block id="e61ad2d01a2692e9ed29c90c0c413101" category="paragraph">次のスクリプトを使用して、 Astra アカウントの管理対象アプリケーションを一覧表示できます。</block>
   <block id="365c8dec8255a8a164436c71a2611920" category="doc">Python を使用する</block>
   <block id="0998ed5beee28345ae02fc586e2414f2" category="section-title">環境を準備</block>
   <block id="eacdf05a2e0f975530592f3afa7c5858" category="paragraph">以下に、 Python スクリプトを実行するための基本的な設定要件を示します。</block>
-  <block id="3c91a74236fab100f024452f6df13b5e" category="section-title">Python 3.</block>
   <block id="5d4e91ee0c02874831683e91598ba067" category="paragraph">最新バージョンの Python 3 がインストールされている必要があります。</block>
-  <block id="56fc4201e750acc72a0afd74dd68fbf7" category="section-title">追加ライブラリ</block>
   <block id="eac991115911389530678363913a1115" category="paragraph">*Requests * および *ullib3 * ライブラリがインストールされている必要があります。環境に応じて、 pip などの Python 管理ツールを使用できます。</block>
-  <block id="7a7bc312cecb8df7c0104f60400498da" category="section-title">ネットワークアクセス</block>
-  <block id="479ddc3e49067c67012525e145d88610" category="section-title">ID 情報</block>
   <block id="ddeb9b8a16dddd591affefce272eca3b" category="paragraph">アカウント ID と API トークンを持つ有効な Astra アカウントが必要です。を参照してください <block ref="949977ec887dbf77cf703083221524dc" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="4b8e18b7aa4e59cfa3e050e47541b237" category="section-title">JSON 入力ファイルを作成します</block>
   <block id="28d986906a20a82d756066c923b70105" category="paragraph">Python スクリプトは、 JSON 入力ファイルに含まれている設定情報に依存します。サンプルファイルは以下のとおりです。</block>
@@ -586,7 +555,6 @@
   <block id="affb0039f4c476ad568439a171c9db0c" category="list-text">収集のサポート</block>
   <block id="39fc3040b9fe64cf202ce4de80bf7f69" category="list-text">リソースコレクションへのアクセスに使用できる豊富なクエリパラメータセットがあります。フィルタ、ソート、ページ付けなどの処理がサポートされます。</block>
   <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="doc">既知の問題</block>
-  <block id="1a615153bb2bd3389942d44023a8f4bb" category="section-title">Astra アカウントのクレデンシャルが必要</block>
   <block id="646fd3c3d22d826a188a59c1bba8854b" category="paragraph">Astra アカウントのクレデンシャルが必要です。</block>
   <block id="ec34ea1038c99109c93f6776a16e2be8" category="section-title">ワークフローのカテゴリ</block>
   <block id="20d2410ae6d60054698fdb2241648ec0" category="paragraph">導入モデルに応じて、幅広い種類の Astra ワークフローが用意されています。Astra Control Center を使用している場合は、インフラワークフローから始めて、管理ワークフローに進みます。Astra Control Service を使用すると、通常は管理ワークフローに直接移動できます。</block>
@@ -610,7 +578,6 @@
   <block id="640575a1239211b2cdac8d24cbd8fe4e" category="paragraph">Astra Control Center と Astra Control Service は、 Curl などのプログラミング言語やユーティリティを使用して直接アクセスできる共通の REST API を提供します。API の主な特長とメリットを以下に示します。</block>
   <block id="351df3aa3706c8ed2199a8019e815c0c" category="admonition">REST API にアクセスするには、最初に Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する必要があります。トークンは各 API 要求に含める必要があります。</block>
   <block id="479c256f055cedaadf40e8a31b1cb62f" category="paragraph">REST API には、リソースコレクションへのアクセスに使用できる豊富なクエリパラメータが用意されています。フィルタ、ソート、ページ付けなどの処理がサポートされます。</block>
-  <block id="04bff76b57babc7298f6780f4f20901e" category="section-title">ワークフロープロセス</block>
   <block id="b6c92126e042e664395830549916fde8" category="paragraph">自動化コードの開発を支援する一連のワークフローが用意されています。ワークフローは、インフラと管理の 2 つの主要なカテゴリに分類されています。</block>
   <block id="e252a713c9e65fd0bb92dbc65b6b0610" category="paragraph">REST API に直接アクセスするだけでなく、 REST API をベースとするその他の自動化テクノロジも使用できます。</block>
   <block id="3cce5f3eaf76e098ba8e28f7bbba3f92" category="section-title">アストラ</block>
@@ -676,9 +643,7 @@
   <block id="8df6c80ff18efadb362ec0a4942fb7b6" category="paragraph">Astra Control REST API は、 Astra Control Service と組み合わせて使用できます。REST テクノロジと現在のベストプラクティスに基づいて作成されています。この API は、 Astra 環境を自動化するための基盤となり、次の機能とメリットが含まれています。</block>
   <block id="5bfa69d8f97671928100931c0d411913" category="doc">Astra Control REST API の概要</block>
   <block id="6c38ead9bdb25d09c6e504c53fc268a5" category="paragraph">REST テクノロジを使用して Astra Control API が作成され、最新のベストプラクティスが適用されている。中核となるテクノロジは、 HTTP 、 JSON 、 RBAC です。</block>
-  <block id="9f58c2cc1c4a1a9d30320aec8702f1e5" category="section-title">2 つの Astra Control 導入モデルをサポート</block>
   <block id="6ded6cd1a82081d2c5fe31ad44e26927" category="paragraph">Astra Control Service はパブリッククラウド環境で使用され、 Astra Control Center はオンプレミス環境に使用されます。これらの両方の導入モデルをサポートする REST API が 1 つあります。</block>
-  <block id="807ccc731ac69ad871b23fef84f7a6a9" category="section-title">Astra Control Web UI とのアライメント</block>
   <block id="973e2c06fdb700a27ccfb70fe4627261" category="paragraph">Astra Control REST API は、システムイベントやユーザ通知など、堅牢なデバッグおよび問題の特定機能を提供します。</block>
   <block id="e2cfa1b12557ae7ad3c2bb28c8b77d7c" category="paragraph">HTTP メソッド、入力パラメータ、応答など、 Astra Control REST API のすべての呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。</block>
   <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">REST API のリファレンスドキュメントは、現在のところ Astra Control に付属しており、オンラインで入手できます。</block>
@@ -694,7 +659,6 @@
   <block id="55fcf9a6a46c69408785dcd2e3a82522" category="admonition">これらのリソースとエンドポイントは、現在のところ、 Astra Control REST API リファレンスドキュメントに含まれていません。</block>
   <block id="14d9b10c6196045941347a9e85704b50" category="inline-link">Astra Trident のドキュメント</block>
   <block id="b886ef3e400bd69f357f6981475b14e1" category="list-text"><block ref="b886ef3e400bd69f357f6981475b14e1" category="inline-link-rx"></block></block>
-  <block id="e0da47631d6f2648f3a36bde7e269c3b" category="section-title">カールの例</block>
   <block id="1966cbc7987b76acf54312ed4c9007ec" category="paragraph">Python は、特にデータセンターの自動化に広く使用されている開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。</block>
   <block id="0e8625d3981b9d26e0866da357d318c8" category="inline-link-macro">NetApp Astra Control Python SDK</block>
   <block id="a048c98daf24dc4c378ae4a226190097" category="admonition">ネットアップは、 Python を使用して Astra Control REST API に直接アクセスするだけでなく、 API を抽象化して複雑さを排除するツールキットパッケージも提供しています。を参照してください <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> を参照してください。</block>
@@ -703,20 +667,16 @@
   <block id="20f4f585bd60497ac5129e3cac5ce9f3" category="admonition">簡単にするために、このページの以降の部分では、 NetApp Astra Control Python SDK を * SDK と呼びます。</block>
   <block id="583a49db5f92162fc0bd14c90e6dfd12" category="section-title">関連する 2 つのソフトウェアツール</block>
   <block id="6185cd9749993dbef93bbd9484213c5d" category="paragraph">SDK には、 Astra Control REST API にアクセスするときに異なる抽象化レベルで動作する 2 つの異なる関連ツールが含まれています。</block>
-  <block id="7a947a0e78de7f2a4b74b7420db98fc3" category="section-title">Astra SDK</block>
   <block id="ad7e7ea46900019430506e34b6c4ad49" category="paragraph">Astra SDK は、コアプラットフォーム機能を提供します。基盤となる REST API 呼び出しを抽象化する一連の Python クラスが含まれています。このクラスは、アプリケーション、バックアップ、 Snapshot 、クラスタなど、さまざまな Astra Control リソースに対する管理操作をサポートしています。</block>
   <block id="6dbbc40c6449ca3fda5f8c356b6b0376" category="paragraph">Astra SDK はパッケージの一部であり、単一の「 astrasdk.py 」ファイルで提供されています。このファイルを環境にインポートし、クラスを直接使用できます。</block>
   <block id="5e5df168638042d7a718b1e5462bfb24" category="admonition">NetApp Astra Control Python SDK * （または SDK のみ）は、パッケージ全体の名前です。*Astra SDK* は、単一ファイル「 astrasdk.py 」の中核的な Python クラスを指します。</block>
-  <block id="042f2f95117cad397f19ae8bda1b2bbf" category="section-title">Toolkit スクリプト</block>
   <block id="56b26fd2ed2c36f5045eb36cf77c7948" category="paragraph">Astra SDK ファイルに加えて 'toolkit.py スクリプトも利用できますこのスクリプトは、 Python 関数として内部的に定義されている個別の管理アクションにアクセスできるようにすることで、抽象化のレベルを高めて動作します。このスクリプトは、 Astra SDK をインポートし、必要に応じてクラスに呼び出します。</block>
   <block id="c1fa54c7b9d3166a56b9afe8d178025e" category="section-title">にアクセスする方法</block>
   <block id="caf8d9c274d92761873c194de7fd847e" category="paragraph">SDK には、次の方法でアクセスできます。</block>
-  <block id="f789019254e2d94578114761c04bb180" category="section-title">Python パッケージ</block>
   <block id="0b0321c50e2a79cdce826f0c8f5f7f20" category="inline-link">Python パッケージインデックス</block>
   <block id="a65d831b17fd79d3bf54336b2ed84e31" category="paragraph">SDK は、から入手できます<block ref="8410061c73ca21d204619a04c32c035c" category="inline-link-rx"></block> 名前の下にある * NetApp-Astra - ツールキット * 。パッケージにはバージョン番号が割り当てられており、必要に応じて更新が続行されます。パッケージを環境にインストールするには、 * PIP * パッケージ管理ユーティリティを使用する必要があります。</block>
   <block id="cc255a90b5e22a79adcc253fd5643c0e" category="inline-link">PyPi ： NetApp Astra Control Python SDK</block>
   <block id="5101ad75321ce3f01dd0612c22b9fa44" category="paragraph">を参照してください<block ref="b0ae7ae3e90ea984094ad8df5b6a65f5" category="inline-link-rx"></block> を参照してください。</block>
-  <block id="0c9b6306d32fc8f44ff469ab235c5104" category="section-title">GitHub ソースコード</block>
   <block id="e8c4206b0f47aa117169255eaa08c5eb" category="paragraph">SDK ソースコードは GitHub からも入手できます。リポジトリには次のものが含まれます。</block>
   <block id="674eb3a9ec8ac34ddaaf6ea44b7eb422" category="list-text">`astrasdk.py (Python クラスを含む Astra SDK)</block>
   <block id="f2af4f364548b21864e1b7b7bd176f6c" category="list-text">`toolkit.py ( より高度な関数ベースのスクリプト )</block>
@@ -727,19 +687,15 @@
   <block id="6a3e1686f161e74193cdf5b583396b8c" category="paragraph">のクローンを作成できます<block ref="722f7e844f39c6d237353116706890c9" category="inline-link-rx"></block> ローカル環境へのリポジトリ。</block>
   <block id="6343ba741cd1ee396593580192d07224" category="section-title">インストールと基本的な要件</block>
   <block id="7e5ad59a792bdfb61631a29cbadd4216" category="paragraph">パッケージのインストールおよび使用準備の一環として、いくつかのオプションと要件を考慮する必要があります。</block>
-  <block id="a2c5d7f1ae59d7e25522b6b34ea1f27f" category="section-title">インストールオプションの概要</block>
   <block id="9fcb3e0ffb2078377dcce5ceb342f1b1" category="paragraph">次のいずれかの方法で SDK をインストールできます。</block>
   <block id="658d546fab60a55bbf70f000f63ee91c" category="list-text">Pip を使用して、 PyPI のパッケージを Python 環境にインストールします</block>
   <block id="144f4cb6f91591a4b697a30ebcf1ab07" category="list-text">Git Hub リポジトリをクローニングし、次のいずれかを実行します。</block>
   <block id="32ffd39c439ea17f73e4f5036abb3944" category="list-text">パッケージを Docker コンテナとして導入（必要なものをすべて含む）</block>
   <block id="a09f9226f893c1dac534e03b85311d73" category="list-text">Python クライアントコードにアクセスできるように、 2 つのコア Python ファイルをコピーします</block>
   <block id="acb730b2d5158050dc822b6dc8c932e2" category="paragraph">詳細については、 PyPi および GitHub のページを参照してください。</block>
-  <block id="1737ce95b71a7983a78611220c00300c" category="section-title">Astra Control 環境の要件</block>
   <block id="20cb526cb438c874dbc67eaf9ded63f0" category="paragraph">Astra SDK の Python クラスを直接使用する場合も、「 toolkit.py 」スクリプトの関数を使用する場合も、最終的には Astra Control 配置で REST API にアクセスすることになります。そのため、 API トークンを持つ Astra アカウントが必要になります。を参照してください <block ref="6790e3b8b21e3717c59b764a5b68d086" category="inline-link-macro-rx"></block> 詳細については、このドキュメントの「 * はじめに * 」セクションの他のページを参照してください。</block>
-  <block id="dfbe44cf1815fe1873dd8a7c434bcda9" category="section-title">NetApp Astra Control Python SDK の要件</block>
   <block id="d53f4bad554105d2379ba7cf28728467" category="paragraph">SDK には、ローカル Python 環境に関連するいくつかの前提条件があります。たとえば、 Python 3.5 以降を使用する必要があります。また、必要な Python パッケージもいくつかあります。詳細については、 GitHub リポジトリページまたは PyPI パッケージページを参照してください。</block>
   <block id="2c3632f4f9feb6a54026be6d9c946d20" category="section-title">役立つリソースの概要</block>
-  <block id="9d287cbd5a950094749c49fb0370b01c" category="paragraph">ここでは、開始するために必要なリソースの概要を示します。</block>
   <block id="ba24114401f0d96a4086faa5796f3079" category="list-text"><block ref="ba24114401f0d96a4086faa5796f3079" category="inline-link-rx"></block></block>
   <block id="b455f4010eda9452a921d32bfc7e1318" category="list-text"><block ref="b455f4010eda9452a921d32bfc7e1318" category="inline-link-rx"></block></block>
   <block id="78ceba6718263592394adb03dc11471c" category="paragraph">Astra Control REST API に関連する現在のリリースの既知の問題をすべて確認しておく必要があります。ここでは、この製品の正常な使用を妨げる可能性のある既知の問題について記載します。</block>
@@ -815,7 +771,6 @@
   <block id="be1c3d3113c4023e29e8dd947523c711" category="inline-link">Astra データストアのドキュメント</block>
   <block id="c1f6a45da7b5911a5f35093ae72bfc7a" category="list-text"><block ref="c1f6a45da7b5911a5f35093ae72bfc7a" category="inline-link-rx"></block></block>
   <block id="f1078b605bb76543a5137c04c286382d" category="paragraph">お客様のオンプレミスに導入されている Astra Data Store ソフトウェアの最新リリースのドキュメント。</block>
-  <block id="d4f45c394127f6c3eb5c89e1eb467c9b" category="section-title">Astra ファミリーのドキュメントの一部</block>
   <block id="4b675e54aa1095b2b20f8c4019de37b0" category="inline-link">Astra のドキュメント</block>
   <block id="e24577a913c63a00f3c432062590ce18" category="paragraph">Astra Control Automation のドキュメントは、 Astra ファミリーの大きなドキュメントの一部です。を参照してください<block ref="30a4a2719bc4878ee8fefb5295fc2613" category="inline-link-rx"></block> を参照してください。</block>
   <block id="c2c4dd027136447874b3a5d1dbac4ae0" category="inline-link">Astra ファミリーのドキュメント</block>
@@ -892,7 +847,6 @@
   <block id="38ed0da570fd8c0b212e0f8dc6cdb8fc" category="paragraph">Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンを HTTP'Authorization' 要求ヘッダーに含める必要があります。</block>
   <block id="ff187555434d269d1d36dedf48955cdb" category="paragraph">次の手順を確認して、 Astra Control REST API の使用を開始するための準備を簡単に行うことができます。</block>
   <block id="2f4e21e17441a71f2d731b0fdb15fc17" category="paragraph">Astra のクレデンシャルが必要になるのは、 Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する場合です。Astra Control Center を使用すると、これらの資格情報をローカルで管理できます。Astra Control Service を使用すると、アカウントの資格情報に * Auth0 * サービスからアクセスできます。</block>
-  <block id="7e8def8db3d7d1cc38b119879791cb9b" category="section-title">Kubernetes の基本概念を理解する</block>
   <block id="4b96d62533ac6ea29ddc9891a6776a3b" category="paragraph">Kubernetes のいくつかの基本概念を理解しておく必要があります。を参照してください <block ref="e274b8e6d2e2ed892d318b3b2d0764db" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="8e9b0300da42294f8690b8db105eb132" category="paragraph">Astra Control REST API のリソースを使用すると、 Astra の導入を自動化できます。各リソースは、 1 つ以上のエンドポイントを介してアクセスされます。以下に、自動化導入の一環として使用できる REST リソースの概要を示します。</block>
   <block id="94076f0e9f9b57b9bc636dff06dec4be" category="section-title">Astra Control REST リソースの要約</block>
@@ -920,4 +874,5 @@
   <block id="f38713c0367843938a57ef219a3bfbfc" category="sidebar">Astra API リソースの要約</block>
   <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">Python をネイティブに使用する</block>
   <block id="d75a5043a76ca76174481f399b106691" category="sidebar">その他の使用に関する考慮事項</block>
+  <block id="74c118bd101940603c14c3d7326843a4" category="paragraph">開始するために必要なリソースをいくつかご紹介します。</block>
 </blocks>
