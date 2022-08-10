@@ -18,16 +18,16 @@ summary:
 
 
 
-=== 1. バケットをリストします
+=== 1.バックエンドをリストします
 
 次の REST API 呼び出しを実行します。
 
-[cols="25,75"]
+[cols="1,6"]
 |===
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{accountID}/topology/v1/storageBackends 
+| 取得 | /account/{account_id}/topology/v1/storageBackends 
 |===
 
 

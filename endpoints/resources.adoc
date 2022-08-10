@@ -44,6 +44,9 @@ Astra Control REST API に用意されているプライマリリソースエン
 | ASUP | 21.08 | ASUP リソースには、ネットアップサポートに転送される AutoSupport バンドルが表示されます。 
 
 
+| 証明書 | *22.08* | 証明書リソースは、発信接続の強力な認証に使用されるインストール済み証明書を表します。 
+
+
 | クレデンシャル | 21.04 | クレデンシャルリソースには、 Astra ユーザ、クラスタ、バケット、ストレージバックエンドで使用できるセキュリティ関連の情報が含まれています。 
 
 
@@ -59,6 +62,9 @@ Astra Control REST API に用意されているプライマリリソースエン
 | フィーチャー（ Feature ） | 21.08 | 機能リソースは、選択した Astra 機能を表します。この機能を照会することで、システムで有効になっているか無効になっているかを確認できます。アクセスは読み取り専用に制限されます。 
 
 
+| グループ | *22.08* | グループリソースは、アストラグループと関連するリソースを表します。現在のリリースでは、LDAPグループのみがサポートされています。 
+
+
 | フックソース | 21.12 | フックソースリソースは、実行フックで使用される実際のソースコードを表します。ソースコードを実行コントロールから分離すると、スクリプトを共有できるようにするなど、いくつかの利点があります。 
 
 
@@ -68,7 +74,7 @@ Astra Control REST API に用意されているプライマリリソースエン
 | 通知 | 21.04 | 通知リソースは、通知の送信先を持つ Astra イベントを表します。アクセスはユーザ単位で提供されます。 
 
 
-| パッケージ | *22.04 * | パッケージリソースは、パッケージ定義の登録とアクセスを提供します。ソフトウェアパッケージは、ファイル、イメージ、その他のアーティファクトなどのさまざまなコンポーネントで構成されます。 
+| パッケージ | 22.04 | パッケージリソースは、パッケージ定義の登録とアクセスを提供します。ソフトウェアパッケージは、ファイル、イメージ、その他のアーティファクトなどのさまざまなコンポーネントで構成されます。 
 
 
 | ロールのバインド | 21.04 | ロールバインドリソースは ' 特定のユーザーとアカウントのペア間の関係を表します2 つの間のリンクに加えて、特定のロールを通じて各に一連の権限が指定されます。 
@@ -86,7 +92,7 @@ Astra Control REST API に用意されているプライマリリソースエン
 | 未読通知 | 21.04 | 未読通知リソースは、特定のユーザーに割り当てられているがまだ読み込まれていない通知を表します。 
 
 
-| アップグレード | *22.04 * | アップグレードリソースを使用して、ソフトウェアコンポーネントにアクセスしたり、アップグレードを開始したりできます。 
+| アップグレード | 22.04 | アップグレードリソースを使用して、ソフトウェアコンポーネントにアクセスしたり、アップグレードを開始したりできます。 
 
 
 | ユーザ | 21.04 | ユーザリソースは、 Astra を使用するユーザで、定義したロールに基づいてシステムにアクセスできる。 
@@ -133,6 +139,9 @@ Astra Control REST API に用意されているプライマリリソースエン
 | アプリケーション | 21.04 | アプリケーションリソースは、 Astra が管理していないアプリケーションも含め、 Kubernetes のすべてのアプリケーションを表します。 
 
 
+| AppMirror（アプリケーションミラー） | *22.08* | AppMirrorリソースは、アプリケーションのミラーリング関係を管理するためのAppMirrorリソースを表します。 
+
+
 | バケット | 21.08 | バケットリソースは、 Astra が管理するアプリケーションのバックアップを保存するために使用する S3 クラウドバケットです。 
 
 
@@ -168,26 +177,6 @@ Astra Control REST API に用意されているプライマリリソースエン
 
 | ボリューム | 21.04 | ボリュームリソースは、管理対象アプリケーションに関連付けられた Kubernetes ストレージボリュームを表します。 
 |===
-
-
-== 現在のリリースの新しいエンドポイント
-
-現行の 22.04 Astra Control リリースでは、次の REST エンドポイントが追加されています。また、いくつかの既存リソースのバージョンもアップグレードされています。
-
-* /accounts / ｛ account_id ｝ /core/v1/packages
-* /accounts / ｛ account_id ｝ /core/v1/packages/｛ package_id ｝
-* /accounts / ｛ account_id ｝ /core/v1/upgrades
-* /accounts / ｛ account_id ｝ /core/v1/upgrades/｛ upgrade_id ｝
-* /accounts/{account_id}/topology/v1/appBackups を指定します
-* /accounts / ｛ account_id ｝ /topology/v1/appBackups / ｛ appBackup_id ｝
-* /accounts / ｛ account_id ｝ /topology/v1/clouds/｛ cloud_id ｝ /clusters/｛ cluster_id ｝ /clusterNodes
-* /accounts / ｛ account_id ｝ /topology/v1/clouds/｛ cloud_id ｝ /clusters/｛ cluster_id ｝ /clusterNodes / ｛ clusternode_id ｝
-* /accounts / ｛ account_id ｝ /topology/v1/managedClusters / ｛ managedCluster_id ｝ /apps/｛ app_id ｝ /appAssets
-* /accounts / ｛ account_id ｝ /topology/v1/managedClusters / ｛ managedCluster_id ｝ /apps/｛ APP_id ｝ /appAssets/｛ appAsset_id ｝
-* /accounts / ｛ account_id ｝ /topology/v1/managedClusters / ｛ managedCluster_id ｝ / clusterNodes
-* /accounts / ｛ account_id ｝ /topology/v1/managedClusters / ｛ managedCluster_id ｝ /clusterNodes / ｛ clusternode_id ｝
-
-
 
 
 == その他のリソースとエンドポイント

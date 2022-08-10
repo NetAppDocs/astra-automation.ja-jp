@@ -1,0 +1,334 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_ldap_add_entries.html 
+keywords:  
+summary:  
+---
+= AstraにLDAPエントリを追加
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Astra Control Centerの認証プロバイダとしてLDAPを設定したら、AstraがLDAPクレデンシャルを使用して認証するLDAPユーザを選択できます。各ユーザがAstraでAstra Control REST APIを使用してAstraにアクセスするには、Astraでロールを持つ必要があります。
+
+Astraを設定してロールを割り当てるには、2つの方法があります。環境に適したものを選択してください。
+
+* link:../workflows_infra/wf_ldap_add_entries.html#add-and-bind-an-individual-user["個々のユーザを追加してバインドします"]
+* link:../workflows_infra/wf_ldap_add_entries.html#add-and-bind-a-group["グループを追加してバインドします"]
+
+
+
+NOTE: LDAPクレデンシャルは、ユーザ名の形式でEメールアドレスおよび関連付けられたLDAPパスワードです。
+
+
+
+== 個々のユーザを追加してバインドします
+
+LDAP認証後に使用する各Astraユーザにロールを割り当てることができます。これは、ユーザの数が少なく、それぞれの管理特性が異なる場合に適しています。
+
+
+
+=== 1.ユーザを追加します
+
+次のREST API呼び出しを実行してAstraにユーザを追加し、LDAPが認証プロバイダであることを示します。
+
+[cols="1,6"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /account/{account_id}/core/v1/users 
+|===
+
+
+===== JSON の入力例
+
+[source, json]
+----
+{
+  "type" :  "application/astra-user",
+  "version" : "1.1",
+  "authID" : "cn=JohnDoe,ou=users,ou=astra,dc=example,dc=com",
+  "authProvider" : "ldap",
+  "firstName" : "John",
+  "lastName" : "Doe",
+  "email" : "john.doe@example.com"
+}
+----
+入力パラメータについては、次の点に注意してください。
+
+* 次のパラメータが必要です。
++
+** 「authProvider」のように指定します
+** 「authid」
+** 「電子メール」
+
+
+* 「authid」は、LDAPのユーザの識別名（DN）です
+* 「email」は、Astraで定義されたすべてのユーザに一意である必要があります
+
+
+「email」の値が一意でない場合は、エラーが発生し、応答に409 HTTPステータスコードが返されます。
+
+
+
+===== カールの例
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/astra-user+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSON応答例
+
+[source, json]
+----
+{
+  "metadata": {
+    "creationTimestamp": "2022-07-21T17:44:18Z",
+    "modificationTimestamp": "2022-07-21T17:44:18Z",
+    "createdBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "labels": []
+  },
+  "type": "application/astra-user",
+  "version": "1.2",
+  "id": "a7b5e674-a1b1-48f6-9729-6a571426d49f",
+  "authProvider": "ldap",
+  "authID": "cn=JohnDoe,ou=users,ou=astra,dc=example,dc=com",
+  "firstName": "John",
+  "lastName": "Doe",
+  "companyName": "",
+  "email": "john.doe@example.com",
+  "postalAddress": {
+    "addressCountry": "",
+    "addressLocality": "",
+    "addressRegion": "",
+    "streetAddress1": "",
+    "streetAddress2": "",
+    "postalCode": ""
+  },
+  "state": "active",
+  "sendWelcomeEmail": "false",
+  "isEnabled": "true",
+  "isInviteAccepted": "true",
+  "enableTimestamp": "2022-07-21T17:44:18Z",
+  "lastActTimestamp": ""
+}
+----
+
+
+=== 2.ユーザのロールバインディングを追加します
+
+次のREST API呼び出しを実行して、ユーザを特定のロールにバインドします。前の手順で作成したユーザのUUIDを用意する必要があります。
+
+[cols="1,6"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /account/{account_id}/core/v1/roleBindings 
+|===
+
+
+===== JSON の入力例
+
+[source, json]
+----
+{
+  "type": "application/astra-roleBinding",
+  "version": "1.1",
+  "accountID": "{account_id}",
+  "userID": "a7b5e674-a1b1-48f6-9729-6a571426d49f",
+  "role": "member",
+  "roleConstraints": ["*"]
+}
+----
+入力パラメータについては、次の点に注意してください。
+
+* 前述の「roleConstraint」の値は、Astraの現在のリリースで使用できる唯一のオプションです。ユーザがネームスペースの制限付きのセットに制限されておらず、すべてのネームスペースにアクセスできることを示しています。
+
+
+
+
+===== カールの例
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSON応答例
+
+[source, json]
+----
+{
+  "metadata": {
+    "creationTimestamp": "2022-07-21T18:08:24Z",
+    "modificationTimestamp": "2022-07-21T18:08:24Z",
+    "createdBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "labels": []
+  },
+  "type": "application/astra-roleBinding",
+  "principalType": "user",
+  "version": "1.1",
+  "id": "b02c7e4d-d483-40d1-aaff-e1f900312114",
+  "userID": "a7b5e674-a1b1-48f6-9729-6a571426d49f",
+  "groupID": "00000000-0000-0000-0000-000000000000",
+  "accountID": "d0fdbfa7-be32-4a71-b59d-13d95b42329a",
+  "role": "member",
+  "roleConstraints": ["*"]
+}
+----
+応答パラメータについては、次の点に注意してください。
+
+* 「principalType」フィールドの値「user」は、（グループではなく）ユーザにロールバインディングが追加されたことを示します。
+
+
+
+
+== グループを追加してバインドします
+
+LDAP認証後に使用するAstraグループにロールを割り当てることができます。これは、ユーザが多数あり、それぞれに類似した管理特性がある場合に適しています。
+
+
+
+=== 1.グループを追加します
+
+次のREST API呼び出しを実行してAstraにグループを追加し、LDAPが認証プロバイダであることを示します。
+
+[cols="1,6"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /account/{account_id}/core/v1/groups 
+|===
+
+
+===== JSON の入力例
+
+[source, json]
+----
+{
+  "type": "application/astra-group",
+  "version": "1.0",
+  "name": "Engineering",
+  "authProvider": "ldap",
+  "authID": "CN=Engineering,OU=groups,OU=astra,DC=example,DC=com"
+}
+----
+入力パラメータについては、次の点に注意してください。
+
+* 次のパラメータが必要です。
++
+** 「authProvider」のように指定します
+** 「authid」
+
+
+
+
+
+
+===== カールの例
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/groups' --header 'Content-Type: application/astra-group+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSON応答例
+
+[source, json]
+----
+{
+  "type": "application/astra-group",
+  "version": "1.0",
+  "id": "8b5b54da-ae53-497a-963d-1fc89990525b",
+  "name": "Engineering",
+  "authProvider": "ldap",
+  "authID": "CN=Engineering,OU=groups,OU=astra,DC=example,DC=com",
+  "metadata": {
+    "creationTimestamp": "2022-07-21T18:42:52Z",
+    "modificationTimestamp": "2022-07-21T18:42:52Z",
+    "createdBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "labels": []
+  }
+}
+----
+
+
+=== 2.グループのロールバインドを追加します
+
+次のREST API呼び出しを実行して、グループを特定のロールにバインドします。前の手順で作成したグループのUUIDが必要です。LDAPが認証を実行すると、グループのメンバーであるユーザはAstraにサインインできるようになります。
+
+[cols="1,6"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /account/{account_id}/core/v1/roleBindings 
+|===
+
+
+===== JSON の入力例
+
+[source, json]
+----
+{
+  "type": "application/astra-roleBinding",
+  "version": "1.1",
+  "accountID": "{account_id}",
+  "groupID": "8b5b54da-ae53-497a-963d-1fc89990525b",
+  "role": "viewer",
+  "roleConstraints": ["*"]
+}
+----
+入力パラメータについては、次の点に注意してください。
+
+* 前述の「roleConstraint」の値は、Astraの現在のリリースで使用できる唯一のオプションです。ユーザが特定のネームスペースに制限されておらず、すべてのネームスペースにアクセスできることを示しています。
+
+
+
+
+===== カールの例
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSON応答例
+
+[source, json]
+----
+{
+  "metadata": {
+    "creationTimestamp": "2022-07-21T18:59:43Z",
+    "modificationTimestamp": "2022-07-21T18:59:43Z",
+    "createdBy": "527329f2-662c-41c0-ada9-2f428f14c137",
+    "labels": []
+  },
+  "type": "application/astra-roleBinding",
+  "principalType": "group",
+  "version": "1.1",
+  "id": "2f91b06d-315e-41d8-ae18-7df7c08fbb77",
+  "userID": "00000000-0000-0000-0000-000000000000",
+  "groupID": "8b5b54da-ae53-497a-963d-1fc89990525b",
+  "accountID": "d0fdbfa7-be32-4a71-b59d-13d95b42329a",
+  "role": "viewer",
+  "roleConstraints": ["*"]
+}
+----
+応答パラメータについては、次の点に注意してください。
+
+* 「ライセンスタイプ」フィールドの値「group」は、（ユーザではなく）グループにロールバインディングが追加されたことを示します。
+

@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_ldap_disable_reset.html 
+keywords:  
+summary:  
+---
+= LDAPを無効にしてリセットします
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+必要に応じてAstra Control Centerの導入で実行できる、関連する管理タスクには2つのオプションがあります。LDAP認証をグローバルに無効にし、LDAP設定をリセットできます。
+
+どちらのワークフロータスクにも'Astrer.account.ldap`Astra設定のIDが必要です設定IDの取得方法の詳細については、「LDAPサーバの設定」*を参照してください。を参照してください link:../workflows_infra/wf_ldap_configure_server.html#3-retrieve-the-uuid-of-the-ldap-setting["LDAP設定のUUIDを取得します"] を参照してください。
+
+* link:../workflows_infra/wf_ldap_disable_reset.html#disable-ldap-authentication["LDAP認証を無効にします"]
+* link:../workflows_infra/wf_ldap_disable_reset.html#reset-the-ldap-authentication-configuration["LDAP認証設定をリセットします"]
+
+
+
+
+== LDAP認証を無効にします
+
+次のREST API呼び出しを実行して、特定のアストラ環境に対してLDAP認証をグローバルに無効にすることができます。コールは'Astra .account.ldap'設定を更新し'IsEnabled'値は'false'に設定されます
+
+[cols="1,6"]
+|===
+| HTTP メソッド | パス 
+
+
+| PUT | /account/{account_id}/core/v1/settings/{settings_id} 
+|===
+
+
+===== JSON の入力例
+
+[source, json]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.0",
+  "desiredConfig": {
+    "connectionHost": "myldap.example.com",
+    "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+    "groupBaseDN": "OU=groups,OU=astra,DC=example,DC=com",
+    "isEnabled": "false",
+    "port": 686,
+    "secureMode": "LDAPS",
+    "userBaseDN": "OU=users,OU=astra,DC=example,dc=com",
+    "userSearchFilter": "((objectClass=User))",
+    "vendor": "Active Directory"
+    }
+}
+----
+[source, curl]
+----
+curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+コールが成功すると'HTTP 204'応答が返されます必要に応じて、設定をもう一度取得して変更を確認することもできます。
+
+
+
+== LDAP認証設定をリセットします
+
+次のREST API呼び出しを実行して、AstraをLDAPサーバから切断し、AstraでLDAP設定をリセットできます。コールは'Astra .account.ldap'の設定と'connectionHost'の値を更新します
+
+IsEnabledの値も'false'に設定する必要がありますこの値は、リセットコールの前に設定することも、リセットコールの一部として設定することもできます。2番目の場合、「connectionHost」はクリアし、「IsEnabled」は同じリセットコールでfalseに設定する必要があります。
+
+
+CAUTION: これはシステムの停止を伴う処理なので、注意してください。インポートされたLDAPユーザおよびグループがすべて削除されます。また、Astra Control Centerで作成した関連するAstraユーザー、グループ、役割バインディング(LDAPタイプ)もすべて削除されます。
+
+[cols="1,6"]
+|===
+| HTTP メソッド | パス 
+
+
+| PUT | /account/{account_id}/core/v1/settings/{settings_id} 
+|===
+
+
+===== JSON の入力例
+
+[source, json]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.0",
+  "desiredConfig": {
+    "connectionHost": "",
+    "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+    "groupBaseDN": "OU=groups,OU=astra,DC=example,DC=com",
+    "isEnabled": "false",
+    "port": 686,
+    "secureMode": "LDAPS",
+    "userBaseDN": "OU=users,OU=astra,DC=example,dc=com",
+    "userSearchFilter": "((objectClass=User))",
+    "vendor": "Active Directory"
+    }
+}
+----
+次の点に注意してください。
+
+* LDAPサーバを変更するには'前述の例に示すように'LDAPを無効にしてから再設定して'connecthost'をnull値に変更する必要があります
+
+
+[source, curl]
+----
+curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+コールが成功すると'HTTP 204'応答が返されます必要に応じて、設定を再取得して変更を確認することもできます。

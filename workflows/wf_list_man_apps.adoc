@@ -27,7 +27,7 @@ Astra が現在管理しているアプリケーションをリストできま�
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{accountID}/k8s/v1/managedApps 
+| 取得 | /account/{account_id}/k8s/v1/managedApps 
 |===
 
 

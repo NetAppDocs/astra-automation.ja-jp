@@ -22,12 +22,12 @@ Astra が現在管理している Kubernetes クラスタをリストできま�
 
 次の REST API 呼び出しを実行します。
 
-[cols="25,75"]
+[cols="1,6"]
 |===
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{accountID}/topology/v1/managedClusters 
+| 取得 | /account/{account_id}/topology/v1/managedClusters 
 |===
 
 

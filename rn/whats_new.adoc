@@ -18,6 +18,48 @@ summary:
 
 
 
+== 2022年8月10日（22.08）
+
+このリリースでは、 REST API の拡張と更新に加え、セキュリティと管理に関する高度な機能が実装されています。
+
+
+
+=== Astra の新しいリソース
+
+3つの新しいリソースタイプ、* Certificate *、* Group *、* AppMirror *が追加されました。また、いくつかの既存リソースのバージョンも更新されています。
+
+
+
+=== LDAP 認証
+
+必要に応じて、Astra Control Centerを構成してLDAPサーバーと統合し、選択したAstraユーザーを認証することができます。を参照してください link:../workflows_infra/ldap_prepare.html["LDAP の設定"] を参照してください。
+
+
+
+=== 拡張実行フック
+
+実行フックのサポートは、Astra Control 21.12リリースで追加されました。既存のスナップショット前およびスナップショット後の実行フックに加えて、22.08リリースで次の種類の実行フックを構成できるようになりました。
+
+* バックアップ前
+* バックアップ後
+* リストア後のPOSTコマンドです
+
+
+Astra Controlでは、複数の実行フックに同じスクリプトを使用できるようになりました。
+
+
+
+=== SnapMirrorを使用したアプリケーションのレプリケーション
+
+NetApp SnapMirrorテクノロジを使用して、クラスタ間でデータやアプリケーションの変更をレプリケートできるようになりました。この拡張機能を使用すると、ビジネス継続性およびリカバリ機能を向上させることができます。
+
+.関連情報
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center ：新機能"^]
+* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service ：新機能"^]
+
+
+
+
 == 2022 年 4 月 26 日（ 2004 年 4 月 22 日）
 
 このリリースでは、 REST API の拡張と更新に加え、セキュリティと管理に関する高度な機能が実装されています。

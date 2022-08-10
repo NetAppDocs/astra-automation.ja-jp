@@ -39,7 +39,7 @@ summary:
 | HTTP メソッド | パス 
 
 
-| PUT | /account/{accountID}/k8s/v1/managedApps/{appID} 
+| PUT | /account/{account_id}/k8s/v1/managedApps/{app_id } 
 |===
 
 

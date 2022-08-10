@@ -8,6 +8,16 @@ entries:
   entries:
   - title: ユーザをリストします
     url: "/workflows_infra/wf_list_users.html"
+- title: LDAP の設定
+  entries:
+  - title: LDAP構成を準備
+    url: "/workflows_infra/ldap_prepare.html"
+  - title: LDAPサーバを設定します
+    url: "/workflows_infra/wf_ldap_configure_server.html"
+  - title: AstraにLDAPエントリを追加
+    url: "/workflows_infra/wf_ldap_add_entries.html"
+  - title: LDAPを無効にしてリセットします
+    url: "/workflows_infra/wf_ldap_disable_reset.html"
 - title: バケット
   entries:
   - title: バケットをリストします

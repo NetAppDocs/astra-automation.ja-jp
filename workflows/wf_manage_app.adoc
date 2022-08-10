@@ -33,7 +33,7 @@ Astra がすでに認識しているアプリケーションに基づいて、�
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{accountID}/k8s/v1/managedApps 
+| 投稿（ Post ） | /account/{account_id}/k8s/v1/managedApps 
 |===
 
 

@@ -36,7 +36,7 @@ NOTE: これらのワークフローで使用されている REST エンドポ�
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{accountID}/topology/v1/apps の順で指定します 
+| 取得 | /account/{account_id}/topology/v1/appsのように指定します 
 |===
 
 
@@ -121,7 +121,7 @@ curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{accountID}/topology/v1/apps の順で指定します 
+| 取得 | /account/{account_id}/topology/v1/appsのように指定します 
 |===
 
 

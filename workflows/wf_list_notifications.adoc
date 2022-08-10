@@ -27,7 +27,7 @@ summary:
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{accountID}/core/v1/notifications 
+| 取得 | /account/{account_id}/core/v1/notifications 
 |===
 
 

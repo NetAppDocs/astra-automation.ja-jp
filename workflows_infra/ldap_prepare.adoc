@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/ldap_prepare.html 
+keywords:  
+summary:  
+---
+= LDAP構成を準備
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+必要に応じて、Astra Control CenterをLightweight Directory Access Protocol（LDAP）サーバーと統合して、選択したAstraユーザーの認証を実行できます。LDAPは、分散ディレクトリ情報にアクセスするための業界標準プロトコルであり、エンタープライズ認証に広く使用されています。
+
+.関連情報
+* https://datatracker.ietf.org/doc/html/rfc4510["LDAPテクニカル・スペシフィケーション・ロード・マップ"^]
+* https://datatracker.ietf.org/doc/html/rfc4511["LDAPバージョン3"^]
+
+
+
+
+== 実装プロセスの概要
+
+大まかには、Astraユーザに認証を提供するためにLDAPサーバを設定するためには、いくつかの手順を実行する必要があります。
+
+
+NOTE: 以下に示す手順は順序どおりですが、場合によっては別の順序で実行できます。たとえば、LDAPサーバを設定する前に、Astraのユーザとグループを定義できます。
+
+. レビュー link:../workflows_infra/ldap_prepare.html#requirements-and-limitations["要件および制限事項"] をクリックして、オプション、要件、および制限事項を確認してください。
+. LDAPサーバおよび必要な設定オプション（セキュリティを含む）を選択します。
+. ワークフローを実行 link:../workflows_infra/wf_ldap_configure_server.html["AstraでLDAPサーバを使用するように設定する"] AstraとLDAPサーバを統合する。
+. LDAPサーバでユーザとグループを調べて、適切に定義されていることを確認します。
+. で適切なワークフローを実行します link:../workflows_infra/wf_ldap_add_entries.html["AstraにLDAPエントリを追加"] LDAPを使用して認証するユーザを指定します。
+
+
+
+
+== 要件および制限事項
+
+認証にLDAPを使用するようにAstraを設定する前に、制限事項や設定オプションなど、ネットアップが提供する基本的な設定を確認しておく必要があります。
+
+Astra Controlプラットフォームには、2つの導入モデルがあります。LDAP認証はAstra Control Centerの導入でのみサポートされます。
+
+現在のリリースのAstra Control Centerは、Astra Control REST APIを使用したLDAP認証の設定のみをサポートしています。この制限の重要な点は、Astra WebインターフェイスのUsersタブにLDAPユーザが表示されないことです。これらは、エンドポイント「./core/v1/users」のREST APIを介して利用できます。
+
+Astra認証要求を受け入れて処理するには、LDAPサーバが必要です。MicrosoftのActive Directoryは、現在のAstra Control Centerリリースでサポートされています。
+
+AstraでLDAPサーバを設定する場合、必要に応じてセキュアな接続を定義できます。この場合は、LDAPSプロトコルの証明書が必要です。
+
+LDAPを使用して認証するユーザを選択する必要があります。これは、個々のユーザまたはユーザのグループを指定することで実行できます。アカウントはLDAPサーバで定義する必要があります。また、認証要求をLDAPに転送できるようにするために、Astra（タイプLDAP）で識別する必要もあります。
+
+現在リリースされているAstra Control Centerでは、「roleConstraint」でサポートされている値は「*」のみです。これは、ユーザがネームスペースの制限に制限されておらず、すべてのネームスペースにアクセスできることを示しています。を参照してください link:../workflows_infra/wf_ldap_add_entries.html["AstraにLDAPエントリを追加"] を参照してください。
+
+LDAPで使用されるクレデンシャルには、ユーザ名（Eメールアドレス）と関連付けられたパスワードが含まれます。
+
+Astra Control Center環境でユーザ名として機能するすべての電子メールアドレスは、一意である必要があります。Astraにすでに定義されているEメールアドレスを持つLDAPユーザを追加することはできません。重複するEメールが存在する場合は、最初にAstraから削除する必要があります。を参照してください https://docs.netapp.com/us-en/astra-control-center/use/manage-users.html#remove-users["ユーザを削除します"^] 詳細については、Astra Control Centerのドキュメントサイトを参照してください。
+
+LDAPユーザとグループは、LDAPにまだ存在していない場合やLDAPサーバが設定されていない場合でも、Astra Control Centerに追加できます。これにより、LDAPサーバを設定する前にユーザとグループを事前に設定できます。
+
+あるLDAPユーザが複数のLDAPグループに属していて、グループにAstraで別々のロールが割り当てられている場合、認証時にそのユーザの有効なロールが最も特権的に使用されます。たとえば'ユーザにgroup1でビューア・ロールが割り当てられていて'group2でメンバー・ロールが割り当てられている場合'そのユーザのロールは'member'になりますこれは、Astraが使用する階層に基づいています（最高から最低まで）。
+
+* オーナー
+* 管理
+* メンバー
+* ビューアー（ Viewer ）
+
+
+Astraは、ユーザーとグループを約60秒ごとにLDAPサーバーと同期します。したがって、ユーザまたはグループがLDAPに追加またはLDAPから削除されると、Astraで利用可能になるまでに最大1分かかる場合があります。
+
+LDAP設定をリセットする前に、LDAP認証を無効にする必要があります。また'LDAPサーバ(connectionHost')を変更するには'両方の操作を実行する必要がありますを参照してください link:../workflows_infra/wf_ldap_disable_reset.html["LDAPを無効にしてリセットします"] を参照してください。
+
+LDAPの設定ワークフローは、特定のタスクを実行するためにREST API呼び出しを実行します。各API呼び出しについて、表示されるサンプルに示すような入力パラメータを含めることができます。を参照してください link:../reference/api_reference.html["API リファレンス"] 参照ドキュメントの検索方法については、を参照してください。
