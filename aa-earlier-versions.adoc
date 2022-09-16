@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: aa-earlier-versions.html 
-keywords:  
-summary:  
+keywords: earlier versions 
+summary: 以前の Astra Control リリースの自動化に関するドキュメントには、次のリンクからアクセスできます。 
 ---
 = 旧バージョンの Astra Control Automation のドキュメント
 :hardbreaks:

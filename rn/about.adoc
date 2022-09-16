@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: rn/about.html 
-keywords:  
-summary:  
+keywords: about, current release 
+summary: このサイトのドキュメントでは、Astra Control REST APIと、Astra Controlで利用可能な関連自動化テクノロジについて説明しています。 
 ---
 = このリリースについて
 :hardbreaks:
@@ -24,3 +24,5 @@ summary:
 * https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 22.08のマニュアル"^]
 * link:../aa-earlier-versions.html["旧バージョンの Astra Automation ドキュメント"]
 
+
+Twitter で @NetAppDoc をフォローしてください。を作成し、ドキュメントに関するフィードバックを送信します link:https://docs.netapp.com/us-en/contribute/["GitHub の貢献者"^] または、 doccomments@netapp.com に電子メールを送信します。

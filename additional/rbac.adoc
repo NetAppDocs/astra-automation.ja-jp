@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: additional/rbac.html 
 keywords:  
-summary:  
+summary: Astra REST API は、ロールベースアクセス制御（ RBAC ）をサポートしているため、システム機能へのアクセスを制限できます。 
 ---
 = RBAC セキュリティ
 :hardbreaks:

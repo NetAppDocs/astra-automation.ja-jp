@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: python/python_before.html 
-keywords:  
-summary:  
+keywords: python3, requests, urllib3, identity, json 
+summary: Python は、特にデータセンターの自動化に広く使用されている開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。 
 ---
 = 作業を開始する前に
 :hardbreaks:
