@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: python/python_before.html 
 keywords: python3, requests, urllib3, identity, json 
-summary: Python は、特にデータセンターの自動化に広く使用されている開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。 
+summary: Pythonは、データセンター自動化のための一般的な開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。 
 ---
 = 作業を開始する前に
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Python は、特にデータセンターの自動化に広く使用さ�
 
 
 [role="lead"]
-Python は、特にデータセンターの自動化に広く使用されている開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。
+Pythonは、データセンター自動化のための一般的な開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。
 
 
 NOTE: ネットアップは、 Python を使用して Astra Control REST API に直接アクセスするだけでなく、 API を抽象化して複雑さを排除するツールキットパッケージも提供しています。を参照してください link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] を参照してください。

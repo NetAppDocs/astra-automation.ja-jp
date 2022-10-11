@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
-permalink: intro/introduction.html 
-keywords: introduction, features, benefits, deployment models, object model, query parameters, automation, family 
-summary: Astra Control Center と Astra Control Service は、 Curl などのプログラミング言語やユーティリティを使用して直接アクセスできる共通の REST API を提供します。API の主な特長とメリットを以下に示します。 
+permalink: intro/overview.html 
+keywords: overview, introduction, features, benefits, deployment models, object model, query parameters, automation, family 
+summary: Astra Control Center と Astra Control Service は、 Curl などのプログラミング言語やユーティリティを使用して直接アクセスできる共通の REST API を提供します。APIの主な特長とメリットはいくつかあります。 
 ---
 = 機能とメリットの概要
 :hardbreaks:

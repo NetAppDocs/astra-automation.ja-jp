@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: additional/rbac.html 
-keywords:  
-summary: Astra REST API は、ロールベースアクセス制御（ RBAC ）をサポートしているため、システム機能へのアクセスを制限できます。 
+keywords: rbac, roles, namespace granularity 
+summary: Astra REST APIは、ロールベースアクセス制御（RBAC）をサポートしており、システム機能へのアクセスを許可および制限します。 
 ---
 = RBAC セキュリティ
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Astra REST API は、ロールベースアクセス制御（ RBAC ）�
 
 
 [role="lead"]
-Astra REST API は、ロールベースアクセス制御（ RBAC ）をサポートしているため、システム機能へのアクセスを制限できます。
+Astra REST APIは、ロールベースアクセス制御（RBAC）をサポートしており、システム機能へのアクセスを許可および制限します。
 
 
 

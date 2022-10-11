@@ -628,7 +628,6 @@
   <block id="8af1f604c2ddb0ae53e02227ab1ca1da" category="paragraph">Representational State Transfer （ REST ）は、分散 Web アプリケーションの作成に使用される形式です。Web サービス API の設計に適用されることで、サーバベースのリソースを公開し、その状態を管理するための一連の主流テクノロジとベストプラクティスが確立されます。REST はアプリケーション開発のための一貫した基盤を提供しますが、各 API の詳細は設計内容に応じて異なる場合があります。ライブ環境で使用する前に、 Astra Control REST API の特性を理解しておく必要があります。</block>
   <block id="352836aad17f0db4217873eb0a9524b3" category="paragraph">Web サービスのクライアントとサーバの間で情報を構造化して転送する方法は複数ありますが、最も広く使用されているのは JavaScript Object Notation （ JSON ）です。JSON は、単純なデータ構造をプレーンテキストで表すための業界標準であり、リソースについての状態情報の転送に使用されます。Astra Control REST API では、 JSON を使用して、各 HTTP 要求と応答の本文で伝送されるデータをフォーマットします。</block>
   <block id="67a1ee90ebb7f60d74dc1baee961de03" category="paragraph">スクリプトを実行するワークステーションは、ネットワークにアクセスし、 Astra Control にアクセスできる必要があります。Astra Control Service を使用する場合は、インターネットに接続し、 https://astra.netapp.io` でサービスに接続できる必要があります。</block>
-  <block id="b0c0f8ac8f671541655d3d0e2beb2ce8" category="paragraph">ネットアップでは、 Astra Control REST API を定期的に更新して、新機能、拡張機能、およびバグ修正を提供しています。</block>
   <block id="2ccd65a5a6a4e8a5f8ce16d83c39361b" category="paragraph">このリリースには、パブリッククラウドサービスとして提供される既存の Astra Control Service に加えて、 Astra Control Center オンプレミス導入モデルも含まれています。Astra Control Center をサイトにインストールして、ローカルの Kubernetes 環境を管理できます。2 つの Astra Control 導入モデルは同じ REST API を共有しますが、ドキュメントで必要とされるわずかな違いがあります。</block>
   <block id="e83314a43cc3f59ae86485142dc33671" category="paragraph">Astra Control REST API からアクセス可能なリソースの数が大幅に増え、多くの新しいリソースがオンプレミスの Astra Control Center の基盤となりました。新しいリソースには、 ASUP 、使用権、機能、ライセンス、設定、 サブスクリプション、バケット、クラウド、クラスタ、管理対象クラスタ、 ストレージバックエンド、およびストレージクラス。を参照してください <block ref="f79c22f30a5c9f960ce998adee5739fa" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="5f5312990235e82a209579a232929aef" category="paragraph">REST リソースの拡張に加えて、 Astra Control 環境をサポートするための新しい API エンドポイントがいくつか追加されました。</block>
@@ -636,7 +635,6 @@
   <block id="6c38ead9bdb25d09c6e504c53fc268a5" category="paragraph">REST テクノロジを使用して Astra Control API が作成され、最新のベストプラクティスが適用されている。中核となるテクノロジは、 HTTP 、 JSON 、 RBAC です。</block>
   <block id="6ded6cd1a82081d2c5fe31ad44e26927" category="paragraph">Astra Control Service はパブリッククラウド環境で使用され、 Astra Control Center はオンプレミス環境に使用されます。これらの両方の導入モデルをサポートする REST API が 1 つあります。</block>
   <block id="973e2c06fdb700a27ccfb70fe4627261" category="paragraph">Astra Control REST API は、システムイベントやユーザ通知など、堅牢なデバッグおよび問題の特定機能を提供します。</block>
-  <block id="e2cfa1b12557ae7ad3c2bb28c8b77d7c" category="paragraph">HTTP メソッド、入力パラメータ、応答など、 Astra Control REST API のすべての呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。</block>
   <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">REST API のリファレンスドキュメントは、現在のところ Astra Control に付属しており、オンラインで入手できます。</block>
   <block id="0f879b71f480ca631ac007cea8270eb9" category="paragraph">Astra Control REST API に用意されているプライマリリソースエンドポイントは、 3 つのカテゴリに分類されています。各リソースは、特定の場所を除いて、すべての CRUD 操作（作成、読み取り、更新、削除）を使用してアクセスできます。</block>
   <block id="a3fb339c1c586b61a4747f75e3e18873" category="list-text"><block ref="a3fb339c1c586b61a4747f75e3e18873" category="inline-link-rx"></block></block>
@@ -649,7 +647,6 @@
   <block id="55fcf9a6a46c69408785dcd2e3a82522" category="admonition">これらのリソースとエンドポイントは、現在のところ、 Astra Control REST API リファレンスドキュメントに含まれていません。</block>
   <block id="14d9b10c6196045941347a9e85704b50" category="inline-link">Astra Trident のドキュメント</block>
   <block id="b886ef3e400bd69f357f6981475b14e1" category="list-text"><block ref="b886ef3e400bd69f357f6981475b14e1" category="inline-link-rx"></block></block>
-  <block id="1966cbc7987b76acf54312ed4c9007ec" category="paragraph">Python は、特にデータセンターの自動化に広く使用されている開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。</block>
   <block id="0e8625d3981b9d26e0866da357d318c8" category="inline-link-macro">NetApp Astra Control Python SDK</block>
   <block id="a048c98daf24dc4c378ae4a226190097" category="admonition">ネットアップは、 Python を使用して Astra Control REST API に直接アクセスするだけでなく、 API を抽象化して複雑さを排除するツールキットパッケージも提供しています。を参照してください <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="0dca49fc2e144253162b8cbd94b3b83c" category="admonition">を参照してください <block ref="471a805638f43cfd34206d9398385425" category="inline-link-macro-rx"></block> 必要な JSON 入力ファイルの例を次に示します。</block>
@@ -797,7 +794,6 @@
   <block id="3d9217d4e4ef94c56689e548b5186591" category="doc">コレクションを操作する</block>
   <block id="99910604d292e8754daf25a401bb8857" category="doc">API トークンを取り消します</block>
   <block id="1e035d8ab99dbf14a530ceac5ef93e74" category="paragraph">Astra アカウントが必要。また、取り消すトークンを特定する必要があります。</block>
-  <block id="220c398b098026c9c6d51b8c5eed3f89" category="paragraph">Astra REST API は、ロールベースアクセス制御（ RBAC ）をサポートしているため、システム機能へのアクセスを制限できます。</block>
   <block id="93f59591ef6394ec20a0c8c92e574665" category="section-title">Astra の役割</block>
   <block id="1dfeab1980c9d1053325319ee410d098" category="paragraph">すべての Astra ユーザには、実行可能なアクションを決定する 1 つのロールが割り当てられます。役割は、次の表に示すように階層構造になっています。</block>
   <block id="ca9f95dba864c02ec48ffa894954ce17" category="admonition">この機能は、 Astra REST API の 22.04 リリースで導入されました。</block>
@@ -1000,12 +996,19 @@
   <block id="3d951227fdf405841826a71ed6c30234" category="list-text"><block ref="3d951227fdf405841826a71ed6c30234" category="inline-link-rx"></block></block>
   <block id="0b7d1e8a8b66c054d1b104e700b7bd15" category="admonition">Astra Control REST APIの22.08リリースでは、新しい既知の問題はありません。以下に記載する問題は以前のリリースで見つかったもので、現在のリリースにも該当します。</block>
   <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">LDAPサーバを設定します</block>
-  <block id="941b6ae90f15cea12f3fe36796089500" category="summary">Astra Control REST APIを使用して提供されるリソースにアクセスすることで、Astraの導入を自動化できます。各リソースは、1つ以上のエンドポイントから使用できます。以下に、自動化導入の一環として使用できる REST リソースの概要を示します。</block>
   <block id="a941511c207017106c6b7b09e9dec884" category="summary">このサイトのドキュメントでは、Astra Control REST APIと、Astra Controlで利用可能な関連自動化テクノロジについて説明しています。</block>
   <block id="3f4fc4220755866f399810fee47c7884" category="inline-link-macro">GitHub の貢献者</block>
   <block id="65ed3c4720fad34d453db54755338725" category="paragraph">Twitter で @NetAppDoc をフォローしてください。を作成し、ドキュメントに関するフィードバックを送信します <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> または、 doccomments@netapp.com に電子メールを送信します。</block>
   <block id="2d388ce46646f517f31092dee87e1af6" category="paragraph">ワークステーションのCLIで簡単なcurlコマンドを問題 して、Astra Control REST APIの使用を開始し、利用可能かどうかを確認することができます。</block>
-  <block id="29af96a9ec5aae2cc2423a2c632b3216" category="doc">機能とメリットの概要</block>
-  <block id="775e2faa120631457b3eb5f26a2f323a" category="summary">Astra Controlは、Kubernetesアプリケーションのデータライフサイクル管理を可能にするネットアップのソフトウェア製品です。環境に応じて2種類の導入モデルがあります。Astra Control CenterとAstra Control Serviceは、同じREST APIを特定のリリースで共有します。APIやその他の関連する自動化テクノロジを使用して、Astra Control環境を管理できます。</block>
   <block id="35ae08a314ffffc02580e3c3fbfad924" category="sidebar">機能とメリット</block>
+  <block id="7a161061772a428a5823e2adbe01f5f4" category="summary">HTTPメソッド、入力パラメータ、応答など、Astra Control REST API呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。</block>
+  <block id="86d5185860be6c597f7e7d99be200aa0" category="summary">以前のAstra Controlリリースの自動化に関するドキュメントにアクセスできます。</block>
+  <block id="c09d3feeeeb00d4c76b65e91bde7c0ac" category="summary">Astra REST APIは、ロールベースアクセス制御（RBAC）をサポートしており、システム機能へのアクセスを許可および制限します。</block>
+  <block id="c30daace746a4b0fbccf1758ed0282eb" category="summary">Pythonは、データセンター自動化のための一般的な開発言語です。Python のネイティブ機能をいくつかの共通パッケージとともに使用する前に、環境と必要な入力ファイルを準備する必要があります。</block>
+  <block id="e14d216616a4529ca008fe30d48b4bda" category="summary">Astra Control Center と Astra Control Service は、 Curl などのプログラミング言語やユーティリティを使用して直接アクセスできる共通の REST API を提供します。APIの主な特長とメリットはいくつかあります。</block>
+  <block id="48f085a79b3bd49f8180067c06092213" category="doc">機能とメリットの概要</block>
+  <block id="7128d9d8a839786105f002007172fbe5" category="summary">ネットアップでは、Astra Control REST APIを定期的に更新して、新機能、拡張機能、バグ修正を提供しています。</block>
+  <block id="c03785645670327afbef79672d54b2df" category="summary">Astra Controlは、Kubernetesアプリケーションのデータライフサイクル管理を可能にするネットアップのソフトウェア製品です。環境に応じて2種類の導入モデルがあります。Astra Control CenterとAstra Control Serviceは、同じREST APIを特定のリリースで共有します。REST APIやその他の関連する自動化テクノロジを使用して、Astra Control環境を管理できます。</block>
+  <block id="d803102aaa79040d7acdf0fdfaf7f156" category="summary">Astra Control REST APIを使用して提供されるリソースにアクセスすることで、Astraの導入を自動化できます。各リソースは、1つ以上のエンドポイントから使用できます。このページでは、自動化導入の一環として使用できるRESTリソースの概要を示します。</block>
+  <block id="2cb4d33cb32e61ac40dcce4208d54e3c" category="paragraph">Astra Control REST APIを使用して提供されるリソースにアクセスすることで、Astraの導入を自動化できます。各リソースは、1つ以上のエンドポイントから使用できます。以下に、自動化導入の一環として使用できるRESTリソースの概要を示します。</block>
 </blocks>

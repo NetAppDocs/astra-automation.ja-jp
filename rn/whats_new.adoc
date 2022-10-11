@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: rn/whats_new.html 
 keywords: whats new, enhancements, new features 
-summary: ネットアップでは、 Astra Control REST API を定期的に更新して、新機能、拡張機能、およびバグ修正を提供しています。 
+summary: ネットアップでは、Astra Control REST APIを定期的に更新して、新機能、拡張機能、バグ修正を提供しています。 
 ---
 = Astra Control REST API の新機能
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: ネットアップでは、 Astra Control REST API を定期的に更�
 
 
 [role="lead"]
-ネットアップでは、 Astra Control REST API を定期的に更新して、新機能、拡張機能、およびバグ修正を提供しています。
+ネットアップでは、Astra Control REST APIを定期的に更新して、新機能、拡張機能、バグ修正を提供しています。
 
 
 

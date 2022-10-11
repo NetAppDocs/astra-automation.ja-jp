@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/hello_world.html 
-keywords:  
-summary:  
+keywords: get started, simple example 
+summary: ワークステーションのCLIで簡単なcurlコマンドを問題 して、Astra Control REST APIの使用を開始し、利用可能かどうかを確認することができます。 
 ---
 = Hello world
 :hardbreaks:
