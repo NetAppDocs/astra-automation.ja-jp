@@ -40,9 +40,11 @@ Astra SDK ファイルに加えて 'toolkit.py スクリプトも利用できま
 
 SDK には、次の方法でアクセスできます。
 
-SDK は、から入手できます https://pypi.org/["Python パッケージインデックス"^] 名前の下にある * NetApp-Astra - ツールキット * 。パッケージにはバージョン番号が割り当てられており、必要に応じて更新が続行されます。パッケージを環境にインストールするには、 * PIP * パッケージ管理ユーティリティを使用する必要があります。
+SDK は、から入手できます https://pypi.org/["Python パッケージインデックス"^] 名前* actoolkit *。パッケージにはバージョン番号が割り当てられており、必要に応じて更新が続行されます。パッケージを環境にインストールするには、 * PIP * パッケージ管理ユーティリティを使用する必要があります。
 
-を参照してください https://pypi.org/project/netapp-astra-toolkits/["PyPi ： NetApp Astra Control Python SDK"^] を参照してください。
+インストールが完了したら、スクリプトに「import astraSDK」を配置することで、astraSDK.pyクラスを利用できます。また'actoolkit'は'コマンドプロンプトから直接呼び出すことができますこれは'toolkit.py (actoolkit list clusters'は'./toolkit.py list clusters'と同じです)と同じです
+
+を参照してください https://pypi.org/project/actoolkit/["PyPi ： NetApp Astra Control Python SDK"^] を参照してください。
 
 SDK ソースコードは GitHub からも入手できます。リポジトリには次のものが含まれます。
 
@@ -63,20 +65,16 @@ SDK ソースコードは GitHub からも入手できます。リポジトリ�
 
 次のいずれかの方法で SDK をインストールできます。
 
-* Pip を使用して、 PyPI のパッケージを Python 環境にインストールします
-* Git Hub リポジトリをクローニングし、次のいずれかを実行します。
-+
-** パッケージを Docker コンテナとして導入（必要なものをすべて含む）
-** Python クライアントコードにアクセスできるように、 2 つのコア Python ファイルをコピーします
-
-
+* 準備したを使用します https://hub.docker.com/r/netapp/astra-toolkits["Docker：Astra -ツールキット"^] イメージ(image )は'actoolkit'を含む'必要な依存関係をすべてインストールしています
+* Pipを使用して'PyPiのactoolkit'パッケージをPython環境にインストールします
+* GitHubリポジトリのクローンを作成し、Pythonクライアントコードからアクセスできるように、2つのコアPythonファイルをコピー/変更します
 
 
 詳細については、 PyPi および GitHub のページを参照してください。
 
 Astra SDK の Python クラスを直接使用する場合も、「 toolkit.py 」スクリプトの関数を使用する場合も、最終的には Astra Control 配置で REST API にアクセスすることになります。そのため、 API トークンを持つ Astra アカウントが必要になります。を参照してください link:../get-started/before_get_started.html["作業を開始する前に"] 詳細については、このドキュメントの「 * はじめに * 」セクションの他のページを参照してください。
 
-SDK には、ローカル Python 環境に関連するいくつかの前提条件があります。たとえば、 Python 3.5 以降を使用する必要があります。また、必要な Python パッケージもいくつかあります。詳細については、 GitHub リポジトリページまたは PyPI パッケージページを参照してください。
+SDK には、ローカル Python 環境に関連するいくつかの前提条件があります。たとえば、Python 3.8以降を使用する必要があります。また、必要な Python パッケージもいくつかあります。詳細については、 GitHub リポジトリページまたは PyPI パッケージページを参照してください。
 
 
 
@@ -86,4 +84,5 @@ SDK には、ローカル Python 環境に関連するいくつかの前提条�
 
 * https://pypi.org/project/netapp-astra-toolkits/["PyPi ： NetApp Astra Control Python SDK"^]
 * https://github.com/NetApp/netapp-astra-toolkits["GitHub ： NetApp / NetApp-Astra - ツールキット"^]
+* https://hub.docker.com/r/netapp/astra-toolkits["Docker：Astra -ツールキット"^]
 
