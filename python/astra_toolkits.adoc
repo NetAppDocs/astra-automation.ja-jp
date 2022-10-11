@@ -82,7 +82,7 @@ SDK には、ローカル Python 環境に関連するいくつかの前提条�
 
 開始するために必要なリソースをいくつかご紹介します。
 
-* https://pypi.org/project/netapp-astra-toolkits/["PyPi ： NetApp Astra Control Python SDK"^]
+* https://pypi.org/project/actoolkit["PyPi ： NetApp Astra Control Python SDK"^]
 * https://github.com/NetApp/netapp-astra-toolkits["GitHub ： NetApp / NetApp-Astra - ツールキット"^]
 * https://hub.docker.com/r/netapp/astra-toolkits["Docker：Astra -ツールキット"^]
 

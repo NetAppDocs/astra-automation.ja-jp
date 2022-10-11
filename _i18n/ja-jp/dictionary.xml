@@ -676,7 +676,6 @@
   <block id="acb730b2d5158050dc822b6dc8c932e2" category="paragraph">詳細については、 PyPi および GitHub のページを参照してください。</block>
   <block id="20cb526cb438c874dbc67eaf9ded63f0" category="paragraph">Astra SDK の Python クラスを直接使用する場合も、「 toolkit.py 」スクリプトの関数を使用する場合も、最終的には Astra Control 配置で REST API にアクセスすることになります。そのため、 API トークンを持つ Astra アカウントが必要になります。を参照してください <block ref="6790e3b8b21e3717c59b764a5b68d086" category="inline-link-macro-rx"></block> 詳細については、このドキュメントの「 * はじめに * 」セクションの他のページを参照してください。</block>
   <block id="2c3632f4f9feb6a54026be6d9c946d20" category="section-title">役立つリソースの概要</block>
-  <block id="ba24114401f0d96a4086faa5796f3079" category="list-text"><block ref="ba24114401f0d96a4086faa5796f3079" category="inline-link-rx"></block></block>
   <block id="b455f4010eda9452a921d32bfc7e1318" category="list-text"><block ref="b455f4010eda9452a921d32bfc7e1318" category="inline-link-rx"></block></block>
   <block id="78ceba6718263592394adb03dc11471c" category="paragraph">Astra Control REST API に関連する現在のリリースの既知の問題をすべて確認しておく必要があります。ここでは、この製品の正常な使用を妨げる可能性のある既知の問題について記載します。</block>
   <block id="f977fda19bbfe49b9346f60f532f0704" category="section-title">バックエンドストレージノード内の一部のストレージデバイスが検出されていません</block>
@@ -1013,4 +1012,5 @@
   <block id="d2eba1db06d9a5fbe5780c6a0d3131b9" category="list-text">GitHubリポジトリのクローンを作成し、Pythonクライアントコードからアクセスできるように、2つのコアPythonファイルをコピー/変更します</block>
   <block id="27b72a5b697b4b5014519a7f674fe0f9" category="paragraph">SDK には、ローカル Python 環境に関連するいくつかの前提条件があります。たとえば、Python 3.8以降を使用する必要があります。また、必要な Python パッケージもいくつかあります。詳細については、 GitHub リポジトリページまたは PyPI パッケージページを参照してください。</block>
   <block id="e598386ca051245bd47f1531754638e2" category="list-text"><block ref="e598386ca051245bd47f1531754638e2" category="inline-link-rx"></block></block>
+  <block id="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="list-text"><block ref="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="inline-link-rx"></block></block>
 </blocks>
