@@ -620,7 +620,6 @@
   <block id="a520c7cb73d88575fc93ad35b53894ab" category="paragraph">Astra Control REST API から使用できるリソースインスタンスには、次のような特徴があります。</block>
   <block id="5edbe2734dc4b7c3185c8a5192c5e940" category="paragraph">Astra Control REST API で使用できるリソース収集には、次のような特徴があります。</block>
   <block id="1e34169f9f85961a4918c2a3ec12335c" category="paragraph">すべてのアストラ制御リソースは、共通の構造を使用して定義されます。</block>
-  <block id="8dc7c8b39c78b50c93daffc3e502aa5e" category="paragraph">Astra Control REST API は、 HTTP および関連パラメータを使用して、リソースとコレクションに対して操作を行います。HTTP 実装の詳細を以下に示します。</block>
   <block id="01b7ef875c4a217845bac8e7ae38175b" category="paragraph">Astra Control REST API は、明確に定義された操作と状態の移行を伴うトランザクションモデルを実装します。</block>
   <block id="c015cb2c04ac629966b40f1d6b58b583" category="paragraph">Astra Control REST API で使用できる各リソースインスタンスとコレクションには、 *CRUD * モデルに基づいてアクセスします。4 つの操作があり、それぞれが単一の HTTP メソッドにマッピングされます。処理は次のとおりです。</block>
   <block id="beeda4a7ebc8ea202e9ed1791403ab32" category="paragraph">次の表に、 Astra Control REST API で使用される HTTP ヘッダーを示します。</block>
@@ -1013,4 +1012,8 @@
   <block id="27b72a5b697b4b5014519a7f674fe0f9" category="paragraph">SDK には、ローカル Python 環境に関連するいくつかの前提条件があります。たとえば、Python 3.8以降を使用する必要があります。また、必要な Python パッケージもいくつかあります。詳細については、 GitHub リポジトリページまたは PyPI パッケージページを参照してください。</block>
   <block id="e598386ca051245bd47f1531754638e2" category="list-text"><block ref="e598386ca051245bd47f1531754638e2" category="inline-link-rx"></block></block>
   <block id="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="list-text"><block ref="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="inline-link-rx"></block></block>
+  <block id="ce44f3c6e8850cf4a69ccd2da1d186c8" category="summary">Representational State Transfer （ REST ）は、分散 Web アプリケーションの作成に使用される形式です。Web サービス API の設計に適用されることで、サーバベースのリソースを公開し、その状態を管理するための一連の主流テクノロジとベストプラクティスが確立されます。</block>
+  <block id="ad60c6f0b038daedb3b46ea65cd82bc1" category="summary">Astra Control REST APIは、HTTPおよび関連パラメータを使用して、リソースのインスタンスおよびコレクションに対して動作します。</block>
+  <block id="e4c8251a9c6d357d3aa4b05293542914" category="paragraph">Astra Control REST APIは、HTTPおよび関連パラメータを使用して、リソースのインスタンスおよびコレクションに対して動作します。HTTP 実装の詳細を以下に示します。</block>
+  <block id="3c7367ab4ec3900042f765d5f3b81ee6" category="summary">Astra Control REST APIをすぐに使用できるように準備を整えることができます。</block>
 </blocks>

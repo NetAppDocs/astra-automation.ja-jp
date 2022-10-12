@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: additional/diagnostics_support.html 
-keywords:  
-summary:  
+keywords: diagnostics, support, debugging 
+summary: 診断とデバッグに使用できる Astra Control REST API には、いくつかのサポート機能が用意されています。 
 ---
 = 診断とサポート
 :hardbreaks:

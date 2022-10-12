@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: rest-core/resources_collections.html 
-keywords: concepts 
-summary:  
+keywords: resources, instances, collections, uuid, uuidv4, state 
+summary: Astra Control REST API を使用すると、リソースインスタンスとリソースインスタンスのコレクションにアクセスできます。 
 ---
 = リソースとコレクション
 :hardbreaks:

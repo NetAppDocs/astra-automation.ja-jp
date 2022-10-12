@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: additional/work_with_collections.html 
-keywords: collections 
-summary:  
+keywords: collections, filtering, pagination, count 
+summary: Astra Control REST API には、定義されたクエリパラメータを使用してリソースコレクションにアクセスするためのさまざまな方法があります。 
 ---
 = コレクションを操作する
 :hardbreaks:

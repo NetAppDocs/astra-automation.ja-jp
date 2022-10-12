@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/kubernetes_concepts.html 
-keywords:  
-summary:  
+keywords: kubernetes, objects, namespaces, labels 
+summary: Kubernetes の概念については、 Astra REST API の使用時にいくつか関連するものがあります。 
 ---
 = Kubernetes の基本概念
 :hardbreaks:

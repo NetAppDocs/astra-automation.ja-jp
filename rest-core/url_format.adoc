@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: rest-core/url_format.html 
-keywords:  
-summary:  
+keywords: url, url format, endpoint, version 
+summary: REST API を使用したリソースインスタンスまたはコレクションへのアクセスに使用される URL の一般的な構造は、いくつかの値で構成されます。この構造は、基礎となるオブジェクトモデルとシステム設計を反映しています。 
 ---
 = URL 形式
 :hardbreaks:

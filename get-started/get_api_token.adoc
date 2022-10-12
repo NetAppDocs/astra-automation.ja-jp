@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/get_api_token.html 
-keywords:  
-summary:  
+keywords: token, obtain token 
+summary: Astra Control REST API を使用するには、 Astra API トークンを取得する必要があります。 
 ---
 = API トークンを取得します
 :hardbreaks:

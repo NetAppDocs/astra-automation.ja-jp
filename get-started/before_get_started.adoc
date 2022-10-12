@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/before_get_started.html 
-keywords:  
-summary:  
+keywords: get started, planning 
+summary: Astra Control REST APIをすぐに使用できるように準備を整えることができます。 
 ---
 = 作業を開始する前に
 :hardbreaks:
