@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: workflows/workflows_before.html 
-keywords:  
-summary:  
+keywords: workflows, management workflows, preparation 
+summary: これらのワークフローは、Astra管理対象クラスタでアプリケーションを管理する際に使用できます。 
 ---
 = 作業を開始する前に
 :hardbreaks:
@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-これらのワークフローは、 Astra 管理対象クラスタ内でアプリケーションを管理する際に使用できます。
+これらのワークフローは、Astra管理対象クラスタでアプリケーションを管理する際に使用できます。
 
 
 NOTE: これらのワークフローは、ネットアップがいつでも拡張および強化できるため、定期的に確認する必要があります。

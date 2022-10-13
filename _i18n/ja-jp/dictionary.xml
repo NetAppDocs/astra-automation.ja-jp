@@ -560,7 +560,6 @@
   <block id="a0aa3c13c7e155cdac2e684ed97bd329" category="section-title">管理ワークフロー</block>
   <block id="6ea966a7aff682cea4e20915ee526ea8" category="paragraph">これらのワークフローは、管理対象クラスタを作成したあとに使用できます。このワークフローでは、バックアップ、リストア、管理対象アプリケーションのクローニングなど、アプリケーションの保護とサポートの処理に重点を置いています。</block>
   <block id="9b355d9a0df5a5e777f4cd881f971a4e" category="paragraph">Curl ユーティリティがローカルワークステーションで使用可能である必要があります。また、 API トークンと関連付けられているアカウント識別子も必要です。を参照してください <block ref="67af9ad396391bc7ade4b472f0b4f030" category="inline-link-macro-rx"></block> を参照してください。</block>
-  <block id="6fff62f9303e1554ae200440f5af5315" category="paragraph">これらのワークフローは、 Astra 管理対象クラスタ内でアプリケーションを管理する際に使用できます。</block>
   <block id="8f6291e033ff30c19e8b03e19a26f0f3" category="admonition">これらのワークフローは、ネットアップがいつでも拡張および強化できるため、定期的に確認する必要があります。</block>
   <block id="6fd2337d24b1882caa5014a35282404b" category="section-title">一般的な準備</block>
   <block id="cbdeff17f21659aa95f18f7102990f97" category="paragraph">いずれかの Astra ワークフローを使用する前に、を確認してください <block ref="1d4e486ef41d26d87e2c5a1c939d4914" category="inline-link-macro-rx"></block>。</block>
@@ -591,7 +590,6 @@
   <block id="b65e59022e022b723c1c1fbb73cd0092" category="doc">バケットをリストします</block>
   <block id="846402b8c9f043783b1fea0eaa5d5e3a" category="paragraph">特定のアストラアカウント用に定義された S3 バケットをリストできます。</block>
   <block id="cfafa44c04121f529847f5cd8be51756" category="section-title">curl の例：すべてのバケットのすべてのデータを返します</block>
-  <block id="40e6d99f89a6388188f257045e26e638" category="paragraph">これらのワークフローを使用して、 Astra Control Center 導入モデルで使用されるインフラストラクチャを作成および管理できます。ほとんどの場合、 Astra Control Service でワークフローを使用することもできます。</block>
   <block id="c2864f49ccd62b4a439e6e98cf080bad" category="paragraph">インフラのワークフローは、さまざまなカテゴリに分類されているため、必要なワークフローを簡単に見つけることができます。</block>
   <block id="cfc97f6bd7c3456321d1fd8b90352beb" category="cell">ID とアクセス</block>
   <block id="d65ef3c48dc6be2ab6c525428ec0071f" category="cell">これらのワークフローを使用すると、 Astra のアイデンティティとアクセス方法を管理できます。リソースには、ユーザ、クレデンシャル、トークンが含まれます。</block>
@@ -1016,4 +1014,7 @@
   <block id="ad60c6f0b038daedb3b46ea65cd82bc1" category="summary">Astra Control REST APIは、HTTPおよび関連パラメータを使用して、リソースのインスタンスおよびコレクションに対して動作します。</block>
   <block id="e4c8251a9c6d357d3aa4b05293542914" category="paragraph">Astra Control REST APIは、HTTPおよび関連パラメータを使用して、リソースのインスタンスおよびコレクションに対して動作します。HTTP 実装の詳細を以下に示します。</block>
   <block id="3c7367ab4ec3900042f765d5f3b81ee6" category="summary">Astra Control REST APIをすぐに使用できるように準備を整えることができます。</block>
+  <block id="bec9f16b8e469e038cb36941a7f49a27" category="summary">これらのワークフローを使用して、Astra Control Centerの導入で使用するインフラストラクチャを作成および管理できます。多くの場合、このワークフローはAstra Control Serviceでも使用できます。</block>
+  <block id="efc48892bfa2d48bf7b7099da5e8b1cb" category="summary">必要に応じて、Astra Control CenterをLightweight Directory Access Protocol（LDAP）サーバーと統合して、選択したAstraユーザーの認証を実行できます。</block>
+  <block id="29d0525c4055c4b47d6c1f6b4681a4d4" category="summary">これらのワークフローは、Astra管理対象クラスタでアプリケーションを管理する際に使用できます。</block>
 </blocks>

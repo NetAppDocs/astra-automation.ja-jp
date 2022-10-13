@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: workflows_infra/workflows_infra_before.html 
-keywords:  
-summary:  
+keywords: workflows, infrastructure workflows, preparation 
+summary: これらのワークフローを使用して、Astra Control Centerの導入で使用するインフラストラクチャを作成および管理できます。多くの場合、このワークフローはAstra Control Serviceでも使用できます。 
 ---
 = 作業を開始する前に
 :hardbreaks:
@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-これらのワークフローを使用して、 Astra Control Center 導入モデルで使用されるインフラストラクチャを作成および管理できます。ほとんどの場合、 Astra Control Service でワークフローを使用することもできます。
+これらのワークフローを使用して、Astra Control Centerの導入で使用するインフラストラクチャを作成および管理できます。多くの場合、このワークフローはAstra Control Serviceでも使用できます。
 
 
 NOTE: これらのワークフローは、ネットアップがいつでも拡張および強化できるため、定期的に確認する必要があります。
