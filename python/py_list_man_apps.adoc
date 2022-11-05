@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: python/py_list_man_apps.html 
-keywords: python script, list apps, list managed apps 
-summary: 次のスクリプトを使用して、 Astra アカウントの管理対象アプリケーションを一覧表示できます。 
+keywords: python script, list apps 
+summary: 次のスクリプトを使用して、Astraアカウントのアプリケーションを一覧表示できます。 
 ---
-= 管理対象アプリケーションをリストします
+= アプリを表示します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 次のスクリプトを使用して、 Astra アカウントの管理�
 
 
 [role="lead"]
-次のスクリプトを使用して、 Astra アカウントの管理対象アプリケーションを一覧表示できます。
+次のスクリプトを使用して、Astraアカウントのアプリケーションを一覧表示できます。
 
 
 NOTE: を参照してください link:../python/python_before.html["作業を開始する前に"] 必要な JSON 入力ファイルの例を次に示します。
@@ -26,7 +26,7 @@ NOTE: を参照してください link:../python/python_before.html["作業を�
 #
 # Usage: python3 list_man_apps.py -i identity_file.json
 #
-# (C) Copyright 2021 NetApp, Inc.
+# (C) Copyright 2022 NetApp, Inc.
 #
 # This sample code is provided AS IS, with no support or warranties of
 # any kind, including but not limited for warranties of merchantability
@@ -51,7 +51,7 @@ api_token = ""
 account_id = ""
 
 def get_managed_apps():
-    ''' Get and print the list of managed apps '''
+    ''' Get and print the list of apps '''
 
     # Global variables
     global api_token
@@ -64,7 +64,7 @@ def get_managed_apps():
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
     # Create URL
-    url1 = "https://astra.netapp.io/accounts/" + account_id + "/k8s/v1/managedApps"
+    url1 = "https://astra.netapp.io/accounts/" + account_id + "/k8s/v2/apps"
 
     # Headers and response output
     req_headers  = {}
@@ -89,7 +89,7 @@ def get_managed_apps():
     http_code = resp1.status_code
     resp_headers = resp1.headers
 
-    # Print the list of managed apps
+    # Print the list of apps
     if resp1.ok:
         resp_data = json.loads(resp1.text)
         items = resp_data['items']
@@ -144,7 +144,7 @@ def main(args):
 def parseArgs():
         ''' Parse the CLI input parameters '''
 
-        parser = argparse.ArgumentParser(description='Astra REST API - List the managed apps',
+        parser = argparse.ArgumentParser(description='Astra REST API - List the apps',
                           add_help = True)
         parser.add_argument("-i", "--identity", action="store", dest="id_file", default=None,
                           help='(Req) Name of the identity input file', required=True)

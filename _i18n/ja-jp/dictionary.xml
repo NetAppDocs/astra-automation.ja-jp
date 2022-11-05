@@ -58,7 +58,6 @@
   <block id="79018ac7f72b136dcb6a5f9e125d4c2b" category="list-text">アプリケーションアセット</block>
   <block id="639d7e9624e068b9cb919e6476673916" category="list-text">アプリケーションのバックアップ</block>
   <block id="1fd2b9909603c282becde555a00d5699" category="list-text">アプリケーションスナップショット</block>
-  <block id="1d1de1a5cacebf8dae3ee084e7af3eaf" category="list-text">マネージドアプリケーション</block>
   <block id="25f7347236b51a5eae4ba01a7862cb55" category="list-text">スケジュール</block>
   <block id="67c58d2de17edb43efeda54f12292dd2" category="section-title">トポロジリソース</block>
   <block id="ac863f346e618f9a959b5c95d5d28941" category="list-text">アプリケーション</block>
@@ -107,28 +106,21 @@
   <block id="4a66fdca0794b65eaa799aa5ead36fb1" category="cell">&lt;api_ctoken&gt; のように指定します</block>
   <block id="bf50d5e661106d0abe925af3c2e6f7e7" category="cell">ヘッダー</block>
   <block id="14ce98600753e7afda082ba76ce94155" category="cell">発信者を識別および認可するベアラトークン。</block>
-  <block id="ef388075ecc9c993b3b3b5dd15b487de" category="cell">&lt;managed_app_ID&gt;</block>
-  <block id="478387b91feafb83455f33de88aa26eb" category="cell">API 呼び出しの管理対象アプリケーションを識別する UUIDv4 値。</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="doc">はじめに</block>
   <block id="3e25960a79dbc69b674cd4ec67a72c62" category="doc">Hello world</block>
   <block id="cbd2fd368381db0d8cdbdead253cf132" category="paragraph">次の Curl コマンドは、 Astra ユーザのリストを取得します。図に示すように、適切な &lt;account_ID&gt; と &lt;api_ctoken&gt; を指定します。</block>
   <block id="efb44cfe1d5b8d9954ea045385675c66" category="doc">Snapshot を削除します</block>
-  <block id="482aff56a1c2140c6b17c288f13f98d1" category="paragraph">管理対象アプリケーションに関連付けられている Snapshot を削除することができます。</block>
   <block id="a08d0039b6defc60dd0db0aebca289d8" category="paragraph">次の情報が必要です。</block>
-  <block id="a50be7a834c95319089495cab34dcc3a" category="inline-link-macro">管理対象アプリケーションをリストします</block>
-  <block id="d2feaf779ccf544c3e1d8746f06f8b6c" category="list-text">スナップショットを所有する管理対象アプリケーションの ID 。必要に応じて、ワークフローを使用できます <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
   <block id="020ac174aad4268a50eed3705447b327" category="inline-link-macro">Snapshot を一覧表示します</block>
   <block id="8228d21d4972f0a8ed1a2129680b70b2" category="list-text">削除する Snapshot の ID 。必要に応じて、ワークフローを使用できます <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block> をクリックしてください。</block>
   <block id="860aa2c08f5183e7dd18366105498ef2" category="section-title">1. スナップショットを削除します</block>
   <block id="0ded27ebd95eb2dcf0ec2ac7f61b926c" category="paragraph">次の REST API 呼び出しを実行します。</block>
   <block id="3ded167f4ad4afb85c6ace5862e27ba0" category="cell">HTTP メソッド</block>
   <block id="32f68a60cef40faedbc6af20298c1a1e" category="cell">削除</block>
-  <block id="c673742e49a29363ba7d2d773a12101f" category="cell">/accounts / ｛ account_id ｝ /k8s/v1/managedApps_｛ managedApp_id ｝ /appSnaps/｛ appSnap_id ｝</block>
   <block id="c24b0224d3b54e6b4e908019f2447f30" category="section-title">追加の入力パラメータ</block>
   <block id="8ad1007adda12ebaacc83f24d677e5e6" category="paragraph">すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。</block>
   <block id="83f499a540b1323009c200d6f8cc9396" category="cell">パラメータ</block>
   <block id="b651efdb98a5d6bd2b3935d0c3f4a5e2" category="cell">必須</block>
-  <block id="f5cd5a00af0952558b2b1674f802d0f8" category="cell">管理アプリ ID</block>
   <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">はい。</block>
   <block id="151b82a6507e2eebe2f879130b46a783" category="cell">スナップショットを所有する管理アプリケーションを指定します。</block>
   <block id="79e04f95eeac07344faa5b56bab83760" category="cell">Snapshot ID</block>
@@ -136,20 +128,13 @@
   <block id="c60d917b462a557b73224bd3194b4cf6" category="section-title">curl の例：アプリケーションのスナップショットを 1 つ削除します</block>
   <block id="f33f60a3b5c95e8659ec5a992f0f055c" category="doc">アプリの管理を解除します</block>
   <block id="2b194b9170143eb845c618e13f34e5fb" category="paragraph">管理対象アプリが不要になった場合は削除できます。管理アプリケーションを削除すると、関連付けられているスケジュールも削除されます。</block>
-  <block id="3e1039dbfbb34cea04f6e9ad984e888d" category="paragraph">管理を解除する管理対象アプリの ID が必要です。必要に応じて、ワークフローを使用できます <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
   <block id="1fa9ca676a71f70d29ff65963febbf34" category="paragraph">アプリケーションのバックアップと Snapshot は、削除されても自動的には削除されません。バックアップと Snapshot が不要になった場合は、アプリケーションを削除する前に削除する必要があります。</block>
   <block id="ba058813d4014443679bdc5bad08e6da" category="section-title">1. アプリをアンマネージします</block>
-  <block id="3901599d0fd96520d6bf312cf8f94bf4" category="cell">/accounts / ｛ account_id ｝ /k8s/v1/managedApps/｛ managedApp_id ｝</block>
-  <block id="659ce686d2a2b1df0facd830a74cdc4a" category="cell">削除する管理対象アプリケーションを指定します。</block>
   <block id="0be694be5856c81608913372d1359b00" category="section-title">curl の例：管理対象アプリケーションを削除します</block>
-  <block id="3ae4faabc8d186416cb233eb7c276c1f" category="doc">バックアップから管理対象アプリケーションをクローニングする</block>
-  <block id="bcb874876569db1f62920ea72a96e0ed" category="paragraph">アプリケーションバックアップからクローニングすることで、新しい管理対象アプリケーションを作成できます。</block>
   <block id="f9af5d61179519ce2b27f22348ea2c5b" category="paragraph">このワークフローについては、次の点に注意してください。</block>
   <block id="6a3f7086385ab02e213a4864a905e1e5" category="list-text">アプリケーションのバックアップが使用されます</block>
   <block id="8b442400420c3b7121c9e031882bcf48" category="list-text">クローニング処理は同じクラスタ内で実行されます</block>
   <block id="e1d39bdee6b9663d35dc3845e9dd04e5" category="admonition">アプリケーションを別のクラスタにクローニングするには、 JSON 入力の「 clusterId 」パラメータを環境に応じて更新する必要があります。</block>
-  <block id="537000f9a14aec12548122fc358faea9" category="section-title">1. クローンを作成する管理アプリを選択します</block>
-  <block id="99155ec73c71b392b5b5511fca5b8697" category="paragraph">ワークフローを実行 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> をクリックし、クローニングするアプリケーションを選択します。アプリケーションのクローニングに使用される REST 呼び出しには、いくつかのリソース値が必要です。</block>
   <block id="a873d81cfc688902e71d08400f93684a" category="section-title">2. 使用するバックアップを選択します</block>
   <block id="8aa0f7001085d2ffdad3efbc0e9de159" category="inline-link-macro">バックアップをリスト表示します</block>
   <block id="d40d66b0e6d970d00db3de547260af68" category="paragraph">ワークフローを実行 <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> 使用するバックアップを選択します。</block>
@@ -171,12 +156,7 @@
   <block id="6ca58aed53ac62d5749597600edbbdff" category="section-title">curl の例：すべてのアプリケーションのすべてのデータを返します</block>
   <block id="68c53a357a1ff35f5aa8ba654aab4362" category="section-title">curl の例：すべてのアプリケーションの名前、 ID 、および状態を返します</block>
   <block id="bff6b273561ec6570215c14bdba13a26" category="section-title">JSON 出力例</block>
-  <block id="5ad1db1f03ff165972b0c70619a75ba3" category="doc">管理アプリをバックアップからリストアします</block>
-  <block id="ce134f7334fe009ec211cc92e1c0b79d" category="paragraph">バックアップから新しいアプリケーションを作成して、管理対象アプリケーションをリストアすることができます。</block>
-  <block id="88164f3abe33a2d7cadd994093364280" category="section-title">1. 復元する管理アプリを選択します</block>
   <block id="dac907b900763815cd0dab3692a0ccb9" category="section-title">3. アプリを復元します</block>
-  <block id="04a20f97156c327fa56ba3a250089cba" category="doc">管理対象アプリケーションのクローンを作成します</block>
-  <block id="4ff0a0de39ae6f53c4831148ad61fcef" category="paragraph">既存の管理対象アプリケーションをクローニングして、新しいアプリケーションを作成できます。</block>
   <block id="c16473b0d0e0a369510a4772f6a13523" category="list-text">アプリケーションのバックアップまたはスナップショットは使用されません</block>
   <block id="91e9ad87c32b1417c98a1c8a57d14d21" category="section-title">2. アプリを複製します</block>
   <block id="812ae8a5c2b12f97ec673b1ed61bab86" category="section-title">curl の例：アプリケーションのクローンを作成します</block>
@@ -184,28 +164,16 @@
   <block id="e24800f8fa54848c57ec9b63af6231d3" category="paragraph">アプリケーションと一般的な Kubernetes 環境をデバッグおよびサポートするためのワークフローがいくつかあります。</block>
   <block id="eadfe8388f5ebf45cdfeff23f0e39899" category="doc">アプリケーション制御</block>
   <block id="9de4b07ae6319c45521f7ab9180fa62e" category="paragraph">これらのワークフローでは、管理対象アプリケーションと管理対象外アプリケーションを制御できます。アプリをリスト表示したり、管理アプリを作成および削除したりできます。</block>
-  <block id="5a040e0212028f4e1b11cb1ca4c1f6b3" category="paragraph">特定の管理対象アプリケーションに対して作成されたスナップショットを一覧表示できます。</block>
-  <block id="abd4e0354b71e6e1bbb5728e6b5ef675" category="paragraph">スナップショットを表示する管理対象アプリケーションの ID が必要です。必要に応じて、ワークフローを使用できます <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
   <block id="f09394ee48f57bbe80f0a951776c3439" category="section-title">1. スナップショットを一覧表示します</block>
-  <block id="d07095366fb3f7a5563f836aeaace3bf" category="cell">/accounts / ｛ account_id ｝ /k8s/v1/managedApps/｛ managedApp_id ｝ /appSnaps</block>
-  <block id="07b981f0108ccf7265702dde8bd01e8e" category="cell">リストされたスナップショットを所有する管理アプリケーションを識別します。</block>
   <block id="e2942a04780e223b215eb8b663cf5353" category="cell">カウント</block>
   <block id="5aeb23b435f0d586a0493bb8c70b8fc5" category="cell">'count=true' の場合 ' スナップショットの数は応答のメタデータセクションに含まれます</block>
   <block id="f51493699b1a1513a7a2e95212bdc3da" category="section-title">curl の例：アプリケーションのすべてのスナップショットを返します</block>
   <block id="a6678bfaa94621c04bacbb0514f6d9d4" category="section-title">curl の例：アプリケーションのすべてのスナップショットとカウントを返します</block>
-  <block id="3d8174b7a5e7e2c2f19aa676ce494658" category="doc">アンマネージアプリケーションをリストします</block>
-  <block id="563a0b5f6c4efcacd5b8847d1eee9649" category="paragraph">Astra で現在管理されていないアプリケーションをリストできます。これは、管理対象のアプリケーションを選択する際に行うことができます。</block>
-  <block id="e2c473c218d9b4c045f316cd4af94e1c" category="section-title">curl の例：すべてのアプリケーションの名前、 ID 、 managedState を返します</block>
-  <block id="d12275e5ed9a0bebaad289f16e74c1e3" category="doc">スナップショットから管理アプリのクローンを作成します</block>
-  <block id="50e826b69d89371f5df994a8efc1fa9a" category="paragraph">アプリケーションスナップショットからアプリケーションをクローニングして、新しいアプリケーションを作成できます。</block>
   <block id="38395f100e712c841ca6c8a613f86abc" category="list-text">アプリケーションスナップショットが使用されます</block>
   <block id="da88fe405a2037d8a9476bbfc8f6cf7f" category="section-title">2. 使用するスナップショットを選択します</block>
   <block id="176ae10d2b65c2e741fef4d23fc66fe5" category="paragraph">ワークフローを実行 <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block> をクリックし、使用する Snapshot を選択します。</block>
   <block id="601c2032f11a3d99c3889b1faf260874" category="section-title">curl の例： Snapshot からアプリケーションをクローニングします</block>
   <block id="44d23b5c3f8571e7bb4294d0b82f7497" category="doc">アプリを管理します</block>
-  <block id="d3475627a9245c69f16195dc1b7e76c6" category="paragraph">Astra がすでに認識しているアプリケーションに基づいて、管理対象アプリケーションを作成できます。アプリケーションの管理時には、定期的なバックアップとスナップショットを作成してアプリケーションを保護できます。</block>
-  <block id="e998c93727ba4b42fb21ab7eb5b2a36d" category="paragraph">管理する検出されたアプリケーションの ID が必要です。必要に応じて、ワークフローを使用できます <block ref="ad26acc8f05568b58fadc6a01e36de64" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
-  <block id="146e5b45541ec01c95f3c39d17e6cb56" category="section-title">1. アプリケーションを管理します</block>
   <block id="f211caf53405c1c7a730894c76845b78" category="cell">管理対象アプリケーションを識別するために必要なパラメータを提供します。以下の例を参照してください。</block>
   <block id="6a476923d36b27fb8d2ff2da1e18c322" category="section-title">curl の例：アプリケーションの管理</block>
   <block id="9c041cca5c70493333f8bd4912e37e70" category="doc">アプリケーションの保護</block>
@@ -217,9 +185,6 @@
   <block id="0aaaa617845874504df6c76a750325da" category="cell">必要に応じて、応答で返す通知をフィルタリングします。</block>
   <block id="f921030431759c9c846d8a3fd7d84ca2" category="section-title">curl の例：すべての通知を返します</block>
   <block id="943e5258980784703a84c31110cf2eec" category="section-title">curl の例：重大度が WARNING の通知について概要を返します</block>
-  <block id="14ead4573d59a3fd24fd074f4279a1ce" category="doc">管理アプリのスナップショットを作成します</block>
-  <block id="e3187f556451d0afc040d8d2882a9cf8" category="paragraph">特定の管理対象アプリケーションのスナップショットを作成できます。</block>
-  <block id="aabc01843e9612eddd27f0ccdd01a0cf" category="paragraph">スナップショットを作成する管理対象アプリケーションの ID が必要です。必要に応じて、ワークフローを使用できます <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
   <block id="18c7420f03313eb33044afb6b943cb43" category="section-title">1. スナップショットを作成します</block>
   <block id="ca88d296d98d8a63f103fe3b0b63d819" category="cell">Snapshot を作成する管理対象アプリケーションを指定します。</block>
   <block id="97edc5e90d2062e191a3eae330d2afa0" category="cell">Snapshot のパラメータを提供します。以下の例を参照してください。</block>
@@ -241,39 +206,23 @@
   <block id="bc75de9e075d82274edd026fd05fd01f" category="paragraph">アプリケーションをリストアする際に考慮すべき事項をいくつか示します。</block>
   <block id="2d49337d583eac8056d564e348f43744" category="list-text">アプリケーションのリストアは、クローニング処理とほぼ同じです。</block>
   <block id="af5cd1844721ca591969375d08152b0e" category="list-text">アプリケーションをリストアするときは、バックアップまたはスナップショットを指定する必要があります。</block>
-  <block id="3e1ffa4f0f56cc64320d9813031ed226" category="doc">管理対象アプリケーションのバックアップを作成</block>
-  <block id="dd4ad95efd478c84cdb33460b84c4a9e" category="paragraph">特定の管理対象アプリケーションのバックアップを作成できます。バックアップを使用して、アプリケーションのリストアやクローニングを行うことができます。</block>
-  <block id="98f7c990eb05a7e5b5e449e8808c1ba0" category="paragraph">バックアップを作成する管理対象アプリケーションの ID が必要です。必要に応じて、ワークフローを使用できます <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
   <block id="15d4d7ada9bf77d46154e409388ea743" category="section-title">1. バックアップを作成します</block>
-  <block id="de8116e7a1571e52baf8e636aca38f81" category="cell">/accounts / ｛ account_id ｝ /k8s/v1/managedApps/｛ managedApp_id ｝ /appBackups</block>
-  <block id="0cb7b7e0036252a8d2ac816a0e9ce6dc" category="cell">バックアップを作成する管理対象アプリケーションを指定します。</block>
   <block id="6f3183b7efdec0553f8a26ad8a42bd12" category="cell">バックアップのパラメータが表示されます。以下の例を参照してください。</block>
   <block id="eaa80d521faeae22624528a6ab4291dc" category="section-title">curl の例：アプリケーションのバックアップを作成します</block>
-  <block id="73dc919e6ecbb6cad3d9d9ba9392aee2" category="paragraph">特定の管理対象アプリケーション用に作成されたバックアップをリストできます。</block>
-  <block id="85c7807d3ea7259393890e092ea20eea" category="paragraph">バックアップを表示する管理対象アプリケーションの ID が必要です。必要に応じて、ワークフローを使用できます <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
   <block id="4cd1e59d794feeee43e7cd32844ec8ec" category="section-title">1. バックアップを一覧表示します</block>
   <block id="0254dd3f84d764f594f8490729e7c196" category="cell">リストされたバックアップを所有する管理アプリケーションを指定します。</block>
   <block id="53c07d76a2f4ca060d727cd96fd24eeb" category="section-title">curl の例：アプリケーションのすべてのバックアップを返します</block>
-  <block id="eacfebc40e4c5274fcf9a4f5c191753f" category="doc">管理アプリを取得します</block>
-  <block id="e3045f9e9da6edc5411efe234eb8d7a0" category="paragraph">単一の管理対象アプリケーションを記述するすべてのリソース変数を取得できます。</block>
-  <block id="4c9466a5ebb832e841259b6ff45eb3f3" category="paragraph">取得する管理アプリの ID が必要です。必要に応じて、ワークフローを使用できます <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
   <block id="d822b85cd89777748e1bd6b0a8fd0a46" category="section-title">1. アプリケーションを取得します</block>
-  <block id="aeb049f425f4d71edb3a5580d5a2155d" category="cell">取得する管理アプリケーションの ID 値。</block>
   <block id="036e9ec4ee01123ffae8afd3dab3ff9f" category="section-title">curl の例：アプリケーションのすべてのデータを返します</block>
   <block id="cb2cecbd9776fc0c17c7929541fe9404" category="doc">バックアップを削除します</block>
-  <block id="245b889f170a1caa3c38b6933fe09e9f" category="paragraph">管理対象アプリケーションに関連付けられているバックアップを削除することができます。</block>
-  <block id="b17b8f6ccac7f28b3e6293a447fd1fb1" category="list-text">バックアップを所有する管理対象アプリケーションの ID 。必要に応じて、ワークフローを使用できます <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
   <block id="9332cf683c594f797fdb3d0a19819c01" category="list-text">削除するバックアップの ID 。必要に応じて、ワークフローを使用できます <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> をクリックしてください。</block>
   <block id="9764b72f7f4c0e5ee3e7e8350c8ccd00" category="section-title">1. バックアップを削除します</block>
-  <block id="5ceeae484264e7fdea333c9b933670e6" category="cell">/accounts / ｛ account_id ｝ /k8s/v1/managedApps / ｛ managedApp_id ｝ /appBackups / ｛ appBackup_id ｝</block>
   <block id="bd5f8c5e1797c9b7450b0fcd4de20d28" category="cell">バックアップを所有する管理アプリケーションを指定します。</block>
   <block id="deed7df33f535761651277671dff8ecd" category="cell">バックアップ ID</block>
   <block id="31bed42d29869473ab52c27108626330" category="cell">削除するバックアップを指定します。</block>
   <block id="97b9689d8a4aef28c756533c3e3bca1d" category="section-title">curl の例：アプリケーションのバックアップを 1 つ削除します</block>
   <block id="6a94b76b128da4767ce7885cb84ec799" category="doc">失敗したアプリを削除します</block>
   <block id="90c78af3e4fa9a4298b9bc66f86d06a6" category="paragraph">バックアップまたはスナップショットが失敗した場合、管理アプリを削除できないことがあります。この場合、以下に説明するワークフローを使用して、アプリケーションを手動で削除できます。</block>
-  <block id="5a58a2434bb85bcdb2f88f89a54856e8" category="section-title">1. 削除する管理アプリを選択します</block>
-  <block id="1718c6712c2030f412e9494b4d22c89f" category="paragraph">ワークフローを実行 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> をクリックし、削除するアプリケーションを選択します。</block>
   <block id="c776475c27b1d7a554d7f110559479d9" category="section-title">2. アプリケーションの既存のバックアップを一覧表示します</block>
   <block id="03697ae46f1d2d1002ffcb19e1ebbd04" category="paragraph">ワークフローを実行 <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block>。</block>
   <block id="dcefcc8de5a7541a95d041f4943c300d" category="section-title">3. すべてのバックアップを削除します</block>
@@ -433,7 +382,6 @@
   <block id="bd4c8bbdccbcb7826a3bc4ae421c0604" category="section-title">JSON 形式</block>
   <block id="8538dfe988aff949d5dd74e2d6c12949" category="paragraph">リソースへのアクセスに使用される外部の REST エンドポイントは、 Astra サービスによって内部的に管理されている整合性のあるオブジェクトモデルにマッピングされます。オブジェクトモデルは、エンティティと関係（ ER ）のモデリングを使用して設計され、 API のアクションと応答を明確に定義できます。</block>
   <block id="bdc2516aa5546e7df819a07cd9385485" category="paragraph">設計された Astra Web ユーザインターフェイスは REST API に対応しているため、 2 つのアクセスパスとユーザエクスペリエンスの間で一貫性があります。</block>
-  <block id="e61ad2d01a2692e9ed29c90c0c413101" category="paragraph">次のスクリプトを使用して、 Astra アカウントの管理対象アプリケーションを一覧表示できます。</block>
   <block id="365c8dec8255a8a164436c71a2611920" category="doc">Python を使用する</block>
   <block id="0998ed5beee28345ae02fc586e2414f2" category="section-title">環境を準備</block>
   <block id="eacdf05a2e0f975530592f3afa7c5858" category="paragraph">以下に、 Python スクリプトを実行するための基本的な設定要件を示します。</block>
@@ -468,8 +416,6 @@
   <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
   <block id="36b64aad8a26246fe3ad4116a2b6f289" category="sidebar">診断</block>
   <block id="824ee32982b0cc1ac1aca8447c9cb3cf" category="sidebar">アプリコントロール</block>
-  <block id="0990e289177ad252ad62d3e723123f2d" category="sidebar">管理対象外アプリをリスト表示します</block>
-  <block id="6e401175b804a895ba134912540780f9" category="sidebar">管理対象アプリを表示します</block>
   <block id="373370c9330843dbc9a492b75e68e396" category="sidebar">アプリケーションの保護</block>
   <block id="f787d303cdb9d100881b69dd4d492588" category="sidebar">Snapshot をリストします</block>
   <block id="f7bcabdf07e891b3508301fa92282eea" category="sidebar">バックアップをリスト表示します</block>
@@ -513,7 +459,6 @@
   <block id="f63ec399edbf672707e34b98cb969ccd" category="list-text">アプリケーションアセットリソースは、 Astra アプリケーションの管理に必要な状態情報の内部コレクションです。</block>
   <block id="e92acef3d98e8a64572a05792290f27b" category="list-text">アプリケーションのバックアップリソースは、管理対象アプリケーションのバックアップを表します。</block>
   <block id="73150caf4eee48175bcbbee6e9bdf201" category="list-text">アプリケーションスナップショットリソースは、管理対象アプリケーションのスナップショットを表します。</block>
-  <block id="2991d7bd84b53963293c4248a415922e" category="list-text">マネージドアプリケーションリソースは、 Astra が管理する Kubernetes アプリケーションを表しています。</block>
   <block id="91fd88ee3861a8eb1aa5fb75a5577d89" category="list-text">スケジュールリソースとは、データ保護ポリシーの一部として管理対象アプリケーションにスケジュールされているデータ保護処理のことです。</block>
   <block id="2570c360375a393547ef6c0be287059b" category="paragraph">トポロジリソースエンドポイントは、管理対象外のアプリケーションとストレージリソースへのアクセスを提供します。</block>
   <block id="e43da2c91ef5f1040a302b6b10917893" category="list-text">アプリケーションリソースは、 Astra が管理していないアプリケーションも含め、 Kubernetes のすべてのアプリケーションを表します。</block>
@@ -558,7 +503,6 @@
   <block id="3037de0d7a975b284e2a80d0ff32a9cc" category="section-title">インフラワークフロー</block>
   <block id="23f646b4da04b69e64a7e464ec005504" category="paragraph">これらのワークフローは、クレデンシャル、バケット、ストレージバックエンドなどの Astra インフラを処理します。Astra Control Center で必要ですが、ほとんどの場合は Astra Control Service でも使用できます。このワークフローでは、マネージドクラスタの構築と保守に必要なタスクを中心に説明します。</block>
   <block id="a0aa3c13c7e155cdac2e684ed97bd329" category="section-title">管理ワークフロー</block>
-  <block id="6ea966a7aff682cea4e20915ee526ea8" category="paragraph">これらのワークフローは、管理対象クラスタを作成したあとに使用できます。このワークフローでは、バックアップ、リストア、管理対象アプリケーションのクローニングなど、アプリケーションの保護とサポートの処理に重点を置いています。</block>
   <block id="9b355d9a0df5a5e777f4cd881f971a4e" category="paragraph">Curl ユーティリティがローカルワークステーションで使用可能である必要があります。また、 API トークンと関連付けられているアカウント識別子も必要です。を参照してください <block ref="67af9ad396391bc7ade4b472f0b4f030" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="8f6291e033ff30c19e8b03e19a26f0f3" category="admonition">これらのワークフローは、ネットアップがいつでも拡張および強化できるため、定期的に確認する必要があります。</block>
   <block id="6fd2337d24b1882caa5014a35282404b" category="section-title">一般的な準備</block>
@@ -581,7 +525,6 @@
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="inline-link">Astra Control Service のマニュアル</block>
   <block id="49d7482cad2dac48b0f0e77473d3a249" category="doc">管理対象クラスタをリストします</block>
   <block id="1b382a88a3817dcba16a81ec9e5cf1c5" category="paragraph">Astra が現在管理している Kubernetes クラスタをリストできます。</block>
-  <block id="c58119ccc549e36f20a93873ead75956" category="section-title">1. クラスタを表示します</block>
   <block id="6ff447fbf69dd4070e63e99da1dde7b0" category="section-title">curl の例：すべてのクラスタのすべてのデータを返します</block>
   <block id="99a4fd4c49fccb599a3b4d33e4b37909" category="doc">ストレージバックエンドをリストします</block>
   <block id="c3a6f95958616037be5bc621e7f71032" category="paragraph">使用可能なストレージバックエンドを表示できます。</block>
@@ -699,17 +642,6 @@
   <block id="832210201d55f5c764a32c055a00b726" category="inline-link">Astra Control Automation 21.08 ドキュメント</block>
   <block id="025fa2688359a439d7fa215fbbbaf287" category="list-text"><block ref="025fa2688359a439d7fa215fbbbaf287" category="inline-link-rx"></block></block>
   <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Astra Control Automation のドキュメント</block>
-  <block id="f13263898a2cd18c9ee7843dc1459aba" category="admonition">これらのワークフローで使用されている REST エンドポイントは、すべての Astra アプリケーションをデフォルトで返します。API 呼び出しで「 filter 」クエリーパラメータを使用して、アンマネージアプリケーションのみを返すように要求できます。代わりに、フィルタパラメータを省略してすべてのアプリケーションを返し、出力の「 anagedState 」フィールドを調べて、「 unmanaged 」状態のアプリケーションを判別することもできます。</block>
-  <block id="b6a35c94f854cd740168a0764638d0df" category="section-title">managedState が unmanaged のアプリケーションのみをリストします</block>
-  <block id="bc9eb7d967c0a164260a3a3362df3173" category="paragraph">このワークフローでは 'filter' クエリー・パラメータを使用して ' 管理対象外のアプリケーションのみを返します</block>
-  <block id="b778c76d47db062e719ea97fffdb251e" category="section-title">1. 管理対象外のアプリケーションを一覧表示します</block>
-  <block id="225ff177d2b3ca52f452571419d65f70" category="cell">フィルタを使用して、どのアプリケーションを返すかを指定します。</block>
-  <block id="b27c8e443cc3570cdff9e631ba1485fa" category="section-title">curl の例：アンマネージアプリケーションの名前、 ID 、および managedState を返します</block>
-  <block id="3a340585a0931b07ac9b6627082689c8" category="section-title">すべてのアプリケーションをリストし、管理対象外のアプリケーションを選択します</block>
-  <block id="f370302c742b824210b358edece7e15d" category="paragraph">このワークフローはすべてのアプリケーションを返します。出力を調べて、どちらが管理対象外であるかを確認する必要があります。</block>
-  <block id="0f17193d6bf995f16caf5e86bc3ded83" category="section-title">1. すべてのアプリケーションを一覧表示します</block>
-  <block id="3640a41cdbb2456f459491fd8672e6cb" category="section-title">2. 管理されていないアプリケーションを選択します</block>
-  <block id="a2fee71d053291b11da659df7d22ce18" category="paragraph">API 呼び出しの出力を確認し、「 unmanaged 」に等しい「 anagedState 」を持つアプリケーションを手動で選択します。</block>
   <block id="08d7f360c94a906d3639173599184943" category="paragraph">次の REST API 呼び出しを実行します。バックアップ（以下を参照）または Snapshot の ID を指定する必要があります。</block>
   <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">curl の例：バックアップからアプリを所定の場所にリストアします</block>
   <block id="98904826ae5cef8716020180473276c8" category="admonition">Astra Control リソースへのアクセスに使用されるパスと完全な URL の形式は、いくつかの値に基づいています。を参照してください <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> を参照してください。も参照してください <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> Astra のリソースとエンドポイントの使用方法の詳細については、を参照してください。</block>
@@ -837,10 +769,7 @@
   <block id="e764fe6b8f8825a307a87cedbef45678" category="cell">22.04</block>
   <block id="c600ce546bf9ac67939481d537d10403" category="cell">AppMirror（アプリケーションミラー）</block>
   <block id="2ea0c70486ac42aa9093e842d4d23473" category="cell">AppMirrorリソースは、アプリケーションのミラーリング関係を管理するためのAppMirrorリソースを表します。</block>
-  <block id="8421de10d5dbbb7e150fb9700fe89879" category="cell">/account/{account_id}/k8s/v1/managedApps</block>
   <block id="66faf58201d5b76b037701451b9a3234" category="cell">/account/{account_id}/core/v1/notifications</block>
-  <block id="cf0a08323ecbf4b810438acdd526b436" category="cell">/account/{account_id}/k8s/v1/managedApps/{app_id }</block>
-  <block id="c07be556746490be1229e10b74e3eb29" category="cell">/account/{account_id}/topology/v1/appsのように指定します</block>
   <block id="9fb6a7e4842bd1acf9b57b499b8036b0" category="cell">/account/{account_id}/topology/v1/buckets/</block>
   <block id="9f836651cdc687b80d11b030386b39cc" category="doc">LDAPを無効にしてリセットします</block>
   <block id="29927b373bf91a30324f8b9244efff87" category="paragraph">必要に応じてAstra Control Centerの導入で実行できる、関連する管理タスクには2つのオプションがあります。LDAP認証をグローバルに無効にし、LDAP設定をリセットできます。</block>
@@ -1017,4 +946,96 @@
   <block id="bec9f16b8e469e038cb36941a7f49a27" category="summary">これらのワークフローを使用して、Astra Control Centerの導入で使用するインフラストラクチャを作成および管理できます。多くの場合、このワークフローはAstra Control Serviceでも使用できます。</block>
   <block id="efc48892bfa2d48bf7b7099da5e8b1cb" category="summary">必要に応じて、Astra Control CenterをLightweight Directory Access Protocol（LDAP）サーバーと統合して、選択したAstraユーザーの認証を実行できます。</block>
   <block id="29d0525c4055c4b47d6c1f6b4681a4d4" category="summary">これらのワークフローは、Astra管理対象クラスタでアプリケーションを管理する際に使用できます。</block>
+  <block id="5b11110b9a97c66915e86bcba53ee809" category="summary">特定のアストラアカウントで定義され、使用可能なクラウドをリストできます。</block>
+  <block id="aef02d026fec2eb688571bfa2422be3a" category="doc">クラウドをリストしてください</block>
+  <block id="1b6ac21e78d44a219b6937e90879165d" category="section-title">1.クラウドのリスト</block>
+  <block id="095599abd98771dd2c043675b15cd910" category="paragraph">以下のREST API呼び出しを実行してクラウドを表示します。</block>
+  <block id="d5141cbc6eb85bf48e94e7d96fbd6a95" category="cell">/account/{account_id}/topology/v1/雲</block>
+  <block id="e660247893e67f2eed38a94a3b63cd22" category="section-title">curlの例：すべてのクラウドのすべてのデータを返します</block>
+  <block id="69e44482660be2fd1013a46b8f354ef2" category="doc">バケットをリストします</block>
+  <block id="4609424b2fcb4eca19af08e562b2f818" category="paragraph">次のREST API呼び出しを実行してバケットを表示します。</block>
+  <block id="9b419681cf780fc8739ee91b14338a6d" category="summary">使用可能なストレージクラスをリストできます。</block>
+  <block id="a2e45d2c4126abee2b89f161a0a3a50f" category="doc">ストレージクラスをリストします</block>
+  <block id="daaec12836753c1aad81b32a5a058476" category="section-title">1.クラウドを選択します</block>
+  <block id="0d3339545a3c8c350c171199c6549779" category="paragraph">ワークフローを実行 <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> 作業するクラウドを選択します。</block>
+  <block id="cb1d8fe3c0fa41d5a40e80cca7f91ff2" category="section-title">2.クラスタを選択します</block>
+  <block id="1a26d4a9628f05c630331939becee5ab" category="inline-link-macro">クラスタをリストします</block>
+  <block id="4c52978a3e6a86d17e5ea3080d73c1d4" category="paragraph">ワークフローを実行 <block ref="23d58ac86c4531c319d79804ab05ca2c" category="inline-link-macro-rx"></block> をクリックし、クラスタを選択します。</block>
+  <block id="0555a951c447a0cbe3807de815a06d5d" category="section-title">3.特定のクラスタのストレージクラスを一覧表示します</block>
+  <block id="646ae38688e5af41b737db05fd5a5cdb" category="paragraph">次のREST API呼び出しを実行して、特定のクラスタとクラウドのストレージクラスを一覧表示します。</block>
+  <block id="bed512ae2e247eeb98fdd4cd3feb1f36" category="cell">/account/{account_id}/topology/v1/clouds/&lt;cloud_ID&gt;/clusters/&lt;cluster_ID&gt;/storageClasses</block>
+  <block id="55d1071fe1b5a920cb319a5cdd834452" category="section-title">curlの例：すべてのストレージクラスのすべてのデータを返します</block>
+  <block id="a70539afac49ca03ebbf1219df791a81" category="paragraph">特定のクラウドで使用可能なクラスタをリストできます。</block>
+  <block id="6e7a5e444e17b81da2d35e5e7b5fb7ea" category="paragraph">ワークフローを実行 <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> をクリックし、クラスタを含むクラウドを選択します。</block>
+  <block id="4a8c29c133faeda5a63e72796ed312c8" category="section-title">2.クラスタを表示します</block>
+  <block id="279e904c662f9babe50ce81e0df24ea5" category="paragraph">特定のクラウドにあるクラスタを表示するには、次のREST API呼び出しを実行します。</block>
+  <block id="ea62700eaf9c7c85e33b80518f121429" category="cell">/account/{account_id}/topology/v1/clouds/{cloud_id}/clusters</block>
+  <block id="fa52d266bf5c95bd5d51a11ed63c7fa3" category="section-title">1.管理対象クラスタの一覧を表示します</block>
+  <block id="8aaca9da7a2057e6c3482b19683ee3b0" category="cell">&lt;APP_ID&gt;</block>
+  <block id="f5a4b32e77235d71cac07525901e432b" category="cell">API呼び出しのアプリケーションを識別するUUIDv4値。</block>
+  <block id="ead63516b6f8d40a5195059120a34741" category="paragraph">これらのワークフローは、管理対象クラスタを作成したあとに使用できます。このワークフローでは、アプリケーションのバックアップ、リストア、クローニングなど、アプリケーションの保護とサポートの処理に重点を置いています。</block>
+  <block id="3559bd2aaec7a375c246be9bad63a176" category="summary">特定のアプリケーションのバックアップを作成し、そのバックアップを使用してアプリケーションのリストアやクローニングを行うことができます。</block>
+  <block id="80681c9412a27f13b376ee7ffc18f647" category="doc">アプリケーションのバックアップを作成する</block>
+  <block id="7d45849f0acada4f0f40e1349c847305" category="inline-link-macro">アプリを表示します</block>
+  <block id="e02fd4c0a67641762561c661c332b72d" category="paragraph">バックアップするアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
+  <block id="96d15410fa829d04096983645e60475b" category="cell">/accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups</block>
+  <block id="c9a1712ca7c64da73ff9ce7bc4f48bea" category="cell">アプリケーションID</block>
+  <block id="8eb729367d3278cfd6c5aa5310d1f61c" category="cell">バックアップを作成するアプリケーションを指定します。</block>
+  <block id="ada65121a72989ba6a7ceafb787c2971" category="summary">既存のアプリケーションをクローニングして、新しいアプリケーションを作成できます。</block>
+  <block id="c92ab9403e09db69311aeb9f72e2e480" category="list-text">新しいアプリケーションは別のネームスペースに配置されます</block>
+  <block id="1db96426d6f4f867edf3cc0ae9e35947" category="section-title">1.クローンを作成するアプリケーションを選択します</block>
+  <block id="b46f6842bf882cb490d122382f7a98d5" category="paragraph">ワークフローを実行 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> をクリックし、クローニングするアプリケーションを選択します。アプリケーションのクローニングに使用される REST 呼び出しには、いくつかのリソース値が必要です。</block>
+  <block id="af2926b139e31d88056f28937a9c49b6" category="paragraph">次のREST API呼び出しを実行してアプリケーションをクローニングします。</block>
+  <block id="567a9af273a25b92860b783e7f5a7524" category="cell">/account/{account_id}/k8s/v2/apps</block>
+  <block id="7bf69d8a687703afd9b5af54243f143d" category="summary">新しいアプリケーションは、バックアップからクローニングして作成できます。</block>
+  <block id="f3e3d6adafd239930134d426b02920c1" category="cell">/account/{account_id}/k8s/v2/qpps</block>
+  <block id="ecf41bcdc089c3b619f5975173077430" category="summary">特定のアプリケーション用に作成されたバックアップをリストできます。</block>
+  <block id="dbd2251516ab8d7e1775469c5c1508a3" category="paragraph">バックアップを表示するアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
+  <block id="8b7796198eef86f78d17188652bd8260" category="section-title">1.削除するアプリを選択します</block>
+  <block id="82029d5fee8f7191d3a021c9db8b43ac" category="paragraph">ワークフローを実行 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> をクリックし、削除するアプリケーションを選択します。</block>
+  <block id="5678454487dc87ea3b9a2601e9ecd8e3" category="summary">アプリケーションに関連付けられているSnapshotを削除できます。</block>
+  <block id="057648776a4afb375be6db76fd760748" category="list-text">スナップショットを所有するアプリケーションのID。必要に応じて、ワークフローを使用できます <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
+  <block id="c25f938f3e5ab183a0718fbc32b60cce" category="cell">/accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appSnaps/｛appSnap_id｝</block>
+  <block id="a9f7d2aed593551dc011220c90a52be3" category="paragraph">特定のネームスペースですでにAstraが認識しているアプリケーションに基づいて、管理アプリケーションを作成できます。アプリケーションをAstraで管理または定義した場合、バックアップとスナップショットを作成してアプリケーションを保護できます。</block>
+  <block id="d801ba89b540c5da0e4f732a81e855fd" category="section-title">1.名前空間を選択します</block>
+  <block id="ef1d4c0913b02ff6423ee4d1161fea0b" category="inline-link-macro">ネームスペースを表示します</block>
+  <block id="0a94b02b2f35acb72af0ca2e31006abb" category="paragraph">ワークフローを実行 <block ref="d14574597a65756c248d691b26627131" category="inline-link-macro-rx"></block> ネームスペースを選択します。</block>
+  <block id="0c686bb338de3ff0d9a5c7aff0164f66" category="section-title">3.アプリケーションを管理します</block>
+  <block id="3c7008ad6fd78ff999655de722126630" category="paragraph">アプリケーションを管理するために次のREST API呼び出しを実行します。</block>
+  <block id="a32aff1568b14bb39f1c15ef5e32eb54" category="paragraph">管理を解除するアプリのIDが必要です。必要に応じて、ワークフローを使用できます <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
+  <block id="cc627e860ccc11393d4a5fb9a37cf9a7" category="paragraph">次のREST API呼び出しを実行してアプリケーションを削除します。</block>
+  <block id="f6ae66a627b9c3047f8f88beffc23cd7" category="cell">/accounts /｛account_id｝/k8s/v2/apps/｛app_id｝</block>
+  <block id="58e5b159105a6ed936549bb5a1695ea7" category="cell">削除するアプリケーションを指定します。</block>
+  <block id="596763b84eac1a557d6c2b19a508c915" category="summary">アプリケーションに関連付けられているバックアップを削除することができます。</block>
+  <block id="9a7affff9968bb03650e50fa108c3fa7" category="list-text">バックアップを所有するアプリケーションのID。必要に応じて、ワークフローを使用できます <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
+  <block id="907cc0ef4298a38b7fa096493c7684a0" category="cell">/accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups /｛appBackup_id｝</block>
+  <block id="1003e23b805c899981a7d5126ccc0378" category="summary">特定のアプリケーションに対して作成されたスナップショットを一覧表示できます。</block>
+  <block id="9abace8c90645d3ee8eec992f42d897a" category="paragraph">スナップショットを表示するアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
+  <block id="02b00e5480497e1586ce1bf62bf8184a" category="paragraph">次のREST API呼び出しを実行してSnapshotを表示します。</block>
+  <block id="250f359ba7b762da3435baba160a6f1b" category="cell">/accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appSnaps</block>
+  <block id="f38ae0e099fa484b915fa7bab67ac4b2" category="cell">リストされたスナップショットを所有するアプリケーションを識別します。</block>
+  <block id="0388f8ab481ed6c7aef94777258ef378" category="summary">単一のアプリケーションを記述するすべてのリソース変数を取得できます。</block>
+  <block id="61b98994206e2a99e823ca136bdf24a1" category="doc">アプリを入手する</block>
+  <block id="c2e04773cf7cf8f91a4a9a351b03c32f" category="paragraph">取得するアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
+  <block id="6bb9953a8e27258bd16ce65f51b81000" category="cell">取得するアプリケーションのID値。</block>
+  <block id="bfdba4e9998c294b1a4016914698c099" category="summary">アプリケーションをリストアするには、バックアップから新しいアプリケーションを作成します。</block>
+  <block id="14e236ddabe391b8a0496211807ab78b" category="section-title">1.復元するアプリを選択します</block>
+  <block id="7a217d2f25d9076086e8f01a3a0e198d" category="paragraph">ワークフローを実行 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> をクリックし、クローニングするアプリケーションを選択します。アプリケーションのリストアに使用するREST呼び出しには、いくつかのリソース値が必要です。</block>
+  <block id="46690c7c33008cbcef94d31765deede2" category="cell">/account/{account_id}/k8s/v2/apps/{app_id}</block>
+  <block id="55c34d696f9301dcae31350ec87093ac" category="summary">Snapshotからクローニングして新しいアプリケーションを作成できます。</block>
+  <block id="29fd28138191fbfa1b58ba0623d40105" category="summary">特定のアプリケーションのスナップショットを作成できます。</block>
+  <block id="be48e6237dab1df212834256a63ceb44" category="doc">アプリケーションのスナップショットを作成します</block>
+  <block id="e32d1c8a20aafa5c39c1d3b2c3875f36" category="paragraph">スナップショットを作成するアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> アプリケーションを検索します。</block>
+  <block id="c9ed41c2c3fbdd3ab2809e8a19fa57ee" category="summary">使用可能なネームスペースをリストできます。</block>
+  <block id="2a983bbf122e057a73bf1870cf2ea2db" category="section-title">1.名前空間を一覧表示します</block>
+  <block id="c42968dfccb26ee2ef5912aaf9ee50ed" category="paragraph">ネームスペースを表示するには、次のREST API呼び出しを実行します。</block>
+  <block id="11ccdd095a2f5d49045fb5bc39eaae3e" category="cell">/account/{account_id}/topology/v1/Namespaces</block>
+  <block id="55b85a82f8838ea89842d9ebe5cbe0d6" category="section-title">curlの例：すべてのネームスペースのすべてのデータを返します</block>
+  <block id="f06023f42f86a62fda5cde9e1ca56143" category="section-title">cURLの例：すべてのネームスペースについて、名前、状態、およびクラスタIDを返します</block>
+  <block id="a5f871c981a398cb87374a1ff883bcca" category="summary">次のスクリプトを使用して、Astraアカウントのアプリケーションを一覧表示できます。</block>
+  <block id="c7a97245522ed1fb42a97f5e4d3c60b7" category="sidebar">クラスタをリストします</block>
+  <block id="4a8f72b777dc9735afaebac72822c77e" category="sidebar">クラウド</block>
+  <block id="b99e07f4bea810f88b69ecfe1784ab28" category="sidebar">クラウドを表示します</block>
+  <block id="4d3e9b74a79b7af51564aa58491a951e" category="sidebar">アプリを表示します</block>
+  <block id="76427b3f214d8ae919f1432a89eefd65" category="sidebar">ネームスペースをリストします</block>
 </blocks>

@@ -18,15 +18,23 @@ entries:
     url: "/workflows_infra/wf_ldap_add_entries.html"
   - title: LDAPを無効にしてリセットします
     url: "/workflows_infra/wf_ldap_disable_reset.html"
+- title: クラスタ
+  entries:
+  - title: クラスタをリストします
+    url: "/workflows_infra/wf_list_clusters.html"
+  - title: 管理対象クラスタをリストします
+    url: "/workflows_infra/wf_list_man_clusters.html"
+- title: クラウド
+  entries:
+  - title: クラウドを表示します
+    url: "/workflows_infra/wf_list_clouds.html"
 - title: バケット
   entries:
   - title: バケットをリストします
     url: "/workflows_infra/wf_list_buckets.html"
 - title: ストレージ
   entries:
+  - title: ストレージクラスをリストします
+    url: "/workflows_infra/wf_list_storage_classes.html"
   - title: ストレージバックエンドをリストします
     url: "/workflows_infra/wf_list_storage_backends.html"
-- title: クラスタ
-  entries:
-  - title: 管理対象クラスタをリストします
-    url: "/workflows_infra/wf_list_man_clusters.html"

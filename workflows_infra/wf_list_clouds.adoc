@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_clouds.html 
+keywords:  
+summary: 特定のアストラアカウントで定義され、使用可能なクラウドをリストできます。 
+---
+= クラウドをリストしてください
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+特定のアストラアカウントで定義され、使用可能なクラウドをリストできます。
+
+
+
+=== 1.クラウドのリスト
+
+以下のREST API呼び出しを実行してクラウドを表示します。
+
+[cols="25,75"]
+|===
+| HTTP メソッド | パス 
+
+
+| 取得 | /account/{account_id}/topology/v1/雲 
+|===
+
+
+===== curlの例：すべてのクラウドのすべてのデータを返します
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: workflows/wf_create_snapshot.html 
 keywords:  
-summary:  
+summary: 特定のアプリケーションのスナップショットを作成できます。 
 ---
-= 管理アプリのスナップショットを作成します
+= アプリケーションのスナップショットを作成します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary:
 
 
 [role="lead"]
-特定の管理対象アプリケーションのスナップショットを作成できます。
+特定のアプリケーションのスナップショットを作成できます。
 
 
 
 === 作業を開始する前に
 
-スナップショットを作成する管理対象アプリケーションの ID が必要です。必要に応じて、ワークフローを使用できます link:wf_list_man_apps.html["管理対象アプリケーションをリストします"] アプリケーションを検索します。
+スナップショットを作成するアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます link:wf_list_man_apps.html["アプリを表示します"] アプリケーションを検索します。
 
 
 
@@ -33,7 +33,7 @@ summary:
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /accounts / ｛ account_id ｝ /k8s/v1/managedApps/｛ managedApp_id ｝ /appSnaps 
+| 投稿（ Post ） | /accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appSnaps 
 |===
 
 
@@ -46,7 +46,7 @@ summary:
 | パラメータ | を入力します | 必須 | 説明 
 
 
-| 管理アプリ ID | パス | はい。 | Snapshot を作成する管理対象アプリケーションを指定します。 
+| アプリケーションID | パス | はい。 | Snapshot を作成する管理対象アプリケーションを指定します。 
 
 
 | JSON | ボディ（ Body ） | はい。 | Snapshot のパラメータを提供します。以下の例を参照してください。 
@@ -59,7 +59,7 @@ summary:
 ----
 {
   "type": "application/astra-appSnap",
-  "version": "1.0",
+  "version": "1.1",
   "name": "snapshot-david-1"
 }
 ----
@@ -69,5 +69,5 @@ summary:
 
 [source, curl]
 ----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>/appSnaps' --header 'Content-Type: application/astra-appSnap+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --d @JSONinput
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Content-Type: application/astra-appSnap+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

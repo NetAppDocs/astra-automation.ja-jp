@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: workflows/wf_clone_app_snapshot.html 
 keywords:  
-summary:  
+summary: Snapshotからクローニングして新しいアプリケーションを作成できます。 
 ---
-= スナップショットから管理アプリのクローンを作成します
+= スナップショットからアプリケーションをクローニングします
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-アプリケーションスナップショットからアプリケーションをクローニングして、新しいアプリケーションを作成できます。
+Snapshotからクローニングして新しいアプリケーションを作成できます。
 
 
 
@@ -31,9 +31,9 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
 
 
 
-=== 1. クローンを作成する管理アプリを選択します
+=== 1.クローンを作成するアプリケーションを選択します
 
-ワークフローを実行 link:wf_list_man_apps.html["管理対象アプリケーションをリストします"] をクリックし、クローニングするアプリケーションを選択します。アプリケーションのクローニングに使用される REST 呼び出しには、いくつかのリソース値が必要です。
+ワークフローを実行 link:wf_list_man_apps.html["アプリを表示します"] をクリックし、クローニングするアプリケーションを選択します。アプリケーションのクローニングに使用される REST 呼び出しには、いくつかのリソース値が必要です。
 
 
 
@@ -52,7 +52,7 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{account_id}/k8s/v1/managedApps 
+| 投稿（ Post ） | /account/{account_id}/k8s/v2/apps 
 |===
 
 
@@ -74,14 +74,13 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
 [source, json]
 ----
 {
-  "type": "application/astra-managedApp",
-  "version": "1.0",
-  "name": "postgres1-postgresql-clone",
+  "type": "application/astra-app",
+  "version": "2.0",
+  "name": "mysql-clone2",
   "clusterID": "30880586-d579-4d27-930f-a9633e59173b",
   "sourceClusterID": "30880586-d579-4d27-930f-a9633e59173b",
-  "namespace": "davidns-postgres-app",
-  "snapshotID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb",
-  "sourceAppID": "e591ee59-ea90-4a9f-8e6c-d2b6e8647096"
+  "namespace": "mysql",
+  "snapshotID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
 }
 ----
 
@@ -90,5 +89,5 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
 
 [source, curl]
 ----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps' --header 'Content-Type: application/astra-managedApp+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --d @JSONinput
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

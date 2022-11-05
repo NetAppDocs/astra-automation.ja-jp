@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_list_buckets.html 
 keywords:  
-summary:  
+summary: 特定のアストラアカウント用に定義された S3 バケットをリストできます。 
 ---
 = バケットをリストします
 :hardbreaks:
@@ -20,7 +20,7 @@ summary:
 
 === 1. バケットをリストします
 
-次の REST API 呼び出しを実行します。
+次のREST API呼び出しを実行してバケットを表示します。
 
 [cols="25,75"]
 |===

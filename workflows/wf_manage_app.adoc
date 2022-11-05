@@ -14,26 +14,32 @@ summary:
 
 
 [role="lead"]
-Astra がすでに認識しているアプリケーションに基づいて、管理対象アプリケーションを作成できます。アプリケーションの管理時には、定期的なバックアップとスナップショットを作成してアプリケーションを保護できます。
+特定のネームスペースですでにAstraが認識しているアプリケーションに基づいて、管理アプリケーションを作成できます。アプリケーションをAstraで管理または定義した場合、バックアップとスナップショットを作成してアプリケーションを保護できます。
 
 
 
-=== 作業を開始する前に
+=== 1.名前空間を選択します
 
-管理する検出されたアプリケーションの ID が必要です。必要に応じて、ワークフローを使用できます link:wf_list_unman_apps.html["アンマネージアプリケーションをリストします"] アプリケーションを検索します。
+ワークフローを実行 link:../workflows/wf_list_namespaces.html["ネームスペースを表示します"] ネームスペースを選択します。
 
 
 
-=== 1. アプリケーションを管理します
+=== 2.クラスタを選択します
 
-次の REST API 呼び出しを実行します。
+ワークフローを実行 link:../workflows_infra/wf_list_clusters.html["クラスタをリストします"] をクリックし、クラスタを選択します。
+
+
+
+=== 3.アプリケーションを管理します
+
+アプリケーションを管理するために次のREST API呼び出しを実行します。
 
 [cols="25,75"]
 |===
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{account_id}/k8s/v1/managedApps 
+| 投稿（ Post ） | /account/{account_id}/k8s/v2/apps 
 |===
 
 
@@ -55,9 +61,11 @@ Astra がすでに認識しているアプリケーションに基づいて、�
 [source, json]
 ----
 {
-  "type": "application/astra-managedApp",
-  "version": "1.1",
-  "id": "7da20fff-c69d-4270-bb0d-a4f91c5a1333"
+  "clusterID": "7ce83fba-6aa1-4e0c-a194-26e714f5eb46",
+  "name": "subtext",
+  "namespaceScopedResources": [{"namespace": "kube-matrix"}],
+  "type": "application/astra-app",
+  "version": "2.0"
 }
 ----
 
@@ -66,5 +74,5 @@ Astra がすでに認識しているアプリケーションに基づいて、�
 
 [source, curl]
 ----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps' --header 'Content-Type: application/astra-managedApp+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'  --d @JSONinput
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'  --data @JSONinput
 ----

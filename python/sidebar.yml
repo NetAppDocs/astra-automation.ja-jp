@@ -8,5 +8,5 @@ entries:
   entries:
   - title: 作業を開始する前に
     url: "/python/python_before.html"
-  - title: 管理対象アプリケーションをリストします
+  - title: アプリを表示します
     url: "/python/py_list_man_apps.html"
