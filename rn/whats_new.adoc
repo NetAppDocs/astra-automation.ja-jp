@@ -46,6 +46,12 @@ summary: ネットアップでは、Astra Control REST APIを定期的に更新�
 
 各クラウドプロバイダに対して複数のアカウントサブスクリプションを追加できるようになりました。
 
+
+
+=== 追加のワークフロー
+
+Astra Control REST APIを説明するワークフローが追加されました。を参照してください link:../workflows_infra/workflows_infra_before.html["インフラワークフロー"] および link:../workflows/workflows_before.html["管理ワークフロー"] を参照してください。
+
 .関連情報
 * https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center ：新機能"^]
 
