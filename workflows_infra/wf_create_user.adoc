@@ -1,0 +1,181 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_create_user.html 
+keywords:  
+summary: 特定のクレデンシャルと事前定義されたロールを持つユーザを作成できます。必要に応じて、ユーザのアクセスを特定のネームスペースに制限することもできます。 
+---
+= ユーザを作成します
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+特定のクレデンシャルと事前定義されたロールを持つユーザを作成できます。必要に応じて、ユーザのアクセスを特定のネームスペースに制限することもできます。
+
+
+
+=== 1.ユーザ名を選択します
+
+ワークフローを実行 link:../workflows_infra/wf_list_users.html["ユーザをリストします"] をクリックし、現在使用されていない使用可能な名前を選択します。
+
+
+
+=== 2.ユーザを作成します
+
+ユーザを作成するには、次のREST API呼び出しを実行します。コールが正常に完了すると、新しいユーザはまだ使用できなくなります。
+
+[cols="25,75"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /accounts /｛account_id｝/core/v1/users 
+|===
+
+
+===== JSON の入力例
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-user",
+  "version" : "1.1",
+  "firstName" : "John",
+  "lastName" : "West",
+  "email" : "jwest@example.com"
+}
+----
+
+
+===== カールの例
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----
+
+
+===== JSON 出力例
+
+[source, curl]
+----
+{
+    "metadata": {
+        "creationTimestamp": "2022-11-20T17:23:15Z",
+        "modificationTimestamp": "2022-11-20T17:23:15Z",
+        "createdBy": "a20e91f3-2c49-443b-b240-615d940ec5f3",
+        "labels": []
+    },
+    "type": "application/astra-user",
+    "version": "1.2",
+    "id": "d07dac0a-a328-4840-a216-12de16bbd484",
+    "authProvider": "local",
+    "authID": "jwest@example.com",
+    "firstName": "John",
+    "lastName": "West",
+    "companyName": "",
+    "email": "jwest@example.com",
+    "postalAddress": {
+        "addressCountry": "",
+        "addressLocality": "",
+        "addressRegion": "",
+        "streetAddress1": "",
+        "streetAddress2": "",
+        "postalCode": ""
+    },
+    "state": "active",
+    "sendWelcomeEmail": "false",
+    "isEnabled": "true",
+    "isInviteAccepted": "true",
+    "enableTimestamp": "2022-11-20T17:23:15Z",
+    "lastActTimestamp": ""
+}
+----
+
+
+=== 3.必要に応じて、許可する名前空間を選択します
+
+ワークフローを実行 link:../workflows/wf_list_namespaces.html["ネームスペースを表示します"] アクセスを制限するネームスペースを選択します。
+
+
+
+=== 4.ユーザをロールにバインドします
+
+次のREST API呼び出しを実行してユーザをロールにバインドします。次の例では、ネームスペースへのアクセスに制限はありません。を参照してください link:../additional/rbac.html#enhanced-rbac-with-namespace-granularity["ネームスペース単位で強化された RBAC"] を参照してください。
+
+[cols="25,75"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /accounts/{account_id}/core/v1/roleBindings 
+|===
+
+
+===== JSON の入力例
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-roleBinding",
+  "version" : "1.1",
+  "userID" : "d07dac0a-a328-4840-a216-12de16bbd484",
+  "accountID" : "29e1f39f-2bf4-44ba-a191-5b84ef414c95",
+  "role" : "viewer",
+  "roleConstraints": [ "*" ]
+}
+----
+
+
+===== カールの例
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----
+
+
+=== 5.資格情報を作成します
+
+次のREST API呼び出しを実行して、クレデンシャルを作成してユーザに関連付けます。この例では、base64値として提供されるパスワードを使用します。。 `name` プロパティには、前の手順で返されたユーザのIDが含まれている必要があります。入力プロパティ `change` base64でエンコードされたユーザは、初回ログイン時にパスワードを変更する必要があるかどうかを確認する必要もあります (`true` または `false`）。
+
+
+NOTE: この手順は、ローカル認証を使用するAstra Control Centerの導入でのみ必要です。LDAPまたはAstra Control Serviceを使用したAstra Control Centerの導入では必要ありません。
+
+[cols="25,75"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /accounts /｛account_id｝/core/v1/credentials 
+|===
+
+
+===== JSON の入力例
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-credential",
+  "version" : "1.1",
+  "name" : "d07dac0a-a328-4840-a216-12de16bbd484",
+  "keyType" : "passwordHash",
+  "keyStore" : {
+      "cleartext" : "TmV0QXBwMTIz",
+      "change" : "ZmFsc2U="
+  },
+  "valid" : "true"
+}
+----
+
+
+===== カールの例
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

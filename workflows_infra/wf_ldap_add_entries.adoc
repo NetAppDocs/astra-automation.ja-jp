@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_add_entries.html 
 keywords:  
-summary:  
+summary: Astra Control Centerの認証プロバイダとしてLDAPを設定したら、AstraがLDAPクレデンシャルを使用して認証するLDAPユーザを選択できます。 
 ---
 = AstraにLDAPエントリを追加
 :hardbreaks:
@@ -42,7 +42,7 @@ LDAP認証後に使用する各Astraユーザにロールを割り当てるこ�
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{account_id}/core/v1/users 
+| 投稿（ Post ） | /accounts /｛account_id｝/core/v1/users 
 |===
 
 
@@ -132,7 +132,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{account_id}/core/v1/roleBindings 
+| 投稿（ Post ） | /accounts/{account_id}/core/v1/roleBindings 
 |===
 
 
@@ -208,7 +208,7 @@ LDAP認証後に使用するAstraグループにロールを割り当てるこ�
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{account_id}/core/v1/groups 
+| 投稿（ Post ） | /accounts /｛account_id｝/core/v1/groups 
 |===
 
 
@@ -274,7 +274,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{account_id}/core/v1/roleBindings 
+| 投稿（ Post ） | /accounts/{account_id}/core/v1/roleBindings 
 |===
 
 

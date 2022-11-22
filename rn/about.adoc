@@ -14,14 +14,14 @@ summary: このサイトのドキュメントでは、Astra Control REST APIと�
 
 
 [role="lead"]
-このサイトのドキュメントでは、Astra Control REST API、およびAstra Controlの8月2022年（22.08）リリースで利用可能な関連自動化テクノロジについて説明しています。特に、このリリースのREST APIは、対応する22.08リリースのAstra Control CenterおよびAstra Control Serviceに含まれています。
+このサイトのドキュメントでは、Astra Control REST API、および2022年11月22日（22.11）にリリースされたAstra Controlに関連する自動化テクノロジについて説明しています。特に、このリリースのREST APIは、対応する22.11リリースのAstra Control CenterとAstra Control Serviceに含まれています。
 
 このリリースおよび以前のリリースの詳細については、次のページとサイトを参照してください。
 
 * link:../rn/whats_new.html["Astra Control REST API の新機能"]
 * link:../endpoints/resources.html["REST のリソースとエンドポイント"]
-* https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center 22.08ドキュメント"^]
-* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 22.08のマニュアル"^]
+* https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center 22.11ドキュメント"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service のマニュアル"^]
 * link:../aa-earlier-versions.html["旧バージョンの Astra Automation ドキュメント"]
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_configure_server.html 
 keywords:  
-summary:  
+summary: LDAPサーバを選択し、認証プロバイダとしてサーバを使用するようにAstraを設定する必要があります。 
 ---
 = AstraでLDAPサーバを使用するように設定する
 :hardbreaks:
@@ -30,7 +30,7 @@ NOTE: この手順は省略可能で、LDAPSを使用してセキュアなチャ
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{account_id}/core/v1/certificatesと入力します 
+| 投稿（ Post ） | /accounts /｛account_id｝/core/v1/certificates 
 |===
 
 
@@ -121,7 +121,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{account_id}/core/v1/credentials 
+| 投稿（ Post ） | /accounts /｛account_id｝/core/v1/credentials 
 |===
 
 
@@ -189,7 +189,7 @@ NOTE: 次のcurlの例では、クエリパラメータを使用してsettings�
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{account_id}/core/v1/settings 
+| 取得 | /accounts /｛account_id｝/core/v1/settings 
 |===
 
 
@@ -228,7 +228,7 @@ NOTE: configSchemaを最初に表示するには、特定の設定に対するGE
 | HTTP メソッド | パス 
 
 
-| PUT | /account/{account_id}/core/v1/settings/{settings_id} 
+| PUT | /accounts /｛account_id｝/core/v1/settings/｛setting_id｝ 
 |===
 
 
@@ -281,7 +281,7 @@ curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/ac
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{account_id}/core/v1/settings/{settings_id} 
+| 取得 | /accounts /｛account_id｝/core/v1/settings/｛setting_id｝ 
 |===
 
 

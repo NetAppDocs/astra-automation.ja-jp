@@ -52,7 +52,7 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
 | HTTP メソッド | パス 
 
 
-| 投稿（ Post ） | /account/{account_id}/k8s/v2/qpps 
+| 投稿（ Post ） | /accounts /｛account_id｝/k8s/v2/qpps 
 |===
 
 

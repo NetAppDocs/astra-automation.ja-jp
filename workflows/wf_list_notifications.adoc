@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_list_notifications.html 
 keywords:  
-summary:  
+summary: 特定のアストラアカウントの通知をリストできます。この処理は、システムアクティビティの監視や問題のデバッグの一環として実行できます。 
 ---
 = 通知を一覧表示します
 :hardbreaks:
@@ -27,7 +27,7 @@ summary:
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{account_id}/core/v1/notifications 
+| 取得 | /accounts /｛account_id｝/core/v1/notifications 
 |===
 
 

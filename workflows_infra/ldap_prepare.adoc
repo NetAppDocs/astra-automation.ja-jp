@@ -45,7 +45,7 @@ NOTE: 以下に示す手順は順序どおりですが、場合によっては�
 
 Astra Controlプラットフォームには、2つの導入モデルがあります。LDAP認証はAstra Control Centerの導入でのみサポートされます。
 
-現在のリリースのAstra Control Centerは、Astra Control REST APIを使用したLDAP認証の設定のみをサポートしています。この制限の重要な点は、Astra WebインターフェイスのUsersタブにLDAPユーザが表示されないことです。これらは、エンドポイント「./core/v1/users」のREST APIを介して利用できます。
+現在のリリースのAstra Control Centerでは、Astra Control REST APIとAstra Webユーザインターフェイスの両方を使用したLDAP認証の設定がサポートされています。
 
 Astra認証要求を受け入れて処理するには、LDAPサーバが必要です。MicrosoftのActive Directoryは、現在のAstra Control Centerリリースでサポートされています。
 

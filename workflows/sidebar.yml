@@ -28,6 +28,8 @@ entries:
     url: "/workflows/wf_delete_snapshot.html"
   - title: バックアップを削除します
     url: "/workflows/wf_delete_backup.html"
+  - title: 保護ポリシーを作成する
+    url: "/workflows/wf_create_protection.html"
 - title: アプリケーションのクローニングとリストア
   entries:
   - title: アプリケーションのクローンを作成します

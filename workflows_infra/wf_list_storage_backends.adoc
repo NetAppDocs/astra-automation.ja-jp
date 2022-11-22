@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_list_storage_backends.html 
 keywords:  
-summary:  
+summary: 使用可能なストレージバックエンドを表示できます。 
 ---
 = ストレージバックエンドをリストします
 :hardbreaks:
@@ -27,7 +27,7 @@ summary:
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{account_id}/topology/v1/storageBackends 
+| 取得 | /accounts /｛account_id｝/topology/v1/storageBackends 
 |===
 
 

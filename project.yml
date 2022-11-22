@@ -37,8 +37,8 @@ homepage:
       url: "/get-started/before_get_started.html"
     - title: API トークンを取得します
       url: "/get-started/get_api_token.html"
-    - title: Hello world
-      url: "/get-started/hello_world.html"
+    - title: 最初のAPI呼び出し
+      url: "/get-started/first_call.html"
   - title: REST 実装
     links:
     - title: REST Web サービス

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_disable_reset.html 
 keywords:  
-summary:  
+summary: 必要に応じてAstra Control Centerの導入で実行できる、関連する管理タスクには2つのオプションがあります。LDAP認証をグローバルに無効にし、LDAP設定をリセットできます。 
 ---
 = LDAPを無効にしてリセットします
 :hardbreaks:
@@ -33,7 +33,7 @@ summary:
 | HTTP メソッド | パス 
 
 
-| PUT | /account/{account_id}/core/v1/settings/{settings_id} 
+| PUT | /accounts /｛account_id｝/core/v1/settings/｛setting_id｝ 
 |===
 
 
@@ -79,7 +79,7 @@ CAUTION: これはシステムの停止を伴う処理なので、注意して�
 | HTTP メソッド | パス 
 
 
-| PUT | /account/{account_id}/core/v1/settings/{settings_id} 
+| PUT | /accounts /｛account_id｝/core/v1/settings/｛setting_id｝ 
 |===
 
 

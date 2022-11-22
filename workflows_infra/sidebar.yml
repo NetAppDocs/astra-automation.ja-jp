@@ -8,6 +8,8 @@ entries:
   entries:
   - title: ユーザをリストします
     url: "/workflows_infra/wf_list_users.html"
+  - title: ユーザを作成します
+    url: "/workflows_infra/wf_create_user.html"
 - title: LDAP の設定
   entries:
   - title: LDAP構成を準備
@@ -22,8 +24,12 @@ entries:
   entries:
   - title: クラスタをリストします
     url: "/workflows_infra/wf_list_clusters.html"
+  - title: クラスタを追加
+    url: "/workflows_infra/wf_add_cluster.html"
   - title: 管理対象クラスタをリストします
     url: "/workflows_infra/wf_list_man_clusters.html"
+  - title: クラスタを管理
+    url: "/workflows_infra/wf_man_cluster.html"
 - title: クラウド
   entries:
   - title: クラウドを表示します

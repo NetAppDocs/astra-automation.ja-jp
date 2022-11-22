@@ -39,7 +39,7 @@ summary: アプリケーションをリストアするには、バックアッ�
 | HTTP メソッド | パス 
 
 
-| PUT | /account/{account_id}/k8s/v2/apps/{app_id} 
+| PUT | /accounts /｛account_id｝/k8s/v2/apps/｛app_id｝ 
 |===
 
 

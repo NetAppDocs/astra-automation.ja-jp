@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_add_cluster.html 
+keywords:  
+summary: クラスタを追加して、Astraで管理できるようにすることができます。 
+---
+= クレデンシャルを使用してクラスタを追加する
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+クラスタを追加して、Astraで管理できるようにすることができます。Astra 22.11以降では、Astra Control CenterまたはAstra Control Serviceを使用してクラスタを追加できます。
+
+
+NOTE: 主要なクラウドプロバイダ（AKS、EKS、GKE）のいずれかからKubernetesサービスを使用する場合、クラスタの追加は必要ありません。
+
+
+
+=== 1. kubeconfigファイルを取得します
+
+Kubernetesの管理者またはサービスから* kubconfig *ファイルのコピーを取得する必要があります。
+
+
+
+=== 2. kubeconfigファイルを準備します
+
+*kubeconfig *ファイルを使用する前に、次の操作を実行する必要があります。
+
+YAML形式のkubeconfigファイルを受信した場合は、JSONに変換する必要があります。
+
+base64のJSONファイルをエンコードする必要があります。例：
+
+`yq -o=json ~/.kube/config | base64`
+
+
+
+=== 3.クラウドを選択します
+
+ワークフローを実行 link:../workflows_infra/wf_list_clouds.html["クラウドをリストしてください"] をクリックし、クラスタを追加するクラウドを選択します。
+
+
+NOTE: 選択できるクラウドは*プライベート*クラウドのみです。
+
+
+
+=== 4.認証情報を作成します
+
+次のREST API呼び出しを実行して、kubeconfigファイルを使用してクレデンシャルを作成します。
+
+[cols="25,75"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /accounts /｛account_id｝/core/v1/credentials 
+|===
+
+
+===== JSON の入力例
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-credential",
+  "version" : "1.1",
+  "name" : "Cloud One",
+  "keyType" : "kubeconfig",
+  "keyStore" : {
+    "base64": encoded_kubeconfig
+  },
+  "valid" : "true"
+}
+----
+
+
+===== カールの例
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----
+
+
+=== 5.クラスタを追加します
+
+次のREST API呼び出しを実行してクラスタをクラウドに追加します。の値 `credentialID` 入力フィールドは、前の手順でREST API呼び出しから取得されます。
+
+[cols="25,75"]
+|===
+| HTTP メソッド | パス 
+
+
+| 投稿（ Post ） | /accounts /｛account_id｝/topology/v1 /雲/｛cloud_id｝/ clusters 
+|===
+
+
+===== JSON の入力例
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-cluster",
+  "version" : "1.1",
+  "credentialID": credential_id
+}
+----
+
+
+===== カールの例
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

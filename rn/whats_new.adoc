@@ -18,6 +18,40 @@ summary: ネットアップでは、Astra Control REST APIを定期的に更新�
 
 
 
+== 2022年11月22日（22.11）
+
+このリリースでは、REST APIの拡張と更新に加え、ネームスペースとLDAPのサポートが強化されています。
+
+
+
+=== Astra の新しいリソース
+
+新しいリソースタイプとして、*apiResource*、*LDAPGroup*、*ldapuser*、*task*の4つが追加されました。また、既存のリソースとエンドポイントがいくつか拡張されています。
+
+
+
+=== 長時間のタスクの監視サポート
+
+新しいタスクエンドポイントは、管理タスクリソースへのアクセスを提供し、内部の長時間実行タスクのステータスを表示するために使用できます。
+
+
+
+=== ネームスペース使用シナリオの強化
+
+複数のネームスペースにまたがるアプリケーションと、ネームスペース修飾リソースに関連付けられたクラスタリソースのサポートが追加されました。
+
+
+
+=== クラウドサブスクリプションの拡張
+
+各クラウドプロバイダに対して複数のアカウントサブスクリプションを追加できるようになりました。
+
+.関連情報
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center ：新機能"^]
+
+
+
+
 == 2022年8月10日（22.08）
 
 このリリースでは、 REST API の拡張と更新に加え、セキュリティと管理に関する高度な機能が実装されています。
@@ -54,8 +88,7 @@ Astra Controlでは、複数の実行フックに同じスクリプトを使用�
 NetApp SnapMirrorテクノロジを使用して、クラスタ間でデータやアプリケーションの変更をレプリケートできるようになりました。この拡張機能を使用すると、ビジネス継続性およびリカバリ機能を向上させることができます。
 
 .関連情報
-* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center ：新機能"^]
-* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service ：新機能"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/whats-new.html["Astra Control Center 22.08：新機能"^]
 
 
 
@@ -103,8 +136,7 @@ Cloud Volumes ONTAP がストレージバックエンドとしてサポートさ
 Astra Control Center および Astra Control Service のドキュメントサイトの「新機能 * 」ページを参照してください。
 
 .関連情報
-* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center ：新機能"^]
-* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service ：新機能"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/whats-new.html["Astra Control Center 22.04：新機能"^]
 
 
 
@@ -130,6 +162,10 @@ REST リソースタイプの数は、実行フックとストレージバック
 === NetApp Astra Control Python SDK
 
 NetApp Astra Control Python SDK は、 Astra Control 環境用の自動化コードを簡単に開発できるようにするオープンソースパッケージです。中核となるのは Astra SDK で、 REST API 呼び出しの複雑さを抽象化する一連のクラスが含まれています。また、 Python クラスをラッピングして抽象化することで、特定の管理タスクを実行するツールキットスクリプトもあります。を参照してください link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] を参照してください。
+
+.関連情報
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/whats-new.html["Astra Control Center 21.12：新機能"^]
+
 
 
 
@@ -157,6 +193,10 @@ REST リソースの拡張に加えて、 Astra Control 環境をサポートす
 
 OpenAPI のサポート:: OpenAPI エンドポイントは、現在の OpenAPI JSON ドキュメントおよびその他の関連リソースへのアクセスを提供します。
 OpenMetrics のサポート:: OpenMetrics エンドポイントは、 OpenMetrics リソースを介してアカウントメトリックへのアクセスを提供します。
+
+
+.関連情報
+* https://docs.netapp.com/us-en/astra-control-center-2108/release-notes/whats-new.html["Astra Control Center 21.08：新機能"^]
 
 
 

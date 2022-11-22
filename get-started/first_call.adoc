@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: get-started/hello_world.html 
-keywords: get started, simple example 
+permalink: get-started/first_call.html 
+keywords: get started, first call, hello world 
 summary: ワークステーションのCLIで簡単なcurlコマンドを問題 して、Astra Control REST APIの使用を開始し、利用可能かどうかを確認することができます。 
 ---
-= Hello world
+= 最初のAPI呼び出し
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -25,7 +25,7 @@ Curl ユーティリティがローカルワークステーションで使用可
 curl --location --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/json' --header 'Authorization: Bearer <API_TOKEN>'
 ----
 .JSON 出力例
-[source, json]
+[listing]
 ----
 {
   "items": [

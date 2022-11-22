@@ -28,10 +28,6 @@ summary: ここでは、 NetApp クラウドサービスとサポート、およ
 +
 パブリッククラウドで利用可能な最新リリースの Astra Control Service ソフトウェアのドキュメント。
 
-* https://docs.netapp.com/us-en/astra-data-store/["Astra データストアのドキュメント"^]
-+
-お客様のオンプレミスに導入されている Astra Data Store ソフトウェアの最新リリースのドキュメント。
-
 * https://docs.netapp.com/us-en/trident/["Astra Trident のドキュメント"^]
 +
 ネットアップが保守しているオープンソースのストレージオーケストレーションツールである Astra Trident ソフトウェアの最新リリースのドキュメント。
@@ -46,7 +42,7 @@ summary: ここでは、 NetApp クラウドサービスとサポート、およ
 
 == ネットアップのクラウドリソース
 
-* https://cloud.netapp.com/["ネットアップのクラウドソリューション"^]
+* https://bluexp.netapp.com/["NetApp BlueXP"^]
 +
 ネットアップのクラウドソリューションの中心的なサイト。
 

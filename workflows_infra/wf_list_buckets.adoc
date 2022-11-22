@@ -27,7 +27,7 @@ summary: 特定のアストラアカウント用に定義された S3 バケッ�
 | HTTP メソッド | パス 
 
 
-| 取得 | /account/{account_id}/topology/v1/buckets/ 
+| 取得 | /accounts /｛account_id｝/topology/v1 /バケット 
 |===
 
 
