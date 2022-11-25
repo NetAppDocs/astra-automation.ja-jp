@@ -19,8 +19,4 @@ Astra Control REST API に関連する現在のリリースの既知の問題を
 
 NOTE: Astra Control REST APIの22.11リリースでは、新しい既知の問題はありません。以下に記載する問題は以前のリリースで見つかったもので、現在のリリースにも該当します。
 
-
-
-== バックエンドストレージノード内の一部のストレージデバイスが検出されていません
-
-ストレージノードに定義されているストレージデバイスを取得する REST API 呼び出しを発行すると、 Astra データストアデバイスのみが検出される。すべてのデバイスが返されるわけではありません。
+を参照してください https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Astra Control Centerの既知の問題"^] を参照してください。
