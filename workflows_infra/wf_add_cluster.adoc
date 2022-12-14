@@ -31,8 +31,10 @@ Kubernetesの管理者またはサービスから* kubconfig *ファイルのコ
 
 *kubeconfig *ファイルを使用する前に、次の操作を実行する必要があります。
 
+.ファイルをYAML形式からJSONに変換します
 YAML形式のkubeconfigファイルを受信した場合は、JSONに変換する必要があります。
 
+.base64でJSONをエンコードします
 base64のJSONファイルをエンコードする必要があります。例：
 
 `yq -o=json ~/.kube/config | base64`

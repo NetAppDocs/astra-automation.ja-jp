@@ -25,6 +25,7 @@ NOTE: 簡単にするために、このページの以降の部分では、 NetA
 
 SDK には、 Astra Control REST API にアクセスするときに異なる抽象化レベルで動作する 2 つの異なる関連ツールが含まれています。
 
+.Astra SDK
 Astra SDK は、コアプラットフォーム機能を提供します。基盤となる REST API 呼び出しを抽象化する一連の Python クラスが含まれています。このクラスは、アプリケーション、バックアップ、 Snapshot 、クラスタなど、さまざまな Astra Control リソースに対する管理操作をサポートしています。
 
 Astra SDK はパッケージの一部であり、単一の「 astrasdk.py 」ファイルで提供されています。このファイルを環境にインポートし、クラスを直接使用できます。
@@ -32,6 +33,7 @@ Astra SDK はパッケージの一部であり、単一の「 astrasdk.py 」フ
 
 NOTE: NetApp Astra Control Python SDK * （または SDK のみ）は、パッケージ全体の名前です。*Astra SDK* は、単一ファイル「 astrasdk.py 」の中核的な Python クラスを指します。
 
+.Toolkit スクリプト
 Astra SDK ファイルに加えて 'toolkit.py スクリプトも利用できますこのスクリプトは、 Python 関数として内部的に定義されている個別の管理アクションにアクセスできるようにすることで、抽象化のレベルを高めて動作します。このスクリプトは、 Astra SDK をインポートし、必要に応じてクラスに呼び出します。
 
 
@@ -40,12 +42,14 @@ Astra SDK ファイルに加えて 'toolkit.py スクリプトも利用できま
 
 SDK には、次の方法でアクセスできます。
 
+.Python パッケージ
 SDK は、から入手できます https://pypi.org/["Python パッケージインデックス"^] 名前* actoolkit *。パッケージにはバージョン番号が割り当てられており、必要に応じて更新が続行されます。パッケージを環境にインストールするには、 * PIP * パッケージ管理ユーティリティを使用する必要があります。
 
 インストールが完了したら、スクリプトに「import astraSDK」を配置することで、astraSDK.pyクラスを利用できます。また'actoolkit'は'コマンドプロンプトから直接呼び出すことができますこれは'toolkit.py (actoolkit list clusters'は'./toolkit.py list clusters'と同じです)と同じです
 
 を参照してください https://pypi.org/project/actoolkit/["PyPi ： NetApp Astra Control Python SDK"^] を参照してください。
 
+.GitHub ソースコード
 SDK ソースコードは GitHub からも入手できます。リポジトリには次のものが含まれます。
 
 * `astrasdk.py (Python クラスを含む Astra SDK)
@@ -63,6 +67,7 @@ SDK ソースコードは GitHub からも入手できます。リポジトリ�
 
 パッケージのインストールおよび使用準備の一環として、いくつかのオプションと要件を考慮する必要があります。
 
+.インストールオプションの概要
 次のいずれかの方法で SDK をインストールできます。
 
 * 準備したを使用します https://hub.docker.com/r/netapp/astra-toolkits["Docker：Astra -ツールキット"^] イメージ(image )は'actoolkit'を含む'必要な依存関係をすべてインストールしています
@@ -72,8 +77,10 @@ SDK ソースコードは GitHub からも入手できます。リポジトリ�
 
 詳細については、 PyPi および GitHub のページを参照してください。
 
+.Astra Control 環境の要件
 Astra SDK の Python クラスを直接使用する場合も、「 toolkit.py 」スクリプトの関数を使用する場合も、最終的には Astra Control 配置で REST API にアクセスすることになります。そのため、 API トークンを持つ Astra アカウントが必要になります。を参照してください link:../get-started/before_get_started.html["作業を開始する前に"] 詳細については、このドキュメントの「 * はじめに * 」セクションの他のページを参照してください。
 
+.NetApp Astra Control Python SDK の要件
 SDK には、ローカル Python 環境に関連するいくつかの前提条件があります。たとえば、Python 3.8以降を使用する必要があります。また、必要な Python パッケージもいくつかあります。詳細については、 GitHub リポジトリページまたは PyPI パッケージページを参照してください。
 
 

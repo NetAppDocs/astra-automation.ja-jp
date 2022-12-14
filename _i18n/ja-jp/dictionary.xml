@@ -1104,4 +1104,63 @@
   <block id="7494e7f70b31d89664784c20229e8098" category="paragraph">Astra Control REST APIを説明するワークフローが追加されました。を参照してください <block ref="fc2071d838ca44c08fca8ef5c62f2e8e" category="inline-link-macro-rx"></block> および <block ref="b729850dc33cbcb91b47d13a137b85a8" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="7a95f2a4373ad29d744890f090214195" category="inline-link">Astra Control Centerの既知の問題</block>
   <block id="9fa80e5e6d07d73203692c1b2c6a3f1f" category="paragraph">を参照してください<block ref="1748a923b17519fc41af247d5369ec47" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="1a615153bb2bd3389942d44023a8f4bb" category="paragraph-title">Astra アカウントのクレデンシャルが必要</block>
+  <block id="7e8def8db3d7d1cc38b119879791cb9b" category="paragraph-title">Kubernetes の基本概念を理解する</block>
+  <block id="0182974655f974e8429fb64bb3d15eb2" category="paragraph-title">REST の概念と実装を確認</block>
+  <block id="bf07f432276ee2fe7e55f9ea12c2ba5a" category="paragraph-title">詳細はこちらをご覧ください</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">このタスクについて</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">完了後</block>
+  <block id="3c91a74236fab100f024452f6df13b5e" category="paragraph-title">Python 3.</block>
+  <block id="56fc4201e750acc72a0afd74dd68fbf7" category="paragraph-title">追加ライブラリ</block>
+  <block id="7a7bc312cecb8df7c0104f60400498da" category="paragraph-title">ネットワークアクセス</block>
+  <block id="479ddc3e49067c67012525e145d88610" category="paragraph-title">ID 情報</block>
+  <block id="7a947a0e78de7f2a4b74b7420db98fc3" category="paragraph-title">Astra SDK</block>
+  <block id="042f2f95117cad397f19ae8bda1b2bbf" category="paragraph-title">Toolkit スクリプト</block>
+  <block id="f789019254e2d94578114761c04bb180" category="paragraph-title">Python パッケージ</block>
+  <block id="0c9b6306d32fc8f44ff469ab235c5104" category="paragraph-title">GitHub ソースコード</block>
+  <block id="a2c5d7f1ae59d7e25522b6b34ea1f27f" category="paragraph-title">インストールオプションの概要</block>
+  <block id="1737ce95b71a7983a78611220c00300c" category="paragraph-title">Astra Control 環境の要件</block>
+  <block id="dfbe44cf1815fe1873dd8a7c434bcda9" category="paragraph-title">NetApp Astra Control Python SDK の要件</block>
+  <block id="fc068ae597c9019f5d61b19badc39991" category="paragraph-title">要求と応答の API トランザクション</block>
+  <block id="54ba5d4469f49d79d837dd2472a96c36" category="paragraph-title">CRUD 操作モデルのサポート</block>
+  <block id="b6af2b8fdca63591236d48930018b8db" category="paragraph-title">リソースタイプ</block>
+  <block id="515fc3276bd3187a4917ddf7d57db2be" category="paragraph-title">リソースインスタンス</block>
+  <block id="c63467857ced87bca573cc84332ea38e" category="paragraph-title">リソースコレクション</block>
+  <block id="55920bcaefa36a6964fdc7020a835d5f" category="paragraph-title">インスタンス ID</block>
+  <block id="2ed6f74fc82a2206a6fa7ea55363656c" category="paragraph-title">共通のデータ</block>
+  <block id="647f6448e005296f7ac5b882aa71a868" category="paragraph-title">メタデータオブジェクト</block>
+  <block id="6cb8b958a36383ed1b7bacc626d0a5dd" category="paragraph-title">リソースの状態</block>
+  <block id="6e84a7dae5ae82dd22a0ec6f456dbc8d" category="paragraph-title">root としてアカウントを作成します</block>
+  <block id="faf17fd8415851163c880ffe0eee8b37" category="paragraph-title">エンドポイントリソースカテゴリ</block>
+  <block id="1a13e0be61ce3aab0376745ec89773a0" category="paragraph-title">カテゴリバージョン</block>
+  <block id="b59579c5294990b3465d2a6e5a853fc0" category="paragraph-title">リソースインスタンスまたはコレクション</block>
+  <block id="11509d3a68301ed377a3d4e05dcd020d" category="paragraph-title">Astra Control Centerでのみサポートされます</block>
+  <block id="1c44f09ee73ed5762695177ad34b47a5" category="paragraph-title">REST APIまたはWebユーザインターフェイスを使用した設定</block>
+  <block id="743f17b310d3349edb0c1f45cc81de25" category="paragraph-title">LDAPサーバが必要です</block>
+  <block id="8dccbd929a8dad2beba58b2f79ba3436" category="paragraph-title">LDAPサーバへのセキュアな接続</block>
+  <block id="84bc6bd3e8bef314de14969bdd159ece" category="paragraph-title">ユーザまたはグループを設定します</block>
+  <block id="b42b70c1eeb08f4931a7765d41130fe7" category="paragraph-title">ユーザまたはグループをバインドするときのロールの制約</block>
+  <block id="610559891957534380ce83e8c749ad4b" category="paragraph-title">LDAPクレデンシャル</block>
+  <block id="a2a945099fa6ce86e287032c4a7995a0" category="paragraph-title">一意のEメールアドレス</block>
+  <block id="0a6eb1c694ac34589f0bb421705552b0" category="paragraph-title">必要に応じて、LDAPユーザおよびグループを先に定義します</block>
+  <block id="b1237b8e9dcb5a28b7d8e23df54f6b0d" category="paragraph-title">複数のLDAPグループに定義されたユーザ</block>
+  <block id="197a73ee4a006ef52c4fbd2b948357d6" category="paragraph-title">定期的なアカウント同期</block>
+  <block id="70d08db9e31d103a9a98ae62d1f934cd" category="paragraph-title">LDAP設定の無効化とリセット</block>
+  <block id="19050c1d965285490381eed739648de9" category="paragraph-title">REST APIパラメータ</block>
+  <block id="0e20371f2b50c1982ba88634480d8036" category="paragraph-title">ファイルをYAML形式からJSONに変換します</block>
+  <block id="fb08278d28a518a351675c5e1706ae41" category="paragraph-title">base64でJSONをエンコードします</block>
+  <block id="305f82eee427805e1142e3f58b3e6aff" category="paragraph-title">REST テクノロジを基盤として構築</block>
+  <block id="9f58c2cc1c4a1a9d30320aec8702f1e5" category="paragraph-title">2 つの Astra Control 導入モデルをサポート</block>
+  <block id="308e494b1e26dffecccd3503e87801ab" category="paragraph-title">REST エンドポイントリソースとオブジェクトモデルの間のマッピングをクリアします</block>
+  <block id="5c4c20c54ea821de85f6857e32e28368" category="paragraph-title">豊富なクエリパラメータ</block>
+  <block id="807ccc731ac69ad871b23fef84f7a6a9" category="paragraph-title">Astra Control Web UI とのアライメント</block>
+  <block id="d92a4a4962077027ebae61f4c351e303" category="paragraph-title">堅牢なデバッグおよび問題の特定データ</block>
+  <block id="04bff76b57babc7298f6780f4f20901e" category="paragraph-title">ワークフロープロセス</block>
+  <block id="fcf3c3d757005a8b62346f06f3b393ff" category="paragraph-title">高度なオートメーション技術の基盤</block>
+  <block id="d4f45c394127f6c3eb5c89e1eb467c9b" category="paragraph-title">Astra ファミリーのドキュメントの一部</block>
+  <block id="bf14a6bb5484aa858662864c8b0d062f" category="paragraph-title">値の選択</block>
+  <block id="9a588db8471730dbfebac65cd5467ad8" category="paragraph-title">フィルタリング</block>
+  <block id="2808a34767e19b842d906ab8ab6264c6" category="paragraph-title">並べ替え</block>
+  <block id="cbb81506a7fe3ef03f7a89c76c52131a" category="paragraph-title">ページ付け</block>
+  <block id="e93f994f01c537c4e2f7d8528c3eb5e9" category="paragraph-title">カウント</block>
 </blocks>
