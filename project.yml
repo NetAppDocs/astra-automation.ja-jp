@@ -31,8 +31,8 @@ homepage:
   tiles:
   - title: はじめに
     links:
-    - title: はじめに
-      url: "/intro/introduction.html"
+    - title: 概要
+      url: "/intro/overview.html"
     - title: 作業を開始する前に
       url: "/get-started/before_get_started.html"
     - title: API トークンを取得します
