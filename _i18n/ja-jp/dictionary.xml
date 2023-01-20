@@ -621,7 +621,6 @@
   <block id="b179356a4d80ff3c8707972005712b2f" category="section-title">2021 年 8 月 5 日（ 21.08 ）</block>
   <block id="b090a7e9d0299b1a0c16321ebfd1f755" category="section-title">2021 年 4 月 15 日（ 21.04 ）</block>
   <block id="d71331c5ce470b093ebf6c996f4ed88a" category="doc">このリリースについて</block>
-  <block id="ea68f7ff6b79a550f669d752f15bd5da" category="paragraph">このリリースおよび以前のリリースの詳細については、次のページとサイトを参照してください。</block>
   <block id="89d597c4d411409065b7e48fe97b7327" category="inline-link-macro">Astra Control REST API の新機能</block>
   <block id="55d1aec576bc2fa5929c487a67f4f1fe" category="list-text"><block ref="55d1aec576bc2fa5929c487a67f4f1fe" category="inline-link-macro-rx"></block></block>
   <block id="fdd081f1598a50889ba0720484271938" category="inline-link-macro">旧バージョンの Astra Automation ドキュメント</block>
@@ -633,7 +632,6 @@
   <block id="08d7f360c94a906d3639173599184943" category="paragraph">次の REST API 呼び出しを実行します。バックアップ（以下を参照）または Snapshot の ID を指定する必要があります。</block>
   <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">curl の例：バックアップからアプリを所定の場所にリストアします</block>
   <block id="98904826ae5cef8716020180473276c8" category="admonition">Astra Control リソースへのアクセスに使用されるパスと完全な URL の形式は、いくつかの値に基づいています。を参照してください <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> を参照してください。も参照してください <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> Astra のリソースとエンドポイントの使用方法の詳細については、を参照してください。</block>
-  <block id="5814e35bd932d85c35c92f3c990f80c0" category="paragraph">[* リリース *] 列は、リソースが最初に導入されたときのアストラリリースを示します。このフィールドは、現在のリリースで新しく追加されたリソースに対して太字で表示されます。</block>
   <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">リソース</block>
   <block id="b8e7b465df7c5979dc731d06e84ce2cf" category="cell">リリース。</block>
   <block id="08bd40c7543007ad06e4fce31618f6ec" category="cell">アカウント：</block>
@@ -874,7 +872,6 @@
   <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">LDAPサーバを設定します</block>
   <block id="a941511c207017106c6b7b09e9dec884" category="summary">このサイトのドキュメントでは、Astra Control REST APIと、Astra Controlで利用可能な関連自動化テクノロジについて説明しています。</block>
   <block id="3f4fc4220755866f399810fee47c7884" category="inline-link-macro">GitHub の貢献者</block>
-  <block id="65ed3c4720fad34d453db54755338725" category="paragraph">Twitter で @NetAppDoc をフォローしてください。を作成し、ドキュメントに関するフィードバックを送信します <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> または、 doccomments@netapp.com に電子メールを送信します。</block>
   <block id="2d388ce46646f517f31092dee87e1af6" category="paragraph">ワークステーションのCLIで簡単なcurlコマンドを問題 して、Astra Control REST APIの使用を開始し、利用可能かどうかを確認することができます。</block>
   <block id="35ae08a314ffffc02580e3c3fbfad924" category="sidebar">機能とメリット</block>
   <block id="7a161061772a428a5823e2adbe01f5f4" category="summary">HTTPメソッド、入力パラメータ、応答など、Astra Control REST API呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。</block>
@@ -1008,7 +1005,6 @@
   <block id="c23ee749361bcb35c4bb9425ae5cd602" category="cell">/accounts /｛account_id｝/topology/v1 /雲/&lt;CLOUD_ID&gt; /&lt;CLUSTER_ID&gt; / storageClasses</block>
   <block id="38a0f81608bad4301a7bd0c62937c7a0" category="summary">クラスタを追加して、Astraで管理できるようにすることができます。</block>
   <block id="617a1e32f2d409a9c77e56b76a744edc" category="doc">クレデンシャルを使用してクラスタを追加する</block>
-  <block id="1596fe22178cdca2d275cff48aad4af1" category="paragraph">クラスタを追加して、Astraで管理できるようにすることができます。Astra 22.11以降では、Astra Control CenterまたはAstra Control Serviceを使用してクラスタを追加できます。</block>
   <block id="ec1064b7d3d701d90bcd843f62de2199" category="admonition">主要なクラウドプロバイダ（AKS、EKS、GKE）のいずれかからKubernetesサービスを使用する場合、クラスタの追加は必要ありません。</block>
   <block id="9a7df7f9a0a709d54e5600f10282be3c" category="section-title">1. kubeconfigファイルを取得します</block>
   <block id="0f9d366662bdbaac5e7e94b497107f97" category="paragraph">Kubernetesの管理者またはサービスから* kubconfig *ファイルのコピーを取得する必要があります。</block>
@@ -1091,7 +1087,6 @@
   <block id="012c01c016d35f3bdc2e34a079b6cf0e" category="list-text"><block ref="012c01c016d35f3bdc2e34a079b6cf0e" category="inline-link-rx"></block></block>
   <block id="099195e2a0ecbb5b0569da7e9c28fbc0" category="inline-link">Astra Control Center 21.08：新機能</block>
   <block id="70679aeca94d2b828ca1dc6cda2ac994" category="list-text"><block ref="70679aeca94d2b828ca1dc6cda2ac994" category="inline-link-rx"></block></block>
-  <block id="9f4dd3879adfbe7a60dc7c6745d67158" category="paragraph">このサイトのドキュメントでは、Astra Control REST API、および2022年11月22日（22.11）にリリースされたAstra Controlに関連する自動化テクノロジについて説明しています。特に、このリリースのREST APIは、対応する22.11リリースのAstra Control CenterとAstra Control Serviceに含まれています。</block>
   <block id="070b3d3a153094a5ee57ed5e75530780" category="inline-link">Astra Control Center 22.11ドキュメント</block>
   <block id="bee8b0efee9e08520e8e0cb30b730adf" category="list-text"><block ref="bee8b0efee9e08520e8e0cb30b730adf" category="inline-link-rx"></block></block>
   <block id="165fa9bdd003d8079831262d0360efc1" category="inline-link">Astra Control Automation 22.08ドキュメント</block>
@@ -1099,11 +1094,9 @@
   <block id="547abae9d6ca9df339ec4543e220ab8e" category="sidebar">最初のAPI呼び出し</block>
   <block id="013a127f643228c21ab6c9baf558cef5" category="sidebar">クラスタを追加</block>
   <block id="826f785c760529ceb6e978afdab2a9a7" category="sidebar">保護ポリシーを作成する</block>
-  <block id="01d6bcac2686956739a4135c6248a7e0" category="admonition">Astra Control REST APIの22.11リリースでは、新しい既知の問題はありません。以下に記載する問題は以前のリリースで見つかったもので、現在のリリースにも該当します。</block>
   <block id="25742c79c197ce7f0982652ead3bd964" category="section-title">追加のワークフロー</block>
   <block id="7494e7f70b31d89664784c20229e8098" category="paragraph">Astra Control REST APIを説明するワークフローが追加されました。を参照してください <block ref="fc2071d838ca44c08fca8ef5c62f2e8e" category="inline-link-macro-rx"></block> および <block ref="b729850dc33cbcb91b47d13a137b85a8" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="7a95f2a4373ad29d744890f090214195" category="inline-link">Astra Control Centerの既知の問題</block>
-  <block id="9fa80e5e6d07d73203692c1b2c6a3f1f" category="paragraph">を参照してください<block ref="1748a923b17519fc41af247d5369ec47" category="inline-link-rx"></block> を参照してください。</block>
   <block id="1a615153bb2bd3389942d44023a8f4bb" category="paragraph-title">Astra アカウントのクレデンシャルが必要</block>
   <block id="7e8def8db3d7d1cc38b119879791cb9b" category="paragraph-title">Kubernetes の基本概念を理解する</block>
   <block id="0182974655f974e8429fb64bb3d15eb2" category="paragraph-title">REST の概念と実装を確認</block>
@@ -1164,4 +1157,30 @@
   <block id="cbb81506a7fe3ef03f7a89c76c52131a" category="paragraph-title">ページ付け</block>
   <block id="e93f994f01c537c4e2f7d8528c3eb5e9" category="paragraph-title">カウント</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">概要</block>
+  <block id="ec23c88fbeb1dbd6e4036cbd90351825" category="paragraph">クラスタを追加して、Astraで管理できるようにすることができます。Astra 22.11リリース以降、Astra Control CenterとAstra Control Serviceの両方でクラスタを追加できるようになりました。</block>
+  <block id="9f8189b17fcf187cb4416d8f8ee93490" category="cell">これらのワークフローは、Astra Control REST APIを使用して利用できるクラウドへのアクセスを提供します。</block>
+  <block id="80bcbd8aa7db0b3dfcedfd4388c73c17" category="paragraph">[* リリース *] 列は、リソースが最初に導入されたときのアストラリリースを示します。このフィールドは、REST APIに最後に追加されたリソースに対して太字で表示されます。</block>
+  <block id="34d23ad383fb9597324019dc1045fabb" category="admonition">Astra Control REST APIの23.01リリースに既知の新しい問題はありません。以下に記載する問題は以前のリリースで見つかったため、現在のリリースにも該当します。</block>
+  <block id="73e9416791f56a93d23840b6c27ae436" category="paragraph">導入モデルに応じて、次のいずれかのページを参照してください。</block>
+  <block id="eb6a5d80177fc44f1a834a5fac76b612" category="inline-link">Astra Control Serviceの既知の問題</block>
+  <block id="1a8244f3a147b8df7de50e9d16df07ac" category="list-text"><block ref="1a8244f3a147b8df7de50e9d16df07ac" category="inline-link-rx"></block></block>
+  <block id="750f48353ffad2f2dc8aaad3df0d9144" category="list-text"><block ref="750f48353ffad2f2dc8aaad3df0d9144" category="inline-link-rx"></block></block>
+  <block id="48d4b62231f750392dd784d9182c8dc5" category="paragraph">このサイトのドキュメントでは、最新リリースの2つのAstra導入モデルに含まれているAstra Control REST APIと関連する自動化テクノロジについて説明しています。</block>
+  <block id="b23a60ebc7020fe310d80180653261b7" category="paragraph-title">ケイデンスを解放します</block>
+  <block id="aecf6ebbe0aba381087ff4427d1692b7" category="paragraph">一般に、Astra Control ServiceとAstra Control Centerのアップデートは同時にリリースされます。ただし、Astra Control Serviceでは、最新のAstra Control Centerリリースを超えて1回以上の差分更新を行う、高速リリースサイクルを使用しています。</block>
+  <block id="0e4bd344e2cee7644ad300cdfc0d63d1" category="paragraph">このサイトには両方の導入モデルのREST APIが記載されているため、最新のAstra Control Serviceリリースにのみ適用される機能や変更が含まれている場合があります。この2つの相違点は、必要に応じてこのサイトに記載されています。</block>
+  <block id="ce2f654fe20c0aa5fa4ece0648021275" category="paragraph-title">Astra Controlの導入</block>
+  <block id="a6614c977e9c818d6355f9b59c74764f" category="paragraph">このサイトのドキュメント環境 the Astra導入モデルは次のとおりです。</block>
+  <block id="d92324a56dde3645b2b0ebf9145c93b8" category="list-text">アストラ制御サービス23.01</block>
+  <block id="910e94624b00c7abc1675a19e1165204" category="list-text">アストラコントロールセンター22.11</block>
+  <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="paragraph-title">詳細情報</block>
+  <block id="06e642707bb2ed358193d9d175786f6d" category="paragraph">REST APIを含む最新リリースと以前のリリースのAstra Controlの詳細については、次のドキュメントを参照してください。</block>
+  <block id="57568765d51dbdfa0a0799807a13dfc5" category="inline-link">Astra Control Service 23.01のマニュアル</block>
+  <block id="9905934fe9c85f338f46074487afd222" category="list-text"><block ref="9905934fe9c85f338f46074487afd222" category="inline-link-rx"></block></block>
+  <block id="8372692ac95eb7fc27fe8f964e134d59" category="paragraph-title">関与してください</block>
+  <block id="5596f30fbf5a63b7848467c492bb0781" category="paragraph">Twitter *@NetAppDoc *でフォローしてください。を使用して、マニュアルに関するフィードバックを送信することもできます <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> または、_doccomments@netapp.com_に電子メールを送信します。</block>
+  <block id="14f03db07d2c880fafbf7c4fdb9955bd" category="section-title">2023年1月17日（23.01）</block>
+  <block id="055a27c4d72ac10e8bf363a70b1218a0" category="paragraph">このリリースには、REST APIのマイナーアップデートが含まれています。</block>
+  <block id="fd681e19859abac8a0d1df0703c54996" category="section-title">強化された実行フック機能とフィルタ</block>
+  <block id="03612c2b7f26bb15fe2a8f56732f28ad" category="paragraph">実行フックを使用するときに、フックが一致するコンテナを制御するフィルタを追加できるようになりました。1つの実行フックに対して複数のフィルタを作成すると、それらは論理AND演算子と結合されます。実行フックごとに最大10個のアクティブフィルタを定義できます。</block>
 </blocks>

@@ -14,7 +14,7 @@ summary: クラスタを追加して、Astraで管理できるようにするこ
 
 
 [role="lead"]
-クラスタを追加して、Astraで管理できるようにすることができます。Astra 22.11以降では、Astra Control CenterまたはAstra Control Serviceを使用してクラスタを追加できます。
+クラスタを追加して、Astraで管理できるようにすることができます。Astra 22.11リリース以降、Astra Control CenterとAstra Control Serviceの両方でクラスタを追加できるようになりました。
 
 
 NOTE: 主要なクラウドプロバイダ（AKS、EKS、GKE）のいずれかからKubernetesサービスを使用する場合、クラスタの追加は必要ありません。
