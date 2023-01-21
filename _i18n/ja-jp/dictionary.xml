@@ -1165,22 +1165,23 @@
   <block id="eb6a5d80177fc44f1a834a5fac76b612" category="inline-link">Astra Control Serviceの既知の問題</block>
   <block id="1a8244f3a147b8df7de50e9d16df07ac" category="list-text"><block ref="1a8244f3a147b8df7de50e9d16df07ac" category="inline-link-rx"></block></block>
   <block id="750f48353ffad2f2dc8aaad3df0d9144" category="list-text"><block ref="750f48353ffad2f2dc8aaad3df0d9144" category="inline-link-rx"></block></block>
-  <block id="48d4b62231f750392dd784d9182c8dc5" category="paragraph">このサイトのドキュメントでは、最新リリースの2つのAstra導入モデルに含まれているAstra Control REST APIと関連する自動化テクノロジについて説明しています。</block>
   <block id="b23a60ebc7020fe310d80180653261b7" category="paragraph-title">ケイデンスを解放します</block>
-  <block id="aecf6ebbe0aba381087ff4427d1692b7" category="paragraph">一般に、Astra Control ServiceとAstra Control Centerのアップデートは同時にリリースされます。ただし、Astra Control Serviceでは、最新のAstra Control Centerリリースを超えて1回以上の差分更新を行う、高速リリースサイクルを使用しています。</block>
-  <block id="0e4bd344e2cee7644ad300cdfc0d63d1" category="paragraph">このサイトには両方の導入モデルのREST APIが記載されているため、最新のAstra Control Serviceリリースにのみ適用される機能や変更が含まれている場合があります。この2つの相違点は、必要に応じてこのサイトに記載されています。</block>
   <block id="ce2f654fe20c0aa5fa4ece0648021275" category="paragraph-title">Astra Controlの導入</block>
-  <block id="a6614c977e9c818d6355f9b59c74764f" category="paragraph">このサイトのドキュメント環境 the Astra導入モデルは次のとおりです。</block>
   <block id="d92324a56dde3645b2b0ebf9145c93b8" category="list-text">アストラ制御サービス23.01</block>
   <block id="910e94624b00c7abc1675a19e1165204" category="list-text">アストラコントロールセンター22.11</block>
   <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="paragraph-title">詳細情報</block>
-  <block id="06e642707bb2ed358193d9d175786f6d" category="paragraph">REST APIを含む最新リリースと以前のリリースのAstra Controlの詳細については、次のドキュメントを参照してください。</block>
   <block id="57568765d51dbdfa0a0799807a13dfc5" category="inline-link">Astra Control Service 23.01のマニュアル</block>
   <block id="9905934fe9c85f338f46074487afd222" category="list-text"><block ref="9905934fe9c85f338f46074487afd222" category="inline-link-rx"></block></block>
-  <block id="8372692ac95eb7fc27fe8f964e134d59" category="paragraph-title">関与してください</block>
-  <block id="5596f30fbf5a63b7848467c492bb0781" category="paragraph">Twitter *@NetAppDoc *でフォローしてください。を使用して、マニュアルに関するフィードバックを送信することもできます <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> または、_doccomments@netapp.com_に電子メールを送信します。</block>
   <block id="14f03db07d2c880fafbf7c4fdb9955bd" category="section-title">2023年1月17日（23.01）</block>
   <block id="055a27c4d72ac10e8bf363a70b1218a0" category="paragraph">このリリースには、REST APIのマイナーアップデートが含まれています。</block>
   <block id="fd681e19859abac8a0d1df0703c54996" category="section-title">強化された実行フック機能とフィルタ</block>
   <block id="03612c2b7f26bb15fe2a8f56732f28ad" category="paragraph">実行フックを使用するときに、フックが一致するコンテナを制御するフィルタを追加できるようになりました。1つの実行フックに対して複数のフィルタを作成すると、それらは論理AND演算子と結合されます。実行フックごとに最大10個のアクティブフィルタを定義できます。</block>
+  <block id="3c59b55f9bf059f6664a2ad8c3b5ff06" category="paragraph">このサイトのドキュメントでは、2つのAstra Control導入モデルの最新リリースに含まれているAstra Control REST APIと関連する自動化テクノロジについて説明しています。</block>
+  <block id="49bc96321f81e28a39f08ecee5252838" category="admonition">すべてのアストラリリースには、* YY.MM *という形式のバージョン番号が割り当てられます。この値は、利用可能になった年（_YY_）と月（_MM_）に基づいてバージョンを識別します。たとえば、Astra Control Service 23.01が2023年1月にリリースされたとします。</block>
+  <block id="41aa8f23ab61278bcb0f5ac2fb49d28d" category="paragraph">一般に、Astra Control ServiceとAstra Control Centerの更新は同時に行われます。ただし、Astra Control Serviceはリリースサイクルを短縮し、最新のAstra Control Centerバージョンを超える1つ以上の増分アップデートを行うことができます。</block>
+  <block id="ce3f3db7878407d89bb9f3e42409287c" category="paragraph">このサイトには両方の導入モデルのREST APIが記載されているため、一部の機能は最新のAstra Control Serviceリリースでしか使用できない場合があります。2つの導入モデルの違いを必要に応じて記載します。</block>
+  <block id="fdd9fe55f1a01a1ad085e5d6ce35c93b" category="paragraph">このサイトのドキュメント環境 次のAstra Controlリリース：</block>
+  <block id="06661ae837df4aebc82db4f943f32dd7" category="paragraph">最新リリースおよび以前のAstra Controlリリースの詳細については、次のページとサイトを参照してください。</block>
+  <block id="6dbfc88df6a1c21e55d3430850d3bd1c" category="paragraph-title">ドキュメントの改善にご協力ください</block>
+  <block id="d2d35c8cbc7027976910df89e09c7b5a" category="paragraph">Twitter *@NetAppDoc *でネットアップのドキュメントに関する通知をお送りしています。また、を作成してフィードバックを送信することもできます <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> または、_doccomments@netapp.com_に電子メールを送信します。</block>
 </blocks>
