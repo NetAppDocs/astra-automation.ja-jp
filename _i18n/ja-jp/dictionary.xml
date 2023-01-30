@@ -237,7 +237,6 @@
   <block id="7a1a5f3e79fdc91edf2f5ead9d66abb4" category="list-text">読み取り</block>
   <block id="06933067aafd48425d67bcb01bba5cb6" category="list-text">更新</block>
   <block id="f2a6c498fb90ee345d997f888fce3b18" category="list-text">削除</block>
-  <block id="fde59e3cd820ea0be7c3ed5c4be3f292" category="paragraph">一部の Astra リソースでは、これらの操作の一部のみがサポートされています。を確認しておきます <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> 特定の API 呼び出しに関する詳細については、を参照してください。</block>
   <block id="957a8c35c28e967701ff975f1d7182d5" category="section-title">HTTP メソッド</block>
   <block id="63d1169901437c6f9acfc445cee3a4ba" category="paragraph">次の表に、 API でサポートされる HTTP メソッドまたは動詞を示します。</block>
   <block id="4c3880bb027f159e801041b1021e88e8" category="cell">メソッド</block>
@@ -631,7 +630,6 @@
   <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Astra Control Automation のドキュメント</block>
   <block id="08d7f360c94a906d3639173599184943" category="paragraph">次の REST API 呼び出しを実行します。バックアップ（以下を参照）または Snapshot の ID を指定する必要があります。</block>
   <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">curl の例：バックアップからアプリを所定の場所にリストアします</block>
-  <block id="98904826ae5cef8716020180473276c8" category="admonition">Astra Control リソースへのアクセスに使用されるパスと完全な URL の形式は、いくつかの値に基づいています。を参照してください <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> を参照してください。も参照してください <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> Astra のリソースとエンドポイントの使用方法の詳細については、を参照してください。</block>
   <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">リソース</block>
   <block id="b8e7b465df7c5979dc731d06e84ce2cf" category="cell">リリース。</block>
   <block id="08bd40c7543007ad06e4fce31618f6ec" category="cell">アカウント：</block>
@@ -791,7 +789,6 @@
   <block id="2839ece291324f6c806790ca58811cc8" category="paragraph">あるLDAPユーザが複数のLDAPグループに属していて、グループにAstraで別々のロールが割り当てられている場合、認証時にそのユーザの有効なロールが最も特権的に使用されます。たとえば'ユーザにgroup1でビューア・ロールが割り当てられていて'group2でメンバー・ロールが割り当てられている場合'そのユーザのロールは'member'になりますこれは、Astraが使用する階層に基づいています（最高から最低まで）。</block>
   <block id="f2ed562f43254d0123b5ec5c7446769b" category="paragraph">Astraは、ユーザーとグループを約60秒ごとにLDAPサーバーと同期します。したがって、ユーザまたはグループがLDAPに追加またはLDAPから削除されると、Astraで利用可能になるまでに最大1分かかる場合があります。</block>
   <block id="b76debe413bda7ec6dfd72991496d708" category="paragraph">LDAP設定をリセットする前に、LDAP認証を無効にする必要があります。また'LDAPサーバ(connectionHost')を変更するには'両方の操作を実行する必要がありますを参照してください <block ref="9757cdec26988067ceb9687504d1344e" category="inline-link-macro-rx"></block> を参照してください。</block>
-  <block id="fd492c20355537c6885cfc88284a0f9c" category="paragraph">LDAPの設定ワークフローは、特定のタスクを実行するためにREST API呼び出しを実行します。各API呼び出しについて、表示されるサンプルに示すような入力パラメータを含めることができます。を参照してください <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> 参照ドキュメントの検索方法については、を参照してください。</block>
   <block id="a4cce93638d786143ceaec53646fcbd0" category="paragraph">LDAPサーバを選択し、認証プロバイダとしてサーバを使用するようにAstraを設定する必要があります。設定タスクは、以下に説明する手順で構成されています。各手順には、単一のREST API呼び出しが含まれています。</block>
   <block id="b05f354eda3398ade96e9055b0305ee6" category="section-title">1. CA証明書を追加します</block>
   <block id="468c35b0a371a6568ff7d068ff72eeea" category="paragraph">次のREST API呼び出しを実行して、AstraにCA証明書を追加します。</block>
@@ -1184,4 +1181,8 @@
   <block id="06661ae837df4aebc82db4f943f32dd7" category="paragraph">最新リリースおよび以前のAstra Controlリリースの詳細については、次のページとサイトを参照してください。</block>
   <block id="6dbfc88df6a1c21e55d3430850d3bd1c" category="paragraph-title">ドキュメントの改善にご協力ください</block>
   <block id="d2d35c8cbc7027976910df89e09c7b5a" category="paragraph">Twitter *@NetAppDoc *でネットアップのドキュメントに関する通知をお送りしています。また、を作成してフィードバックを送信することもできます <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> または、_doccomments@netapp.com_に電子メールを送信します。</block>
+  <block id="11c9923ccf1bdb99c76f391a24f9925f" category="inline-link-macro">オンラインのAPIリファレンス</block>
+  <block id="e89fa43834d6738a939f8c7ecd4c28a4" category="paragraph">LDAPの設定ワークフローは、特定のタスクを実行するためにREST API呼び出しを実行します。各API呼び出しについて、表示されるサンプルに示すような入力パラメータを含めることができます。を参照してください <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> 参照ドキュメントの検索方法については、を参照してください。</block>
+  <block id="b7ca8ec82a5eaa56c4cd485d10d4f8ff" category="admonition">Astra Control リソースへのアクセスに使用されるパスと完全な URL の形式は、いくつかの値に基づいています。を参照してください <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> を参照してください。も参照してください <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> Astra のリソースとエンドポイントの使用方法の詳細については、を参照してください。</block>
+  <block id="943f70de346a2442881b356af65be85e" category="paragraph">一部の Astra リソースでは、これらの操作の一部のみがサポートされています。を確認しておきます <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> 特定の API 呼び出しに関する詳細については、を参照してください。</block>
 </blocks>

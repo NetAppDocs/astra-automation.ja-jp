@@ -34,7 +34,7 @@ Astra Control REST API で使用できる各リソースインスタンスとコ
 * 削除
 
 
-一部の Astra リソースでは、これらの操作の一部のみがサポートされています。を確認しておきます link:../reference/api_reference.html["API リファレンス"] 特定の API 呼び出しに関する詳細については、を参照してください。
+一部の Astra リソースでは、これらの操作の一部のみがサポートされています。を確認しておきます link:../get-started/online_api_ref.html["オンラインのAPIリファレンス"] 特定の API 呼び出しに関する詳細については、を参照してください。
 
 
 
