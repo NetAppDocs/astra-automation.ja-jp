@@ -42,6 +42,6 @@ Astra リソースエンドポイントは、次の 3 つのカテゴリに分�
 
 * 完全な URL
 +
-対応するエンドポイントの完全な URL は、 https://astra.netapp.io/accounts/{account_id}/core/v1/users` です。
+対応するエンドポイントの完全なURLは次のとおりです。 `\https://astra.netapp.io/accounts/{account_id}/core/v1/users`。
 
 

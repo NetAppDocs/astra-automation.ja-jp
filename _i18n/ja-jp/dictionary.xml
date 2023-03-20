@@ -324,7 +324,6 @@
   <block id="2fc537b9f7b2c95f698a1e045c1ca8c7" category="list-text">リソースパス</block>
   <block id="4c1c10477ca13145352fd9a92f9744f6" category="paragraph">上記の構造に基づいて、エンドポイントへの一般的なパスは、「 /accounts/{account_id}/core/v1/users` です。</block>
   <block id="8a95104150e07b745de96037e7eb15b4" category="list-text">完全な URL</block>
-  <block id="f39323c9cdd9d851595dba08fa974f82" category="paragraph">対応するエンドポイントの完全な URL は、 https://astra.netapp.io/accounts/{account_id}/core/v1/users` です。</block>
   <block id="0ef9d205b3c12ed04d4b22391e87afc8" category="doc">リソースとコレクション</block>
   <block id="a1da6a69dc3621a153be0d63ad955397" category="admonition">概念的には REST * リソース * は、オブジェクト指向プログラミング（ OOP ）言語およびシステムで定義される * オブジェクト * に似ています。これらの用語が同じ意味で使用されることもあります。ただし一般には、外部 REST API のコンテキストで使用する場合は「リソース」が推奨され、サーバに格納される対応するステートフルインスタンスデータには「オブジェクト」が使用されます。</block>
   <block id="10522d991ba47cf052332e37b93638f3" category="section-title">Astra リソースの属性</block>
@@ -1185,4 +1184,5 @@
   <block id="e89fa43834d6738a939f8c7ecd4c28a4" category="paragraph">LDAPの設定ワークフローは、特定のタスクを実行するためにREST API呼び出しを実行します。各API呼び出しについて、表示されるサンプルに示すような入力パラメータを含めることができます。を参照してください <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> 参照ドキュメントの検索方法については、を参照してください。</block>
   <block id="b7ca8ec82a5eaa56c4cd485d10d4f8ff" category="admonition">Astra Control リソースへのアクセスに使用されるパスと完全な URL の形式は、いくつかの値に基づいています。を参照してください <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> を参照してください。も参照してください <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> Astra のリソースとエンドポイントの使用方法の詳細については、を参照してください。</block>
   <block id="943f70de346a2442881b356af65be85e" category="paragraph">一部の Astra リソースでは、これらの操作の一部のみがサポートされています。を確認しておきます <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> 特定の API 呼び出しに関する詳細については、を参照してください。</block>
+  <block id="d01376790c7b0b81f92f0a93fe0d3fad" category="paragraph">対応するエンドポイントの完全なURLは次のとおりです。<block ref="889041d0c093d3ff7a84829871523416" prefix=" " category="inline-code"></block>。</block>
 </blocks>
