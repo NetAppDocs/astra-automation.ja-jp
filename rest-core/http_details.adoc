@@ -99,7 +99,7 @@ NOTE: を参照してください https://www.rfc-editor.org/rfc/rfc7232.txt["RF
 
 == クエリパラメータ
 
-リソースコレクションでは、次のクエリパラメータを使用できます。を参照してください link:../additional/working_with_collections.html["コレクションの操作"] を参照してください。
+リソースコレクションでは、次のクエリパラメータを使用できます。を参照してください link:../additional/work_with_collections.html["コレクションを操作する"] を参照してください。
 
 [cols="20,80"]
 |===
@@ -130,7 +130,7 @@ NOTE: を参照してください https://www.rfc-editor.org/rfc/rfc7232.txt["RF
 Astra Control REST API で使用される HTTP ステータスコードを次に示します。
 
 
-NOTE: Astra Control REST API は、 HTTP API * 標準の * 問題の詳細も使用します。を参照してください link:diagnostics_support.html["診断とサポート"] を参照してください。
+NOTE: Astra Control REST API は、 HTTP API * 標準の * 問題の詳細も使用します。を参照してください link:../additional/diagnostics_support.html["診断とサポート"] を参照してください。
 
 [cols="15,20,65"]
 |===
