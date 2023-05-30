@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: get-started/online_api_call.html 
+keywords: reference, api reference, execute call 
+summary: Astra Control REST API呼び出しは、APIリファレンスドキュメントページから問題できます。 
+---
+= 問題Astra REST APIコール
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Astra Control REST API呼び出しは、APIリファレンスドキュメントページから問題できます。
+
+.作業を開始する前に
+Astraにサインインし、APIリファレンスページにアクセスする必要があります。を参照してください link:../get-started/online_api_ref.html["Astra APIのリファレンスドキュメントにアクセス"] を参照してください。REST APIを使用するにはトークンも必要です。を参照してください link:../get-started/get_api_token.html["API トークンを取得します"] APIトークンの生成の詳細については、を参照してください。
+
+.手順
+. APIリファレンスページの上部にある*[Authorize]*をクリックします。
+. APIトークンの値をコピーしてポップアップウィンドウのフィールドに貼り付け、*[Authorize]*をクリックし、*[Close]*をクリックします。
+. ページを下にスクロールし、目的のAPI呼び出しを開きます。
+. 右クリック*試してみてください*。
+. 同じAPI呼び出し内を下にスクロールし、*[Execute]*をクリックします。
+
+
+.結果
+API呼び出しが実行され、HTTPステータスコードが表示されます。

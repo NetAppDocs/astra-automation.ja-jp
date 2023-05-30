@@ -13,4 +13,8 @@ entries:
 - title: Kubernetes の基本概念
   url: "/get-started/kubernetes_concepts.html"
 - title: オンラインのAPIリファレンス
-  url: "/get-started/online_api_ref.html"
+  entries:
+  - title: リファレンスドキュメントにアクセスします
+    url: "/get-started/online_api_ref.html"
+  - title: 問題Astra REST APIコール
+    url: "/get-started/online_api_call.html"

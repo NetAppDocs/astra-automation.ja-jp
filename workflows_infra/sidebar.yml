@@ -44,3 +44,5 @@ entries:
     url: "/workflows_infra/wf_list_storage_classes.html"
   - title: ストレージバックエンドをリストします
     url: "/workflows_infra/wf_list_storage_backends.html"
+  - title: 動的なANFプールを有効化
+    url: "/workflows_infra/wf_enable_anf_dyn_pools.html"

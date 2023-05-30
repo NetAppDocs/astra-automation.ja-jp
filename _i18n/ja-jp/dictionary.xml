@@ -62,7 +62,6 @@
   <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="inline-link-macro">その他のリソース</block>
   <block id="1975d27c17bd745494bde5176f3687d2" category="paragraph">に示す追加情報のリソースを確認しておく必要があります <block ref="d9232e9ba333ee728d29f8228e038c57" category="inline-link-macro-rx"></block>。</block>
   <block id="6e567afb3c0582569592264335e77063" category="doc">API トークンを取得します</block>
-  <block id="b329e0b224bc672c7032902e91459644" category="list-text">ページで [API トークンの生成 ] をクリックし、ポップアップウィンドウで [API トークンの生成 ] をクリックします。</block>
   <block id="3040c02566f3d35a3b86a6ca9472dadd" category="list-text">アイコンをクリックしてトークン文字列をクリップボードにコピーし、エディタに保存します。</block>
   <block id="df98c0b39730eeb3f14749ea1c0684c2" category="list-text">同じページにあるアカウント ID をコピーして保存します。</block>
   <block id="1b18b55a054bdd1b04a8c8f5c862bc4f" category="doc">ワークフローを使用する準備をします</block>
@@ -227,7 +226,6 @@
   <block id="af9ef9bb2e7c334105bad0aa17ad5d28" category="section-title">6. アプリケーションを削除します</block>
   <block id="08a28b071946cc1515702440ff6582d8" category="paragraph">ワークフローを実行 <block ref="a7ef8d5c47daed312bb700c375f9019c" category="inline-link-macro-rx"></block> アプリケーションを削除します。</block>
   <block id="a242cf3d90ad638fe0e23d9477b74175" category="list-text">ページの上部で、 * API ドキュメント * の下に表示される URL をクリックします。</block>
-  <block id="1cafd580155ad918d6c525c18cc8e5e6" category="list-text">プロンプトが表示されたら、アカウントのクレデンシャルを再度入力し</block>
   <block id="015f8c34f52b6ef8a3361958660f5e88" category="inline-link-macro">その他の考慮事項については</block>
   <block id="7ab91fd48b58ce1ea4cada1f1a4e1808" category="doc">HTTP の詳細</block>
   <block id="deaf360f123e9392f769c7ceb4e01747" category="section-title">API トランザクションと CRUD モデル</block>
@@ -500,8 +498,6 @@
   <block id="6a627ba1141f45676a9b0d39e9f12cbe" category="cell">アプリケーションのクローニングとリストア</block>
   <block id="f51006269ca36dd064b0504bccc2bab2" category="paragraph">管理ワークフローを使用する場合は、さらにいくつかの点を考慮する必要があります。</block>
   <block id="78997a84642061d9102d778722872a51" category="paragraph">アプリケーションのクローニングでは、いくつかの点を考慮する必要があります。以下に、 JSON 入力のパラメータを示します。</block>
-  <block id="18bfd97c33ffd64bcd077be2ff48cd45" category="paragraph">Astra Control Center または Astra Control Service のアカウントが必要です。</block>
-  <block id="1fb6c6816575c47391caa2d4408774f5" category="paragraph">Astra Control Service の次のサイトにアクセスします。 <block ref="a7c1946d9e83ca7cb364e2283d9c1bfa" category="inline-link-macro-rx"></block></block>
   <block id="640575a1239211b2cdac8d24cbd8fe4e" category="paragraph">Astra Control Center と Astra Control Service は、 Curl などのプログラミング言語やユーティリティを使用して直接アクセスできる共通の REST API を提供します。API の主な特長とメリットを以下に示します。</block>
   <block id="351df3aa3706c8ed2199a8019e815c0c" category="admonition">REST API にアクセスするには、最初に Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する必要があります。トークンは各 API 要求に含める必要があります。</block>
   <block id="479c256f055cedaadf40e8a31b1cb62f" category="paragraph">REST API には、リソースコレクションへのアクセスに使用できる豊富なクエリパラメータが用意されています。フィルタ、ソート、ページ付けなどの処理がサポートされます。</block>
@@ -563,7 +559,6 @@
   <block id="6c38ead9bdb25d09c6e504c53fc268a5" category="paragraph">REST テクノロジを使用して Astra Control API が作成され、最新のベストプラクティスが適用されている。中核となるテクノロジは、 HTTP 、 JSON 、 RBAC です。</block>
   <block id="6ded6cd1a82081d2c5fe31ad44e26927" category="paragraph">Astra Control Service はパブリッククラウド環境で使用され、 Astra Control Center はオンプレミス環境に使用されます。これらの両方の導入モデルをサポートする REST API が 1 つあります。</block>
   <block id="973e2c06fdb700a27ccfb70fe4627261" category="paragraph">Astra Control REST API は、システムイベントやユーザ通知など、堅牢なデバッグおよび問題の特定機能を提供します。</block>
-  <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">REST API のリファレンスドキュメントは、現在のところ Astra Control に付属しており、オンラインで入手できます。</block>
   <block id="0f879b71f480ca631ac007cea8270eb9" category="paragraph">Astra Control REST API に用意されているプライマリリソースエンドポイントは、 3 つのカテゴリに分類されています。各リソースは、特定の場所を除いて、すべての CRUD 操作（作成、読み取り、更新、削除）を使用してアクセスできます。</block>
   <block id="a3fb339c1c586b61a4747f75e3e18873" category="list-text"><block ref="a3fb339c1c586b61a4747f75e3e18873" category="inline-link-rx"></block></block>
   <block id="8814863051032c96890d514b89b4519c" category="paragraph">Astra Control REST API には、定義されたクエリパラメータを使用してリソースコレクションにアクセスするためのさまざまな方法があります。</block>
@@ -705,15 +700,12 @@
   <block id="3430bf151db09278950b5545d1433fc0" category="paragraph">ラベルは Kubernetes オブジェクトに関連付けることができます。キーと値のペアを使用して属性を記述します。また、 Kubernetes の中核的な処理には含まれない、組織には役立つ任意の組織をクラスタに適用できます。</block>
   <block id="f2082cbd04c532123c4a60b265595268" category="paragraph">Astra Control REST API を使用するには、 Astra API トークンを取得する必要があります。</block>
   <block id="e18812059a8d09f0f17ebcad797930df" category="paragraph">API トークンは、 Astra の呼び出し元を識別し、すべての REST API 呼び出しに含める必要があります。</block>
-  <block id="0e2c9374186101782c17c706d964b6ab" category="list-text">Astra Web ユーザインターフェイスを使用して、 API トークンを生成できます。</block>
-  <block id="dd1c8bab333b87721ef3d1780c9d2744" category="list-text">トークンを使用して伝送されるユーザ ID は、トークンを作成するユーザによって決まります。</block>
   <block id="80c4d1da0ffc63fa594010f5c5541b4b" category="list-text">トークンは 'Authorization'HTTP 要求ヘッダーに含める必要があります</block>
   <block id="7d3bb36b2de41ab91073fa12ad3242f6" category="list-text">トークンは、 Astra の Web ユーザインターフェイスから取り消すことができます。</block>
   <block id="344fcf1ffe13f47b7e084c95c8926ec6" category="list-text"><block ref="344fcf1ffe13f47b7e084c95c8926ec6" category="inline-link-macro-rx"></block></block>
   <block id="1ac36aa6ca00de5e76a5920ca6368fa6" category="section-title">Astra API トークンを作成</block>
   <block id="8d4eb0217153cb37c8687158d7067cfb" category="paragraph">Astra API トークンを作成する手順を次に示します。</block>
   <block id="af02d3e1ad157f1839fbba3f7e1fc763" category="paragraph">このタスクは、 Astra Web インターフェイスで API トークンを生成します。また、 API 呼び出しの際にも必要なアカウント ID を取得する必要があります。</block>
-  <block id="38ed0da570fd8c0b212e0f8dc6cdb8fc" category="paragraph">Curl またはプログラミング言語を使用して Astra Control REST API にアクセスする場合は、 API ベアラトークンを HTTP'Authorization' 要求ヘッダーに含める必要があります。</block>
   <block id="ff187555434d269d1d36dedf48955cdb" category="paragraph">次の手順を確認して、 Astra Control REST API の使用を開始するための準備を簡単に行うことができます。</block>
   <block id="2f4e21e17441a71f2d731b0fdb15fc17" category="paragraph">Astra のクレデンシャルが必要になるのは、 Astra Web ユーザインターフェイスにサインインして、 API トークンを生成する場合です。Astra Control Center を使用すると、これらの資格情報をローカルで管理できます。Astra Control Service を使用すると、アカウントの資格情報に * Auth0 * サービスからアクセスできます。</block>
   <block id="4b96d62533ac6ea29ddc9891a6776a3b" category="paragraph">Kubernetes のいくつかの基本概念を理解しておく必要があります。を参照してください <block ref="e274b8e6d2e2ed892d318b3b2d0764db" category="inline-link-macro-rx"></block> を参照してください。</block>
@@ -1184,12 +1176,9 @@
   <block id="52eabae058b28c969498b7a857c6879d" category="list-text"><block ref="52eabae058b28c969498b7a857c6879d" category="inline-link-rx"></block></block>
   <block id="8f84a5e65a3efc01a0b185016179b60b" category="admonition">Astra Controlのすべてのリリースには、* YY.MM *形式のバージョン番号が割り当てられます。この値は、利用可能になった年（_YY_）と月（_MM_）に基づいてバージョンを識別します。たとえば、2023年4月にAstra Control Center 23.04がリリースされました。</block>
   <block id="c41bf5dc0ae334cb95d5c9af7e04effd" category="paragraph">一般に、Astra Control ServiceとAstra Control Centerの更新は同時に行われます。ただし、Astra Control Serviceではリリースサイクルが短縮されているため、最新のAstra Control Centerバージョン以降に1つ以上の差分更新が行われる可能性があります。</block>
-  <block id="010fb6f5627b64ba23d67bf240d888f1" category="list-text">Astra Control Service 23.04</block>
   <block id="20a97065ffc33c9c3dbdd1435b0a9fef" category="list-text">Astra Control Center 23.04</block>
   <block id="e2345475f657a83bdb89f0d758173706" category="inline-link">Astra Control Center 23.04のドキュメント</block>
   <block id="806930774cd41dac9f96fae2a8f4bdd3" category="list-text"><block ref="806930774cd41dac9f96fae2a8f4bdd3" category="inline-link-rx"></block></block>
-  <block id="40e101808c19a51478d8108eed888560" category="inline-link">Astra Control Service 23.04のドキュメント</block>
-  <block id="aff8f153110395d7fa2dad02e6fef700" category="list-text"><block ref="aff8f153110395d7fa2dad02e6fef700" category="inline-link-rx"></block></block>
   <block id="cdfde9b3972928d07d0aa9787e6589c3" category="section-title">2023年4月25日（23.04）</block>
   <block id="05b8695ac535480ad4f4cf9e5bd4ecd2" category="paragraph">このリリースでは、REST APIに対する一部の更新が含まれています。</block>
   <block id="a1dba4846637919a02bf180b636f6229" category="section-title">選択的なリストア処理</block>
@@ -1197,4 +1186,47 @@
   <block id="fc39be20ea823e1b9e3d3a96c1cc1c4d" category="section-title">データ専用アプリケーションのサポート</block>
   <block id="060c77065349f3e6f9b971248729bf60" category="paragraph">アプリケーション管理のサポートは、データ専用アプリケーションに拡張されました。</block>
   <block id="b844ee2db8fd78557f753d0c04015c4a" category="summary">Astra Controlは、Kubernetesアプリケーションのデータライフサイクル管理を可能にするネットアップのソフトウェア製品です。環境に応じて2種類の導入モデルがあります。リリースに応じて、Astra Control CenterとAstra Control Serviceはどちらも同じREST APIを共有します。REST APIやその他の関連する自動化テクノロジを使用して、Astra Control環境を管理できます。</block>
+  <block id="e347b2f3a025e39e9b9b45d49ad72dab" category="summary">Astra Control REST API呼び出しは、APIリファレンスドキュメントページから問題できます。</block>
+  <block id="d2d3bbdb180fea4732023aa385c2bcad" category="doc">問題Astra REST APIコール</block>
+  <block id="53b4dbb805da489969e32d5e207f43af" category="inline-link-macro">Astra APIのリファレンスドキュメントにアクセス</block>
+  <block id="ebe7080a642d0936cad4e377fe9b8401" category="paragraph">Astraにサインインし、APIリファレンスページにアクセスする必要があります。を参照してください <block ref="010c4a1892f0ae334c914939807b2734" category="inline-link-macro-rx"></block> を参照してください。REST APIを使用するにはトークンも必要です。を参照してください <block ref="949977ec887dbf77cf703083221524dc" category="inline-link-macro-rx"></block> APIトークンの生成の詳細については、を参照してください。</block>
+  <block id="cbed555cdf913285d9275ccd1866519f" category="list-text">APIリファレンスページの上部にある*[Authorize]*をクリックします。</block>
+  <block id="f1fca9fdba2865f1e5e68171f8e501c8" category="list-text">APIトークンの値をコピーしてポップアップウィンドウのフィールドに貼り付け、*[Authorize]*をクリックし、*[Close]*をクリックします。</block>
+  <block id="d77956bf312c489126fb210ac26e1560" category="list-text">ページを下にスクロールし、目的のAPI呼び出しを開きます。</block>
+  <block id="640c9068a50bdac21a3ada93c538c020" category="list-text">右クリック*試してみてください*。</block>
+  <block id="faa896405f051eeeb846ead40d365dcf" category="list-text">同じAPI呼び出し内を下にスクロールし、*[Execute]*をクリックします。</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
+  <block id="5a698356ed60cc238c0048ecf6f15037" category="paragraph">API呼び出しが実行され、HTTPステータスコードが表示されます。</block>
+  <block id="e90840c9e835dabec4f6627d0ccddef2" category="paragraph">導入時にAstra Webユーザインターフェイスにサインインするには、クレデンシャルが必要です。リファレンスドキュメントにアクセスするための手順は、Astra ControlサービスとAstra Control Centerで同じです。URLだけが異なります。リファレンスドキュメントにアクセスして表示するためにAPIトークンは必要ありません。</block>
+  <block id="c961cf856b145ed8b86b895597c0d1b6" category="list-text">次のアカウントクレデンシャルを使用してAstraにサインインします。</block>
+  <block id="ffda91bc16561c140aa3a3293cb3373d" category="list-text">Astra Controlサービス： <block ref="a7c1946d9e83ca7cb364e2283d9c1bfa" category="inline-link-macro-rx"></block></block>
+  <block id="b95e7570a853619e504ccb1e42b41457" category="list-text">Astra Control Center：インストール時に設定したローカル環境のURLを使用します</block>
+  <block id="93a04a12da3b73c104f76110d28e439f" category="paragraph">Swaggerページが新しいウィンドウまたはタブで表示されます。URLには、サインインしたアカウントのアカウントIDが含まれていることに注意してください。</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">次の手順</block>
+  <block id="2e72d917f5fd43aa4a556d9db54a8b23" category="paragraph">必要に応じて、SwaggerページからAPI呼び出しを実行できます。を参照してください <block ref="d791a02ae369ca3bfa55295caf72fedd" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="7652ed5ca976b004d92eaaa78c376c9d" category="list-text">Astra Webユーザインターフェイスを使用してAPIトークンを生成する必要があります。</block>
+  <block id="3c8afa648b8d63ba3e2f942bec9ab73e" category="list-text">トークンを生成するための手順は、どちらのAstra導入モデルでも同じです。Astraへのアクセスに使用されるURLのみが異なります。</block>
+  <block id="19f3e619111d8d4c522de7221584fc6c" category="list-text">トークンと関連付けられているアクセス許可とともに伝送されるユーザーIDは、トークンを作成したユーザーによって決定されます。</block>
+  <block id="69c0346ff6510c5ad7f7659ec6fd66be" category="list-text">ページで*[APIトークンの生成]*をクリックし、ポップアップウィンドウで*[APIトークンの生成]*をクリックします。</block>
+  <block id="e720ccabcfbd213be97f4476ff0c5601" category="paragraph">curlまたはプログラミング言語を使用してAstra Control REST APIにアクセスする場合は、API BearerトークンをHTTPに含める必要があります<block ref="9cd8a2455b1839ff98ef70c05b9b5983" prefix=" " category="inline-code"></block> 要求ヘッダー。</block>
+  <block id="9aba329f6bcfe3b8f1b0df8dd4c1e1fa" category="summary">ANFストレージバックエンドを備えたプライベートオンプレミスクラスタで管理対象アプリケーションをバックアップする場合は、動的なANFプール機能を有効にする必要があります。これには、容量プールを拡張および縮小するときに使用するサブスクリプションIDを指定します。</block>
+  <block id="2d895ac3837ac459cbcdcd76339d84cd" category="doc">自己管理型クラスタ向けに動的ANFプールを有効化</block>
+  <block id="5eb0c12811f3c807e7fa3fce6fb5b38d" category="inline-link">Azureアプリケーションのバックアップ</block>
+  <block id="d2f8ee1082b8b805ab4862d852412403" category="admonition">動的ANFプールは、Azure NetApp Files（ANF）ストレージバックエンドを使用するAstraが管理するアプリケーションの機能です。これらのアプリケーションをバックアップすると、永続ボリュームが属する容量プールがAstraによって自動的に1.5倍に拡張および縮小されます。これにより、追加の恒久的な料金を支払うことなく、バックアップ用の十分なスペースが確保されます。を参照してください<block ref="e77f243482d8cab01f119049bce61a15" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="7d1e075c0879d28eb6f2e0dc2ca0c95d" category="section-title">1. AzureサブスクリプションIDを追加します</block>
+  <block id="842df53ed4115db6639f801f88098d30" category="admonition">サブスクリプションIDやサービスプリンシパルのbase64値など、環境に応じてJSON入力例を更新する必要があります。</block>
+  <block id="e740ac68beb1aec839dcd6ebdf75bf51" category="section-title">2.必要に応じてバケットを追加します</block>
+  <block id="efdbcac27db1bf42436b1e2e15d5d0e5" category="paragraph">必要に応じて、管理対象アプリケーションにバケットを追加する必要があります。</block>
+  <block id="31858496f01db3c4c122cda1f4614893" category="section-title">3.管理対象アプリのバックアップを作成します</block>
+  <block id="25e18fd10fb78e25d46577d809123272" category="paragraph">ワークフローを実行 <block ref="531c5c815f0a3a3ceb921ff9baf4d1b9" category="inline-link-macro-rx"></block>。元の永続ボリュームが存在する容量プールは、自動的に拡張および縮小されます。</block>
+  <block id="96422ff09af7e6fad796f820c7b0e17c" category="section-title">4.イベントログを確認します</block>
+  <block id="5212b6690e36338eb93a0191226877d7" category="paragraph">アクティビティイベントはバックアップ中に記録されます。ワークフローを実行 <block ref="0828f7558c056f6ee4409551e28d3465" category="inline-link-macro-rx"></block> をクリックしてメッセージを表示します。</block>
+  <block id="2aeee044c45621f3427b4056855a973c" category="list-text">Astra Control Service 23.05</block>
+  <block id="a1a82e7175905cefa5377393fc5e0e4b" category="inline-link">Astra Control Service 23.05ドキュメント</block>
+  <block id="87baaf02b03cc0785a4a9e2b89d4cdc4" category="list-text"><block ref="87baaf02b03cc0785a4a9e2b89d4cdc4" category="inline-link-rx"></block></block>
+  <block id="162c594ec970f3cd4eb2f6d6d2311381" category="section-title">2023年5月30日（23.05）</block>
+  <block id="3ecf6cf3aaad58d22b055973cbbae0d4" category="paragraph">デスティネーションストレージクラスは、リストア処理またはクローン処理の実行時に選択できます。</block>
+  <block id="5917ef890e9d60f9bf3cc41a2723766a" category="inline-link-macro">動的なANFプールを有効化</block>
+  <block id="10331a659c4281dea77fa4165e988593" category="paragraph">ANFストレージバックエンドを備えたプライベートオンプレミスクラスタで管理対象アプリケーションをバックアップする場合、サブスクリプションIDを指定して動的なANFプール機能を有効にできるようになりました。を参照してください <block ref="0d6a3e3d7740d3989d225fce5dc1ad21" category="inline-link-macro-rx"></block> を参照してください。</block>
+  <block id="157ecd713825d83c3595df6b4c0c11af" category="sidebar">リファレンスドキュメントにアクセスします</block>
 </blocks>

@@ -4,7 +4,7 @@ permalink: get-started/online_api_ref.html
 keywords: reference, api reference 
 summary: HTTPメソッド、入力パラメータ、応答など、Astra Control REST API呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。 
 ---
-= オンラインのAPIリファレンス
+= Astra APIのリファレンスドキュメントにアクセス
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,18 +16,22 @@ summary: HTTPメソッド、入力パラメータ、応答など、Astra Control
 [role="lead"]
 HTTPメソッド、入力パラメータ、応答など、Astra Control REST API呼び出しの詳細にアクセスできます。このリファレンスは、 REST API を使用して自動化アプリケーションを開発する場合に役立ちます。
 
-
-NOTE: REST API のリファレンスドキュメントは、現在のところ Astra Control に付属しており、オンラインで入手できます。
-
 .作業を開始する前に
-Astra Control Center または Astra Control Service のアカウントが必要です。
+導入時にAstra Webユーザインターフェイスにサインインするには、クレデンシャルが必要です。リファレンスドキュメントにアクセスするための手順は、Astra ControlサービスとAstra Control Centerで同じです。URLだけが異なります。リファレンスドキュメントにアクセスして表示するためにAPIトークンは必要ありません。
 
 .手順
-. アカウントのクレデンシャルを使用して Astra にサインインします。
+. 次のアカウントクレデンシャルを使用してAstraにサインインします。
 +
-Astra Control Service の次のサイトにアクセスします。 link:https://astra.netapp.io["https://astra.netapp.io"^]
+** Astra Controlサービス： link:https://astra.netapp.io["https://astra.netapp.io"^]
+** Astra Control Center：インストール時に設定したローカル環境のURLを使用します
+
 
 . ページの右上にある図のアイコンをクリックし、 * API access * を選択します。
 . ページの上部で、 * API ドキュメント * の下に表示される URL をクリックします。
-. プロンプトが表示されたら、アカウントのクレデンシャルを再度入力し
 
+
+.結果
+Swaggerページが新しいウィンドウまたはタブで表示されます。URLには、サインインしたアカウントのアカウントIDが含まれていることに注意してください。
+
+.次の手順
+必要に応じて、SwaggerページからAPI呼び出しを実行できます。を参照してください link:../get-started/online_api_call.html["問題Astra REST APIコール"] を参照してください。
