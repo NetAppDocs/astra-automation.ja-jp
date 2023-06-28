@@ -18,6 +18,24 @@ summary: ネットアップでは、Astra Control REST APIを定期的に更新�
 
 
 
+== 2023年6月27日（23.06）
+
+このリリースでは、REST APIに対する一部の更新が含まれています。
+
+
+
+=== Azure Marketplace で入手できます
+
+Azure Marketplaceのサブスクリプションは、分単位ではなく時間単位で課金されるようになりました。も参照してください https://docs.netapp.com/us-en/astra-control-service/use/set-up-billing.html["請求を設定します"^]。
+
+
+
+=== RESTIC最適化
+
+フラグを使用して、RESTICバックアップのパフォーマンス最適化を有効にすることができます `useResticParallel` 新しいで `astra.datamover` 設定APIリソース。に設定すると `true`、の数 `backendConnections` これは、大容量ボリュームをAzureコンテナにバックアップする場合に使用される容量が増加します。1TB~4TBのボリュームでは、128個の接続が使用されます。4TBを超えるボリュームでは、512のバックエンド接続が使用されます。
+
+
+
 == 2023年5月30日（23.05）
 
 このリリースでは、REST APIに対する一部の更新が含まれています。
