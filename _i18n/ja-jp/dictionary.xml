@@ -1193,7 +1193,6 @@
   <block id="f1fca9fdba2865f1e5e68171f8e501c8" category="list-text">APIトークンの値をコピーしてポップアップウィンドウのフィールドに貼り付け、*[Authorize]*をクリックし、*[Close]*をクリックします。</block>
   <block id="d77956bf312c489126fb210ac26e1560" category="list-text">ページを下にスクロールし、目的のAPI呼び出しを開きます。</block>
   <block id="640c9068a50bdac21a3ada93c538c020" category="list-text">右クリック*試してみてください*。</block>
-  <block id="faa896405f051eeeb846ead40d365dcf" category="list-text">同じAPI呼び出し内を下にスクロールし、*[Execute]*をクリックします。</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
   <block id="5a698356ed60cc238c0048ecf6f15037" category="paragraph">API呼び出しが実行され、HTTPステータスコードが表示されます。</block>
   <block id="e90840c9e835dabec4f6627d0ccddef2" category="paragraph">導入時にAstra Webユーザインターフェイスにサインインするには、クレデンシャルが必要です。リファレンスドキュメントにアクセスするための手順は、Astra ControlサービスとAstra Control Centerで同じです。URLだけが異なります。リファレンスドキュメントにアクセスして表示するためにAPIトークンは必要ありません。</block>
@@ -1235,4 +1234,5 @@
   <block id="3987948e759f27889fb63521255c084f" category="inline-link">Astra Control Service 23.06ドキュメント</block>
   <block id="8de8be2639041c77c0c0e3c2870c7446" category="list-text"><block ref="8de8be2639041c77c0c0e3c2870c7446" category="inline-link-rx"></block></block>
   <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Astra Control REST APIの23.06リリースでは、新しい既知の問題はありません。以下に記載する問題は以前のリリースで見つかったため、現在のリリースにも該当します。</block>
+  <block id="db21e6fd52879394e8294f15387580ad" category="list-text">同じAPI呼び出し内で下にスクロールします。必要なパラメータ値を指定し、*[Execute]*をクリックしてコールを問題します。</block>
 </blocks>
