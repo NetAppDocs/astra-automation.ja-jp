@@ -1,6 +1,6 @@
 ---
 section: rest-core
-title: コア REST の実装
+title: コア設計
 entries:
 - title: REST Web サービス
   url: "/rest-core/rest_web_services.html"

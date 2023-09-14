@@ -18,7 +18,7 @@ Astra Control REST API を使用するには、 Astra API トークンを取得�
 
 
 
-== はじめに
+== 概要
 
 API トークンは、 Astra の呼び出し元を識別し、すべての REST API 呼び出しに含める必要があります。
 

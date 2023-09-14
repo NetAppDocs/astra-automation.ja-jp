@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: aa-earlier-versions.html 
+permalink: rn/earlier-versions.html 
 keywords: earlier versions, earlier releases 
 summary: 以前のAstra Controlリリースの自動化に関するドキュメントにアクセスできます。 
 ---

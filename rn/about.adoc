@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: rn/about.html 
 keywords: about, about this release, current release 
-summary: このサイトのドキュメントでは、Astra Control REST APIと、Astra Controlで利用可能な関連自動化テクノロジについて説明しています。 
+summary: このサイトのドキュメントでは、2つのAstra Control導入モデルに含まれるAstra Control REST APIと関連する自動化テクノロジについて説明しています。 
 ---
 = このリリースについて
 :hardbreaks:
@@ -14,15 +14,13 @@ summary: このサイトのドキュメントでは、Astra Control REST APIと�
 
 
 [role="lead"]
-このサイトのドキュメントでは、次の2つのAstra Control導入モデルに含まれるAstra Control REST APIと関連する自動化テクノロジについて説明します。
+このサイトのドキュメントでは、2つのAstra Control導入モデルに含まれるAstra Control REST APIと関連する自動化テクノロジについて説明しています。
 
-
-NOTE: Astra Controlのすべてのリリースには、* YY.MM *形式のバージョン番号が割り当てられます。この値は、利用可能になった年（_YY_）と月（_MM_）に基づいてバージョンを識別します。たとえば、2023年7月にAstra Control Center 23.07がリリースされました。
+.リリースのバージョン管理
+Astra Controlのすべてのリリースには、* YY.MM *形式のバージョン番号が割り当てられます。この値は、利用可能になった年（_YY_）と月（_MM_）に基づいてバージョンを識別します。たとえば、2023年7月にAstra Control Center 23.07がリリースされました。
 
 .ケイデンスを解放します
-一般に、Astra Control ServiceとAstra Control Centerの更新は同時に行われます。ただし、Astra Control Serviceではリリースサイクルが短縮されているため、最新のAstra Control Centerバージョン以降に1つ以上の差分更新が行われる可能性があります。
-
-このサイトには両方の導入モデルのREST APIが記載されているため、一部の機能は最新のAstra Control Serviceリリースでしか使用できない場合があります。2つの導入モデルの違いを必要に応じて記載します。
+通常、Astra Control ServiceとAstra Control Centerの更新は同時に実行されます。しかし、これまでのAstra Control Serviceではリリースサイクルが短縮されていました。そのため、最新のAstra Control Centerリリース以降に1つ以上の差分更新が行われました。
 
 .Astra Controlの導入
 このサイトのドキュメント環境 次のAstra Controlリリース：
@@ -31,6 +29,8 @@ NOTE: Astra Controlのすべてのリリースには、* YY.MM *形式のバー�
 * Astra Control Center 23.07
 
 
+このサイトでは両方の導入モデルのREST APIについて説明しているため、一方の導入モデルでしか使用できない機能もあります。この2つの大きな違いは、必要に応じて記録されます。
+
 .詳細情報
 最新リリースおよび以前のAstra Controlリリースの詳細については、次のページとサイトを参照してください。
 
@@ -38,7 +38,7 @@ NOTE: Astra Controlのすべてのリリースには、* YY.MM *形式のバー�
 * link:../endpoints/resources.html["REST のリソースとエンドポイント"]
 * https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center 23.07ドキュメント"^]
 * https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 23.07ドキュメント"^]
-* link:../aa-earlier-versions.html["旧バージョンの Astra Automation ドキュメント"]
+* link:../rn/earlier-versions.html["旧バージョンの Astra Automation ドキュメント"]
 
 
 .ドキュメントの改善にご協力ください
