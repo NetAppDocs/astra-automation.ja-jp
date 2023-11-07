@@ -16,6 +16,7 @@ summary: 以前のAstra Controlリリースの自動化に関するドキュメ�
 [role="lead"]
 以前の Astra Control リリースの自動化に関するドキュメントには、次のリンクからアクセスできます。
 
+* https://docs.netapp.com/us-en/astra-automation-2307/["Astra Control Automation 23.07ドキュメント"^]
 * https://docs.netapp.com/us-en/astra-automation-2304/["Astra Control Automation 23.04ドキュメント"^]
 * https://docs.netapp.com/us-en/astra-automation-2211/["Astra Control Automation 22.11ドキュメント"^]
 * https://docs.netapp.com/us-en/astra-automation-2208/["Astra Control Automation 22.08ドキュメント"^]
