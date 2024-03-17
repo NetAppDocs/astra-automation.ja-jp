@@ -606,7 +606,6 @@
   <block id="4bddbc6d61b2586c05f9efdf9aa7b5cd" category="paragraph">以前の Astra Control リリースの自動化に関するドキュメントには、次のリンクからアクセスできます。</block>
   <block id="832210201d55f5c764a32c055a00b726" category="inline-link">Astra Control Automation 21.08 ドキュメント</block>
   <block id="025fa2688359a439d7fa215fbbbaf287" category="list-text"><block ref="025fa2688359a439d7fa215fbbbaf287" category="inline-link-rx"></block></block>
-  <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Astra Control Automation のドキュメント</block>
   <block id="08d7f360c94a906d3639173599184943" category="paragraph">次の REST API 呼び出しを実行します。バックアップ（以下を参照）または Snapshot の ID を指定する必要があります。</block>
   <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">curl の例：バックアップからアプリを所定の場所にリストアします</block>
   <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">リソース</block>
@@ -1264,4 +1263,5 @@
   <block id="ad688d9042062312f59460f99f7f7881" category="list-text"><block ref="ad688d9042062312f59460f99f7f7881" category="inline-link-rx"></block></block>
   <block id="2ce5679e796a226301682da2e8eb77f6" category="inline-link">Astra Control Automation 23.10ドキュメント</block>
   <block id="b59949e755b5f42564828ce536cb3b96" category="list-text"><block ref="b59949e755b5f42564828ce536cb3b96" category="inline-link-rx"></block></block>
+  <block id="0b11ef934b0c996ff94917743f4e7c1c" category="doc">Astra Control Automation 24.02ドキュメント</block>
 </blocks>
