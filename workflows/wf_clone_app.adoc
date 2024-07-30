@@ -18,7 +18,7 @@ summary: 既存のアプリケーションをクローニングして、新し�
 
 
 
-=== 作業を開始する前に
+== 作業を開始する前に
 
 このワークフローについては、次の点に注意してください。
 
@@ -32,15 +32,18 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
 
 
 
-=== 1.クローンを作成するアプリケーションを選択します
+== 手順1：クローニングするアプリケーションを選択
 
 ワークフローを実行 link:wf_list_man_apps.html["アプリを表示します"] をクリックし、クローニングするアプリケーションを選択します。アプリケーションのクローニングに使用される REST 呼び出しには、いくつかのリソース値が必要です。
 
 
 
-=== 2. アプリを複製します
+== ステップ2：アプリのクローンを作成する
 
 次のREST API呼び出しを実行してアプリケーションをクローニングします。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -49,10 +52,7 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
 
 | 投稿（ Post ） | /accounts /｛account_id｝/k8s/v2/apps 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="25,10,10,55"]
@@ -62,10 +62,18 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
 
 | JSON | ボディ（ Body ） | はい。 | クローニングされたアプリケーションのパラメーターを提供します。以下の例を参照してください。 
 |===
-
-
-===== JSON の入力例
-
+.curl の例：アプリケーションのクローンを作成します
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps" \
+--include \
+--header "Content-Type: application/astra-app+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
 [source, json]
 ----
 {
@@ -77,12 +85,4 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
   "namespace": "mysql-ns",
   "sourceAppID": "e591ee59-ea90-4a9f-8e6c-d2b6e8647096"
 }
-----
-
-
-===== curl の例：アプリケーションのクローンを作成します
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

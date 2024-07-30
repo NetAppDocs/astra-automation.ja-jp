@@ -18,15 +18,18 @@ summary: 特定のアプリケーション用に作成されたバックアッ�
 
 
 
-=== 作業を開始する前に
+== 作業を開始する前に
 
 バックアップを表示するアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます link:wf_list_man_apps.html["アプリを表示します"] アプリケーションを検索します。
 
 
 
-=== 1. バックアップを一覧表示します
+== バックアップをリスト表示します
 
 次の REST API 呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ summary: 特定のアプリケーション用に作成されたバックアッ�
 
 | 取得 | /accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="25,10,10,55"]
@@ -48,19 +48,17 @@ summary: 特定のアプリケーション用に作成されたバックアッ�
 
 | アプリケーションID | パス | はい。 | リストされたバックアップを所有する管理アプリケーションを指定します。 
 |===
-
-
-===== curl の例：アプリケーションのすべてのバックアップを返します
-
+.curl の例：アプリケーションのすべてのバックアップを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups" \
+--include  \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== JSON 出力例
-
-[source, json]
+.JSON 出力例
+[listing]
 ----
 {
     "items": [

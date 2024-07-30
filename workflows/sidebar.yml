@@ -2,7 +2,7 @@
 section: workflows
 title: 管理ワークフロー
 entries:
-- title: 作業を開始する前に
+- title: 管理ワークフローを使用するための準備
   url: "/workflows/workflows_before.html"
 - title: アプリコントロール
   entries:

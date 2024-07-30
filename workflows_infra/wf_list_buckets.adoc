@@ -16,11 +16,10 @@ summary: 特定のアストラアカウント用に定義された S3 バケッ�
 [role="lead"]
 特定のアストラアカウント用に定義された S3 バケットをリストできます。
 
-
-
-=== 1. バケットをリストします
-
 次のREST API呼び出しを実行してバケットを表示します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -29,11 +28,12 @@ summary: 特定のアストラアカウント用に定義された S3 バケッ�
 
 | 取得 | /accounts /｛account_id｝/topology/v1 /バケット 
 |===
-
-
-===== curl の例：すべてのバケットのすべてのデータを返します
-
+.curl の例：すべてのバケットのすべてのデータを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/buckets' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/buckets" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

@@ -18,7 +18,7 @@ summary: アプリケーションに関連付けられているSnapshotを削除
 
 
 
-=== 作業を開始する前に
+== 作業を開始する前に
 
 次の情報が必要です。
 
@@ -28,9 +28,12 @@ summary: アプリケーションに関連付けられているSnapshotを削除
 
 
 
-=== 1. スナップショットを削除します
+== Snapshotを削除します。
 
 次の REST API 呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -39,10 +42,7 @@ summary: アプリケーションに関連付けられているSnapshotを削除
 
 | 削除 | /accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appSnaps/｛appSnap_id｝ 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="25,10,10,55"]
@@ -55,11 +55,12 @@ summary: アプリケーションに関連付けられているSnapshotを削除
 
 | Snapshot ID | パス | はい。 | 削除する Snapshot を指定します。 
 |===
-
-
-===== curl の例：アプリケーションのスナップショットを 1 つ削除します
-
+.curl の例：アプリケーションのスナップショットを 1 つ削除します
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps/<SNAPSHOT_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request DELETE \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps/<SNAPSHOT_ID>" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

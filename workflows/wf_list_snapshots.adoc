@@ -18,15 +18,18 @@ summary: 特定のアプリケーションに対して作成されたスナッ�
 
 
 
-=== 作業を開始する前に
+== 作業を開始する前に
 
 スナップショットを表示するアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます link:wf_list_man_apps.html["アプリを表示します"] アプリケーションを検索します。
 
 
 
-=== 1. スナップショットを一覧表示します
+== Snapshot を一覧表示します
 
 次のREST API呼び出しを実行してSnapshotを表示します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ summary: 特定のアプリケーションに対して作成されたスナッ�
 
 | 取得 | /accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appSnaps 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="15,10,10,65"]
@@ -51,27 +51,26 @@ summary: 特定のアプリケーションに対して作成されたスナッ�
 
 | カウント | クエリ | いいえ | 'count=true' の場合 ' スナップショットの数は応答のメタデータセクションに含まれます 
 |===
-
-
-===== curl の例：アプリケーションのすべてのスナップショットを返します
-
+.curl の例：アプリケーションのすべてのスナップショットを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== curl の例：アプリケーションのすべてのスナップショットとカウントを返します
-
+.curl の例：アプリケーションのすべてのスナップショットとカウントを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps?count=true' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps?count=true" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== JSON 出力例
-
-[source, json]
+.JSON 出力例
+[listing]
 ----
 {
     "items": [

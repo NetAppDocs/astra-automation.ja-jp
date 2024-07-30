@@ -18,15 +18,18 @@ summary: 特定のアプリケーションのバックアップを作成し、�
 
 
 
-=== 作業を開始する前に
+== 作業を開始する前に
 
 バックアップするアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます link:wf_list_man_apps.html["アプリを表示します"] アプリケーションを検索します。
 
 
 
-=== 1. バックアップを作成します
+== バックアップを作成します
 
 次の REST API 呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ summary: 特定のアプリケーションのバックアップを作成し、�
 
 | 投稿（ Post ） | /accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="25,10,10,55"]
@@ -51,10 +51,18 @@ summary: 特定のアプリケーションのバックアップを作成し、�
 
 | JSON | ボディ（ Body ） | はい。 | バックアップのパラメータが表示されます。以下の例を参照してください。 
 |===
-
-
-===== JSON の入力例
-
+.curl の例：アプリケーションのバックアップを作成します
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups" \
+--include \
+--header "Content-Type: application/astra-appBackup+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
 [source, json]
 ----
 {
@@ -62,12 +70,4 @@ summary: 特定のアプリケーションのバックアップを作成し、�
   "version": "1.1",
   "name": "backup-david-1"
 }
-----
-
-
-===== curl の例：アプリケーションのバックアップを作成します
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Content-Type: application/astra-appBackup+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

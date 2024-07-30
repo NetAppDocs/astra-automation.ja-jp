@@ -21,12 +21,15 @@ NOTE: 動的ANFプールは、Azure NetApp Files（ANF）ストレージバッ�
 
 
 
-=== 1. AzureサブスクリプションIDを追加します
+== 手順1：AzureサブスクリプションIDを追加する
 
 次の REST API 呼び出しを実行します。
 
 
 NOTE: サブスクリプションIDやサービスプリンシパルのbase64値など、環境に応じてJSON入力例を更新する必要があります。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -35,6 +38,17 @@ NOTE: サブスクリプションIDやサービスプリンシパルのbase64値
 
 | 投稿（ Post ） | /accounts /｛account_id｝/core/v1/credentials 
 |===
+.カールの例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Content-Type: application/astra-credential+json"
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
 .JSON の入力例
 [source, json]
 ----
@@ -65,25 +79,20 @@ NOTE: サブスクリプションIDやサービスプリンシパルのbase64値
   }
 }
 ----
-.カールの例
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Content-Type: application/astra-credential+json'
-----
 
 
-=== 2.必要に応じてバケットを追加します
+== 手順2：必要に応じてバケットを追加する
 
 必要に応じて、管理対象アプリケーションにバケットを追加する必要があります。
 
 
 
-=== 3.管理対象アプリのバックアップを作成します
+== ステップ3：管理対象アプリのバックアップを作成する
 
 ワークフローを実行 link:../workflows/wf_create_backup.html["アプリケーションのバックアップを作成する"]。元の永続ボリュームが存在する容量プールは、自動的に拡張および縮小されます。
 
 
 
-=== 4.イベントログを確認します
+== 手順4：イベントログを確認する
 
 アクティビティイベントはバックアップ中に記録されます。ワークフローを実行 link:../workflows/wf_list_notifications.html["通知を一覧表示します"] をクリックしてメッセージを表示します。

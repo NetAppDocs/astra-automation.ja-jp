@@ -18,15 +18,18 @@ summary: 特定のクラウドで使用可能なクラスタをリストでき�
 
 
 
-=== 1.クラウドを選択します
+== ステップ1：クラウドを選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_clouds.html["クラウドをリストしてください"] をクリックし、クラスタを含むクラウドを選択します。
 
 
 
-=== 2.クラスタを表示します
+== 手順2：クラスタをリストする
 
 特定のクラウドにあるクラスタを表示するには、次のREST API呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -35,19 +38,17 @@ summary: 特定のクラウドで使用可能なクラスタをリストでき�
 
 | 取得 | /accounts /｛account_id｝/topology/v1 /雲/｛cloud_id｝/ clusters 
 |===
-
-
-===== curl の例：すべてのクラスタのすべてのデータを返します
-
+.curl の例：すべてのクラスタのすべてのデータを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== JSON 出力例
-
-[source, json]
+.JSON 出力例
+[listing]
 ----
 {
     "items": [

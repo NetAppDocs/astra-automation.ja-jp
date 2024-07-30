@@ -16,11 +16,10 @@ summary: 使用可能なストレージバックエンドを表示できます�
 [role="lead"]
 使用可能なストレージバックエンドを表示できます。
 
-
-
-=== 1.バックエンドをリストします
-
 次の REST API 呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -29,19 +28,17 @@ summary: 使用可能なストレージバックエンドを表示できます�
 
 | 取得 | /accounts /｛account_id｝/topology/v1/storageBackends 
 |===
-
-
-===== cURL の例：すべてのストレージバックエンドのすべてのデータを返します
-
+.cURL の例：すべてのストレージバックエンドのすべてのデータを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/storageBackends' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/storageBackends" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== JSON 出力例
-
-[source, json]
+.JSON 出力例
+[listing]
 ----
 {
   "items": [

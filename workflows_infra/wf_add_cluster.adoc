@@ -21,21 +21,25 @@ NOTE: 主要なクラウドプロバイダ（AKS、EKS、GKE）のいずれか�
 
 
 
-=== 1. kubeconfigファイルを取得します
+== 手順1：kubeconfigファイルを取得する
 
 Kubernetesの管理者またはサービスから* kubconfig *ファイルのコピーを取得する必要があります。
 
 
 
-=== 2. kubeconfigファイルを準備します
+== 手順2：kubeconfigファイルを準備する
 
 *kubeconfig *ファイルを使用する前に、次の操作を実行する必要があります。
 
-.ファイルをYAML形式からJSONに変換します
+. ファイルをYAML形式からJSON形式に変換します。
++
 YAML形式のkubeconfigファイルを受信した場合は、JSONに変換する必要があります。
 
-.base64でJSONをエンコードします
+. base64でJSONをエンコードします。
++
 base64のJSONファイルをエンコードする必要があります。
+
+
 
 .例
 次に、kubeconfigファイルをYAMLからJSONに変換し、base64でエンコードする例を示します。
@@ -44,7 +48,7 @@ base64のJSONファイルをエンコードする必要があります。
 
 
 
-=== 3.クラウドを選択します
+== ステップ3：クラウドを選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_clouds.html["クラウドをリストしてください"] をクリックし、クラスタを追加するクラウドを選択します。
 
@@ -53,9 +57,12 @@ NOTE: 選択できるクラウドは*プライベート*クラウドのみです
 
 
 
-=== 4.認証情報を作成します
+== 手順4：クレデンシャルを作成する
 
 次のREST API呼び出しを実行して、kubeconfigファイルを使用してクレデンシャルを作成します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -64,11 +71,18 @@ NOTE: 選択できるクラウドは*プライベート*クラウドのみです
 
 | 投稿（ Post ） | /accounts /｛account_id｝/core/v1/credentials 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
+[source, json]
 ----
 {
   "type" :  "application/astra-credential",
@@ -83,17 +97,12 @@ NOTE: 選択できるクラウドは*プライベート*クラウドのみです
 ----
 
 
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
-----
-
-
-=== 5.クラスタを追加します
+== 手順5：クラスタを追加する
 
 次のREST API呼び出しを実行してクラスタをクラウドに追加します。の値 `credentialID` 入力フィールドは、前の手順でREST API呼び出しから取得されます。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -102,23 +111,22 @@ curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>
 
 | 投稿（ Post ） | /accounts /｛account_id｝/topology/v1 /雲/｛cloud_id｝/ clusters 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
+[source, json]
 ----
 {
   "type" :  "application/astra-cluster",
   "version" : "1.1",
   "credentialID": credential_id
 }
-----
-
-
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

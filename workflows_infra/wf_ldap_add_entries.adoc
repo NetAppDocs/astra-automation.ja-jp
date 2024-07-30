@@ -33,9 +33,12 @@ LDAP認証後に使用する各Astraユーザにロールを割り当てるこ�
 
 
 
-=== 1.ユーザを追加します
+=== 手順1：ユーザを追加する
 
 次のREST API呼び出しを実行してAstraにユーザを追加し、LDAPが認証プロバイダであることを示します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -44,10 +47,18 @@ LDAP認証後に使用する各Astraユーザにロールを割り当てるこ�
 
 | 投稿（ Post ） | /accounts /｛account_id｝/core/v1/users 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/users" \
+--include \
+--header "Content-Type: application/astra-user+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
 [source, json]
 ----
 {
@@ -75,19 +86,8 @@ LDAP認証後に使用する各Astraユーザにロールを割り当てるこ�
 
 「email」の値が一意でない場合は、エラーが発生し、応答に409 HTTPステータスコードが返されます。
 
-
-
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/astra-user+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== JSON応答例
-
-[source, json]
+.JSON 出力例
+[listing]
 ----
 {
   "metadata": {
@@ -123,9 +123,12 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
-=== 2.ユーザのロールバインディングを追加します
+=== 手順2：ユーザーのロールバインドを追加する
 
 次のREST API呼び出しを実行して、ユーザを特定のロールにバインドします。前の手順で作成したユーザのUUIDを用意する必要があります。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -134,10 +137,18 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 
 | 投稿（ Post ） | /accounts/{account_id}/core/v1/roleBindings 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/roleBindings" \
+--include \
+--header "Content-Type: application/astra-roleBinding+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
 [source, json]
 ----
 {
@@ -154,19 +165,8 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 * 前述の「roleConstraint」の値は、Astraの現在のリリースで使用できる唯一のオプションです。ユーザがネームスペースの制限付きのセットに制限されておらず、すべてのネームスペースにアクセスできることを示しています。
 
 
-
-
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== JSON応答例
-
-[source, json]
+.JSON応答例
+[listing]
 ----
 {
   "metadata": {
@@ -199,9 +199,12 @@ LDAP認証後に使用するAstraグループにロールを割り当てるこ�
 
 
 
-=== 1.グループを追加します
+=== 手順1：グループを追加する
 
 次のREST API呼び出しを実行してAstraにグループを追加し、LDAPが認証プロバイダであることを示します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -210,10 +213,18 @@ LDAP認証後に使用するAstraグループにロールを割り当てるこ�
 
 | 投稿（ Post ） | /accounts /｛account_id｝/core/v1/groups 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/groups" \
+--include \
+--header "Content-Type: application/astra-group+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
 [source, json]
 ----
 {
@@ -234,19 +245,8 @@ LDAP認証後に使用するAstraグループにロールを割り当てるこ�
 
 
 
-
-
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/groups' --header 'Content-Type: application/astra-group+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== JSON応答例
-
-[source, json]
+.JSON応答例
+[listing]
 ----
 {
   "type": "application/astra-group",
@@ -265,9 +265,12 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
-=== 2.グループのロールバインドを追加します
+=== 手順2：グループのロールバインドを追加する
 
 次のREST API呼び出しを実行して、グループを特定のロールにバインドします。前の手順で作成したグループのUUIDが必要です。LDAPが認証を実行すると、グループのメンバーであるユーザはAstraにサインインできるようになります。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -276,10 +279,18 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 
 | 投稿（ Post ） | /accounts/{account_id}/core/v1/roleBindings 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/roleBindings" \
+--include \
+--header "Content-Type: application/astra-roleBinding+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
 [source, json]
 ----
 {
@@ -296,19 +307,8 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 * 前述の「roleConstraint」の値は、Astraの現在のリリースで使用できる唯一のオプションです。ユーザが特定のネームスペースに制限されておらず、すべてのネームスペースにアクセスできることを示しています。
 
 
-
-
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== JSON応答例
-
-[source, json]
+.JSON応答例
+[listing]
 ----
 {
   "metadata": {

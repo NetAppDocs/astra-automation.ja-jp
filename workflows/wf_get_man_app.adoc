@@ -18,15 +18,18 @@ summary: 単一のアプリケーションを記述するすべてのリソー�
 
 
 
-=== 作業を開始する前に
+== 作業を開始する前に
 
 取得するアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます link:wf_list_man_apps.html["アプリを表示します"] アプリケーションを検索します。
 
 
 
-=== 1. アプリケーションを取得します
+== ステップ1：アプリケーションを取得する
 
 次の REST API 呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ summary: 単一のアプリケーションを記述するすべてのリソー�
 
 | 取得 | /accounts /｛account_id｝/k8s/v2/apps/｛app_id｝ 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="25,10,10,55"]
@@ -48,11 +48,12 @@ summary: 単一のアプリケーションを記述するすべてのリソー�
 
 | アプリケーションID | パス | はい。 | 取得するアプリケーションのID値。 
 |===
-
-
-===== curl の例：アプリケーションのすべてのデータを返します
-
+.curl の例：アプリケーションのすべてのデータを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps/$APP_ID" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

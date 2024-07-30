@@ -18,21 +18,24 @@ summary: 使用可能なストレージクラスをリストできます。
 
 
 
-=== 1.クラウドを選択します
+== ステップ1：クラウドを選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_clouds.html["クラウドをリストしてください"] 作業するクラウドを選択します。
 
 
 
-=== 2.クラスタを選択します
+== 手順2：クラスタを選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_clusters.html["クラスタをリストします"] をクリックし、クラスタを選択します。
 
 
 
-=== 3.特定のクラスタのストレージクラスを一覧表示します
+== 手順3：特定のクラスタのストレージクラスを表示する
 
 次のREST API呼び出しを実行して、特定のクラスタとクラウドのストレージクラスを一覧表示します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -41,19 +44,17 @@ summary: 使用可能なストレージクラスをリストできます。
 
 | 取得 | /accounts /｛account_id｝/topology/v1 /雲/<CLOUD_ID> /<CLUSTER_ID> / storageClasses 
 |===
-
-
-===== curlの例：すべてのストレージクラスのすべてのデータを返します
-
+.curlの例：すべてのストレージクラスのすべてのデータを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageClasses' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageClasses" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== JSON 出力例
-
-[source, json]
+.JSON 出力例
+[listing]
 ----
 {
     "items": [

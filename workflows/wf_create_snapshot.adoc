@@ -18,15 +18,18 @@ summary: 特定のアプリケーションのスナップショットを作成�
 
 
 
-=== 作業を開始する前に
+== 作業を開始する前に
 
 スナップショットを作成するアプリケーションのIDが必要です。必要に応じて、ワークフローを使用できます link:wf_list_man_apps.html["アプリを表示します"] アプリケーションを検索します。
 
 
 
-=== 1. スナップショットを作成します
+== Snapshot を作成します
 
 次の REST API 呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ summary: 特定のアプリケーションのスナップショットを作成�
 
 | 投稿（ Post ） | /accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appSnaps 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="25,10,10,55"]
@@ -51,10 +51,18 @@ summary: 特定のアプリケーションのスナップショットを作成�
 
 | JSON | ボディ（ Body ） | はい。 | Snapshot のパラメータを提供します。以下の例を参照してください。 
 |===
-
-
-===== JSON の入力例
-
+.curl の例：アプリケーションのスナップショットを作成します
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps" \
+--include \
+--header "Content-Type: application/astra-appSnap+jso" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
 [source, json]
 ----
 {
@@ -62,12 +70,4 @@ summary: 特定のアプリケーションのスナップショットを作成�
   "version": "1.1",
   "name": "snapshot-david-1"
 }
-----
-
-
-===== curl の例：アプリケーションのスナップショットを作成します
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Content-Type: application/astra-appSnap+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

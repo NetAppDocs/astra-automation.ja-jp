@@ -16,11 +16,10 @@ summary: 特定のアストラアカウントの通知をリストできます�
 [role="lead"]
 特定のアストラアカウントの通知をリストできます。この処理は、システムアクティビティの監視や問題のデバッグの一環として実行できます。
 
-
-
-=== 1. 通知を一覧表示します
-
 次の REST API 呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -29,10 +28,7 @@ summary: 特定のアストラアカウントの通知をリストできます�
 
 | 取得 | /accounts /｛account_id｝/core/v1/notifications 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="25,10,10,55"]
@@ -45,27 +41,26 @@ summary: 特定のアストラアカウントの通知をリストできます�
 
 | 含める | クエリ | いいえ | 必要に応じて、応答で返す値を選択します。 
 |===
-
-
-===== curl の例：すべての通知を返します
-
+.curl の例：すべての通知を返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/notifications" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== curl の例：重大度が WARNING の通知について概要を返します
-
+.curl の例：重大度が WARNING の通知について概要を返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications?filter=severity%20eq%20'warning'&include=description' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/notifications?filter=severity%20eq%20'warning'&include=description" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== JSON 出力例
-
-[source, json]
+.JSON 出力例
+[listing]
 ----
 {
   "items": [

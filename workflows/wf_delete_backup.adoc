@@ -18,7 +18,7 @@ summary: アプリケーションに関連付けられているバックアッ�
 
 
 
-=== 作業を開始する前に
+== 作業を開始する前に
 
 次の情報が必要です。
 
@@ -28,12 +28,15 @@ summary: アプリケーションに関連付けられているバックアッ�
 
 
 
-=== 1. バックアップを削除します
+== バックアップの削除
 
 次の REST API 呼び出しを実行します。
 
 
 NOTE: 障害が発生したバックアップは、次に示すオプションの要求ヘッダーを使用して強制的に削除できます。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -42,10 +45,7 @@ NOTE: 障害が発生したバックアップは、次に示すオプション�
 
 | 削除 | /accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups /｛appBackup_id｝ 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="25,10,10,55"]
@@ -61,19 +61,22 @@ NOTE: 障害が発生したバックアップは、次に示すオプション�
 
 | 強制的に削除します | ヘッダー | いいえ | 失敗したバックアップを強制的に削除する場合に使用します。 
 |===
-
-
-===== curl の例：アプリケーションのバックアップを 1 つ削除します
-
+.curl の例：アプリケーションのバックアップを 1 つ削除します
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request DELETE \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups/<BACKUP_ID>" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== curl の例： force オプションを使用して、アプリケーションのバックアップを 1 つ削除します
-
+.curl の例： force オプションを使用して、アプリケーションのバックアップを 1 つ削除します
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Force-Delete: true'
+curl --request DELETE \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups/<BACKUP_ID>" \
+--include \
+--header "Force-Delete: true" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

@@ -18,13 +18,13 @@ Kubernetesクラスタを管理して、データ保護を実行できます。
 
 
 
-=== 1.管理するクラスタを選択します
+== 手順1：管理するクラスタを選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_clusters.html["クラスタをリストします"] をクリックし、目的のクラスタを選択します。プロパティ `managedState` クラスタのがである必要があります `unmanaged`。
 
 
 
-=== 2.必要に応じて、ストレージクラスを選択します
+== 手順2：必要に応じて、ストレージクラスを選択します。
 
 必要に応じてワークフローを実行します link:../workflows_infra/wf_list_storage_classes.html["ストレージクラスをリストします"] をクリックし、目的のストレージクラスを選択します。
 
@@ -33,9 +33,12 @@ NOTE: クラスタを管理するためのストレージクラスを指定し�
 
 
 
-=== 3.クラスタを管理します
+== 手順3：クラスタを管理する
 
 クラスタを管理するために次のREST API呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -44,10 +47,17 @@ NOTE: クラスタを管理するためのストレージクラスを指定し�
 
 | 投稿（ Post ） | /accounts /｛account_id｝/topology/v1 / managedClusters 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/managedClusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
 [source, json]
 ----
 {
@@ -55,12 +65,4 @@ NOTE: クラスタを管理するためのストレージクラスを指定し�
   "version": "1.0",
   "id": "d0fdf455-4330-476d-bb5d-4d109714e07d"
 }
-----
-
-
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/managedClusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

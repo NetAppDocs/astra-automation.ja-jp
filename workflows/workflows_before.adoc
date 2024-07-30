@@ -4,7 +4,7 @@ permalink: workflows/workflows_before.html
 keywords: workflows, management workflows, preparation 
 summary: これらのワークフローは、Astra管理対象クラスタでアプリケーションを管理する際に使用できます。 
 ---
-= 作業を開始する前に
+= 管理ワークフローを使用するための準備
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

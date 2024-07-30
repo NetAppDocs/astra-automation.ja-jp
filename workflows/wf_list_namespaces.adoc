@@ -16,11 +16,10 @@ summary: 使用可能なネームスペースをリストできます。
 [role="lead"]
 使用可能なネームスペースをリストできます。
 
-
-
-=== 1.名前空間を一覧表示します
-
 ネームスペースを表示するには、次のREST API呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="1,6"]
 |===
@@ -29,27 +28,26 @@ summary: 使用可能なネームスペースをリストできます。
 
 | 取得 | /accounts/{account_id}/topology/v1/Namespaces 
 |===
-
-
-===== curlの例：すべてのネームスペースのすべてのデータを返します
-
+.curlの例：すべてのネームスペースのすべてのデータを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/namespaces' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/namespaces" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== cURLの例：すべてのネームスペースについて、名前、状態、およびクラスタIDを返します
-
+.cURLの例：すべてのネームスペースについて、名前、状態、およびクラスタIDを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/namespaces?include=name,namespaceState,clusterID' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/namespaces?include=name,namespaceState,clusterID" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== JSON 出力例
-
-[source, json]
+.JSON 出力例
+[listing]
 ----
 {
     "items": [

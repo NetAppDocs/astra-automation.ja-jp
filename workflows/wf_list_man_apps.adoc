@@ -16,11 +16,10 @@ summary: Astra が現在管理しているアプリケーションをリスト�
 [role="lead"]
 Astra が現在管理しているアプリケーションをリストできます。特定のアプリケーションの Snapshot やバックアップを検索する際に、この操作を行うことができます。
 
-
-
-=== 1. アプリケーションを一覧表示します
-
 次の REST API 呼び出しを実行します。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -29,10 +28,7 @@ Astra が現在管理しているアプリケーションをリストできま�
 
 | 取得 | /account/{account_id}/k8s/v2/apps 
 |===
-
-
-===== 追加の入力パラメータ
-
+.追加の入力パラメータ
 すべての REST API 呼び出しに共通するパラメータに加えて、この手順の curl の例では次のパラメータも使用されます。
 
 [cols="25,10,10,55"]
@@ -42,27 +38,26 @@ Astra が現在管理しているアプリケーションをリストできま�
 
 | 含める | クエリ | いいえ | 必要に応じて、応答で返す値を選択します。 
 |===
-
-
-===== curl の例：すべてのアプリケーションのすべてのデータを返します
-
+.curl の例：すべてのアプリケーションのすべてのデータを返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== curl の例：すべてのアプリケーションの名前、 ID 、および状態を返します
-
+.curl の例：すべてのアプリケーションの名前、 ID 、および状態を返します
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps?include=name,id,state' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps?include=name,id,state" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== JSON 出力例
-
-[source, json]
+.JSON 出力例
+[listing]
 ----
 {
     "items": [

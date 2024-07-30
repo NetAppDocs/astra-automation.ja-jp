@@ -18,15 +18,18 @@ summary: 特定のクレデンシャルと事前定義されたロールを持�
 
 
 
-=== 1.ユーザ名を選択します
+== 手順1：ユーザ名を選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_users.html["ユーザをリストします"] をクリックし、現在使用されていない使用可能な名前を選択します。
 
 
 
-=== 2.ユーザを作成します
+== 手順2：ユーザを作成する
 
 ユーザを作成するには、次のREST API呼び出しを実行します。コールが正常に完了すると、新しいユーザはまだ使用できなくなります。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -35,11 +38,18 @@ summary: 特定のクレデンシャルと事前定義されたロールを持�
 
 | 投稿（ Post ） | /accounts /｛account_id｝/core/v1/users 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/users" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
+[source, json]
 ----
 {
   "type" :  "application/astra-user",
@@ -49,19 +59,8 @@ summary: 特定のクレデンシャルと事前定義されたロールを持�
   "email" : "jwest@example.com"
 }
 ----
-
-
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
-----
-
-
-===== JSON 出力例
-
-[source, curl]
+.JSON 出力例
+[listing]
 ----
 {
     "metadata": {
@@ -97,15 +96,18 @@ curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>
 ----
 
 
-=== 3.必要に応じて、許可する名前空間を選択します
+== 手順3：必要に応じて、許可するネームスペースを選択します。
 
 ワークフローを実行 link:../workflows/wf_list_namespaces.html["ネームスペースを表示します"] アクセスを制限するネームスペースを選択します。
 
 
 
-=== 4.ユーザをロールにバインドします
+== 手順4：ユーザをロールにバインドする
 
 次のREST API呼び出しを実行してユーザをロールにバインドします。次の例では、ネームスペースへのアクセスに制限はありません。を参照してください link:../additional/rbac.html#enhanced-rbac-with-namespace-granularity["ネームスペース単位で強化された RBAC"] を参照してください。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -114,11 +116,18 @@ curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>
 
 | 投稿（ Post ） | /accounts/{account_id}/core/v1/roleBindings 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/roleBindings" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
+[source, json]
 ----
 {
   "type" :  "application/astra-roleBinding",
@@ -131,20 +140,15 @@ curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>
 ----
 
 
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
-----
-
-
-=== 5.資格情報を作成します
+== 手順5：クレデンシャルを作成する
 
 次のREST API呼び出しを実行して、クレデンシャルを作成してユーザに関連付けます。この例では、base64値として提供されるパスワードを使用します。。 `name` プロパティには、前の手順で返されたユーザのIDが含まれている必要があります。入力プロパティ `change` base64でエンコードされたユーザは、初回ログイン時にパスワードを変更する必要があるかどうかを確認する必要もあります (`true` または `false`）。
 
 
 NOTE: この手順は、ローカル認証を使用するAstra Control Centerの導入でのみ必要です。LDAPまたはAstra Control Serviceを使用したAstra Control Centerの導入では必要ありません。
+
+.HTTPメソッドとエンドポイント
+このREST API呼び出しでは、次のメソッドとエンドポイントを使用します。
 
 [cols="25,75"]
 |===
@@ -153,11 +157,18 @@ NOTE: この手順は、ローカル認証を使用するAstra Control Centerの
 
 | 投稿（ Post ） | /accounts /｛account_id｝/core/v1/credentials 
 |===
-
-
-===== JSON の入力例
-
+.カールの例
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON の入力例
+[source, json]
 ----
 {
   "type" :  "application/astra-credential",
@@ -170,12 +181,4 @@ NOTE: この手順は、ローカル認証を使用するAstra Control Centerの
   },
   "valid" : "true"
 }
-----
-
-
-===== カールの例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

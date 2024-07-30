@@ -2,7 +2,7 @@
 section: workflows_infra
 title: インフラワークフロー
 entries:
-- title: 作業を開始する前に
+- title: インフラワークフローを使用するための準備
   url: "/workflows_infra/workflows_infra_before.html"
 - title: ID とアクセス
   entries:
