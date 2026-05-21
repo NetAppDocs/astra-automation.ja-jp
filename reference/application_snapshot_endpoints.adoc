@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/application_snapshot_endpoints.html 
+summary: Astra API（ACC）アプリケーションSnapshotエンドポイント 
+---
+= Astra API（ACC）アプリケーションSnapshotエンドポイント
+:allow-uri-read: 
+
+
+Application Snapshot APIを使用すると、ユーザーは管理対象アプリケーションのスナップショットを作成および表示できます。

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/user_endpoints.html 
+summary: Astra API（ACC）ユーザーエンドポイント 
+---
+= Astra API（ACC）ユーザーエンドポイント
+:allow-uri-read: 
+
+
+ユーザーAPIは、システムとやり取りできるユーザーを表します。

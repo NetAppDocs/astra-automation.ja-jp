@@ -1,0 +1,662 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: true 
+permalink: reference/get-accounts-core-v1-groups-users.html 
+summary: グループのユーザを一覧表示する 
+---
+= グループのユーザを一覧表示する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users`#
+
+コレクション内の一致するすべてのリソースのJSON配列を返します。リクエストで個別のフィールドが指定されている場合、アイテムのJSON配列には、一致する各リソースに対して要求されたフィールドが、指定された順序で含まれます。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| group_id | string | path（パス） | True  a| 
+包含するグループリソースのID
+
+
+
+| 含める | string | query | False  a| 
+コレクションを一覧表示する際に、どのフィールドを返すかを指定します。
+
+URLの例："include=id"、"include=id,name"
+
+OpenAPI の例："id"
+
+* 例：id、email
+
+
+
+
+| 制限（ Limit ） | string | query | False  a| 
+コレクションを一覧表示する際に返されるリソースの最大数を示します。
+
+URLの例："limit=2"
+
+OpenAPI の例："2"
+
+
+
+| フィルタ | string | query | False  a| 
+コレクションを一覧表示する際に、リソースを返すためにどのフィールドを一致させる必要があるかを示します。
+
+サポートされているオペレータは次のとおりです：
+
+* eq - 等号
+* lt/gt - より小さい/より大きい
+* lte/gte - 以下/以上
+
+
+URLの例："filter=field%20eq%20%27value%27"
+
+OpenAPI の例：「field eq 'value'」
+
+
+
+| OrderBy | string | query | False  a| 
+コレクションを一覧表示する際の、リソースの並び順を示します。
+
+URLの例："orderBy=name"、"orderBy=name%20desc"
+
+OpenAPI の例："name desc"
+
+
+
+| スキップします | string | query | False  a| 
+コレクションを一覧表示する際にスキップするリソースの数を指定します。
+
+URLの例：「skip=1」
+
+OpenAPI の例："1"
+
+
+
+| カウント | string | query | False  a| 
+メタデータオブジェクトで返されるリソースの総数。
+
+URLの例："count=true"
+
+OpenAPI の例："true"
+
+
+
+| 続行 |  | query | False  a| 
+リストの表示を再開するトークンを示します。
+
+URLの例："continue=+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++
+
+OpenAPIの例："+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++</continue>
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 項目 | 配列[いずれか：link:#user_1_2_get_response_body["user_1.2_get_response_body"]、配列[]] | True  a| 
+
+
+
+| メタデータ | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-users",
+  "version": "1.2",
+  "items": [
+    [
+      "11c0cfa1-4f27-4ef7-a21c-cb452fc5c9aa",
+      "jdoe@example.com"
+    ],
+    [
+      "e324ec3a-706d-4f57-a95d-1d88c03e7b73",
+      "ssmith@example.com"
+    ],
+    [
+      "3070c84d-129b-4017-82a8-2c26a42dd77e",
+      "wjohns@example.com"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+postalAddress
+
+住所を指定するフィールドの集合を含むJSONオブジェクト。このキーが存在しない場合、住所が提供されていないことを示します。このキーが存在する場合、含まれる6つのフィールドすべてが存在します。ユーザーから何も入力されなかった場合、文字列は空になります。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| addressCountry | string | True  a| 
+ISO 3166 Alpha-2で規定されている、郵便住所に関連付けられた国名または国コードを含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：2
+* 最大長さ：2
+
+
+
+
+| addressLocality | string | True  a| 
+郵便番号に関連付けられた地域（例えば、都市）を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| addressRegion | string | True  a| 
+郵便番号に関連付けられた地域（例えば、州）を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| postalCode | string | True  a| 
+郵便番号に関連付けられた郵便番号を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| streetAddress1を使用したチャンク アップロード署名要求がサポートされるようになりました。 | string | True  a| 
+郵便番号に関連付けられた番地を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| streetAddress2を使用したチャンク アップロード署名要求がサポートされるようになりました。 | string | False  a| 
+オプションの付加的な住所情報（番地、私書箱など）を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+user_1.2_get_response_body
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* 「application/astra-user」
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+* "1.2"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 状態 | string | True  a| 
+ユーザーの動作状態を示す値を含むJSON文字列。定義値は次のとおりです：
+
+* "pending" - ユーザーアカウントは現在作成中です。ユーザーはユーザーリソースの読み取りと変更のみが可能です（デフォルト値）。
+* この状態は、「authProvider」が「local」のユーザには無効です
+* 「アクティブ」 - ユーザーアカウントは動作中です（アカウント設定「isEnabled」が「true」の場合、ユーザーはログインできます）。
+* これは、"authProvider"が"local"であるユーザーのデフォルト値です
+* 「suspended」 - ユーザーアカウントが停止されています（アカウントの「isEnabled」設定に関係なく、ユーザーはログインできません）。
+
+
+
+
+| isEnabled | string | True  a| 
+ユーザーがログインを許可されているかどうかを示すJSON文字列。定義済みの値は次のとおりです：
+
+* 「true」 - ユーザーはログインできます。作成時のデフォルト値です。
+* 「false」 - ユーザーはログインを許可されていません。
+
+
+
+
+| authID | string | False  a| 
+外部IDプロバイダに関連付けられた識別子を含むJSON文字列。この文字列の内容は、指定されたauthProviderによって異なります。「authProvider」が「local」のユーザの場合、「authID」は「email」の値に設定されます。「authProvider」が「ldap」のユーザの場合、「authID」はLDAPサーバからの識別名（DN）に設定されます。
+
+
+
+| authProvider | string | False  a| 
+idAuth識別子のコンテキストを示すJSON文字列。定義された値は次のとおりです：
+
+* 「cloud-central」 - ユーザー認証はNetApp Cloud Centralサービスから提供されます
+* 「local」 - ユーザ認証はローカルのユーザ/パスワードストアから行われます
+* 「ldap」 - ユーザー認証は外部LDAPサーバから行われますAstra Control Centerでは、すべてのユーザーが「local」または「ldap」のいずれかの値を持つ必要があります。値が指定されていない場合は、デフォルト値として「local」が選択されます。Astra Control Serviceでは、「authProvider」を「local」または「ldap」とすることはサポートされていません。値が指定されていない場合は、デフォルトで「cloud-central」が使用されます。
+
+
+
+
+| firstName | string | True  a| 
+ユーザーが指定したフルネーム（名）を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+* この文字列は、XSS、Unicode、ディレクトリトラバーサル、SQLインジェクション攻撃を防ぐために内部的に検証されます
+
+
+
+
+| lastName | string | True  a| 
+ユーザーが指定した長めの姓を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+* この文字列は、XSS、Unicode、ディレクトリトラバーサル、SQLインジェクション攻撃を防ぐために内部的に検証されます
+
+
+
+
+| companyName | string | False  a| 
+ユーザーに関連付けられた会社名を含むJSON文字列。このキーが存在しない場合、会社名が提供されていないことを示します。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* この文字列は、XSS、Unicode、ディレクトリトラバーサル、SQLインジェクション攻撃を防ぐために内部的に検証されます
+
+
+
+
+| email | string | True  a| 
+ユーザーが指定したメールアドレスを含むJSON文字列。
+
+
+
+| 電話 | string | False  a| 
+ユーザーの電話番号を含むJSON文字列。このキーが存在しない場合、電話番号が提供されていないことを示します。
+
+
+
+| postalAddress | link:#postalAddress["postalAddress"] | False  a| 
+住所を指定するフィールドの集合を含むJSONオブジェクト。このキーが存在しない場合、住所が提供されていないことを示します。このキーが存在する場合、含まれる6つのフィールドすべてが存在します。ユーザーから何も入力されなかった場合、文字列は空になります。
+
+
+
+| sendWelcomeEmail | string | True  a| 
+検証後にウェルカムメールが送信されるかどうかを示すJSON文字列。作成時に指定しない場合、ACSの場合は値が「true」に設定され、Astra Control Centerの場合は「false」に設定されます。定義された値は次のとおりです：
+
+* 「true」 - ウェルカムメールが送信されます。作成時のデフォルト値です。
+* 「false」 - ウェルカムメールは送信されません。「authProvider」が「local」または「ldap」のユーザの場合、この値は無視され、「false」に設定されます。
+
+
+
+
+| enableTimestamp | string | False  a| 
+ユーザーが最後に有効化された日時を示す、ISO-8601形式のタイムスタンプを含むJSON文字列。定義された値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| lastActTimestamp | string | False  a| 
+このユーザーに代わって最後にID APIが呼び出された日時を示す、ISO-8601形式のタイムスタンプを含むJSON文字列。（注：これはコストがかかります。）定義された値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 続行 | string | False  a| 
+
+
+
+| カウント | 番号 | False  a| 
+
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

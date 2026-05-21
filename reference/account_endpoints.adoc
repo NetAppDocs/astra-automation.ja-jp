@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/account_endpoints.html 
+summary: Astra API（ACC）アカウントエンドポイント 
+---
+= Astra API（ACC）アカウントエンドポイント
+:allow-uri-read: 
+
+
+アカウント API は、マルチテナントシステムにおける分離されたテナントを表します。

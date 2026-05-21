@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/namespace_endpoints.html 
+summary: Astra API（ACC）ネームスペースエンドポイント 
+---
+= Astra API（ACC）ネームスペースエンドポイント
+:allow-uri-read: 
+
+
+名前空間APIは、特定のクラスタに関連付けられた名前空間を記述するために、名前空間リソースへの読み取り専用アクセスを提供します。

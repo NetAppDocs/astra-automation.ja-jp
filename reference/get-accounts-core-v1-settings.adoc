@@ -1,0 +1,644 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-settings.html 
+summary: すべての設定を一覧表示 
+---
+= すべての設定を一覧表示
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings`#
+
+コレクション内の一致するすべてのリソースのJSON配列を返します。リクエストで個別のフィールドが指定されている場合、アイテムのJSON配列には、一致する各リソースに対して要求されたフィールドが、指定された順序で含まれます。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| 含める | string | query | False  a| 
+コレクションを一覧表示する際に、どのフィールドを返すかを指定します。
+
+URLの例："include=id"、"include=id,name"
+
+OpenAPI の例："id"
+
+
+
+| 制限（ Limit ） | string | query | False  a| 
+コレクションを一覧表示する際に返されるリソースの最大数を示します。
+
+URLの例："limit=2"
+
+OpenAPI の例："2"
+
+
+
+| フィルタ | string | query | False  a| 
+コレクションを一覧表示する際に、リソースを返すためにどのフィールドを一致させる必要があるかを示します。
+
+サポートされているオペレータは次のとおりです：
+
+* eq - 等号
+* lt/gt - より小さい/より大きい
+* lte/gte - 以下/以上
+
+
+URLの例："filter=field%20eq%20%27value%27"
+
+OpenAPI の例：「field eq 'value'」
+
+
+
+| カウント | string | query | False  a| 
+メタデータオブジェクトで返されるリソースの総数。
+
+URLの例："count=true"
+
+OpenAPI の例："true"
+
+
+
+| OrderBy | string | query | False  a| 
+コレクションを一覧表示する際の、リソースの並び順を示します。
+
+URLの例："orderBy=name"、"orderBy=name%20desc"
+
+OpenAPI の例："name desc"
+
+
+
+| スキップします | string | query | False  a| 
+コレクションを一覧表示する際にスキップするリソースの数を指定します。
+
+URLの例：「skip=1」
+
+OpenAPI の例："1"
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 項目 | 配列[いずれか：link:#setting_1_1_get_response_body["setting_1.1_get_response_body"]、配列[]] | True  a| 
+
+
+
+| メタデータ | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-settings",
+  "version": "1.1",
+  "items": [
+    {
+      "type": "application/astra-setting",
+      "version": "1.0",
+      "id": "5da0a2ed-c51d-4d91-8b98-ed3aa8a88cc5",
+      "name": "astra.account.smtp",
+      "currentConfig": {
+        "credential": "",
+        "isEnabled": "false",
+        "port": 587,
+        "relayServer": "smtp.sendgrid.net"
+      },
+      "configSchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "astra.account.smtp",
+        "type": "object",
+        "properties": {
+          "credential": {
+            "type": "string",
+            "description": "The credential ID for SMTP authentication."
+          },
+          "isEnabled": {
+            "type": "string",
+            "description": "This property determines if this setting is enabled or not."
+          },
+          "port": {
+            "type": "integer",
+            "description": "The SMTP port. For an unencrypted or a TLS connection, use port 25, 2525, or 587."
+          },
+          "relayServer": {
+            "type": "string",
+            "description": "This setting is sometimes referred to as the external SMTP server or the SMTP relay."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "relayServer",
+          "port",
+          "isEnabled"
+        ]
+      },
+      "state": "valid",
+      "stateUnready": [],
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2021-06-04T20:14:52Z",
+        "modificationTimestamp": "2021-06-04T20:14:52Z",
+        "createdBy": "c9550bbb-e70b-4578-8504-07397f875bcb",
+        "modifiedBy": "65e1571b-1b46-4f05-95b0-7d7f5a93da6a"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_json
+
+この設定の現在の構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。デフォルト値はconfigmapによって提供されます。ユーザーがデフォルト設定を変更した後は、その設定は上書きされません。
+
+[role="api-collapsible-fifth-title"]
+type_json
+
+この設定に必要な構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。オブジェクトは指定されるまで存在しません。指定すると、機能サービスが対応するサービスに通知し、目的の構成を適用できるように要求します。対応するサービスは、検証を実行し、目的の構成を現在の構成に適用できます。
+
+[role="api-collapsible-fifth-title"]
+プロパティ
+
+[role="api-collapsible-fifth-title"]
+type_json_schema
+
+このリソース内のconfigプロパティのJSONスキーマを含むJSONオブジェクト。JSONスキーマドラフト7に準拠する必要があります。リソースに設定値が存在する場合、指定されたconfigSchemaに対する検証は必須です。一般的な慣例として、構成には必要に応じて「isEnabled」フィールドを含めることが推奨されます。「isEnabled」フィールドには、設定がオン（「true」）かオフ（「false」）かを示す値が含まれています。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| $schema | string | True  a| 
+
+
+
+| を入力します | string | True  a| 
+
+
+
+| プロパティ | link:#properties["プロパティ"] | True  a| 
+
+
+
+| additionalProperties | ブーリアン | True  a| 
+
+
+
+| 必須 | array[string] | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更されずに保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+setting_1.1_get_response_body
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-setting"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 名前 | string | True  a| 
+階層ドット表記（.）で記述された設定名を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* この文字列は、XSS攻撃、Unicode攻撃、ディレクトリトラバーサル攻撃、SQLインジェクション攻撃を防ぐために内部的に検証されます。この値は実行時にロードされるconfigmapによって指定され、ユーザーが更新することはできません。
+
+
+
+
+| currentConfig | link:#type_json["type_json"] | True  a| 
+この設定の現在の構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。デフォルト値はconfigmapによって提供されます。ユーザーがデフォルト設定を変更した後は、その設定は上書きされません。
+
+
+
+| desiredConfig | link:#type_json["type_json"] | False  a| 
+この設定に必要な構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。オブジェクトは指定されるまで存在しません。指定すると、機能サービスが対応するサービスに通知し、目的の構成を適用できるように要求します。対応するサービスは、検証を実行し、目的の構成を現在の構成に適用できます。
+
+
+
+| configSchema | link:#type_json_schema["type_json_schema"] | True  a| 
+このリソース内のconfigプロパティのJSONスキーマを含むJSONオブジェクト。JSONスキーマドラフト7に準拠する必要があります。リソースに設定値が存在する場合、指定されたconfigSchemaに対する検証は必須です。一般的な慣例として、構成には必要に応じて「isEnabled」フィールドを含めることが推奨されます。「isEnabled」フィールドには、設定がオン（「true」）かオフ（「false」）かを示す値が含まれています。
+
+
+
+| 状態 | string | True  a| 
+アプリケーションの動作状態を示す値を含むJSON文字列。定義されている値は次のとおりです：
+
+* 「valid」 - 現在の設定は、希望する設定と一致しています。
+* 「pending」 - 目的の設定が適用されています。
+* 「error」 - 目的の設定を適用できません。
+
+
+
+
+| stateUnready | array[string] | True  a| 
+JSON文字列のJSON配列。各文字列は、設定が正常に適用されなかった理由を示しています。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：127
+
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更されずに保持されます。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 続行 | string | False  a| 
+
+
+
+| カウント | 番号 | False  a| 
+
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/bucket_endpoints.html 
+summary: Astra API（ACC）バケットエンドポイント 
+---
+= Astra API（ACC）バケットエンドポイント
+:allow-uri-read: 
+
+
+Bucket API は、Astra でアプリケーションのバックアップを保存するために使用されるバケットへのアクセスを提供します。

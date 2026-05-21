@@ -1,0 +1,603 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-certificates-.html 
+summary: 証明書を変更する 
+---
+= 証明書を変更する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates/{certificate_id}`#
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えます。
+
+*副作用*
+
+* 更新された CA 証明書がトラストストアで更新されます。
+* 既存の信頼済みCA証明書が信頼できなくなった場合、信頼ストアから削除されます。
+* 証明書本体が更新された場合（「cert」フィールド）、新しい証明書の状態を示すために「isSelfSigned」インジケータを含める必要があります。この場合、「isSelfSigned」インジケータが含まれていない場合、値は「false」に設定されます。
+* 更新によって証明書本体（「cert」フィールド）が変更されない場合、「isSelfSigned」インジケーターはオプションであり、指定しない場合は既存の値が保持されます。
+
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| certificate_id | string | path（パス） | True  a| 
+一覧表示する証明書コレクションのID
+
+|===
+
+
+== 要求の本文
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えます。
+
+*副作用*
+
+* 更新された CA 証明書がトラストストアで更新されます。
+* 既存の信頼済みCA証明書が信頼できなくなった場合、信頼ストアから削除されます。
+* 証明書本体が更新された場合（「cert」フィールド）、新しい証明書の状態を示すために「isSelfSigned」インジケータを含める必要があります。この場合、「isSelfSigned」インジケータが含まれていない場合、値は「false」に設定されます。
+* 更新によって証明書本体（「cert」フィールド）が変更されない場合、「isSelfSigned」インジケーターはオプションであり、指定しない場合は既存の値が保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-certificate"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | string | False  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| certUse | string | False  a| 
+証明書の使用状況を示すJSON文字列。指定しない場合は、「rootCA」がデフォルトとなります。定義値は次のとおりです：
+
+* 「rootCA」 - この証明書は、その認証局（CA）によって署名された証明書を信頼するために使用される認証局（CA）証明書です。
+* 「intermediateCA」 - この証明書は、ルートCAによって発行された中間CA証明書です。
+
+
+
+
+| cert | string | False  a| 
+Base64エンコードされたPKCS-11形式の証明書（PEM）を含むJSON文字列。定義値は次のとおりです：
+
+* base64 Encoded Data Schemaに準拠
+
+
+
+
+| cn | string | False  a| 
+証明書から抽出された共通名を含むJSON文字列。定義されている値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：511
+
+
+
+
+| expiryTimestamp | string | False  a| 
+証明書の有効期限を示すタイムスタンプを含むJSON文字列。定義値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| isSelfSigned | string | False  a| 
+証明書が自己署名されているかどうかを示すJSON文字列。作成時に指定されない場合、値はデフォルトで「false」になります。更新時：
+
+* 値が指定されている場合は、その値が使用されます。
+* 値が指定されておらず、かつ更新に「cert」フィールドが含まれている場合、値は「false」に設定されます。
+* 値が指定されておらず、「cert」フィールドが更新に含まれていない場合は、既存の値が保持されます。定義されている値は次のとおりです：
+* 「true」 - 証明書は自己署名されています。
+* 「false」 - 証明書は自己署名されていません。
+
+
+
+
+| trustState | string | False  a| 
+証明書が信頼されているかどうかを示す、列挙された値のセットのうちの1つを含むJSON文字列。定義値は次のとおりです：
+
+* 「untrusted」 - 証明書が信頼されていません。
+* 「trusted」 - 証明書は信頼できるものとしてマークされています。
+* 「期限切れ」-証明書の有効期限が切れているため、信頼されているとも信頼されていないとも判断できません。
+
+
+
+
+| trustStateTransitions | 配列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | False  a| 
+JSONオブジェクトのJSON配列。各オブジェクトは、特定の定義済み状態からの許可された状態遷移のセットを表します。各JSONオブジェクトには「from」と「to」というフィールドが含まれており、「from」の値は状態の名前、「to」の値は許可された宛先状態の配列です。
+
+
+
+| trustStateDesired | string | False  a| 
+証明書が信頼されているかどうかを示す値を含むJSON文字列。作成時に指定しない場合、デフォルト値は"trusted"になります。定義された値は次のとおりです：
+
+* 「untrusted」 - 証明書が信頼されていません。
+* 「trusted」 - 証明書は信頼できるものとしてマークされています。
+
+
+
+
+| trustStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | False  a| 
+証明書の信頼状態に関する詳細情報を一覧表示するJSONオブジェクトのJSON配列。詳細情報がない場合は、この配列は空になります。
+
+* 最小アイテム数：0
+
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | False  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.リクエスト例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-certificate",
+  "version": "1.1",
+  "trustStateDesired": "trusted"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 204, Indicates if the certificate resource was updated.
+----
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| - | string | True  a| 
+
+
+
+| - | array[string] | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なリクエストボディフィールドの名前
+
+
+
+| 理由 | string | True  a| 
+リクエスト本文フィールドが無効な理由
+
+|===
+====

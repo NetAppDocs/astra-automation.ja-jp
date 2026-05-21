@@ -1,0 +1,134 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/delete-accounts-core-v1-certificates-.html 
+summary: 証明書を削除する 
+---
+= 証明書を削除する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates/{certificate_id}`#
+
+指定された証明書 API リソースを削除します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| certificate_id | string | path（パス） | True  a| 
+一覧表示する証明書コレクションのID
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 204, Indicates if the certificate resource was deleted.
+----
+
+
+== 応答
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====

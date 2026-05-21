@@ -1,0 +1,568 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-k8s-v1-apps-appassets.html 
+summary: アプリのアプリケーションアセットを一覧表示する 
+---
+= アプリのアプリケーションアセットを一覧表示する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appAssets`#
+
+コレクション内の一致するすべてのリソースのJSON配列を返します。リクエストで個別のフィールドが指定されている場合、アイテムのJSON配列には、一致する各リソースに対して要求されたフィールドが、指定された順序で含まれます。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| app_id | string | path（パス） | True  a| 
+含まれるアプリリソースのID
+
+
+
+| 含める | string | query | False  a| 
+コレクションを一覧表示する際に、どのフィールドを返すかを指定します。
+
+URLの例："include=id"、"include=id,name"
+
+OpenAPI の例："id"
+
+* 例：assetType、assetName
+
+
+
+
+| 制限（ Limit ） | string | query | False  a| 
+コレクションを一覧表示する際に返されるリソースの最大数を示します。
+
+URLの例："limit=2"
+
+OpenAPI の例："2"
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 項目 | 配列[いずれか：link:#appAsset_1_1_get_response_body["appAsset_1.1_get_response_body"]、配列[]] | True  a| 
+
+
+
+| メタデータ | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appAssets",
+  "version": "1.1",
+  "items": [
+    [
+      "Pod",
+      "mediawiki-69c6fcf864-2wx6l"
+    ],
+    [
+      "ReplicaSet",
+      "mediawiki-69c6fcf864"
+    ],
+    [
+      "Service",
+      "mediawiki"
+    ],
+    [
+      "Deployment",
+      "mediawiki"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+GVK
+
+Kubernetesのグループ/バージョン/種類を含むJSONオブジェクト。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| グループ | string | False  a| 
+Kubernetesによって割り当てられたグループ識別子を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| 種類 | string | False  a| 
+Kubernetesによって割り当てられた種類識別子を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| バージョン | string | False  a| 
+Kubernetesによって割り当てられたバージョン識別子を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_json
+
+Kubernetesリソース定義の全内容を含むJSONオブジェクト。
+
+[role="api-collapsible-fifth-title"]
+ラベル
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+ラベル名を含むJSON文字列。定義済みの値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* 定義された正規表現は次のとおりです："^([\S.]{1,253}\/)?([a-z0-9A-Z_.-]){1,63}$"
+
+
+
+
+| Value | string | True  a| 
+ラベル値を含むJSON文字列。定義済みの値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* 定義された正規表現は次のとおりです："^([a-z0-9A-Z_.-]){1,63}$"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astraメタデータスキーマに準拠
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 作成タイムスタンプ | string | True  a| 
+
+
+
+| modificationTimestamp | string | True  a| 
+
+
+
+| 作成者 | string | True  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+appAsset_1.1_get_response_body
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-appAsset"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| assetType | string | True  a| 
+Kubernetesから取得したアセットの種類を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| 作成タイムスタンプ | string | True  a| 
+Kubernetesメタデータが作成された日時を示すタイムスタンプを含むJSON文字列。定義値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| GVK | link:#GVK["GVK"] | True  a| 
+Kubernetesのグループ/バージョン/種類を含むJSONオブジェクト。
+
+
+
+| リソース | link:#type_json["type_json"] | False  a| 
+Kubernetesリソース定義の全内容を含むJSONオブジェクト。
+
+
+
+| assetID | string | True  a| 
+Kubernetesによって割り当てられた識別子を含むJSON文字列。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| ラベル | 配列[link:#labels["ラベル"]] | True  a| 
+JSONオブジェクトのJSON配列。各JSONオブジェクトには、アセットに関連付けられたKubernetesラベルが含まれています。詳細情報がない場合は、この配列は空になります。
+
+* 最小アイテム数：0
+
+
+
+
+| assetName | string | True  a| 
+Kubernetesによって割り当てられた名前を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| namespace | string | False  a| 
+Kubernetesによって割り当てられた名前空間を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| メタデータ | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astraメタデータスキーマに準拠
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 続行 | string | False  a| 
+
+
+
+| カウント | 番号 | False  a| 
+
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

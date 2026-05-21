@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/subscription_endpoints.html 
+summary: Astra API（ACC）サブスクリプションエンドポイント 
+---
+= Astra API（ACC）サブスクリプションエンドポイント
+:allow-uri-read: 
+
+
+Subscription APIは、アクティブなサブスクリプションを表すために、サブスクリプションリソースへのアクセスを提供します。

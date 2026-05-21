@@ -1,0 +1,640 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-storagebackends.html 
+summary: すべてのストレージバックエンドを一覧表示します 
+---
+= すべてのストレージバックエンドを一覧表示します
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends`#
+
+コレクション内の一致するすべてのリソースのJSON配列を返します。リクエストで個別のフィールドが指定されている場合、アイテムのJSON配列には、一致する各リソースに対して要求されたフィールドが、指定された順序で含まれます。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| 含める | string | query | False  a| 
+コレクションを一覧表示する際に、どのフィールドを返すかを指定します。
+
+URLの例："include=id"、"include=id,name"
+
+OpenAPI の例："id"
+
+* 例：id、name、state
+
+
+
+
+| 制限（ Limit ） | string | query | False  a| 
+コレクションを一覧表示する際に返されるリソースの最大数を示します。
+
+URLの例："limit=2"
+
+OpenAPI の例："2"
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 項目 | 配列[いずれか：link:#storageBackend_1_3_get_response_body["storageBackend_1.3_get_response_body"]、配列[]] | True  a| 
+
+
+
+| メタデータ | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-storageBackends",
+  "version": "1.3",
+  "items": [
+    [
+      "d6ee1e51-d65f-415a-a3d4-6d7fa8b64943",
+      "st1-45",
+      "running"
+    ],
+    [
+      "a5c508b7-aacd-4d19-9455-53c0d183ab4e",
+      "st2-67",
+      "discovered"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+機能
+
+このストレージバックエンドの機能を含むJSONオブジェクト。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| flexClone | string | True  a| 
+このストレージバックエンドがFlexCloneをサポートしているかどうかを示すJSON文字列。
+
+
+
+| snapMirror | string | True  a| 
+このストレージバックエンドがSnapMirrorをサポートしているかどうかを示すJSON文字列。
+
+
+
+| s3を使用したチャンク アップロード署名要求がサポートされるようになりました。 | string | True  a| 
+このストレージバックエンドがs3をサポートしているかどうかを示すJSON文字列。
+
+|===
+[role="api-collapsible-fifth-title"]
+ontap
+
+ONTAPクラスタに関連する特定の情報を含むJSONオブジェクト。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| authenticationStyle | string | True  a| 
+ONTAP認証がユーザ名とパスワードの組み合わせまたは証明書を使用して実行されるかどうかを示すJSON文字列。定義された値は次のとおりです：
+
+* 「basic」 - ユーザー名/パスワードを使用します
+* 「certificate」 - 証明書を使用する
+* 列挙型：["basic", "certificate"]
+* 例：基本
+
+
+
+
+| backendManagementIP | string | False  a| 
+このONTAPクラスタへの接続に使用されるIPアドレスを含むJSON文字列。
+
+
+
+| manag理IP | array[string] | False  a| 
+このONTAPクラスタへの接続に使用される、すべての管理IPのリストを含むJSON文字列のJSON配列。これは、Tridentで検出されたバックエンドとAstraのストレージバックエンドを関連付けるために使用されます。
+
+* uniqueItems：1
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+storageBackend_1.3_get_response_body
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* 「application/astra-storageBackend」
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| backendName | string | True  a| 
+ストレージバックエンドのユーザー指定名を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| backendType | string | True  a| 
+表現されているストレージバックエンドのタイプを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 「ontap」 - ストレージバックエンドはNetApp ONTAPシステムを表します
+* enum: ["ontap"]
+* 例：ONTAP
+
+
+
+
+| backendVersion | string | True  a| 
+表現対象のストレージバックエンドのバージョンを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| backendCredentialsName | string | True  a| 
+ストレージバックエンドで使用される1つ以上の認証情報リソースの名前を示す値を含むJSON文字列。複数の認証情報オブジェクトが同じ名前を持つ場合に、認証情報のローテーションを可能にします。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| configVersion | string | False  a| 
+ストレージバックエンドで使用されるアクティブな構成を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| 状態 | string | True  a| 
+ストレージバックエンドの動作状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「検出済み」 - ストレージバックエンドが管理対象クラスタから検出されました
+* 「running」 - ストレージバックエンドは正常に動作しています
+* 「不明」 - ストレージバックエンドの状態を判断できません
+* 「failed」 - ストレージバックエンドが利用できない状態です
+
+
+
+
+| stateDesired | string | False  a| 
+ストレージバックエンドの望ましい動作状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「実行中」 - ストレージバックエンドは通常の実行状態になります
+
+
+
+
+| stateUnready | array[string] | True  a| 
+JSON文字列のJSON配列。各文字列は、ストレージバックエンドが「実行中」に移行できない理由、「失敗」または「不明」に移行した理由、および/または「失敗」に移行する危険性がある理由を示します。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：127
+
+
+
+
+| managedState | string | True  a| 
+ストレージバックエンドの管理状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「pending」 - ストレージバックエンドは、検出または追加される予定です。
+* 「管理対象外」 - ストレージバックエンドは「検出済み」状態であり、管理対象外ですが、管理対象にすることができます
+* 「managed」 - ストレージバックエンドは「running」または「unknown」の状態であり、管理下にあります。
+
+
+
+
+| managedStateUnready | array[string] | True  a| 
+JSON文字列のJSON配列。各文字列は、ストレージバックエンドが管理対象外である理由を示しています。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：127
+
+
+
+
+| healthState | string | False  a| 
+ストレージバックエンドの健全性状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「不確定」 - リソースの状態を判断できません（例えば、接続不良のため）
+* 「normal」 - リソースに既知の問題はなく、インターフェース仕様に従ってサービスを提供できます。
+* 「警告」：このリソースには既知の問題がありますが、インターフェース仕様に従ってサービスを提供することに支障はありません。
+* 「重大」 - リソースに既知の問題があり、インターフェース仕様に従ってサービスを提供できない
+
+
+
+
+| healthStateUnready | array[string] | False  a| 
+JSON文字列のJSON配列。各文字列は、ストレージバックエンドが正常な状態にない理由を示しています。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：127
+
+
+
+
+| protectionState | string | True  a| 
+ストレージバックエンドの保護状態を示す値を含むJSON文字列。ONTAPの場合は「unknown」。定義された値は次のとおりです：
+
+* 「保護されている」 - ストレージバックエンドには保護ポリシーが定義されており、そのポリシーに準拠している
+* 「部分的」 - ストレージバックエンドには保護ポリシーが定義されているが、そのポリシーに準拠していない
+* 「none」 - ストレージバックエンドは保護されていません
+* 「不明」 - ストレージバックエンド保護ポリシー適合性を判断できない
+* enum: ["protected", "partial", "none", "unknown"]
+* 例：protected
+
+
+
+
+| protectionStateUnready | array[string] | True  a| 
+JSON文字列のJSON配列。各文字列は、保護ポリシーが規格に適合していない理由を示します。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：127
+
+
+
+
+| 機能 | link:#capabilities["機能"] | True  a| 
+このストレージバックエンドの機能を含むJSONオブジェクト。
+
+
+
+| ontap | link:#ontap["ontap"] | False  a| 
+ONTAPクラスタに関連する特定の情報を含むJSONオブジェクト。
+
+* additionalProperties：false
+
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 続行 | string | False  a| 
+
+
+
+| カウント | 番号 | False  a| 
+
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

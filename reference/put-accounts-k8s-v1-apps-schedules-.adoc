@@ -1,0 +1,538 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-k8s-v1-apps-schedules-.html 
+summary: スケジュールを変更する 
+---
+= スケジュールを変更する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えますが、ユーザーが変更できないキー値は保持します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| app_id | string | path（パス） | True  a| 
+含まれるアプリリソースのID
+
+
+
+| schedule_id | string | path（パス） | True  a| 
+リストするスケジュールコレクションのID
+
+|===
+
+
+== 要求の本文
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えますが、ユーザーが変更できないキー値は保持します。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-schedule"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+
+
+
+
+| ID | string | False  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 名前 | string | False  a| 
+スケジュール名を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| 有効 | string | False  a| 
+スケジュールが有効かどうかを示すJSON文字列。定義された値は次のとおりです：
+
+* 「true」 - スケジュールが有効です
+* 「false」 - スケジュールは有効ではありません。指定しない場合、デフォルト値は「true」です。
+
+
+
+
+| 粒度 | string | False  a| 
+スケジュールの粒度を示すJSON文字列。定義された値は次のとおりです：
+
+* 「毎時」
+* "日次"
+* "週次"
+* "月次"
+* "カスタム"
+
+
+
+
+| 分 | string | False  a| 
+スケジュールを実行する時刻（0～59分）を示す数値を含むJSON文字列。定義された値は次のとおりです：
+
+* 定義された正規表現は次のとおりです："^[0-9]|[1-5][0-9]$" このフィールドは、粒度が「hourly」、「daily」、「weekly」、または「monthly」に設定されている場合に存在します。カスタムスケジュールの場合、値「0」が返されます。
+
+
+
+
+| 時間 | string | False  a| 
+スケジュールを実行する時刻（0～23時）を示す数値を含むJSON文字列。定義された値は次のとおりです：
+
+* 定義された正規表現は次のとおりです："^[0-9]|[1][0-9]|[2][0-3]$" このフィールドは、粒度が「日次」、「週次」、または「月次」に設定されている場合に存在します。
+
+
+
+
+| dayOfWeek | string | False  a| 
+スケジュールを実行する曜日（0～7）を示す数値を含むJSON文字列。定義された値は次のとおりです：
+
+* 定義された正規表現は「^[0-7]$」です。このフィールドは、粒度が「weekly」に設定されている場合にのみ存在します。
+
+
+
+
+| dayOfMonth | string | False  a| 
+スケジュールを実行する月の日（1～31）を示す数値を含むJSON文字列。定義された値は次のとおりです：
+
+* 定義された正規表現は次のとおりです："^[1-9]|[1-2][0-9]|[3][0-1]$" このフィールドは、粒度が「monthly」に設定されている場合にのみ存在します。
+
+
+
+
+| recurrenceRule | string | False  a| 
+RFC-5545 セクション 3.8.5.3 を含む JSON 文字列。再帰ルール。DTSTART パラメータについては、UTC タイムスタンプ（末尾に「Z」が付く）のみがサポートされ、現在時刻より前のタイムスタンプのみがサポートされます。RECUR ルールパーツについては、「FREQ」と「INTERVAL」のみがサポートされています。FREQ ルールの部分では、「MINUTELY」と「HOURLY」のみがサポートされる値です。このフィールドは、粒度が「custom」に設定されている場合にのみ表示されます。
+
+
+
+| snapshotRetention | string | True  a| 
+保持するスナップショットの数を示す正の数値を含むJSON文字列。ゼロは、バックアップ取得後にスナップショットを削除する必要があることを示します。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* 定義された正規表現は次のとおりです："^(0|([1-9][0-9]*))$"
+
+
+
+
+| backupRetention | string | True  a| 
+保持するバックアップの数を示す正の数値を含むJSON文字列。ゼロは、バックアップを作成しないことを示します。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* 定義された正規表現は次のとおりです："^(0|([1-9][0-9]*))$"
+
+
+
+
+| bucketID | string | False  a| 
+バックアップの作成時に保存する場所を示す、オプションのバケットIDを含むJSON文字列。指定がない場合は、システムが選択したバケットが使用されます。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| レプリケート | string | False  a| 
+スケジュールが各スナップショットのAppMirrorレプリケーションをトリガーするかどうかを示すJSON文字列。アプリケーションにAppMirror関係が定義されている場合にのみ有効になります。定義値は次のとおりです：
+
+* 「true」 - スケジュールがAppMirrorレプリケーションをトリガーします
+* 「false」 - スケジュールはAppMirrorレプリケーションをトリガーしません。指定しない場合、デフォルト値は「false」です。
+
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | False  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.リクエスト例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-schedule",
+  "version": "1.3",
+  "granularity": "daily",
+  "minute": "0",
+  "hour": "0",
+  "snapshotRetention": "12",
+  "backupRetention": "12"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 204, Indicates if the schedule resource was updated.
+----
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なリクエストボディフィールドの名前
+
+
+
+| 理由 | string | True  a| 
+リクエスト本文フィールドが無効な理由
+
+|===
+====

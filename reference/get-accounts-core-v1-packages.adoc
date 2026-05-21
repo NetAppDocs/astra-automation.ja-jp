@@ -1,0 +1,849 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-packages.html 
+summary: すべてのパッケージを一覧表示 
+---
+= すべてのパッケージを一覧表示
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
+
+コレクション内の一致するすべてのリソースのJSON配列を返します。リクエストで個別のフィールドが指定されている場合、アイテムのJSON配列には、一致する各リソースに対して要求されたフィールドが、指定された順序で含まれます。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| フィルタ | string | query | False  a| 
+コレクションを一覧表示する際に、リソースを返すためにどのフィールドを一致させる必要があるかを示します。
+
+サポートされているオペレータは次のとおりです：
+
+* eq - 等号
+* lt/gt - より小さい/より大きい
+* lte/gte - 以下/以上
+
+
+URLの例："filter=field%20eq%20%27value%27"
+
+OpenAPI の例：「field eq 'value'」
+
+
+
+| OrderBy | string | query | False  a| 
+コレクションを一覧表示する際の、リソースの並び順を示します。
+
+URLの例："orderBy=name"、"orderBy=name%20desc"
+
+OpenAPI の例："name desc"
+
+
+
+| 含める | string | query | False  a| 
+コレクションを一覧表示する際に、どのフィールドを返すかを指定します。
+
+URLの例："include=id"、"include=id,name"
+
+OpenAPI の例："id"
+
+* 例：id、packageName、packageVersion、softwareType
+
+
+
+
+| 制限（ Limit ） | string | query | False  a| 
+コレクションを一覧表示する際に返されるリソースの最大数を示します。
+
+URLの例："limit=2"
+
+OpenAPI の例："2"
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 項目 | 配列[いずれか：link:#package_1_0_get_response_body["package_1.0_get_response_body"]、配列[]] | True  a| 
+
+
+
+| メタデータ | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-packages",
+  "version": "1.0",
+  "items": [
+    [
+      "e280ff62-be35-4f31-a31b-a210a1ad1b33",
+      "acc",
+      "22.01.0",
+      "install"
+    ],
+    [
+      "e8507dad-d33f-44b3-9c15-ec55ba6f6473",
+      "acc",
+      "22.01.1",
+      "patch"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| - | string | True  a| 
+
+
+
+| - | array[string] | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+dependsOnImages
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| imagePath | string | True  a| 
+このDockerイメージへのパスを含むJSON文字列。レジストリ名を含めてはならず、ルートからイメージへの絶対パスのみを含める必要があります。例：/globalcicd/acc 定義値：
+
+* 最小長さ：1
+* 最大長さ：1023
+
+
+
+
+| imageName | string | True  a| 
+Docker イメージ名を含む JSON 文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| imageTag | string | True  a| 
+この画像のタグ/バージョンを表すJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：31
+
+
+|===
+[role="api-collapsible-fifth-title"]
+画像
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| imageName | string | True  a| 
+Docker イメージ名を含む JSON 文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| imagePath | string | True  a| 
+このDockerイメージへのパスを含むJSON文字列。レジストリ名を含めてはならず、ルートからイメージへの絶対パスのみを含める必要があります。例：/globalcicd/acc 定義値：
+
+* 最小長さ：1
+* 最大長さ：1023
+
+
+
+
+| imageTag | string | True  a| 
+この画像のタグ/バージョンを表すJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：31
+
+
+
+
+| imageDigest | string | True  a| 
+この画像のダイジェストを表すJSON文字列。定義値は次のとおりです：
+
+* 定義された正規表現は次のとおりです："^(sha256:)[0-9a-f]{64}$"
+
+
+
+
+| dependsOnImages | 配列[link:#dependsOnImages["dependsOnImages"]] | False  a| 
+現在のイメージをインストールまたはアップグレードするために必要なイメージを記述するJSONオブジェクトのJSON配列。
+
+|===
+[role="api-collapsible-fifth-title"]
+dependsOnComponents
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| componentName | string | True  a| 
+コンポーネント名を表すJSON文字列。定義値は次のとおりです：
+
+* "acc"
+* "acs"
+* 「trident」
+* "kubernetes"
+
+
+
+
+| バージョン | array[string] | True  a| 
+現在のイメージをインストールするために必要なコンポーネントのバージョンを定義するJSON文字列のJSON配列。
+
+|===
+[role="api-collapsible-fifth-title"]
+アーティファクト
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| artifactName | string | True  a| 
+ファイル名を含むJSON文字列。定義されている値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| artifactIdentifier | string | True  a| 
+このファイルの識別子を含むJSON文字列。同じパッケージタイプのバージョン間では、ファイル名は変更される可能性がありますが、識別子は通常同じままです。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：511
+
+
+
+
+| artifactPath | string | True  a| 
+既知の Astra Control Center データストア / ロケーションのルートからこのアーティファクトへのパスを含む JSON 文字列。例：/vmware/1.0/ 定義されている値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：1023
+
+
+
+
+| artifactVersion | string | False  a| 
+提供されている場合、その成果物のバージョンを含むJSON文字列。定義されている値は次のとおりです：
+
+* SemVerスキーマに準拠
+* 最小長さ：1
+* 最大長さ：31
+
+
+
+
+| dependsOnComponents | 配列[link:#dependsOnComponents["dependsOnComponents"]] | False  a| 
+現在のイメージをインストール/アップグレードするために必要なインストール済みコンポーネントを記述するJSONオブジェクトのJSON配列。
+
+|===
+[role="api-collapsible-fifth-title"]
+files
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| fileName | string | True  a| 
+ファイル名を含むJSON文字列。定義されている値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| fileIdentifier | string | True  a| 
+このファイルの識別子を含むJSON文字列。同じパッケージタイプのバージョン間では、ファイル名は変更される可能性がありますが、識別子は通常同じままです。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：511
+
+
+
+
+| fileMediaType | string | True  a| 
+ファイルのメディアタイプを含むJSON文字列。定義済み値は、 https://www.iana.org/assignments/media-types/media-types.xhtml["IANA"]で定義されているメディアタイプです。さらに、yamlファイル用のapplication/x-yamlまたはapplication/x-yamlもサポートされています。
+
+* 最小長さ：1
+* 最大長さ：211
+
+
+
+
+| fileContents | string | True  a| 
+ファイルの内容を含むJSON文字列。定義された値は次のとおりです：
+
+* Base64 スキーマに準拠します。FIXME - これが圧縮されていることをどのように指定すればよいですか？どのようなアルゴリズムなどですか？
+
+
+|===
+[role="api-collapsible-fifth-title"]
+upgradableVersions
+
+パッケージバージョンにアップグレード可能な最小バージョンと最大バージョンを含むJSONオブジェクト。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| minVersion | string | False  a| 
+パッケージバージョンにアップグレード可能な最小バージョンを記述したJSON文字列。定義された値は次のとおりです：
+
+* SemVerスキーマに準拠
+
+
+
+
+| maxVersion | string | False  a| 
+パッケージバージョンにアップグレード可能な最大バージョンを記述したJSON文字列。定義された値は次のとおりです：
+
+* SemVerスキーマに準拠
+
+
+|===
+[role="api-collapsible-fifth-title"]
+依存関係
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| componentName | string | True  a| 
+コンポーネント名を表すJSON文字列。定義値は次のとおりです：
+
+* "acc"
+* "acs"
+* 「trident」
+* "kubernetes"
+
+
+
+
+| componentMinVersion | string | False  a| 
+そのコンポーネントに必要な最小バージョンを記述したJSON文字列。定義された値は次のとおりです：
+
+* SemVerスキーマに準拠
+
+
+
+
+| componentMaxVersion | string | False  a| 
+そのコンポーネントに必要な最大バージョンを記述したJSON文字列。定義された値は次のとおりです：
+
+* SemVerスキーマに準拠
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 作成タイムスタンプ | string | True  a| 
+
+
+
+| modificationTimestamp | string | True  a| 
+
+
+
+| 作成者 | string | True  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+package_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* 「application/astra-package」
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| packageName | string | True  a| 
+パッケージ名を含むJSON文字列。定義されている値は次のとおりです：
+
+* 最小長さ：1
+* 最大長:31 例の値:
+* "acc"
+* "acs"
+* 「trident」
+
+
+
+
+| packageVersion | string | True  a| 
+パッケージのSemVerを含むJSON文字列。定義された値は次のとおりです：
+
+* SemVerスキーマに準拠
+
+
+
+
+| packageType | string | True  a| 
+パッケージの種類を示すJSON文字列。これは、完全インストールパッケージかパッチかを示します。定義された値は次のとおりです：
+
+* "インストール"
+* "patch"
+
+
+
+
+| bundleName | array[string] | False  a| 
+パッケージが含まれているバンドルの名前を含むJSON文字列のJSON配列。
+
+
+
+| severityLevel | string | True  a| 
+このパッチまたはインストールの重大度レベルを示すJSON文字列。定義された値は次のとおりです：
+
+* 「recommended」 - インストールを推奨 - デフォルト値
+* 「critical」 - 重大なバグ修正やセキュリティパッチに対処するため、インストールを強く推奨します
+
+
+
+
+| packageState | string | True  a| 
+パッケージの動作状態を示す値を含むJSON文字列。パッケージの確認とインポートが完了すると、ステータスは「complete」と表示されます。そうでない場合は、状態は「incomplete」と表示されます。定義値は次のとおりです：
+
+* 「verifying」 - パッケージは検証中です
+* 「corrupt」 - パッケージが破損しています
+* 「incomplete」 - パッケージに要素が不足しています
+* 「available」 - パッケージに関連するすべての要素が利用可能であり、パッケージはすぐに使用できます。
+
+
+
+
+| packageStateTransitions | 配列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | True  a| 
+JSONオブジェクトのJSON配列。各オブジェクトは、特定の定義済み状態からの許可された状態遷移のセットを表します。各JSONオブジェクトには「from」と「to」というフィールドが含まれており、「from」の値は状態の名前、「to」の値は許可された宛先状態の配列です。定義値は次のとおりです：
+
+* 状態遷移スキーマに準拠する
+
+
+
+
+| packageStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+現在の「状態」に関する詳細情報を一覧表示する JSON オブジェクトの JSON 配列。詳細情報が利用できない場合、この配列は空になります。
+
+* 最小アイテム数：0
+
+
+
+
+| 画像 | 配列[link:#images["画像"]] | False  a| 
+パッケージの一部である各 Docker イメージを含む JSON オブジェクトの JSON 配列。
+
+
+
+| アーティファクト | 配列[link:#artifacts["アーティファクト"]] | False  a| 
+このパッケージに関連付けられている追加の成果物（バイナリファイルなど）を記述するJSONオブジェクトのJSON配列。
+
+
+
+| files | 配列[link:#files["files"]] | False  a| 
+JSONオブジェクトのJSON配列。各オブジェクトは、このパッケージに関連付けられた画像以外の成果物を表します。
+
+
+
+| upgradableVersions | link:#upgradableVersions["upgradableVersions"] | False  a| 
+パッケージバージョンにアップグレード可能な最小バージョンと最大バージョンを含むJSONオブジェクト。
+
+
+
+| 依存関係 | 配列[link:#dependencies["依存関係"]] | False  a| 
+このパッケージをインストールするために必要な、特定の依存関係の最小バージョンを記述するJSONオブジェクトのJSON配列
+
+
+
+| メタデータ | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 続行 | string | False  a| 
+
+
+
+| カウント | 番号 | False  a| 
+
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

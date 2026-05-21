@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/managed_cluster_endpoints.html 
+summary: Astra API（ACC）で管理されるクラスタエンドポイント 
+---
+= Astra API（ACC）で管理されるクラスタエンドポイント
+:allow-uri-read: 
+
+
+Managed Cluster APIは、管理対象のKubernetesクラスターを表します。

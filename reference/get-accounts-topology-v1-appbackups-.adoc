@@ -1,0 +1,539 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-appbackups-.html 
+summary: アプリケーションのバックアップを取得する 
+---
+= アプリケーションのバックアップを取得する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
+
+JSON レスポンス ボディに格納された Application Backup API リソースを返します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| appBackup_id | string | path（パス） | True  a| 
+リストするappBackupコレクションのID
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns the stored Application Backup API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-appBackup"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+* "1.2"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 名前 | string | True  a| 
+バックアップのユーザー指定名を含むJSON文字列。指定がない場合、またはバックアップがスケジュールによって開始された場合、システムはバックアップに名前を割り当てます。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* DNS 1123 Label Schemaに準拠
+
+
+
+
+| bucketID | string | True  a| 
+バックアップの作成時に保存される場所を示すオプションのバケットIDを含むJSON文字列。指定がない場合は、システムが選択したバケットが使用されます。バケットが利用できない場合は、作成時にエラーが返されます。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| snapshotID | string | False  a| 
+バックアップの作成に使用されたスナップショットを含むJSON文字列。バックアップを作成するには、バックアップ対象アプリケーションに関連付けられたスナップショットIDを、作成時に指定できます。指定がない場合、バックアップ用に新しいスナップショットが作成されます。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| scheduleID | string | False  a| 
+バックアップがスケジュールによってトリガーされたこと、およびどのスケジュールがバックアップをトリガーしたかを示す、オプションのスケジュールIDを含むJSON文字列。スケジュールに基づいて開始されるバックアップの場合にのみ存在します。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| 状態 | string | True  a| 
+バックアップの動作状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「pending」 - アプリケーションのバックアップは検出のためにスケジュールされています
+* 「discovering」 - アプリケーションのバックアップが検出中です
+* 「running」 - アプリケーションのバックアップは正常に実行されています
+* 「completed」 - アプリケーションのバックアップが正常に完了しました
+* 「failed」 - アプリケーションのバックアップが永続的な失敗状態になっています
+* 「削除済み」 - アプリケーションのバックアップには現在アクセスできません
+* 「不明」 - アプリケーションのバックアップ状態を判断できません
+* 「削除中」 - アプリケーションのバックアップは削除予定です
+
+
+
+
+| stateUnready | array[string] | True  a| 
+JSON文字列のJSON配列。各文字列は、アプリケーションのバックアップが「実行中」に移行できない理由、または「失敗」もしくは「削除済み」に移行した理由を示します。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：127
+
+
+
+
+| stateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | False  a| 
+現在の状態に関する詳細情報（現在の状態に至った理由を含む）をリストしたJSONオブジェクトのJSON配列。詳細情報がない場合は、この配列は空になります。定義された値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| hookState | string | False  a| 
+スナップショットの一部として実行される実行フックの状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「failed」 - 1つ以上の実行フックが失敗しました
+* 「success」 - 適用可能なフックがゼロ個以上あり、すべて成功しました
+
+
+
+
+| hookStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | False  a| 
+「hookState」が「failed」に移行した理由に関する追加の詳細をリストするJSONオブジェクトのJSON配列。詳細情報がない場合は、この配列は空になります。
+
+* 最小アイテム数：0
+
+
+
+
+| backupCreationTimestamp | string | False  a| 
+バックアップが取得された日時を示すタイムスタンプを含むJSON文字列。定義された値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| totalBytes | 番号 | False  a| 
+バックアップに含まれる合計バイト数を表すJSON形式の数値。
+
+
+
+| bytesDone | 番号 | False  a| 
+実行中のバックアップでバックアップされたバイト数を含むJSON形式の数値。バックアップが完了すると、totalBytesフィールドと一致します。
+
+
+
+| percentDone | 番号 | False  a| 
+実行中のバックアップの完了率を示すJSON形式の数値。バックアップが完了すると、「100」に設定されます。
+
+
+
+| メタデータ | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。
+
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appBackup",
+  "version": "1.2",
+  "id": "bab39d53-2d04-5297-b92e-58df89a2117b",
+  "name": "app-name-245",
+  "bucketID": "0afbe357-a717-4c7a-8b3d-d0368959c8de",
+  "scheduleID": "1fe83650-9b3c-41ef-bb25-a2910c19c33e",
+  "state": "pending",
+  "stateUnready": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 500, Internal server error
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/95",
+  "title": "Backup not retrieved",
+  "detail": "The backup wasn't retrieved because of an internal server issue.",
+  "status": "500"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 作成タイムスタンプ | string | True  a| 
+
+
+
+| modificationTimestamp | string | True  a| 
+
+
+
+| 作成者 | string | True  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

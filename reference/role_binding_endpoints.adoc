@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/role_binding_endpoints.html 
+summary: Astra API（ACC）ロールバインディングエンドポイント 
+---
+= Astra API（ACC）ロールバインディングエンドポイント
+:allow-uri-read: 
+
+
+ロールバインディングAPIは、ユーザーアカウントのペア、またはグループアカウントのペア間の関係と、それらに付与される権限のセット（ロール）を記述します。

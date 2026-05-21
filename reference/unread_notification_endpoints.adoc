@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/unread_notification_endpoints.html 
+summary: Astra API（ACC）未読通知エンドポイント 
+---
+= Astra API（ACC）未読通知エンドポイント
+:allow-uri-read: 
+
+
+未読通知APIは、特定のユーザーによって読まれていない通知に関する情報を提供し、それらを既読としてマークできるようにします。

@@ -1,0 +1,607 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-buckets.html 
+summary: すべてのバケットを一覧表示 
+---
+= すべてのバケットを一覧表示
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets`#
+
+コレクション内の一致するすべてのリソースのJSON配列を返します。リクエストで個別のフィールドが指定されている場合、アイテムのJSON配列には、一致する各リソースに対して要求されたフィールドが、指定された順序で含まれます。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 項目 | 配列[いずれか：link:#bucket_1_2_get_response_body["bucket_1.2_get_response_body"]、配列[]] | True  a| 
+
+
+
+| メタデータ | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-buckets",
+  "version": "1.2",
+  "items": [
+    [
+      "4c753e39-25e9-4b36-a8de-69f168aa59cd",
+      "Test Bucket",
+      "gcp"
+    ],
+    [
+      "d8fd585d-6429-4c08-a308-af193a88eac7",
+      "Local",
+      "ontap-s3"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+s3を使用したチャンク アップロード署名要求がサポートされるようになりました。
+
+Simple Storage Service（S3）プロトコルパラメータを提供するJSONオブジェクト。（すべてのS3タイプのプロバイダーにこのオブジェクトを使用します）。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| serverURL | string | True  a| 
+バケットのベースパスへのURLを含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：1023
+
+
+
+
+| bucketName | string | True  a| 
+S3バケット名を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+gcp
+
+Google Cloudプロトコルパラメータを提供するJSONオブジェクト。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| bucketName | string | True  a| 
+バックエンドとなるGoogle Cloudバケット名を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+azure
+
+Azureプロトコルパラメータを提供するJSONオブジェクト。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| storageAccount | string | True  a| 
+Azure ストレージアカウント名を含む JSON 文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+
+
+| bucketName | string | True  a| 
+バックエンドとなるAzureブロブの名前を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+bucketParameters
+
+バケットへのアクセスに必要な、バケットプロバイダー固有の情報を提供するJSONオブジェクト。このバケット内の具体的な値は、プロバイダーによって異なります。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| s3を使用したチャンク アップロード署名要求がサポートされるようになりました。 | link:#s3["s3を使用したチャンク アップロード署名要求がサポートされるようになりました。"] | False  a| 
+Simple Storage Service（S3）プロトコルパラメータを提供するJSONオブジェクト。（すべてのS3タイプのプロバイダーにこのオブジェクトを使用します）。
+
+
+
+| gcp | link:#gcp["gcp"] | False  a| 
+Google Cloudプロトコルパラメータを提供するJSONオブジェクト。
+
+
+
+| azure | link:#azure["azure"] | False  a| 
+Azureプロトコルパラメータを提供するJSONオブジェクト。
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+bucket_1.2_get_response_body
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-bucket"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+* "1.2"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 名前 | string | True  a| 
+バケットにユーザーが割り当てた名前を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：256
+
+
+
+
+| credentialID | string | True  a| 
+バケットへのアクセスに使用される認証情報の識別子を含むJSON文字列。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| 状態 | string | True  a| 
+バケットの動作状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「pending」 - バケットは検出予定
+* 「available」 - バケットは使用可能です
+* 「failed」 - バケットが永続的な失敗状態にあります
+* 「removed」 - バケットには現在アクセスできません
+* 「不明」 - バケットの状態を判断できません
+
+
+
+
+| stateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+「state」が「removed」または「failed」に移行した理由に関する詳細情報をリストしたJSONオブジェクトのJSON配列。詳細情報が利用できない場合、この配列は空になります。
+
+* 最小アイテム数：0
+
+
+
+
+| retentionTime | 番号 | False  a| 
+このバケット上のファイルが保持される期間を表す秒数。定義された値は次のとおりです：
+
+* -1（サポートされていないバケット）
+* 0（既知の保持ポリシーなし）
+* 
++
+[quote]
+____
+0（既知の保持ポリシー）
+
+____
+
+
+
+
+
+| プロバイダ | string | True  a| 
+バケットへのアクセスに使用できるバケットプロトコルを示すJSON文字列。定義された値は次のとおりです：
+
+* "ontap-s3"
+* "storagegrid-s3"
+* "generic-s3"
+* "gcp"
+* "azure"
+* "aws"
+
+
+
+
+| bucketParameters | link:#bucketParameters["bucketParameters"] | True  a| 
+バケットへのアクセスに必要な、バケットプロバイダー固有の情報を提供するJSONオブジェクト。このバケット内の具体的な値は、プロバイダーによって異なります。
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 続行 | string | False  a| 
+
+
+
+| カウント | 番号 | False  a| 
+
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

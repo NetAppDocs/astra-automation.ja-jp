@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/application_backup_endpoints.html 
+summary: Astra API（ACC）アプリケーションバックアップエンドポイント 
+---
+= Astra API（ACC）アプリケーションバックアップエンドポイント
+:allow-uri-read: 
+
+
+アプリケーションバックアップAPIを使用すると、ユーザーは管理対象アプリケーションのバックアップを作成および表示できます。

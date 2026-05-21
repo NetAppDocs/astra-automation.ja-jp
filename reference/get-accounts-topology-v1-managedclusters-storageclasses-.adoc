@@ -1,0 +1,474 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-managedclusters-storageclasses-.html 
+summary: 管理対象クラスタのストレージクラスを取得します 
+---
+= 管理対象クラスタのストレージクラスを取得します
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/storageClasses/{storageClass_id}`#
+
+JSONレスポンスボディに格納されているStorage Class APIリソースを返します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| managedCluster_id | string | path（パス） | True  a| 
+包含するmanagedClusterリソースのID
+
+
+
+| storageClass_id | string | path（パス） | True  a| 
+リストするstorageClassコレクションのID
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns the stored Storage Class API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-storageClass"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 名前 | string | True  a| 
+ストレージクラスの名前を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：255
+
+
+
+
+| プロビジョナー | string | True  a| 
+ストレージクラスに関連付けられたプロビジョナーを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：255
+
+
+
+
+| 使用可能 | string | True  a| 
+ストレージクラスがクラスターで使用可能か、または管理下にある場合にクラスターに追加可能かどうかを示すJSON文字列。定義値は次のとおりです：
+
+* 「available」 - ストレージクラスは使用可能です
+* 「eligible」 - ストレージクラスは、管理下にあるクラスターで使用可能です。
+* 「不適格」 - ストレージクラスは、管理下にあるクラスタで使用する資格がありません
+
+
+
+
+| allowVolumeExpansion | string | True  a| 
+ストレージクラスがボリューム拡張を許可しているかどうかを示すJSON文字列。定義された値は次のとおりです：
+
+* 「true」 - ストレージクラスはボリューム拡張を許可します
+* 「false」 - ストレージクラスではボリュームの拡張は許可されていません
+* 「unavailable」 - ストレージクラスがボリューム拡張を許可しているかどうかは不明です
+
+
+
+
+| reclaimPolicy | string | True  a| 
+ストレージクラスの保持ポリシーを示すクラウド固有の値を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：255
+
+
+
+
+| volumeBindingMode | string | True  a| 
+ストレージクラスのバインディングモードを示す、クラウド固有の値を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：255
+
+
+
+
+| isDefault | string | False  a| 
+ストレージクラスにデフォルトのアノテーションが含まれているかどうかを示すJSON文字列。定義された値は次のとおりです：
+
+* 「true」 - ストレージクラスにはデフォルトのアノテーションが含まれています
+
+
+
+
+| maxSnapshotCount | 番号 | False  a| 
+サポートされているスナップショットの数を示すJSON数値。この情報は、NetAppが提供するストレージクラスに添付されています。
+
+
+
+| maxBackupCount | 番号 | False  a| 
+サポートされているバックアップの数を示すJSON形式の数値。この情報は、NetAppが提供するストレージクラスに添付されています。
+
+
+
+| 価格 | string | False  a| 
+ストレージクラスにおける単位時間あたりの通貨単位を示すJSON文字列。この情報は、NetAppが提供するストレージクラスに添付されています。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| 通貨 | string | False  a| 
+価格が測定される通貨のISO 4217 3文字コードを示すJSON文字列。この情報は、NetAppが提供するストレージクラスに添付されます。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：255
+
+
+
+
+| Performance | 番号 | False  a| 
+パフォーマンスサービスレベル目標（SLO）をMBps単位で示すJSON数値。この情報は、NetAppが提供するストレージクラスに添付されています。
+
+
+
+| レジリエンス | string | False  a| 
+ストレージの耐障害性構成を示すJSON文字列。この情報は、NetAppが提供するストレージクラスに添付されています。定義された値は次のとおりです：
+
+* 「regional」 - 特定のリージョンが利用できなくなった場合、ボリュームは利用できなくなります
+* 「マルチサイト」 - 特定のリージョンが利用できなくなった場合でも、ボリュームは引き続き利用可能です。
+
+
+
+
+| メタデータ | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astraメタデータスキーマに準拠
+
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-storageClass",
+  "version": "1.1",
+  "id": "ad9be22b-53c7-540c-8647-76afe2878952",
+  "name": "my-storage-class",
+  "provisioner": "csi.trident.netapp.io",
+  "available": "eligible",
+  "allowVolumeExpansion": "true",
+  "reclaimPolicy": "recycle",
+  "volumeBindingMode": "immediate",
+  "isDefault": "true",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astraメタデータスキーマに準拠
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 作成タイムスタンプ | string | True  a| 
+
+
+
+| modificationTimestamp | string | True  a| 
+
+
+
+| 作成者 | string | True  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

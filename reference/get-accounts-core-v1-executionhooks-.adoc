@@ -1,0 +1,589 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-executionhooks-.html 
+summary: 実行フックを取得する 
+---
+= 実行フックを取得する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks/{executionHook_id}`#
+
+JSONレスポンスボディに保存されたExecution Hook APIリソースを返します。また、現在のmatchingCriteriaと定義されたアプリに基づいて、matchingContainersおよびmatchingImagesに値を設定します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| executionHook_id | string | path（パス） | True  a| 
+リストするexecutionHookコレクションのID
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns the stored Execution Hook API resource in the JSON response body. Also populates matchingContainers and matchingImages based on the current matchingCriteria and the defined app.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-executionHook"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 名前 | string | True  a| 
+ユーザーが指定したリソース名を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：63 名前はすべての実行フックリソースで一意である必要があります。
+
+
+
+
+| hookType | string | True  a| 
+フックの種類を定義するJSON文字列。定義された値は次のとおりです：
+
+* 「netapp」 - NetAppが提供する実行フック。
+* 「custom」 - 特定のアプリIDに紐付けられます。hookTypeが「netapp」の実行フックリソースは読み取り専用です。
+
+
+
+
+| matchingCriteria | 配列[link:#matchingCriteria["matchingCriteria"]] | True  a| 
+実行フックのマッチング条件を記述するJSONオブジェクトのJSON配列。複数のmatchingCriteriaが指定されている場合、条件に対して論理ANDが適用されます。定義値は次のとおりです：
+
+* 最小アイテム数：0
+* 最大アイテム数：10
+
+
+
+
+| matchingContainers | 配列[link:#matchingContainers["matchingContainers"]] | False  a| 
+定義されたアプリ内で、設定された一致条件に一致する各コンテナの JSON オブジェクトの JSON 配列。
+
+
+
+| matchingImages | array[string] | False  a| 
+一致するコンテナイメージのJSON文字列のJSON配列。定義されている値は次のとおりです：
+
+* 最小アイテム数：0
+* 最大アイテム数：4095
+* 最小長さ：1
+* 最大長さ：255
+
+
+
+
+| アクション | string | True  a| 
+一致条件が満たされた場合に実行フックが実行するアクションを示すJSON文字列。定義された値は次のとおりです：
+
+* "スナップショット"
+* "バックアップ"
+* "リストア"
+* "フェイルオーバー"
+
+
+
+
+| ステージ | string | True  a| 
+フックが実行されるアクション中の段階を示すJSON文字列。定義された値は次のとおりです：
+
+* 「pre」 - 指定されたアクションの前に実行フックが実行されます。
+* 「post」 - 指定されたアクションの後に実行フックが実行されます。アクション「snapshot」の値は「pre」と「post」です。アクション「backup」の値は「pre」と「post」です。アクション「restore」の値は「post」です。アクション「failover」の値は「post」です。
+
+
+
+
+| hookSourceID | string | True  a| 
+この実行フックを通して実行されるフックソースIDを含むJSON文字列。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| 引数 | array[string] | False  a| 
+ソースへの引数となるJSON文字列のJSON配列。定義された値は次のとおりです：
+
+* 最小アイテム数：0
+* 最大アイテム数：16
+* 最小長さ：0
+* 最大長さ：127
+
+
+
+
+| appID | string | False  a| 
+このフックがリンクされているアプリケーションの関連IDを含むJSON文字列。要するに、設定されている場合は、その他のマッチング基準も含まれる。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| 有効 | string | True  a| 
+実行フックが有効になっているかどうかを示すJSON文字列。定義値は次のとおりです：
+
+* 「true」 - 実行フックが有効になっており、指定されたとおりに実行されます。
+* 「false」 - 実行フックが無効になっており、実行されません。デフォルト値は「true」です。
+
+
+
+
+| description | string | False  a| 
+フックソースに関するユーザー指定の説明を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：511
+
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-executionHook",
+  "version": "1.3",
+  "id": "5f7e2e31-280d-5984-a28b-2d19ab5b77c0",
+  "name": "Payroll",
+  "hookType": "custom",
+  "matchingCriteria": [
+    {
+      "type": "podLabel",
+      "value": "^env=production$"
+    },
+    {
+      "type": "containerName",
+      "value": "^payroll-master"
+    }
+  ],
+  "matchingImages": [
+    "docker.io/bitnami/payroll:3.7.8",
+    "docker.io/bitnami/payroll:4.1.2"
+  ],
+  "matchingContainers": [
+    {
+      "namespaceName": "payroll-east",
+      "podName": "payroll-release3-7",
+      "podLabels": [
+        {
+          "name": "env",
+          "value": "production"
+        },
+        {
+          "name": "app.kubernetes.io/managed-by",
+          "value": "Helm"
+        }
+      ],
+      "containerName": "payroll-master-0",
+      "containerImage": "docker.io/bitnami/payroll:3.7.8"
+    },
+    {
+      "namespaceName": "payroll-east",
+      "podName": "payroll-release3-7",
+      "podLabels": [
+        {
+          "name": "env",
+          "value": "production"
+        },
+        {
+          "name": "app.kubernetes.io/managed-by",
+          "value": "Helm"
+        }
+      ],
+      "containerName": "payroll-master-1",
+      "containerImage": "docker.io/bitnami/payroll:3.7.8"
+    }
+  ],
+  "action": "snapshot",
+  "stage": "pre",
+  "hookSourceID": "50e89023-ba84-435d-bb47-1833f4c250ff",
+  "arguments": [
+    "freeze"
+  ],
+  "appID": "7be5ae7c-151d-4230-ac39-ac1d0b33c2a9",
+  "enabled": "true",
+  "description": "Payroll production hook",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+matchingCriteria
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+一致条件の種類を識別する JSON 文字列。
+
+
+
+| Value | string | True  a| 
+指定されたマッチタイプに一致する正規表現を含む JSON 文字列。正規表現の構文： https://github.com/google/re2/wiki/Syntax[]
+
+|===
+[role="api-collapsible-fifth-title"]
+type_k8s_labelを使用したチャンク アップロード署名要求がサポートされるようになりました。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+matchingContainers
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| podName | string | False  a| 
+一致するコンテナのポッド名のJSON文字列。
+
+
+
+| podLabels | 配列[link:#type_k8s_label["type_k8s_labelを使用したチャンク アップロード署名要求がサポートされるようになりました。"]] | False  a| 
+一致するコンテナのポッドのラベルのラベルオブジェクトのJSON配列。
+
+
+
+| containerImage | string | False  a| 
+一致するコンテナのイメージのJSON文字列。
+
+
+
+| containerName | string | False  a| 
+一致するコンテナ名のJSON文字列。
+
+
+
+| namespaceName | string | False  a| 
+一致するコンテナのポッドの名前空間名を表すJSON文字列。
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/schedule_endpoints.html 
+summary: Astra API（ACC）スケジュールエンドポイント 
+---
+= Astra API（ACC）スケジュールエンドポイント
+:allow-uri-read: 
+
+
+Schedule APIを使用すると、さまざまなスケジュールされたデータ保護処理を定義できます。

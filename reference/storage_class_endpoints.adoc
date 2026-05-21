@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/storage_class_endpoints.html 
+summary: Astra API（ACC）ストレージクラスのエンドポイント 
+---
+= Astra API（ACC）ストレージクラスのエンドポイント
+:allow-uri-read: 
+
+
+ストレージクラスAPIは、特定のクラスターで認識されているストレージクラスを記述します。

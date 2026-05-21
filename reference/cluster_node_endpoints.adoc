@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cluster_node_endpoints.html 
+summary: Astra API（ACC）クラスタノードエンドポイント 
+---
+= Astra API（ACC）クラスタノードエンドポイント
+:allow-uri-read: 
+
+
+クラスターノードAPIは、クラスターに関連付けられたノードへのアクセスを提供します。

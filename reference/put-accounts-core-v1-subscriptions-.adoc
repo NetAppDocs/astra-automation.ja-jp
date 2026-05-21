@@ -1,0 +1,643 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-subscriptions-.html 
+summary: サブスクリプションを変更する 
+---
+= サブスクリプションを変更する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えますが、ユーザーが変更できないキー値は保持します。
+
+*副作用*
+
+* ユーザーがサブスクリプションをキャンセルした場合、PUTエンドポイントを「status」：「inactive」で呼び出す必要があります。
+* ステータスが「非アクティブ」に設定されると、このサブスクリプションの保留中の料金がZuoraに送信され、Zuoraのサブスクリプションは何らかの方法で「非アクティブ」としてマークされます。
+
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| subscription_id | string | path（パス） | True  a| 
+リストするサブスクリプションコレクションのID
+
+|===
+
+
+== 要求の本文
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えますが、ユーザーが変更できないキー値は保持します。
+
+*副作用*
+
+* ユーザーがサブスクリプションをキャンセルした場合、PUTエンドポイントを「status」：「inactive」で呼び出す必要があります。
+* ステータスが「非アクティブ」に設定されると、このサブスクリプションの保留中の料金がZuoraに送信され、Zuoraのサブスクリプションは何らかの方法で「非アクティブ」としてマークされます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* 「application/astra-subscription」
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+* "1.2"
+
+
+
+
+| ID | string | False  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 顧客概要ID | string | False  a| 
+ http://authorize.net["Authorize.net"]から呼び出された顧客概要IDを含むJSON文字列は、試用期間中は設定されません。設定されていない場合、読み取り操作中に空の文字列を返します。定義値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+
+
+| paymentFirstName | string | False  a| 
+支払い請求に使用される、ユーザーが指定したフルネーム（名）を含むJSON文字列。定期購読の再請求時にのみ指定されます。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| paymentLastName | string | False  a| 
+支払い請求に使用される、ユーザーが指定した長めの姓を含むJSON文字列。定期購読の再請求時にのみ指定されます。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| paymentAddress | link:#paymentAddress["paymentAddress"] | False  a| 
+請求先住所を指定するJSON文字列のコレクションを含むJSONオブジェクト。サブスクリプションの再請求時にのみ指定されます。このキーが存在する場合、含まれている6つのJSON文字列すべてが存在します。ユーザーから何も入力されなかった場合、文字列は空になります。
+
+
+
+| paymentProfileID | string | False  a| 
+ http://Authorize.net["Authorize.net"]から呼び出された支払いプロファイルIDを含むJSON文字列。トライアル期間には設定されません。設定されていない場合、読み取り操作中に空の文字列を返します。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+
+
+| paymentExpiry | string | False  a| 
+支払い方法の有効期限を示すタイムスタンプを含むJSON文字列。これはauthorize.net](http://authorize.net[]から取得され、UIによって設定されます。定義された値は次のとおりです：
+
+* ISO-8601 日付時刻スキーマに準拠しています。このフィールドは試用期間には返されません。
+
+
+
+
+| purchaseOrderNumber | string | False  a| 
+支払い方法に対応する発注番号を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：31
+
+
+
+
+| マーケットプレイス | string | False  a| 
+支払いが記録されるアカウントのマーケットプレイスを示すJSON文字列。定義された値：
+
+* 「netapp」
+* "azure"
+* "aws"
+* "gcp"
+
+
+
+
+| licenseSN | string | False  a| 
+支払い方法のライセンスシリアル番号を含むJSON文字列。定義されている値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：31
+
+
+
+
+| 条項 | string | False  a| 
+アカウントの現在のティアを示すJSON文字列。定義された値は次のとおりです：
+
+* "トライアル"
+* 「paid」
+
+
+
+
+| ステータス | string | False  a| 
+サブスクリプションの現在のステータスを示すJSON文字列。定義されている値は次のとおりです：
+
+* "アクティブ"
+* 「inactive」
+
+
+
+
+| appLimit | 番号 | False  a| 
+このサブスクリプションにおけるアプリケーション制限を示すJSON数値。-1の値は制限がないことを示します。
+
+
+
+| namespaceLimit | 番号 | False  a| 
+このサブスクリプションにおける名前空間の制限を示すJSON数値。-1の値は制限がないことを示します。
+
+
+
+| subscriptionPeriod | 番号 | False  a| 
+購読期間を示すJSON形式の数値。-1の値は制限がないことを示します。単位：日
+
+
+
+| gracePeriod | 番号 | False  a| 
+トライアル期間が終了した後、または有料サブスクリプションがキャンセルされた後の猶予期間を示すJSON数値。単位：日
+
+
+
+| reminderBeforePeriod | 番号 | False  a| 
+顧客への通知が開始されるトライアル期間終了前の日数を示すJSON形式の数値。値は日数で表され、-1は該当しないことを示します。
+
+
+
+| onboardStatus | string | False  a| 
+顧客オンボーディングの現在のステータスを示すJSON文字列。有効な値は "not started"、"in progress"、"success"、"failed" です。定義値は次のとおりです：
+
+* 「未開始」
+* "進行中"
+* "成功"
+* "失敗"
+
+
+
+
+| costPerAppUnit | 番号 | False  a| 
+アプリユニットあたりのコストを示すJSON番号。試用版の場合、値は0です。単位：米ドル
+
+
+
+| costPerNamespaceUnit | 番号 | False  a| 
+名前空間単位あたりのコストを示すJSON数値。試用版の場合、値は0です。単位：米ドル
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | False  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.リクエスト例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-subscription",
+  "version": "1.2",
+  "customerProfileID": "2157047189",
+  "paymentProfileID": "E7CEB0A9F1BECA32A02493E1B31D5955",
+  "paymentExpiry": "2022-05-01T00:00:00Z"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 204, Indicates if the subscription resource was updated.
+----
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+paymentAddress
+
+請求先住所を指定するJSON文字列のコレクションを含むJSONオブジェクト。サブスクリプションの再請求時にのみ指定されます。このキーが存在する場合、含まれている6つのJSON文字列すべてが存在します。ユーザーから何も入力されなかった場合、文字列は空になります。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| addressCountry | string | True  a| 
+ISO 3166 Alpha-2で規定されている、郵便住所に関連付けられた国名または国コードを含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：2
+
+
+
+
+| addressLocality | string | True  a| 
+郵便番号に関連付けられた地域（例えば、都市）を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+
+
+| addressRegion | string | True  a| 
+郵便番号に関連付けられた地域（例えば、州）を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+
+
+| postalCode | string | True  a| 
+郵便番号に関連付けられた郵便番号を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+
+
+| streetAddress1を使用したチャンク アップロード署名要求がサポートされるようになりました。 | string | True  a| 
+郵便番号に関連付けられた番地を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+
+
+| streetAddress2を使用したチャンク アップロード署名要求がサポートされるようになりました。 | string | False  a| 
+オプションの付加的な住所情報（番地、私書箱など）を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なリクエストボディフィールドの名前
+
+
+
+| 理由 | string | True  a| 
+リクエスト本文フィールドが無効な理由
+
+|===
+====

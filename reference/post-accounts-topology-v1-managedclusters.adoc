@@ -1,0 +1,846 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts-topology-v1-managedclusters.html 
+summary: 新しいマネージドクラスタを作成します 
+---
+= 新しいマネージドクラスタを作成します
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters`#
+
+作成される Managed Cluster API リソースの希望値を指定します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+|===
+
+
+== 要求の本文
+
+作成される Managed Cluster API リソースの希望値を指定します。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* 「application/astra-managedCluster」
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+* "1.4"
+* "1.5"
+* "1.6"
+* "1.7"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| tridentManagedStateDesired | string | False  a| 
+Tridentの目的の管理状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「managed」 - このクラスター上でTridentを管理する
+* 「unmanaged」 - このクラスター上でTridentを管理しない
+
+
+
+
+| defaultStorageClass | string | False  a| 
+Kubernetesで設定されているデフォルトのストレージクラスに対応するストレージクラスIDを含むJSON文字列。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠します。含まれていない場合は、まだ検出されていません。
+
+
+
+
+| defaultBucketID | string | False  a| 
+管理対象の Neptune クラスタのアプリケーションメタデータを永続化するためにデフォルトで使用されるバケットの ID を含む JSON 文字列。クラスター上でデフォルトバケットが指定されていない場合、対応するクラウドのデフォルトバケットが使用されます。
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | False  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.リクエスト例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-managedCluster",
+  "version": "1.7",
+  "id": "241e9d94-eb8b-5c25-ba20-9292baac2396",
+  "defaultStorageClass": "e280ff62-be35-4f31-a31b-a210a1ad1b33",
+  "tridentManagedStateDesired": "managed"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 201, Returns the newly created managedCluster resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* 「application/astra-managedCluster」
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+* "1.4"
+* "1.5"
+* "1.6"
+* "1.7"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 名前 | string | True  a| 
+クラスター名を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* この文字列は、XSS攻撃、Unicode攻撃、ディレクトリトラバーサル攻撃、SQLインジェクション攻撃を防ぐために内部的に検証されます。
+
+
+
+
+| 状態 | string | True  a| 
+クラスターの動作状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「pending」 - クラスターの検出が予定されています
+* 「discovering」 - クラスタの検出処理中です
+* 「provisioning」 - クラスタのプロビジョニング処理中です
+* 「running」 - クラスターは正常に動作しています
+* 「failed」 - クラスタが永続的な障害状態にあります
+* 「削除済み」 - クラスターには現在アクセスできません
+* 「不明」 - クラスタの状態を判断できません
+
+
+
+
+| restoreTargetSupported | string | False  a| 
+管理対象クラスタがアプリケーションデータ管理操作の_ターゲット_となる能力を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「true」 - クラスタは、アプリケーションデータ管理処理の対象として適格です。
+* 「false」 - クラスタは、アプリケーションデータ管理処理の対象として適格では_ありません_。
+
+
+
+
+| snapshotSupported | string | False  a| 
+管理対象クラスタがアプリケーションデータ管理のバックアップのような操作を実行できるかどうかを示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「true」 - クラスタは、アプリケーションデータ管理操作を実行する資格があります。
+* 「false」 - クラスタは、アプリケーションデータ管理処理を実行する資格が_ありません_。
+
+
+
+
+| stateUnready | array[string] | True  a| 
+JSON文字列のJSON配列。各文字列は、クラスターが「実行中」状態に移行できない理由、「実行中」状態中に問題が発生した場合、または「失敗」状態や「削除済み」状態に移行した理由を示します。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：127
+
+
+
+
+| managedState | string | True  a| 
+クラスターの管理状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「pending」 - クラスターは検出または追加される予定です
+* 「ineligible」 - クラスタは「running」状態であり、管理下になく、管理の対象外です。この不適格性の理由は、unreadyキーの値に示されています。
+* 「削除中」 - クラスタは削除処理中です
+* 「管理対象外」 - クラスターは「実行中」または「障害発生」状態であり、管理対象外ですが、管理対象にすることができます
+* 「管理中」 - クラスタは「実行中」状態であり、管理処理中です
+* 「managed」 - クラスタは「running」、「failed」、または「removed」状態であり、管理下にあります
+
+
+
+
+| managedStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | False  a| 
+現在の状態に関する詳細情報（現在の状態に至った理由を含む）をリストしたJSONオブジェクトのJSON配列。詳細情報がない場合は、この配列は空になります。定義された値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| protectionState | string | True  a| 
+クラスターの保護状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「full」 - クラスタのデフォルトのストレージクラスはスナップショットをサポートします
+* 「partial」 - クラスタには、スナップショットをサポートしないストレージクラスのみが存在します
+* "atRisk" - クラスターのデフォルトのストレージクラスはスナップショットをサポートしていません
+
+
+
+
+| protectionStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+現在の保護状態に関する詳細情報（現在の状態に至った理由を含む）を一覧表示するJSONオブジェクトのJSON配列。詳細情報が利用できない場合、この配列は空になります。定義された値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| managedStateUnready | array[string] | True  a| 
+JSON文字列のJSON配列。各文字列は、クラスターが管理対象外である理由を示しています。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：127
+
+
+
+
+| managedTimestamp | string | True  a| 
+クラスターが管理下に置かれた日時を示すタイムスタンプを含むJSON文字列。定義された値は次のとおりです：
+
+* ISO-8601 日付時刻スキーマに準拠 このキーは、クラスタのmanagedStateが「managed」の場合にのみ返されます。
+
+
+
+
+| tridentVersion | string | False  a| 
+クラスタにインストールされているTridentのバージョンを含むJSON文字列。定義された値は次のとおりです：
+
+* ソフトウェアバージョンスキーマに準拠
+
+
+
+
+| acpVersion | string | False  a| 
+クラスタにインストールされているAstra Control Provisionerのバージョンを含むJSON文字列。定義された値は次のとおりです：
+
+* ソフトウェアバージョンスキーマに準拠
+
+
+
+
+| tridentManagedState | string | False  a| 
+このクラスタ上の Trident の管理状態を示す列挙値のセットの 1 つを含む JSON 文字列。定義された値は次のとおりです：
+
+* 「managed」 - クラスタ上の Trident インスタンスは Astra によって管理されます
+* 「管理されていない」 - クラスター上のTridentインスタンスはAstraによって管理されていません
+
+
+
+
+| tridentManagedStateDesired | string | False  a| 
+Tridentの目的の管理状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「managed」 - このクラスター上でTridentを管理する
+* 「unmanaged」 - このクラスター上でTridentを管理しない
+
+
+
+
+| tridentManagedStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | False  a| 
+「state」が「managed」または「unmanaged」に移行した理由に関する詳細情報をリストしたJSONオブジェクトのJSON配列。+ 詳細情報が利用できない場合、この配列は空になります。
+
+* 最小アイテム数：0
+
+
+
+
+| tridentManagedStateAllowed | array[string] | False  a| 
+特定のtridentManagedStateで要求できる状態。各定義済み状態において、以下の状態を要求することができます：
+
+* "managed"："managed"
+* "unmanaged"："管理対象外"
+
+
+
+
+| inUse | string | True  a| 
+クラスターに管理対象アプリケーションが存在するかどうか、つまり削除できないかどうかを示す値を含む JSON 文字列。定義された値は次のとおりです：
+
+* 「false」 - クラスターは管理されていないか、管理されているが、関連付けられている管理対象アプリケーションがない
+* 「true」 - クラスターは管理されており、管理対象アプリケーションが関連付けられています
+
+
+
+
+| accHost | string | False  a| 
+このクラスタが現在アクセスされているAstra Control Centerのインスタンスをホストしていることを示すJSON文字列。定義された値は次のとおりです：
+
+* 「true」 - このクラスタは、現在アクセスされているAstra Control Centerのインスタンスをホストしています。
+
+
+
+
+| clusterType | string | True  a| 
+クラスターの種類を示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 「gke」- Google Kubernetes Engine 上でホストされる Kubernetes
+* 「aks」 - Microsoft Azure Kubernetes Service 上でホストされている Kubernetes
+* 「eks」 - Amazon Elastic Kubernetes Service でホストされる Kubernetes
+* 「rke」 - クラスタのタイプは Rancher です
+* 「tanzu」 - クラスタのタイプは Tanzu Kubernetes Grid です
+* "openshift" - クラスタのタイプはOpenShift
+* 「anthos」 - クラスタのタイプはGKE Anthosです
+* 「kubernetes」 - クラスタは汎用Kubernetesです
+
+
+
+
+| clusterVersion | string | True  a| 
+クラスタ環境のセマンティックバージョニング表現を含むJSON文字列。Kubernetesクラスタの場合、これはKubernetesバージョンです。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：31
+
+
+
+
+| clusterVersionString | string | True  a| 
+クラスタ環境の拡張バージョン情報を示す値を含むJSON文字列。Kubernetesクラスタの場合、これは完全なKubernetesバージョンです。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：31
+
+
+
+
+| clusterCreationTimestamp | string | False  a| 
+クラスターが最初に作成された日時を示すタイムスタンプを含むJSON文字列。定義された値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| ネームスペース | array[string] | False  a| 
+JSON文字列のJSON配列。各文字列は、クラスター内の名前空間を示します。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：253
+
+
+
+
+| defaultStorageClass | string | False  a| 
+Kubernetesで設定されているデフォルトのストレージクラスに対応するストレージクラスIDを含むJSON文字列。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠します。含まれていない場合は、まだ検出されていません。
+
+
+
+
+| cloudID | string | True  a| 
+クラスターが実行されているクラウドのIDを示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| credentialID | string | False  a| 
+クラスタのkubeconfigファイルを含むクレデンシャルのIDを示す値を含むJSON文字列。定義されている値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| 場所 | string | False  a| 
+クラスターが実行されているクラウドから提供される値を含むJSON文字列。この値は、クラスターのクラウド固有の場所を示します。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| isMultizonal | string | True  a| 
+クラスターが実行されているクラウドから提供される値を含むJSON文字列。この値は、クラスターが2つ以上の可用性ゾーンにまたがっているかどうかを示します。定義値は次のとおりです：
+
+* 「true」 - クラスタが2つ以上のアベイラビリティゾーンにまたがっている
+* 「false」 - クラスタは単一のアベイラビリティゾーン内に完全に配置されています
+
+
+
+
+| privateRouteID | string | False  a| 
+プライベートクラスタのlocationIDを含むJSON文字列。
+
+* 最小長さ：1
+* 最大長さ：255
+
+
+
+
+| apiServiceID | string | False  a| 
+Kubernetes (k8s) APIサービスオブジェクトから取得したUUIDを含むJSON文字列。クラスターを一意に識別するために使用されます。
+
+
+
+| defaultBucketID | string | False  a| 
+管理対象の Neptune クラスタのアプリケーションメタデータを永続化するためにデフォルトで使用されるバケットの ID を含む JSON 文字列。クラスター上でデフォルトバケットが指定されていない場合、対応するクラウドのデフォルトバケットが使用されます。
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-managedCluster",
+  "version": "1.7",
+  "id": "241e9d94-eb8b-5c25-ba20-9292baac2396",
+  "name": "GKE-22",
+  "state": "running",
+  "stateUnready": [],
+  "managedState": "managed",
+  "managedStateUnready": [],
+  "managedTimestamp": "2020-08-06T12:24:52.256624Z",
+  "protectionState": "full",
+  "protectionStateDetails": [],
+  "tridentVersion": "23.10.0",
+  "acpVersion": "23.10.0",
+  "tridentManagedState": "managed",
+  "tridentManagedStateDesired": "managed",
+  "tridentManagedStateDetails": [],
+  "inUse": "false",
+  "clusterType": "kubernetes",
+  "clusterVersion": "1.91.1",
+  "clusterVersionString": "1.19.1",
+  "clusterCreationTimestamp": "2020-08-06T12:24:52.256624Z",
+  "namespaces": [
+    "kube-system",
+    "kube-public",
+    "my-app-1"
+  ],
+  "defaultStorageClass": "e280ff62-be35-4f31-a31b-a210a1ad1b33",
+  "cloudID": "548bdc1f-f00e-4a23-a062-83265d224d46",
+  "credentialID": "055e365a-2215-40de-aecb-a4070a7e6f1e",
+  "location": "europe-west4",
+  "isMultizonal": "false",
+  "apiServiceID": "6bf33af2-872a-4553-a891-26b510c3edbe",
+  "defaultBucketID": "a549b757-2be1-494f-aafa-4ee399ca3f00",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なリクエストボディフィールドの名前
+
+
+
+| 理由 | string | True  a| 
+リクエスト本文フィールドが無効な理由
+
+|===
+====

@@ -1,0 +1,704 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-k8s-v1-appmirrors-.html 
+summary: AppMirrorリソースを変更する 
+---
+= AppMirrorリソースを変更する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/appMirrors/{appMirror_id}`#
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えますが、ユーザーが変更できないキー値は保持します。
+
+*副作用*
+
+* desiredStateに基づくさまざまな副作用。
+
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| appMirror_id | string | path（パス） | True  a| 
+リストするappMirrorコレクションのID
+
+|===
+
+
+== 要求の本文
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えますが、ユーザーが変更できないキー値は保持します。
+
+*副作用*
+
+* desiredStateに基づくさまざまな副作用。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* 「application/astra-appMirror」
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | string | False  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| sourceAppID | string | False  a| 
+ソースアプリケーションの識別子。sourceAppIDとdestinationAppIDを入れ替えた場合にのみ更新されます。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| sourceClusterID | string | False  a| 
+ソースアプリケーションをホストしている管理対象クラスタの識別子。このフィールドは読み取り専用であり、ソースアプリケーションのホストクラスタに基づいて決定されます。アップデートで提供される場合、ソースアプリケーションのクラスタIDと一致する必要があるため、sourceAppIDとdestinationAppIDを入れ替える場合にのみ変更できます。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| destinationAppID | string | False  a| 
+デスティネーション アプリケーションの識別子。作成時に指定することはできません。なぜなら、関係の初期化の一環として新しいアプリIDが生成されるからです。sourceAppIDとdestinationAppIDを入れ替えた場合にのみ更新可能です。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| デスティネーション クラスタ ID | string | False  a| 
+デスティネーション アプリケーションをホストする管理対象クラスタの識別子。作成時に必ず指定する必要があります。これは、デスティネーション アプリケーションが作成されるクラスタを決定するためです。更新時に指定される場合、デスティネーション アプリケーションのクラスタIDと一致する必要があるため、sourceAppIDとdestinationAppIDを入れ替える場合にのみ変更できます。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| namespaceMapping | 配列[link:#namespaceMapping["namespaceMapping"]] | False  a| 
+宛先アプリケーションを作成する際に使用する名前空間（または複数の名前空間）。これは、ソースアプリケーションの名前空間に対応します。各 JSON オブジェクトには「clusterID」と「namespaces」というフィールドが含まれており、「clusterID」の値はソースまたはデスティネーション クラスタの JSON 文字列 ID で、「namespaces」の値は JSON 文字列の JSON 配列です。各クラスタには必ず 1 つの JSON オブジェクトが存在し、名前空間はインデックスによって関連付けられます。指定しない場合は、ソース クラスタの同じ名前空間がデスティネーション クラスタで使用されます。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：2
+
+
+
+
+| storageClasses | 配列[link:#storageClasses["storageClasses"]] | False  a| 
+新しい永続ボリューム要求（PVC）を作成するときにデスティネーション クラスタで使用されるストレージクラス。各JSONオブジェクトには「clusterID」と「storageClassName」のフィールドが含まれており、「clusterID」の値はソースまたはデスティネーション クラスタのJSON文字列IDで、「storageClassName」はそのクラスタでPVCを作成する際に使用するストレージクラスです。指定されていない場合、またはクラスタに対して値が欠落している場合は、そのクラスタにはデフォルトのストレージクラスが使用されます。定義された値は次のとおりです：
+
+* 最小長さ：0
+* 最大長さ：2
+
+
+
+
+| 状態 | string | False  a| 
+関係の状態。定義値は次のとおりです：
+
+* 「establishing」 - 関係が構築されつつある。
+* 「established」 - 関係が作成されます。
+* 「failingOver」- アプリケーションのデスティネーション クラスタへのフェイルオーバーが進行中です。
+* 「failedOver」- アプリケーションのデスティネーション クラスタへのフェイルオーバーが完了しました。
+* 「削除中」 - 関係によって作成されたリソースがクリーンアップされています。
+* 「削除済み」 - 関係が整理され、削除されました。
+
+
+
+
+| stateTransitions | 配列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | False  a| 
+許可された状態遷移。このリソースでは、以下の状態遷移が可能です：
+
+* 「establishing」：「established」、「deleting」
+* "established"："failingOver"、"deleting"
+* "failingOver"："failedOver"、"deleting"
+* "failedOver"："establishing"、"deleting"
+* "deleting"："deleted"
+* 「削除済み」：
+
+
+
+
+| stateDesired | string | False  a| 
+関係の望ましい状態。作成時に有効な値は「established」のみです。定義値は次のとおりです：
+
+* 「established」 - 関係が作成されます。
+* 「failedOver」- アプリケーションのデスティネーション クラスタへのフェイルオーバーが完了しました。
+* 「削除済み」 - 関係性は正常にクリーンアップされ、削除されました。
+
+
+
+
+| stateAllowed | array[string] | False  a| 
+特定の状態で要求できる状態。各定義済み状態において、以下の状態を要求することができます。
+
+* 「establishing」：「established」、「deleted」
+* "established"："failedOver"、"deleted"
+* "failingOver"："failedOver"、"deleted"
+* "failedOver": "established"、"deleted"
+* "deleting"："deleted"
+* "deleted"："削除済み"
+
+
+
+
+| stateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | False  a| 
+現在の状態に関する追加の詳細情報（現在の状態に至った理由を含む）。詳細情報がない場合は、この配列は空になります。定義された値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| transferState | string | False  a| 
+現在または直近のスナップショット転送の状態。定義値は次のとおりです：
+
+* 「転送中」 - 新しいスナップショットが作成され、現在デスティネーション クラスタにレプリケートされています。この状態には、以前の試行で失敗し、継続的に再試行されている転送も含まれます。
+* 「idle」 - 現在、転送処理は行われていません。
+
+
+
+
+| transferStateTransitions | 配列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | False  a| 
+特定の定義済み状態からの許可された状態遷移。このリソースでは、以下の状態遷移が可能です：
+
+* "transferring": "idle"
+* "idle":"transferring"
+
+
+
+
+| transferStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | False  a| 
+現在の状態に関する追加の詳細情報（現在の状態に至った理由を含む）。詳細情報がない場合は、この配列は空になります。定義された値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| healthState | string | False  a| 
+リソースの健全性状態。定義値は次のとおりです：
+
+* 「不確定」 - リソースの状態を判断できません（例えば、接続不良のため）
+* 「normal」 - リソースに既知の問題はなく、インターフェース仕様に従ってサービスを提供できます。
+* 「警告」：このリソースには既知の問題がありますが、インターフェース仕様に従ってサービスを提供することに支障はありません。
+* 「重大」 - リソースに既知の問題があり、インターフェース仕様に従ってサービスを提供できない
+
+
+
+
+| healthStateTransitions | 配列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | False  a| 
+特定の定義済み状態からの許可された状態遷移。このリソースでは、以下の状態遷移が可能です：
+
+* "indeterminate"："normal"、"warning"、"critical"
+* "normal"："indeterminate"、"warning"、"critical"
+* "warning"："indeterminate"、"normal"、"critical"
+* "critical"："indeterminate"、"normal"、"warning"
+
+
+
+
+| healthStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | False  a| 
+現在の状態に関する追加の詳細情報（現在の状態に至った理由を含む）。詳細情報がない場合は、この配列は空になります。定義された値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | False  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.リクエスト例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appMirror",
+  "version": "1.1",
+  "stateDesired": "failedOver"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 204, Indicates if the appMirror resource was updated.
+----
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+namespaceMapping
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| clusterID | string | False  a| 
+名前空間が指定されているクラスタの識別子。定義されている値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| ネームスペース | array[string] | False  a| 
+クラスタで使用するネームスペースのリスト。インデックスによって他のクラスタのネームスペースリストと関連付けられます。定義されている値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* DNS 1123 Label Schemaに準拠
+
+
+
+
+| ロール | string | False  a| 
+この名前空間定義の初期の役割。このパラメータは、同一クラスタ内レプリケーション構成を使用する場合を除き、オプションです。定義値は次のとおりです：
+
+* "ソース"
+* "デスティネーション"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+storageClasses
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| clusterID | string | False  a| 
+ストレージクラスが指定されているクラスタの識別子。定義されている値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| storageClassName | string | False  a| 
+「clusterID」で指定されたクラスタ上でPVCを作成する際に使用するストレージクラスの名前。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：255
+
+
+
+
+| ロール | string | False  a| 
+このストレージクラス定義の初期ロール。このパラメータは、同一クラスタレプリケーション構成を使用する場合を除き、オプションです。定義値は次のとおりです：
+
+* "ソース"
+* "デスティネーション"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| - | string | True  a| 
+
+
+
+| - | array[string] | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なリクエストボディフィールドの名前
+
+
+
+| 理由 | string | True  a| 
+リクエスト本文フィールドが無効な理由
+
+|===
+====

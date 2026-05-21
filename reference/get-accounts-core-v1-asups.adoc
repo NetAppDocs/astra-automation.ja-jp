@@ -1,0 +1,556 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-asups.html 
+summary: すべてのASUPリソースを一覧表示します 
+---
+= すべてのASUPリソースを一覧表示します
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups`#
+
+コレクション内の一致するすべてのリソースのJSON配列を返します。リクエストで個別のフィールドが指定されている場合、アイテムのJSON配列には、一致する各リソースに対して要求されたフィールドが、指定された順序で含まれます。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| 含める | string | query | False  a| 
+コレクションを一覧表示する際に、どのフィールドを返すかを指定します。
+
+URLの例："include=id"、"include=id,name"
+
+OpenAPI の例："id"
+
+
+
+| 制限（ Limit ） | string | query | False  a| 
+コレクションを一覧表示する際に返されるリソースの最大数を示します。
+
+URLの例："limit=2"
+
+OpenAPI の例："2"
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 項目 | 配列[いずれか:link:#asup_1_0_get_response_body["asup_1.0_get_response_body"]、配列[]] | True  a| 
+
+
+
+| メタデータ | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-asups",
+  "version": "1.0",
+  "items": [
+    {
+      "type": "application/astra-asup",
+      "version": "1.0",
+      "id": "80796606-79ba-480b-966c-e4c600fbf623",
+      "creationState": "completed",
+      "creationStateDetails": [],
+      "upload": "true",
+      "uploadState": "running",
+      "uploadStateDetails": [],
+      "triggerType": "manual",
+      "dataWindowStart": "2020-08-05T12:24:00.000000Z",
+      "dataWindowEnd": "2020-08-06T12:24:52.000000Z",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "1b32a508-cc6f-4f1b-809f-c42fd91b4848"
+      }
+    },
+    {
+      "type": "application/astra-asup",
+      "version": "1.0",
+      "id": "6503131d-8b36-4434-b34f-73661ae8100b",
+      "creationState": "completed",
+      "creationStateDetails": [],
+      "upload": "true",
+      "uploadState": "completed",
+      "uploadStateDetails": [],
+      "triggerType": "scheduled",
+      "dataWindowStart": "2020-08-04T13:30:00.000000Z",
+      "dataWindowEnd": "2020-08-05T13:30:00.000000Z",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-05T13:30:00.012321Z",
+        "modificationTimestamp": "2020-08-05T13:30:00.012321Z",
+        "createdBy": "1b32a508-cc6f-4f1b-809f-c42fd91b4848"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 作成タイムスタンプ | string | True  a| 
+
+
+
+| modificationTimestamp | string | True  a| 
+
+
+
+| 作成者 | string | True  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+asup_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-asup"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| creationState | string | True  a| 
+AutoSupport バンドルの作成状態を示す値を含むJSON文字列。「completed」および「partial」状態の場合、「_/_」または「application/gzip」を含むAcceptヘッダーを指定してリソースURIに対してGETを実行することで、バンドルをダウンロードできます。定義された値は次のとおりです：
+
+* 「running」 - AutoSupportバンドルの生成は正常に実行されています。
+* 「完了」 - AutoSupport バンドル生成が完了しました。
+* "partial" - AutoSupport バンドル生成は完了しましたが、一部のデータがバンドルに含まれていませんでした。
+* "failed" - AutoSupport バンドル生成が恒久的な障害状態になっています。
+
+
+
+
+| creationStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+「creationState」が「partial」または「failed」に移行した理由に関する追加の詳細をリストするJSONオブジェクトのJSON配列。詳細情報がない場合は、この配列は空になります。
+
+* 最小アイテム数：0
+
+
+
+
+| アップロード | string | True  a| 
+作成が成功した後にAutoSupportバンドルをアップロードするかどうかを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 「true」 - AutoSupportバンドルをアップロードします。
+* 「false」 - AutoSupportバンドルをアップロードしないでください。
+
+
+
+
+| uploadState | string | False  a| 
+要求された場合のAutoSupportバンドルアップロードの状態を示す値を含むJSON文字列。定義値は次のとおりです：
+
+* "pending" - AutoSupportバンドルのアップロードは、AutoSupportバンドルの作成が完了したとき（"creationState"が"running"）にスケジュールされます。
+* 「blocked」 - AutoSupportバンドルが作成されなかったため（「creationState」が「failed」）、またはライセンスがないためアップロードがブロックされたため、バンドルのアップロードは試行されませんでした。
+* "running" - AutoSupportバンドルのアップロードは正常に実行されています（"creationState"は"completed"または"partial"です）。
+* 「完了」- AutoSupportバンドルのアップロードが完了しました。
+* "failed" - AutoSupport バンドルのアップロードが恒久的に失敗しています。
+
+
+
+
+| uploadStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | False  a| 
+「uploadState」が「failed」に移行した理由に関する追加の詳細をリストするJSONオブジェクトのJSON配列。詳細情報がない場合は、この配列は空になります。
+
+* 最小アイテム数：0
+
+
+
+
+| triggerType | string | True  a| 
+ASUPリソースの作成をトリガーした要因を示す値を含むJSON文字列。定義値は次のとおりです：
+
+* "manual" - ASUP リソースおよび関連する AutoSupport バンドルは手動で作成されました。
+* 「scheduled」 - ASUPリソースおよび関連するAutoSupportバンドルは、設定されたスケジュールに従って作成されました。
+
+
+
+
+| dataWindowStart | string | True  a| 
+AutoSupportバンドルデータ収集ウィンドウの開始時刻を示すタイムスタンプを含むJSON文字列。デフォルトは「dataWindowEnd」キー値の24時間前です。「dataWindowEnd」キー値より前に発生する必要があります。最大で、リクエストの現在時刻から7日前までです。定義値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| dataWindowEnd | string | True  a| 
+AutoSupportバンドルデータ収集ウィンドウの終了時刻を示すタイムスタンプを含むJSON文字列。デフォルトでは、リクエスト時の現在時刻が使用されます。定義された値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| メタデータ | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 続行 | string | False  a| 
+
+
+
+| カウント | 番号 | False  a| 
+
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

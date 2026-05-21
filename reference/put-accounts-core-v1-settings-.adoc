@@ -1,0 +1,559 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-settings-.html 
+summary: 設定を変更する 
+---
+= 設定を変更する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えますが、ユーザーが変更できないキー値は保持します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| setting_id | string | path（パス） | True  a| 
+リストする設定コレクションのID
+
+|===
+
+
+== 要求の本文
+
+保存されているリソース全体を、指定されたJSONリクエストボディに置き換えますが、ユーザーが変更できないキー値は保持します。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-setting"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | string | False  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 名前 | string | False  a| 
+階層ドット表記（.）で記述された設定名を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* この文字列は、XSS攻撃、Unicode攻撃、ディレクトリトラバーサル攻撃、SQLインジェクション攻撃を防ぐために内部的に検証されます。この値は実行時にロードされるconfigmapによって指定され、ユーザーが更新することはできません。
+
+
+
+
+| currentConfig | link:#type_json["type_json"] | False  a| 
+この設定の現在の構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。デフォルト値はconfigmapによって提供されます。ユーザーがデフォルト設定を変更した後は、その設定は上書きされません。
+
+
+
+| desiredConfig | link:#type_json["type_json"] | False  a| 
+この設定に必要な構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。オブジェクトは指定されるまで存在しません。指定すると、機能サービスが対応するサービスに通知し、目的の構成を適用できるように要求します。対応するサービスは、検証を実行し、目的の構成を現在の構成に適用できます。
+
+
+
+| configSchema | link:#type_json_schema["type_json_schema"] | False  a| 
+このリソース内のconfigプロパティのJSONスキーマを含むJSONオブジェクト。JSONスキーマドラフト7に準拠する必要があります。リソースに設定値が存在する場合、指定されたconfigSchemaに対する検証は必須です。一般的な慣例として、構成には必要に応じて「isEnabled」フィールドを含めることが推奨されます。「isEnabled」フィールドには、設定がオン（「true」）かオフ（「false」）かを示す値が含まれています。
+
+
+
+| 状態 | string | False  a| 
+アプリケーションの動作状態を示す値を含むJSON文字列。定義されている値は次のとおりです：
+
+* 「valid」 - 現在の設定は、希望する設定と一致しています。
+* 「pending」 - 目的の設定が適用されています。
+* 「error」 - 目的の設定を適用できません。
+
+
+
+
+| stateUnready | array[string] | False  a| 
+JSON文字列のJSON配列。各文字列は、設定が正常に適用されなかった理由を示しています。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：127
+
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | False  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更されずに保持されます。
+
+
+|===
+.リクエスト例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.1",
+  "desiredConfig": {
+    "credential": "e3d2ea77-398e-49be-85fd-ec66d9426a06",
+    "port": 587,
+    "relayServer": "link:http://smtp.sendgrid.net[smtp.sendgrid.net]",
+    "isEnabled": "true"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 204, Indicates if the setting resource was updated.
+----
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_json
+
+この設定の現在の構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。デフォルト値はconfigmapによって提供されます。ユーザーがデフォルト設定を変更した後は、その設定は上書きされません。
+
+[role="api-collapsible-fifth-title"]
+type_json
+
+この設定に必要な構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。オブジェクトは指定されるまで存在しません。指定すると、機能サービスが対応するサービスに通知し、目的の構成を適用できるように要求します。対応するサービスは、検証を実行し、目的の構成を現在の構成に適用できます。
+
+[role="api-collapsible-fifth-title"]
+プロパティ
+
+[role="api-collapsible-fifth-title"]
+type_json_schema
+
+このリソース内のconfigプロパティのJSONスキーマを含むJSONオブジェクト。JSONスキーマドラフト7に準拠する必要があります。リソースに設定値が存在する場合、指定されたconfigSchemaに対する検証は必須です。一般的な慣例として、構成には必要に応じて「isEnabled」フィールドを含めることが推奨されます。「isEnabled」フィールドには、設定がオン（「true」）かオフ（「false」）かを示す値が含まれています。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| $schema | string | True  a| 
+
+
+
+| を入力します | string | True  a| 
+
+
+
+| プロパティ | link:#properties["プロパティ"] | True  a| 
+
+
+
+| additionalProperties | ブーリアン | True  a| 
+
+
+
+| 必須 | array[string] | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更されずに保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なリクエストボディフィールドの名前
+
+
+
+| 理由 | string | True  a| 
+リクエスト本文フィールドが無効な理由
+
+|===
+====

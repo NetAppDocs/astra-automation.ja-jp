@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/event_endpoints.html 
+summary: Astra API（ACC）イベントエンドポイント 
+---
+= Astra API（ACC）イベントエンドポイント
+:allow-uri-read: 
+
+
+イベントAPIは、システム内で発生するイベントへのアクセスを提供します。

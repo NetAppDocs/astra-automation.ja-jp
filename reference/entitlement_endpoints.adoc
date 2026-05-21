@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/entitlement_endpoints.html 
+summary: Astra API（ACC）エンタイトルメントエンドポイント 
+---
+= Astra API（ACC）エンタイトルメントエンドポイント
+:allow-uri-read: 
+
+
+エンタイトルメントAPIは、アカウントに対して有効なライセンスおよびサブスクリプションによって有効化される機能または容量を表します。

@@ -1,0 +1,529 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clusters-clusternodes-.html 
+summary: クラスタのクラスタノードを取得します 
+---
+= クラスタのクラスタノードを取得します
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/clusterNodes/{clusterNode_id}`#
+
+JSONレスポンスボディに格納されているクラスタノードAPIリソースを返します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| cluster_id | string | path（パス） | True  a| 
+含まれるクラスタリソースのID
+
+
+
+| clusterNode_id | string | path（パス） | True  a| 
+リストするclusterNodeコレクションのID
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns the stored Cluster Node API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* 「application/astra-clusterNode」
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 名前 | string | True  a| 
+ノードのKubernetes名を示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| ロール | string | True  a| 
+ノードのKubernetesロールを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| ラベル | 配列[link:#labels["ラベル"]] | True  a| 
+JSONオブジェクトのJSON配列。各JSONオブジェクトには、ノードに関連付けられたKubernetesラベルが含まれています。詳細情報が利用できない場合、この配列は空になります。
+
+* 最小アイテム数：0
+
+
+
+
+| creationTime | string | True  a| 
+ノードが作成された日時を示すISO 8601タイムスタンプを含むJSON文字列。定義値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| externalIP | string | True  a| 
+ノードの内部IPアドレスを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| internalIP | string | True  a| 
+ノードの外部IPアドレスを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| ゾーン | string | True  a| 
+ノードのKubernetesゾーンを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| リージョン | string | True  a| 
+ノードのKubernetesリージョンを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| instanceType | string | True  a| 
+ノードのKubernetesインスタンスタイプを示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| kernelVersion | string | True  a| 
+ノードで使用されているカーネルバージョンを示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| osImage | string | True  a| 
+ノードが使用するオペレーティングシステムイメージを示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| numCpus | string | True  a| 
+ノードに割り当てられたCPUの数を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| memory | string | True  a| 
+ノードに割り当てられたメモリ量を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：254
+
+
+
+
+| 状態 | string | True  a| 
+ノードの動作状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「running」 - ノードは正常に動作しています
+* 「provisioning」 - ノードはプロビジョニング処理中です
+* 「discovering」 - ノードの側面が検出されている最中です
+* 「pending」 - ノードの検出が予定されています
+* 「failed」 - ノードが障害状態です
+* 「不明」 - ノードの状態を判断できません
+
+
+
+
+| メタデータ | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astraメタデータスキーマに準拠
+
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-clusterNode",
+  "version": "1.0",
+  "id": "5df0e09f-2c30-5b8a-b6b6-4fb4063525e4",
+  "name": "test-0",
+  "role": "node-role.kubernetes.io/worker",
+  "labels": [],
+  "creationTime": "2020-09-06T04:35:23.593845Z",
+  "externalIP": "192.168.12.44",
+  "internalIP": "10.0.1.1",
+  "zone": "us-west1-c",
+  "region": "us-east1",
+  "instanceType": "e2-medium",
+  "kernelVersion": "4.18.0-147.0.3.el8_1.x86_64",
+  "osImage": "Red Hat Enterprise Linux CoreOS 42.81.20191203.0",
+  "numCpus": "2",
+  "memory": "67108864Ki",
+  "state": "running",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+ラベル
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+ラベル名を含むJSON文字列。定義済みの値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* 定義された正規表現は次のとおりです："^([\S.]{1,253}\/)?([a-z0-9A-Z_.-]){1,63}$"
+
+
+
+
+| Value | string | True  a| 
+ラベル値を含むJSON文字列。定義済みの値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* 定義された正規表現は次のとおりです："^([a-z0-9A-Z_.-]){1,63}$"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astraメタデータスキーマに準拠
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 作成タイムスタンプ | string | True  a| 
+
+
+
+| modificationTimestamp | string | True  a| 
+
+
+
+| 作成者 | string | True  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

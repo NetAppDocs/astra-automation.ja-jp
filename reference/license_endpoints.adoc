@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/license_endpoints.html 
+summary: Astra API（ACC）ライセンスエンドポイント 
+---
+= Astra API（ACC）ライセンスエンドポイント
+:allow-uri-read: 
+
+
+ライセンスAPIは、アカウントにロードされたライセンスを表します。

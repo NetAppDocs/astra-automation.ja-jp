@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/application_asset_endpoints.html 
+summary: Astra API（ACC）アプリケーションアセットエンドポイント 
+---
+= Astra API（ACC）アプリケーションアセットエンドポイント
+:allow-uri-read: 
+
+
+Application Asset APIは、アプリケーションの管理に使用される状態情報の内部コレクションへのアクセスを提供します。

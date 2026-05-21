@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/ldap_user_endpoints.html 
+summary: Astra API（ACC）LDAPユーザエンドポイント 
+---
+= Astra API（ACC）LDAPユーザエンドポイント
+:allow-uri-read: 
+
+
+LDAP User APIは、設定されたLDAPサーバ内のLDAPユーザーへの読み取り専用アクセスを提供します。

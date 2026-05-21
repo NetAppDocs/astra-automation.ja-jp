@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/asup_endpoints.html 
+summary: Astra API（ACC）AutoSupportエンドポイント 
+---
+= Astra API（ACC）AutoSupportエンドポイント
+:allow-uri-read: 
+
+
+ASUP API は、AutoSupport バンドルを作成し、必要に応じてアップロードするために、ASUP リソースへのアクセスを提供します。

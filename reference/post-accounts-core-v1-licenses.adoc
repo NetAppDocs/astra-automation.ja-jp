@@ -1,0 +1,665 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts-core-v1-licenses.html 
+summary: 新しいライセンスを作成する 
+---
+= 新しいライセンスを作成する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses`#
+
+作成するライセンス API リソースの希望値を示します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+|===
+
+
+== 要求の本文
+
+作成するライセンス API リソースの希望値を示します。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-license"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+
+
+
+
+| 割り当て | string | False  a| 
+ライセンスが何に割り当てられているかを示すIDを含むJSON文字列。ライセンスが割り当てられている場合にのみ存在します。Astra Control Centerライセンスの場合、このフィールドにはアカウントIDを入力する必要があり、POST URIで指定されたアカウントIDと一致している必要があります。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| deviceCredentialID | string | False  a| 
+Credential APIに関連付けられたdeviceCredentialの識別子を含むJSON文字列。Astra Data Storeライセンスにのみ存在します。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| licenseText | string | True  a| 
+NetAppライセンスシステムから取得したライセンスJSONのbase64エンコード表現を含むJSON文字列。署名検証を可能にするため、これは元のバイトレベルの順序で提供されなければなりません。定義値は次のとおりです：
+
+* base64 Encoded Data Schemaに準拠
+
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | False  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.リクエスト例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-license",
+  "version": "1.0",
+  "allocation": "4185d09b-6687-4801-a832-c005a9d94f41",
+  "licenseText": "ewogICAic3RhdHVzUmVzcCI6ewogMTYwNzAwIgp9"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 201, Returns the newly created license resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-license"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "1.0"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| 割り当て | string | False  a| 
+ライセンスが何に割り当てられているかを示すIDを含むJSON文字列。ライセンスが割り当てられている場合にのみ存在します。Astra Control Centerライセンスの場合、このフィールドにはアカウントIDを入力する必要があり、POST URIで指定されたアカウントIDと一致している必要があります。定義値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| hostID | string | False  a| 
+ライセンスが紐付けられているホスト識別子を含むJSON文字列。ライセンスがホストロックされている場合にのみ表示されます。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+
+
+
+
+| deviceCredentialID | string | False  a| 
+Credential APIに関連付けられたdeviceCredentialの識別子を含むJSON文字列。Astra Data Storeライセンスにのみ存在します。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| isEvaluation | string | True  a| 
+ライセンスが評価版ライセンスであるかどうかを示すJSON文字列。定義された値は次のとおりです：
+
+* "true"
+* "false"
+
+
+
+
+| licenseProtocol | string | True  a| 
+ライセンスから抽出されたライセンスプロトコルを含むJSON文字列。定義値は次のとおりです：
+
+* スキーマで検証されていない文字列の内容
+
+
+
+
+| licenseText | string | True  a| 
+NetAppライセンスシステムから取得したライセンスJSONのbase64エンコード表現を含むJSON文字列。署名検証を可能にするため、これは元のバイトレベルの順序で提供されなければなりません。定義値は次のとおりです：
+
+* base64 Encoded Data Schemaに準拠
+
+
+
+
+| validFromTimestamp | string | True  a| 
+ライセンスが有効になる日時を示すタイムスタンプを含むJSON文字列。定義値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| validUntilTimestamp | string | True  a| 
+ライセンスが無効になった日時を示すタイムスタンプを含むJSON文字列。定義値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| 製品 | string | True  a| 
+ライセンスから抽出された製品文字列を含むJSON文字列。定義値は次のとおりです：
+
+* スキーマで検証されていない文字列の内容
+
+
+
+
+| productVersion | string | True  a| 
+ライセンスから抽出されたバージョン文字列を含むJSON文字列。定義されている値は次のとおりです：
+
+* スキーマで検証されていない文字列の内容
+
+
+
+
+| productSN | string | True  a| 
+ライセンスから抽出されたシリアル番号文字列を含むJSON文字列。定義された値は次のとおりです：
+
+* スキーマで検証されていない文字列の内容
+
+
+
+
+| 機能 | string | True  a| 
+ライセンスから抽出されたパッケージ値を含むJSON文字列。定義された値は次のとおりです：
+
+* スキーマで検証されていない文字列の内容
+
+
+
+
+| capacity | string | True  a| 
+ライセンスから抽出された容量を含むJSON文字列。
+
+
+
+| capacity2を使用したチャンク アップロード署名要求がサポートされるようになりました。 | string | True  a| 
+ライセンスから抽出されたセカンダリ容量を含むJSON文字列。
+
+
+
+| アドオン | 配列[link:#addons["アドオン"]] | False  a| 
+ライセンスに含まれるアドオンのリストを含むJSONオブジェクトのJSON配列。アドオンとは、将来発生する可能性のある特定の日付におけるライセンスの変更のことです。
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-license",
+  "version": "1.0",
+  "id": "6db53b32-8417-5d3c-8ef0-552fc602c78f",
+  "allocation": "4185d09b-6687-4801-a832-c005a9d94f41",
+  "hostID": "99132549-e0c2-4203-9d1e-598628b4ff9b",
+  "isEvaluation": "false",
+  "licenseProtocol": "ASTRASDS-ENT-SUBS",
+  "licenseText": "ewogICAic3RhdHVzUmVzcCI6ewogMTYwNzAwIgp9",
+  "validFromTimestamp": "2020-08-06T00:00:00.000000Z",
+  "validUntilTimestamp": "2021-08-06T00:00:00.000000Z",
+  "product": "Astra Control Center",
+  "productVersion": "1.0",
+  "productSN": "320000046",
+  "features": "ASTRA-ENT-STD",
+  "capacity": "4000",
+  "capacity2": "0",
+  "addons": [
+    {
+      "startDate": "2020-08-06T00:00:00.000000Z",
+      "endDate": "2021-08-06T00:00:00.000000Z",
+      "capacity": "4000",
+      "licenseProtocol": "ASTRA-ENT-STD",
+      "features": "p-nfs,dm-storage-policy-based-pvs-for-k8s,dm-spbm-based-vvols-for-vms,dm-storage-efficiency,dm-data-at-rest-encryption"
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidFields | 配列[link:#invalidFields["invalidFields"]] | False  a| 
+無効なリクエストボディフィールドのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+アドオン
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| startDate | string | False  a| 
+このアドオンが有効になる日時を示すタイムスタンプを含むJSON文字列。定義された値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| endDate | string | False  a| 
+このアドオンが無効になった日時を示すタイムスタンプを含むJSON文字列。定義された値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| 機能 | string | False  a| 
+このアドオンに関連付けられた機能のリストを含むJSON文字列。定義された値は次のとおりです：
+
+* 文字列の内容がスキーマによって検証されていません。
+
+
+
+
+| capacity | string | False  a| 
+アドオンから抽出された容量を含むJSON文字列。定義された値は次のとおりです：
+
+* スキーマで検証されていない文字列の内容
+
+
+
+
+| licenseProtocol | string | False  a| 
+このアドオンに関連付けられたライセンスプロトコルを含むJSON文字列。定義された値は次のとおりです：
+
+* スキーマで検証されていない文字列の内容
+
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なリクエストボディフィールドの名前
+
+
+
+| 理由 | string | True  a| 
+リクエスト本文フィールドが無効な理由
+
+|===
+====

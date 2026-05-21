@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/notification_endpoints.html 
+summary: Astra API（ACC）通知エンドポイント 
+---
+= Astra API（ACC）通知エンドポイント
+:allow-uri-read: 
+
+
+通知APIは、通知先を持つイベントへのユーザーごとのアクセスを提供します。

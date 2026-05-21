@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/feature_endpoints.html 
+summary: Astra API（ACC）機能エンドポイント 
+---
+= Astra API（ACC）機能エンドポイント
+:allow-uri-read: 
+
+
+Feature API は、システム内でどの機能が有効または無効になっているかを判断するために、機能フラグリソースへの読み取り専用アクセスを提供します。

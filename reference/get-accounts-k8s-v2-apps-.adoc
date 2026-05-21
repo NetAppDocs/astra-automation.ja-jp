@@ -1,0 +1,1012 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-k8s-v2-apps-.html 
+summary: アプリを取得する 
+---
+= アプリを取得する
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps/{app_id}`#
+
+JSONレスポンスボディに格納されたApp APIリソースを返します。
+
+
+
+== パラメータ
+
+[cols="5*"]
+|===
+| Name | を入力します | 入力 | 必須 | 説明 
+
+
+| account_id | string | path（パス） | True  a| 
+包含するアカウントリソースのID
+
+* 例：{{.Account}}
+
+
+
+
+| app_id | string | path（パス） | True  a| 
+一覧表示するアプリコレクションのID
+
+|===
+
+
+== 応答
+
+[source]
+----
+Status: 200, Returns the stored App API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+リソースのメディアタイプ。定義された値は次のとおりです：
+
+* "application/astra-app"
+
+
+
+
+| バージョン | string | True  a| 
+リソースのバージョン。定義された値は次のとおりです：
+
+* "2.0"
+* "2.1"
+* "2.2"
+
+
+
+
+| ID | string | True  a| 
+リソースのグローバル一意識別子。定義された値は次のとおりです：
+
+* UUIDv4スキーマに準拠
+
+
+
+
+| リンク | 配列[link:#type_astra_link["type_astra_link"]] | True  a| 
+リソースに対してサポートされている操作を説明するリンク。
+
+
+
+| 名前 | string | True  a| 
+アプリケーション名を含むJSON文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* この文字列は、XSS攻撃、Unicode攻撃、ディレクトリトラバーサル攻撃、SQLインジェクション攻撃を防ぐために内部的に検証されます。
+* DNS 1123 Label Schemaに準拠
+
+
+
+
+| clusterScopedResources | 配列[link:#clusterScopedResources["clusterScopedResources"]] | False  a| 
+このアプリに含まれるクラスタを対象としたリソースを記述するJSONオブジェクトのJSON配列
+
+
+
+| namespaceScopedResources | 配列[link:#namespaceScopedResources["namespaceScopedResources"]] | True  a| 
+このアプリに含まれるリソースを記述するJSONオブジェクトのJSON配列
+
+
+
+| lastResourceCollectionTimestamp | string | False  a| 
+最後にリソース収集が実行された日時を示すタイムスタンプを含むJSON文字列。このフィールドは、このアプリケーションに対してまだリソース収集が実行されていない場合は設定されません。定義された値は次のとおりです：
+
+* ISO-8601 Date Time Schemaに準拠
+
+
+
+
+| 状態 | string | True  a| 
+アプリケーションの動作状態を示す値を含むJSON文字列。定義されている値は次のとおりです：
+
+* 「pending」 - アプリケーションは検出がスケジュールされています
+* 「discovering」 - アプリケーションは現在検出中です
+* 「provisioning」 - アプリケーションは現在プロビジョニング処理中です
+* 「ready」 - アプリケーションは正常に動作しています
+* 「failed」 - アプリケーションが永続的な失敗状態にあります
+* 「復元中」-アプリケーションはバックアップまたはスナップショットから復元されています
+* 「unavailable」 - アプリケーションは現在アクセスできません
+* 「不明」 - アプリケーションの状態を判断できません
+* 「削除中」 - アプリケーションは削除処理中です
+
+
+
+
+| stateTransitions | 配列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | False  a| 
+JSONオブジェクトのJSON配列。各オブジェクトは、特定の定義済み状態からの許可された状態遷移のセットを表します。各JSONオブジェクトには「from」と「to」というフィールドが含まれており、「from」の値は状態の名前、「to」の値は許可された宛先状態の配列です。
+
+
+
+| stateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+現在の状態に関する詳細情報（現在の状態に至った理由を含む）をリストしたJSONオブジェクトのJSON配列。詳細情報がない場合は、この配列は空になります。定義された値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| protectionState | string | True  a| 
+アプリケーションの保護状態を示す値を含むJSON文字列。定義された値は次のとおりです：
+
+* 「保護されています」 - アプリケーションには保護ポリシーが定義されており、そのポリシーに準拠しています
+* 「部分的」 - アプリケーションには保護ポリシーが定義されているが、そのポリシーに準拠していない
+* 「なし」 - アプリケーションには保護ポリシーが定義されていません
+* 「atRisk」- クラスターのデフォルトのストレージクラスはスナップショットをサポートしていないため、アプリケーションはサポートされていないボリュームを取得するリスクがあります
+
+
+
+
+| protectionStateDetails | 配列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+現在の保護状態に関する詳細情報（現在の状態に至った理由を含む）を一覧表示するJSONオブジェクトのJSON配列。詳細情報が利用できない場合、この配列は空になります。定義値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| appDetectedType | string | False  a| 
+検出された特定のアプリケーションの種類を一意に表すJSON文字列。定義値は次のとおりです：
+
+* 「system」 - アプリケーションには、Kubernetes環境の一部であることを識別するリソースが含まれています。
+* 「acc」 - アプリケーションには、それがAstra Control Centerインスタンスであることを識別するリソースが含まれています
+
+
+
+
+| ネームスペース | array[string] | True  a| 
+アプリケーションが実行されている名前空間の名前を含むJSON文字列のJSON配列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：253
+* DNS 1123 Label Schemaに準拠
+
+
+
+
+| namespaceMapping | 配列[link:#namespaceMapping["namespaceMapping"]] | False  a| 
+JSONオブジェクトのJSON配列。各オブジェクトは、クローン操作のソースネームスペースをデスティネーションネームスペースにマッピングします。定義値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| storageClassMapping | 配列[link:#storageClassMapping["storageClassMapping"]] | False  a| 
+JSONオブジェクトのJSON配列。各JSONオブジェクトは、リストア処理のために、ソースストレージクラスをデスティネーション ストレージクラスにマッピングします。要素が存在しない場合、または存在しない場合は、元のソースストレージクラス名が使用されます。定義された値は次のとおりです：
+
+* 最小アイテム数：0
+
+
+
+
+| clusterName | string | False  a| 
+アプリケーションが実行されているクラスタの名前を含むJSON文字列。アプリケーションが現在実行されていない場合は返されません。
+
+
+
+| clusterID | string | False  a| 
+アプリケーションが実行されているクラスタのIDを含むJSON文字列。アプリケーションが現在実行されていない場合は返されません。作成時に指定すると、clusterIDはアプリケーションをクローンするクラスタを示します。指定されたクラスタが存在しない場合、または指定されたクラスタがリクエストURIで指定されたclusterIDと一致しない場合、クローンは失敗します。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| clusterType | string | False  a| 
+クラスターの種類を示す値を含むJSON文字列。定義値は次のとおりです：
+
+* 「gke」 - Google Kubernetes Engine（GKE）上でホストされるKubernetes
+* 「aks」 - Microsoft Azure Kubernetes Service（AKS）上でホストされるKubernetes
+* 「eks」 - Amazon Elastic Kubernetes Service（Amazon EKS）上でホストされるKubernetes
+* "openshift" - クラスタのタイプはOpenShift
+* 「kubernetes」 - クラスタは汎用Kubernetesです
+
+
+
+
+| sourceAppID | string | False  a| 
+ソースアプリケーションのIDを含むJSON文字列。アプリケーションが別のアプリケーションからクローンされた場合、またはバックアップやスナップショットから復元された場合にのみ返されます。作成時に指定される場合、sourceAppIDはsourceClusterIDと組み合わせて使用され、どの実行中のアプリケーションがクローンされるかを示します。指定されたアプリケーションが指定されたソースクラスタ上に存在しない場合、クローンは失敗します。アプリケーションを作成する際に指定できるのは、sourceAppID、backupID、snapshotIDのうちいずれか1つだけです。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| sourceClusterName | string | False  a| 
+アプリケーションが以前実行されていたクラスタの名前を含むJSON文字列。アプリケーションが別のクラスタからクローニングされた場合にのみ返されます。
+
+
+
+| sourceClusterID | string | False  a| 
+アプリケーションが以前実行されていたクラスタのIDを含むJSON文字列。アプリケーションが別のクラスタからクローニングされた場合にのみ返されます。作成時に指定した場合、sourceClusterIDはsourceAppIDと組み合わせて使用され、クローニングするアプリケーションのソース クラスタを示します。指定したソース クラスタが存在しない場合、クローンは失敗します。定義されている値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| backupID | string | False  a| 
+アプリケーションが復元されたバックアップのIDを含むJSON文字列。アプリケーションがバックアップから復元された場合にのみ返されます。作成時に指定すると、backupIDはアプリケーションが既存のバックアップからクローンされることを示します。指定されたバックアップが存在しない場合、クローン作成は失敗します。アプリケーションを作成する際に指定できるのは、sourceAppID、backupID、snapshotIDのうちいずれか1つだけです。置換時に指定される場合、backupIDは、アプリケーションがインプレース復元されるアプリケーションバックアップを示します。指定されたバックアップが存在しない場合、復元は失敗します。アプリケーションの更新時には、backupIDまたはsnapshotIDのいずれか一方のみを指定できます。定義済みの値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| snapshotID | string | False  a| 
+アプリケーションが復元されたスナップショットのIDを含むJSON文字列。アプリケーションがスナップショットから復元された場合にのみ返されます。作成時に指定すると、snapshotIDは、アプリケーションが既存のスナップショットからクローンされることを示します。指定されたスナップショットが存在しない場合、クローンは失敗します。アプリケーションを作成する際に指定できるのは、sourceAppID、backupID、snapshotIDのうちいずれか1つだけです。置換時に指定される場合、snapshotIDは、アプリケーションがその場で復元されるアプリケーションのスナップショットを示します。指定されたスナップショットが存在しない場合、復元は失敗します。アプリケーションを更新する際には、backupIDとsnapshotIDのどちらか一方のみを指定できます。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| replicationSourceAppID | string | False  a| 
+このアプリケーションに複製されるアプリケーションのIDを含むJSON文字列。アプリケーションが現在AppMirror関係のデスティネーション クラスタであり、その関係がfailedOver状態でない場合にのみ返されます。関係がfailedOver状態の場合、このフィールドは返されません。定義された値は次のとおりです：
+
+* Astra識別子スキーマに準拠
+
+
+
+
+| restoreFilter | link:#restoreFilter["restoreFilter"] | False  a| 
+選択的復元操作に含めるリソースと除外するリソースを記述するフィルタのリストを含むJSONオブジェクト。含める設定と除外設定は相互に排他的であり、選択的復元ではいずれか一方のフィルタしか使用できません。
+
+
+
+| メタデータ | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-app",
+  "version": "2.2",
+  "id": "39c1c79f-efab-5357-88fb-20e628c4dd96",
+  "links": [
+    {
+      "rel": "canonical",
+      "href": "/accounts/652f7a18-d4ed-47b2-b467-15bf2154d079/topology/v2/managedClusters/6a358976-c3ac-49aa-b043-9c9b425c90ac/apps/27467088-2e99-4bd8-aa9b-014d5f44a62f"
+    },
+    {
+      "rel": "collection",
+      "href": "/accounts/652f7a18-d4ed-47b2-b467-15bf2154d079/topology/v1/clouds/892814c9-77a1-46f3-b54a-82c34cdf0032/clusters/6a358976-c3ac-49aa-b043-9c9b425c90ac/namespaces/da78daf6-8e11-4220-a461-6b1d4a6dc231/apps"
+    },
+    {
+      "rel": "related",
+      "href": "/accounts/652f7a18-d4ed-47b2-b467-15bf2154d079/k8s/v1/apps/27467088-2e99-4bd8-aa9b-014d5f44a62f/appBackups",
+      "type": "application/astra-appBackup",
+      "title": "disruptiveBackup",
+      "hints": {
+        "allow": [],
+        "permissions": [
+          "appBackup-create"
+        ]
+      }
+    },
+    {
+      "rel": "related",
+      "href": "/accounts/652f7a18-d4ed-47b2-b467-15bf2154d079/k8s/v1/apps/27467088-2e99-4bd8-aa9b-014d5f44a62f/appBackups",
+      "type": "application/astra-appBackup",
+      "title": "nonDisruptiveBackup",
+      "hints": {
+        "allow": [
+          "POST"
+        ],
+        "permissions": [
+          "appBackup-create"
+        ]
+      }
+    },
+    {
+      "rel": "related",
+      "href": "/accounts/652f7a18-d4ed-47b2-b467-15bf2154d079/k8s/v2/apps",
+      "type": "application/astra-app",
+      "title": "restore",
+      "hints": {
+        "allow": [
+          "POST"
+        ],
+        "permissions": [
+          "app-create"
+        ]
+      }
+    },
+    {
+      "rel": "related",
+      "href": "/accounts/652f7a18-d4ed-47b2-b467-15bf2154d079/k8s/v1/apps/27467088-2e99-4bd8-aa9b-014d5f44a62f/appSnaps",
+      "type": "application/astra-appSnap",
+      "title": "snapshot",
+      "hints": {
+        "allow": [
+          "POST"
+        ],
+        "permissions": [
+          "appSnap-create"
+        ]
+      }
+    },
+    {
+      "rel": "related",
+      "href": "/accounts/652f7a18-d4ed-47b2-b467-15bf2154d079/k8s/v2/apps",
+      "type": "application/astra-app",
+      "title": "clone",
+      "hints": {
+        "allow": [
+          "POST"
+        ],
+        "permissions": [
+          "app-create"
+        ]
+      }
+    },
+    {
+      "rel": "related",
+      "href": "/accounts/652f7a18-d4ed-47b2-b467-15bf2154d079/k8s/v2/apps/27467088-2e99-4bd8-aa9b-014d5f44a62f",
+      "type": "application/astra-app",
+      "title": "inPlaceRestore",
+      "hints": {
+        "allow": [
+          "PUT"
+        ],
+        "permissions": [
+          "app-update"
+        ]
+      }
+    },
+    {
+      "rel": "related",
+      "href": "/accounts/652f7a18-d4ed-47b2-b467-15bf2154d079/k8s/v1/apps/27467088-2e99-4bd8-aa9b-014d5f44a62f/appMirrors",
+      "type": "application/astra-appMirror",
+      "title": "replication",
+      "hints": {
+        "allow": [
+          "POST"
+        ],
+        "permissions": [
+          "appMirror-create"
+        ]
+      }
+    }
+  ],
+  "name": "jenkins",
+  "namespaceScopedResources": [
+    {
+      "namespace": "production-clone",
+      "labelSelectors": [
+        "app = jenkins,release = production"
+      ]
+    }
+  ],
+  "namespaceMapping": [
+    {
+      "source": "production",
+      "destination": "production-clone"
+    }
+  ],
+  "state": "ready",
+  "stateDetails": [],
+  "protectionState": "none",
+  "protectionStateDetails": [],
+  "namespaces": [
+    "production-clone"
+  ],
+  "snapshotID": "8d561930-0437-4647-b3e6-49b8a5362e3d",
+  "clusterName": "GKE-24",
+  "clusterID": "0f284377-e5dc-4dcd-bacd-3197f2b8a347",
+  "clusterType": "kubernetes",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+
+
+| invalidParams | 配列[link:#invalidParams["invalidParams"]] | False  a| 
+無効なクエリパラメータのリスト
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 応答
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.回答例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== エラー
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| ステータス | string | True  a| 
+
+
+
+| correlationID | string | False  a| 
+
+|===
+.エラー応答の例
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 用語の意味
+
+.定義を参照
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+targetSchema
+
+[role="api-collapsible-fifth-title"]
+accept-post
+
+[role="api-collapsible-fifth-title"]
+accept-put
+
+[role="api-collapsible-fifth-title"]
+ヒント
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ステータス | string | False  a| 
+
+
+
+| 許可する | array[string] | False  a| 
+
+
+
+| accept-post | link:#accept-post["accept-post"] | False  a| 
+
+
+
+| 権限 | array[string] | False  a| 
+
+
+
+| accept-put | link:#accept-put["accept-put"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_link
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| rel | string | True  a| 
+
+
+
+| href | string | True  a| 
+
+
+
+| を入力します | string | False  a| 
+
+
+
+| targetSchema | link:#targetSchema["targetSchema"] | False  a| 
+
+
+
+| タイトル | string | False  a| 
+
+
+
+| ヒント | link:#hints["ヒント"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+GVK
+
+Kubernetesのグループ/バージョン/種類を含むJSONオブジェクト。
+
+* このオブジェクトは、Astra/apiResourcesに対して内部的に検証されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| グループ | string | True  a| 
+Kubernetesによって割り当てられたグループ識別子を含むJSON文字列。
+
+* この文字列は内部的にAstra/apiResourcesに対して検証されます
+
+
+
+
+| 種類 | string | True  a| 
+Kubernetesによって割り当てられた種類識別子を含むJSON文字列。
+
+* この文字列は内部的にAstra/apiResourcesに対して検証されます
+
+
+
+
+| バージョン | string | True  a| 
+Kubernetesによって割り当てられたバージョン識別子を含むJSON文字列。
+
+* この文字列は内部的にAstra/apiResourcesに対して検証されます
+
+
+|===
+[role="api-collapsible-fifth-title"]
+clusterScopedResources
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| GVK | link:#GVK["GVK"] | True  a| 
+Kubernetesのグループ/バージョン/種類を含むJSONオブジェクト。
+
+* このオブジェクトは、Astra/apiResourcesに対して内部的に検証されます。
+
+
+
+
+| labelSelectors | array[string] | False  a| 
+クラスタ内のクラスタスコープGroupVersionKinds（GVK）のラベルセレクタを表すJSON文字列のJSON配列。これが空の場合、クラスタ上のすべてのGVKインスタンスが含まれます。この配列の各要素はKubernetesラベルセレクタ文字列であり、それらの値と同じ文法に従います。例：
+
+* [ "app=mysql" ] -- 名前が app で値が mysql のラベルを持つすべてのリソースを選択します。その他の例はこちらをご覧ください： https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#set-based-requirement[]
+
+
+|===
+[role="api-collapsible-fifth-title"]
+namespaceScopedResources
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| namespace | string | True  a| 
+アプリケーションが定義されている名前空間の名前を含むJSON文字列。定義値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：253
+* DNS 1123 Label Schemaに準拠
+
+
+
+
+| labelSelectors | array[string] | True  a| 
+名前空間内のラベルセレクタを表すJSON文字列のJSON配列。これが空の場合、名前空間内のすべてのリソースが含まれます。この配列の各要素はKubernetesラベルセレクタ文字列であり、それらの値に関する文法に従います。例：
+
+* [ "app=mysql" ] -- 名前が app で値が mysql のラベルを持つすべてのリソースを選択します
+* [ "app != mysql" ] -- 名前が app で値が mysql ではないラベルを持つすべてのリソースを選択します
+* [ "app in (mysql, mariadb)" ] -- 名前が app で値が mysql または mariadb であるラベルを持つすべてのリソースを選択します
+* [ "app notin (nginx, wordpress)" ] -- 名前が app で値が nginx または wordpress であるラベルを持たないすべてのリソースを選択します
+* [ "app" ] -- app という名前のラベルを持つすべてのリソースを選択します
+* [ "!app" ] -- app という名前のラベルを持たないすべてのリソースを選択します。複数の選択演算子をカンマで区切って 1 つのセレクタに含めることができることに注意してください。その場合、個々の選択演算子の結果は AND 演算されます：
+* [ "app=mysql,version=2" ] -- 名前が app で値が mysql のラベルと、名前が version で値が 2 のラベルを持つすべてのリソースを選択します
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| - | string | True  a| 
+
+
+
+| - | array[string] | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| を入力します | string | True  a| 
+
+
+
+| タイトル | string | True  a| 
+
+
+
+| 詳細 | string | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+namespaceMapping
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ソース | string | True  a| 
+ソース クラスタ上のネームスペース名を含む JSON 文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：253
+* DNS 1123 Label Schemaに準拠
+
+
+
+
+| を参照してください。 | string | True  a| 
+デスティネーション クラスタ上のネームスペースの名前を含む JSON 文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：253
+* DNS 1123 Label Schemaに準拠
+
+
+|===
+[role="api-collapsible-fifth-title"]
+storageClassMapping
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ソース | string | True  a| 
+ソースストレージクラスの名前を含むJSON文字列。すべてのソースストレージクラスを指定する場合は、「*」を指定することもできます。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* Storage Class名が使用されている場合、DNS 1123 Label Schemaに準拠します
+* '*' を指定してすべてのストレージクラスを指定します
+
+
+
+
+| を参照してください。 | string | True  a| 
+デスティネーション ストレージ クラスの名前を含む JSON 文字列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* DNS 1123 Label Schemaに準拠
+
+
+|===
+[role="api-collapsible-fifth-title"]
+GVKN
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| グループ | string | False  a| 
+Kubernetesによって割り当てられたグループ識別子を含むJSON文字列。
+
+* この文字列は内部的にAstra/apiResourcesに対して検証されます
+
+
+
+
+| バージョン | string | False  a| 
+Kubernetesによって割り当てられたバージョン識別子を含むJSON文字列。
+
+* この文字列は内部的にAstra/apiResourcesに対して検証されます
+
+
+
+
+| 種類 | string | False  a| 
+Kubernetesによって割り当てられた種類識別子を含むJSON文字列。
+
+* この文字列は内部的にAstra/apiResourcesに対して検証されます
+
+
+
+
+| ネームスペース | array[string] | False  a| 
+リソースを含めるか除外するかを指定する名前空間を記述するJSON文字列のJSON配列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長さ：63
+* DNS 1123 Label Schemaに準拠
+
+
+
+
+| 名前 | array[string] | False  a| 
+選択的復元に含めるか除外するかを指定するKubernetesリソース名を記述したJSON文字列のJSON配列。定義された値は次のとおりです：
+
+* 最小長さ：1
+* 最大長：253
+* DNS 1123 Label Schemaに準拠
+
+
+
+
+| labelSelectors | array[string] | False  a| 
+選択的リストアからリソースを含めるか除外するかを決定するために使用されるKubernetesラベルセレクタを記述するJSON文字列のJSON配列。この配列の各要素はKubernetesラベルセレクタ文字列であり、それらの値に対して同じ文法に従います。例：
+
+* [ "app=mysql" ] -- 名前が app で値が mysql のラベルを持つすべてのリソースを選択します。その他の例はこちらをご覧ください： https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#set-based-requirement[]
+
+
+|===
+[role="api-collapsible-fifth-title"]
+restoreFilter
+
+選択的復元操作に含めるリソースと除外するリソースを記述するフィルタのリストを含むJSONオブジェクト。含める設定と除外設定は相互に排他的であり、選択的復元ではいずれか一方のフィルタしか使用できません。
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| resourceSelectionCriteria | string | False  a| 
+リソースフィルターがリソースを選択する方法を示す値を含むJSON文字列。有効な値は include または exclude です。
+
+
+
+| GVKN | 配列[link:#GVKN["GVKN"]] | False  a| 
+選択的復元時にフィルタリングするリソースを記述するJSONオブジェクトのJSON配列。指定されたすべてのフィルタフィールドが対応するリソースフィールドと一致する場合、そのリソースは単一のGVKNフィルタ要素に一致します。配列であるフィルタフィールド（例えば、名前空間や名前）は、その要素のいずれかが対応するリソースフィールドと一致する場合に一致します。labelSelectorsフィールドでは、すべてのセレクタが一致する必要があります。GVKNフィルタオブジェクトの配列内のいずれかのフィルタに一致するリソースは、resourceSelectionCriteriaの値に基づいて復元に含まれるか除外されます。空のGVKNオブジェクトを指定すると、検証エラーが発生します。
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+
+
+
+| Value | string | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+リソースに関連付けられた、クライアントおよびサービス指定のメタデータ。定義された値は次のとおりです：
+
+* Astra メタデータスキーマに準拠します。作成時に指定しない場合、ラベルのないメタデータオブジェクトが作成されます。更新時に指定されていない場合、メタデータオブジェクトのラベル、creationTimestamp および createdBy は、変更なしで保持されます。
+
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| ラベル | 配列[link:#type_astra_label["type_astra_label"]] | False  a| 
+
+
+
+| 作成タイムスタンプ | string | False  a| 
+
+
+
+| modificationTimestamp | string | False  a| 
+
+
+
+| 作成者 | string | False  a| 
+
+
+
+| modifiedBy | string | False  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | を入力します | 必須 | 説明 
+
+
+| 名前 | string | True  a| 
+無効なクエリパラメータの名前
+
+
+
+| 理由 | string | True  a| 
+クエリパラメータが無効な理由
+
+|===
+====

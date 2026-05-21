@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/storage_backend_endpoints.html 
+summary: Astra API（ACC）ストレージバックエンドエンドポイント 
+---
+= Astra API（ACC）ストレージバックエンドエンドポイント
+:allow-uri-read: 
+
+
+ストレージバックエンドAPIは、管理対象クラスタおよびアプリケーションで使用できる、ストレージサービスプロバイダ（ストレージバックエンド）の表現へのアクセスを提供します。

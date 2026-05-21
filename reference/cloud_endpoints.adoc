@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cloud_endpoints.html 
+summary: Astra API（ACC）クラウドエンドポイント 
+---
+= Astra API（ACC）クラウドエンドポイント
+:allow-uri-read: 
+
+
+クラウドAPIは、クライアントが特定のクラウドに接続してクラスターやアプリケーションを管理できるように、クラウドのリソースへのアクセスを提供します。

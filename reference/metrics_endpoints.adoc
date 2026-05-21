@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/metrics_endpoints.html 
+summary: Astra API（ACC）メトリクスエンドポイント 
+---
+= Astra API（ACC）メトリクスエンドポイント
+:allow-uri-read: 
+
+
+メトリクスAPIは、特定のアカウントに関連付けられたメトリクスを表します。
