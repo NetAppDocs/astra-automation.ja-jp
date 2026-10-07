@@ -7,6 +7,7 @@ summary: Astra API（ACC）ストレージクラスのエンドポイント
 ---
 = Astra API（ACC）ストレージクラスのエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 ストレージクラスAPIは、特定のクラスターで認識されているストレージクラスを記述します。

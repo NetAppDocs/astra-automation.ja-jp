@@ -7,6 +7,7 @@ summary: アプリを削除する
 ---
 = アプリを削除する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps/{app_id}`#
@@ -21,6 +22,7 @@ summary: アプリを削除する
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -42,6 +44,7 @@ summary: アプリを削除する
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -50,6 +53,7 @@ Status: 204, Indicates if the app resource was deleted.
 ----
 
 
+[[response]]
 == 応答
 
 [source]
@@ -95,6 +99,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -145,6 +150,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -190,6 +196,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -235,6 +242,7 @@ Status: 500, Internal server error
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -280,6 +288,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -325,11 +334,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

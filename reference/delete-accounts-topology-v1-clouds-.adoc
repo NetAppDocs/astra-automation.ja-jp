@@ -7,6 +7,7 @@ summary: クラウドを削除する
 ---
 = クラウドを削除する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
@@ -15,6 +16,7 @@ summary: クラウドを削除する
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -36,6 +38,7 @@ summary: クラウドを削除する
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -44,6 +47,7 @@ Status: 204, Indicates if the cloud resource was deleted.
 ----
 
 
+[[response]]
 == 応答
 
 [source]
@@ -89,6 +93,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -139,6 +144,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -184,6 +190,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -229,6 +236,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -274,11 +282,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -296,6 +306,7 @@ invalidParams
 クエリパラメータが無効な理由
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

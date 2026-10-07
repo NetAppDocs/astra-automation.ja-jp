@@ -2,11 +2,12 @@
 sidebar: sidebar 
 api: true 
 explorer: false 
-permalink: 'reference/astra_api_(acc)_overview.html' 
+permalink: reference/astra_api_acc_overview.html 
 summary: Astra API（ACC）の概要 
 ---
 = Astra API（ACC）の概要
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Astra Control REST APIリファレンスドキュメントには、エンドポイント、HTTPメソッド、入力パラメータ、レスポンスを含むすべてのREST API呼び出しの詳細が記載されています。この包括的なリファレンスは、APIを使用して自動化アプリケーションを開発する際に役立ちます。Astra REST APIは、特定のリソースカテゴリについて明記されている場合を除き、すべてのAstra Controlリソースに対してCRUD（作成・読み取り・更新・削除）アクセスを提供します。このリファレンスドキュメントは、Astra Control REST APIの24.02リリースに適用されます。

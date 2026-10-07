@@ -18,6 +18,7 @@ summary: アプリケーションに関連付けられているSnapshotを削除
 
 
 
+[[before-you-begin]]
 == 作業を開始する前に
 
 次の情報が必要です。
@@ -28,6 +29,7 @@ summary: アプリケーションに関連付けられているSnapshotを削除
 
 
 
+[[delete-the-snapshot]]
 == Snapshotを削除します。
 
 次の REST API 呼び出しを実行します。

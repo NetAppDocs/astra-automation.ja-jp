@@ -7,6 +7,7 @@ summary: Astra API（ACC）クラスタエンドポイント
 ---
 = Astra API（ACC）クラスタエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Cluster APIは、管理されていないKubernetesクラスタを表します。

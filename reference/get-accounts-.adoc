@@ -7,6 +7,7 @@ summary: アカウントを取得する
 ---
 = アカウントを取得する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}`#
@@ -15,6 +16,7 @@ JSONレスポンスボディに格納されたAccount APIリソースを返し�
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -31,6 +33,7 @@ JSONレスポンスボディに格納されたAccount APIリソースを返し�
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -139,6 +142,7 @@ Status: 200, Returns the stored Account API resource in the JSON response body.
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -184,6 +188,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -234,6 +239,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -279,6 +285,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -324,11 +331,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[postalAddress]]
 [role="api-collapsible-fifth-title"]
 postalAddress
 
@@ -392,6 +401,7 @@ ISO 3166 Alpha-2で規定されている、郵便住所に関連付けられた�
 
 
 |===
+[[accountContact]]
 [role="api-collapsible-fifth-title"]
 accountContact
 
@@ -454,6 +464,7 @@ accountContact
 住所を指定するJSON文字列のコレクションを含むJSONオブジェクト。このキーが存在しない場合、住所が提供されていないことを示します。このキーが存在する場合、含まれている6つのJSON文字列すべてが存在します。何も指定しない場合、文字列は空になります。
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -469,6 +480,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -501,6 +513,7 @@ type_astra_metadata_update
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

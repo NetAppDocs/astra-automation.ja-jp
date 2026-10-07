@@ -7,6 +7,7 @@ summary: Astra API（ACC）クラスタノードエンドポイント
 ---
 = Astra API（ACC）クラスタノードエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 クラスターノードAPIは、クラスターに関連付けられたノードへのアクセスを提供します。

@@ -7,6 +7,7 @@ summary: クラスタを取得する
 ---
 = クラスタを取得する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}`#
@@ -15,6 +16,7 @@ JSONレスポンスボディに格納されたCluster APIリソースを返し�
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -36,6 +38,7 @@ JSONレスポンスボディに格納されたCluster APIリソースを返し�
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -418,6 +421,7 @@ Kubernetes（k8s）APIサービスオブジェクトからのUUIDを含むJSON�
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -463,6 +467,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -513,6 +518,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -558,6 +564,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -603,6 +610,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -648,14 +656,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -679,6 +690,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -694,6 +706,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -726,6 +739,7 @@ type_astra_metadata_update
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

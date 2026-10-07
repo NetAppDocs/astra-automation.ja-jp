@@ -18,6 +18,7 @@ Astra REST APIは、ロールベースアクセス制御（RBAC）をサポー�
 
 
 
+[[astra-roles]]
 == Astra の役割
 
 すべての Astra ユーザには、実行可能なアクションを決定する 1 つのロールが割り当てられます。役割は、次の表に示すように階層構造になっています。
@@ -40,6 +41,7 @@ Astra REST APIは、ロールベースアクセス制御（RBAC）をサポー�
 |===
 
 
+[[enhanced-rbac-with-namespace-granularity]]
 == ネームスペース単位で強化された RBAC
 
 

@@ -18,12 +18,14 @@ summary: 特定のクレデンシャルと事前定義されたロールを持�
 
 
 
+[[step-1-select-a-user-name]]
 == 手順1：ユーザ名を選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_users.html["ユーザをリストします"] をクリックし、現在使用されていない使用可能な名前を選択します。
 
 
 
+[[step-2-create-the-user]]
 == 手順2：ユーザを作成する
 
 ユーザを作成するには、次のREST API呼び出しを実行します。コールが正常に完了すると、新しいユーザはまだ使用できなくなります。
@@ -96,12 +98,14 @@ curl --request POST \
 ----
 
 
+[[step-3-optionally-select-the-allowed-namespaces]]
 == 手順3：必要に応じて、許可するネームスペースを選択します。
 
 ワークフローを実行 link:../workflows/wf_list_namespaces.html["ネームスペースを表示します"] アクセスを制限するネームスペースを選択します。
 
 
 
+[[step-4-bind-the-user-to-a-role]]
 == 手順4：ユーザをロールにバインドする
 
 次のREST API呼び出しを実行してユーザをロールにバインドします。次の例では、ネームスペースへのアクセスに制限はありません。を参照してください link:../additional/rbac.html#enhanced-rbac-with-namespace-granularity["ネームスペース単位で強化された RBAC"] を参照してください。
@@ -140,6 +144,7 @@ curl --request POST \
 ----
 
 
+[[step-5-create-a-credential]]
 == 手順5：クレデンシャルを作成する
 
 次のREST API呼び出しを実行して、クレデンシャルを作成してユーザに関連付けます。この例では、base64値として提供されるパスワードを使用します。。 `name` プロパティには、前の手順で返されたユーザのIDが含まれている必要があります。入力プロパティ `change` base64でエンコードされたユーザは、初回ログイン時にパスワードを変更する必要があるかどうかを確認する必要もあります (`true` または `false`）。

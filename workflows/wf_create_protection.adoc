@@ -18,12 +18,14 @@ summary: 1つ以上のスケジュールに基づいてデータ保護ポリシ�
 
 
 
+[[step-1-select-the-app]]
 == ステップ1：アプリを選択する
 
 ワークフローを実行 link:../workflows/wf_list_man_apps.html["アプリを表示します"] をクリックし、目的のアプリケーションを選択します。
 
 
 
+[[step-2-create-the-protection]]
 == 手順2：保護を作成する
 
 次のREST API呼び出しを実行して、特定のアプリケーションの保護ポリシーを作成します。

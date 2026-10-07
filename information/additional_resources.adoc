@@ -18,6 +18,7 @@ summary: ここでは、 NetApp クラウドサービスとサポート、およ
 
 
 
+[[astra]]
 == アストラ
 
 * https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center のドキュメント"^]
@@ -44,6 +45,7 @@ Astra Controlとその他のネットアップ製品のコミュニティサポ�
 
 
 
+[[netapp-cloud-resources]]
 == ネットアップのクラウドリソース
 
 * https://bluexp.netapp.com/["NetApp BlueXP"^]
@@ -62,6 +64,7 @@ NetApp Cloud Central サービスコンソールにサインインします。
 
 
 
+[[rest-and-cloud-concepts]]
 == REST とクラウドの概念
 
 * 博士 https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["失策"^] 著者 : Roy Fielding オリジナル版を読む

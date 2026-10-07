@@ -7,6 +7,7 @@ summary: グループを削除する
 ---
 = グループを削除する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}`#
@@ -21,6 +22,7 @@ summary: グループを削除する
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -42,6 +44,7 @@ summary: グループを削除する
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -50,6 +53,7 @@ Status: 204, Indicates if the group resource was deleted.
 ----
 
 
+[[response]]
 == 応答
 
 [source]
@@ -95,6 +99,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -140,6 +145,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -185,11 +191,13 @@ Status: 403, Forbidden
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

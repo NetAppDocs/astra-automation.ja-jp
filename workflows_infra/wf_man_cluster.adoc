@@ -18,12 +18,14 @@ Kubernetesクラスタを管理して、データ保護を実行できます。
 
 
 
+[[step-1-select-the-cluster-to-manage]]
 == 手順1：管理するクラスタを選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_clusters.html["クラスタをリストします"] をクリックし、目的のクラスタを選択します。プロパティ `managedState` クラスタのがである必要があります `unmanaged`。
 
 
 
+[[step-2-optionally-select-the-storage-class]]
 == 手順2：必要に応じて、ストレージクラスを選択します。
 
 必要に応じてワークフローを実行します link:../workflows_infra/wf_list_storage_classes.html["ストレージクラスをリストします"] をクリックし、目的のストレージクラスを選択します。
@@ -33,6 +35,7 @@ NOTE: クラスタを管理するためのストレージクラスを指定し�
 
 
 
+[[step-3-manage-the-cluster]]
 == 手順3：クラスタを管理する
 
 クラスタを管理するために次のREST API呼び出しを実行します。

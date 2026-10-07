@@ -7,6 +7,7 @@ summary: Astra API（ACC）タスクエンドポイント
 ---
 = Astra API（ACC）タスクエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Task App APIは、長時間実行されるタスクを表現するために、管理対象のタスクリソースへのアクセスを提供します。

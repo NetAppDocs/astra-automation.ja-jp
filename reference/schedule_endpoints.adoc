@@ -7,6 +7,7 @@ summary: Astra API（ACC）スケジュールエンドポイント
 ---
 = Astra API（ACC）スケジュールエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Schedule APIを使用すると、さまざまなスケジュールされたデータ保護処理を定義できます。

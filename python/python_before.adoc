@@ -21,6 +21,7 @@ NOTE: ネットアップは、 Python を使用して Astra Control REST API に
 
 
 
+[[prepare-the-environment]]
 == 環境を準備
 
 以下に、 Python スクリプトを実行するための基本的な設定要件を示します。
@@ -39,6 +40,7 @@ NOTE: ネットアップは、 Python を使用して Astra Control REST API に
 
 
 
+[[create-the-json-input-files]]
 == JSON 入力ファイルを作成します
 
 Python スクリプトは、 JSON 入力ファイルに含まれている設定情報に依存します。サンプルファイルは以下のとおりです。

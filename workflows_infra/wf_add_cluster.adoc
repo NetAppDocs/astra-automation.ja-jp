@@ -21,12 +21,14 @@ NOTE: 主要なクラウドプロバイダ（AKS、EKS、GKE）のいずれか�
 
 
 
+[[step-1-obtain-the-kubeconfig-file]]
 == 手順1：kubeconfigファイルを取得する
 
 Kubernetesの管理者またはサービスから* kubconfig *ファイルのコピーを取得する必要があります。
 
 
 
+[[step-2-prepare-the-kubeconfig-file]]
 == 手順2：kubeconfigファイルを準備する
 
 *kubeconfig *ファイルを使用する前に、次の操作を実行する必要があります。
@@ -48,6 +50,7 @@ base64のJSONファイルをエンコードする必要があります。
 
 
 
+[[step-3-select-the-cloud]]
 == ステップ3：クラウドを選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_clouds.html["クラウドをリストしてください"] をクリックし、クラスタを追加するクラウドを選択します。
@@ -57,6 +60,7 @@ NOTE: 選択できるクラウドは*プライベート*クラウドのみです
 
 
 
+[[step-4-create-a-credential]]
 == 手順4：クレデンシャルを作成する
 
 次のREST API呼び出しを実行して、kubeconfigファイルを使用してクレデンシャルを作成します。
@@ -97,6 +101,7 @@ curl --request POST \
 ----
 
 
+[[step-5-add-the-cluster]]
 == 手順5：クラスタを追加する
 
 次のREST API呼び出しを実行してクラスタをクラウドに追加します。の値 `credentialID` 入力フィールドは、前の手順でREST API呼び出しから取得されます。

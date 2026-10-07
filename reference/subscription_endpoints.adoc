@@ -7,6 +7,7 @@ summary: Astra API（ACC）サブスクリプションエンドポイント
 ---
 = Astra API（ACC）サブスクリプションエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Subscription APIは、アクティブなサブスクリプションを表すために、サブスクリプションリソースへのアクセスを提供します。

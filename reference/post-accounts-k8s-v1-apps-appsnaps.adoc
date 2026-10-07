@@ -7,6 +7,7 @@ summary: アプリの新しいアプリケーションスナップショット�
 ---
 = アプリの新しいアプリケーションスナップショットを作成する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps`#
@@ -15,6 +16,7 @@ summary: アプリの新しいアプリケーションスナップショット�
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -36,6 +38,7 @@ summary: アプリの新しいアプリケーションスナップショット�
 |===
 
 
+[[request-body]]
 == 要求の本文
 
 作成するアプリケーションスナップショット API リソースの目的の値を示します。
@@ -103,6 +106,7 @@ summary: アプリの新しいアプリケーションスナップショット�
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -256,6 +260,7 @@ Status: 201, Returns the newly created appSnap resource in the JSON response bod
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -301,6 +306,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -346,6 +352,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -391,6 +398,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -436,6 +444,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -481,11 +490,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -501,6 +512,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -533,9 +545,11 @@ type_astra_metadata
 | modifiedBy | string | False  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -559,6 +573,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -576,6 +591,7 @@ invalidParams
 クエリパラメータが無効な理由
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

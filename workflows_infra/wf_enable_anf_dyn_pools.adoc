@@ -21,6 +21,7 @@ NOTE: 動的ANFプールは、Azure NetApp Files（ANF）ストレージバッ�
 
 
 
+[[step-1-add-the-azure-subscription-identifier]]
 == 手順1：AzureサブスクリプションIDを追加する
 
 次の REST API 呼び出しを実行します。
@@ -81,18 +82,21 @@ curl --request POST \
 ----
 
 
+[[step-2-add-a-bucket-if-needed]]
 == 手順2：必要に応じてバケットを追加する
 
 必要に応じて、管理対象アプリケーションにバケットを追加する必要があります。
 
 
 
+[[step-3-take-a-backup-of-the-managed-app]]
 == ステップ3：管理対象アプリのバックアップを作成する
 
 ワークフローを実行 link:../workflows/wf_create_backup.html["アプリケーションのバックアップを作成する"]。元の永続ボリュームが存在する容量プールは、自動的に拡張および縮小されます。
 
 
 
+[[step-4-review-the-event-log]]
 == 手順4：イベントログを確認する
 
 アクティビティイベントはバックアップ中に記録されます。ワークフローを実行 link:../workflows/wf_list_notifications.html["通知を一覧表示します"] をクリックしてメッセージを表示します。

@@ -7,6 +7,7 @@ summary: Astra API（ACC）クラウドエンドポイント
 ---
 = Astra API（ACC）クラウドエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 クラウドAPIは、クライアントが特定のクラウドに接続してクラスターやアプリケーションを管理できるように、クラウドのリソースへのアクセスを提供します。

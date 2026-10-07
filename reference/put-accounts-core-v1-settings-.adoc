@@ -7,6 +7,7 @@ summary: 設定を変更する
 ---
 = 設定を変更する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
@@ -15,6 +16,7 @@ summary: 設定を変更する
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -36,6 +38,7 @@ summary: 設定を変更する
 |===
 
 
+[[request-body]]
 == 要求の本文
 
 保存されているリソース全体を、指定されたJSONリクエストボディに置き換えますが、ユーザーが変更できないキー値は保持します。
@@ -140,6 +143,7 @@ JSON文字列のJSON配列。各文字列は、設定が正常に適用されな
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -148,6 +152,7 @@ Status: 204, Indicates if the setting resource was updated.
 ----
 
 
+[[response]]
 == 応答
 
 [source]
@@ -193,6 +198,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -243,6 +249,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -293,6 +300,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -338,6 +346,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -383,6 +392,7 @@ Status: 503, Service unavailable
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -428,24 +438,29 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 type_json
 
 この設定の現在の構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。デフォルト値はconfigmapによって提供されます。ユーザーがデフォルト設定を変更した後は、その設定は上書きされません。
 
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 type_json
 
 この設定に必要な構成を構成するキーと値を含むJSONオブジェクト。このオブジェクトの内容は、configSchemaフィールドに含まれるJSONスキーマに準拠する必要があります。オブジェクトは指定されるまで存在しません。指定すると、機能サービスが対応するサービスに通知し、目的の構成を適用できるように要求します。対応するサービスは、検証を実行し、目的の構成を現在の構成に適用できます。
 
+[[properties]]
 [role="api-collapsible-fifth-title"]
 プロパティ
 
+[[type_json_schema]]
 [role="api-collapsible-fifth-title"]
 type_json_schema
 
@@ -475,6 +490,7 @@ type_json_schema
 | 必須 | array[string] | True  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -490,6 +506,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -522,6 +539,7 @@ type_astra_metadata_update
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -539,6 +557,7 @@ invalidParams
 クエリパラメータが無効な理由
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

@@ -7,6 +7,7 @@ summary: 名前空間を取得する
 ---
 = 名前空間を取得する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/namespaces/{namespace_id}`#
@@ -15,6 +16,7 @@ JSONレスポンスボディに格納されている名前空間APIリソース�
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -36,6 +38,7 @@ JSONレスポンスボディに格納されている名前空間APIリソース�
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -194,6 +197,7 @@ JSONオブジェクトのJSON配列。各JSONオブジェクトには、名前�
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -239,6 +243,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -289,6 +294,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -334,6 +340,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -379,20 +386,25 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[targetSchema]]
 [role="api-collapsible-fifth-title"]
 targetSchema
 
+[[accept-post]]
 [role="api-collapsible-fifth-title"]
 accept-post
 
+[[accept-put]]
 [role="api-collapsible-fifth-title"]
 accept-put
 
+[[hints]]
 [role="api-collapsible-fifth-title"]
 ヒント
 
@@ -420,6 +432,7 @@ accept-put
 | accept-put | link:#accept-put["accept-put"] | False  a| 
 
 |===
+[[type_astra_link]]
 [role="api-collapsible-fifth-title"]
 type_astra_link
 
@@ -451,9 +464,11 @@ type_astra_link
 | ヒント | link:#hints["ヒント"] | False  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -477,6 +492,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -492,6 +508,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -524,6 +541,7 @@ type_astra_metadata
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

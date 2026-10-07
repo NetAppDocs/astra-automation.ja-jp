@@ -7,6 +7,7 @@ summary: Astra API（ACC）AppMirrorエンドポイント
 ---
 = Astra API（ACC）AppMirrorエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 AppMirror API を使用すると、AppMirror 関係を管理できます。

@@ -18,12 +18,14 @@ summary: 特定のクラウドで使用可能なクラスタをリストでき�
 
 
 
+[[step-1-select-the-cloud]]
 == ステップ1：クラウドを選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_clouds.html["クラウドをリストしてください"] をクリックし、クラスタを含むクラウドを選択します。
 
 
 
+[[step-2-list-the-clusters]]
 == 手順2：クラスタをリストする
 
 特定のクラウドにあるクラスタを表示するには、次のREST API呼び出しを実行します。

@@ -7,6 +7,7 @@ summary: Astra API（ACC）実行フックオーバーライドエンドポイ�
 ---
 = Astra API（ACC）実行フックオーバーライドエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 実行フックオーバーライドAPIを使用すると、ユーザーは特定のアプリケーションに対してプリロードされている「netapp」実行フックを無効にすることができます。（*以下のAPI非推奨事項に注意*）

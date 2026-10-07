@@ -18,60 +18,70 @@ summary: ネットアップでは、Astra Control REST APIを定期的に更新�
 
 
 
+[[14-march-2024-24-02]]
 == 2024年3月14日（24.02）
 
 Astra Control ServiceとAstra Control Centerは、どちらも24.02リリースで更新されています。
 
 
 
+[[minor-bug-fixes]]
 === マイナーなバグ修正
 
 24.02リリースは、主にいくつかのマイナーなバグの修正に重点を置いています。Astra Control APIに新しいリソースタイプは追加されていません。
 
 
 
+[[tech-preview-declarative-kubernetes-workflows]]
 === 技術プレビュー：Kubernetesの宣言ワークフロー
 
 Astra Control Center 24.02にはKubernetesの宣言機能が含まれています。この機能を使用すると、ネイティブのKubernetesカスタムリソース（CR）からデータ管理を実行できます。この機能はまだ一般提供されていません。を参照してください https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center ：新機能"^] を参照してください。
 
 
 
+[[7-november-2023-23-10]]
 == 2023年11月7日（23.10）
 
 Astra Control ServiceとAstra Control Centerは、どちらも23.10リリースで更新されています。REST APIでは、新機能をサポートするためにいくつかの機能拡張が行われています。
 
 
 
+[[expanded-storage-backends]]
 === 拡張されたストレージバックエンド
 
 バックアップ処理とリストア処理を有効にすることができます。 `ontap-nas-economy` ストレージバックエンド：
 
 
 
+[[immutable-backups]]
 === 変更不可のバックアップ
 
 Astra Controlで、マルウェアやその他の脅威に対する追加のセキュリティレイヤとして、変更不可能な読み取り専用バックアップがサポートされるようになりました。
 
 
 
+[[enhanced-control-over-execution-hooks]]
 === 実行フックの制御の強化
 
 このリリース以降、セキュリティを強化するために実行フック機能を有効または無効にすることができます（デフォルトでは無効になっています）。Astra Controlで使用する実行フックをまだ作成していない場合は、実行フック機能を有効にしてフックの作成を開始する必要があります。このリリースより前に実行フックを作成した場合、実行フック機能は有効なままになり、通常どおりフックを使用できます。
 
 
 
+[[27-july-2023-23-07]]
 == 2023年7月27日（23.07）
 
 このリリースでは、REST APIに対する一部の機能拡張が含まれています。Astra Control ServiceとAstra Control Centerは、どちらも23.07リリースで更新されています。
 
 
 
+[[clone-and-replication-operations]]
 === クローニング処理とレプリケーション処理
 
 クローン処理では、ライブクローンのみがサポートされるようになりました（管理対象アプリケーションの現在の状態）。Snapshotまたはバックアップからクローニングするには、リストア処理を使用する必要があります。また、同じKubernetesクラスタ内のONTAPストレージバックエンド間でアプリケーションをレプリケートできるようになりました。
 
 
 
+[[expanded-storage-backends]]
 === 拡張されたストレージバックエンド
 
 Astra Control Centerでは、次のような追加のストレージバックエンドを使用できるようになりました。
@@ -82,108 +92,126 @@ Astra Control Centerでは、次のような追加のストレージバックエ
 
 
 
+[[new-execution-hook-type]]
 === 新しい実行フックタイプ
 
 Astra Control Centerでは、新しい実行フックタイプ* post-failover *を使用できます。
 
 
 
+[[27-june-2023-23-06]]
 == 2023年6月27日（23.06）
 
 このリリースでは、REST APIに対する一部の更新が含まれています。
 
 
 
+[[azure-marketplace]]
 === Azure Marketplace で入手できます
 
 Azure Marketplaceのサブスクリプションは、分単位ではなく時間単位で課金されるようになりました。も参照してください https://docs.netapp.com/us-en/astra-control-service/use/set-up-billing.html["請求を設定します"^]。
 
 
 
+[[restic-optimization]]
 === RESTIC最適化
 
 フラグを使用して、RESTICバックアップのパフォーマンス最適化を有効にすることができます `useResticParallel` 新しいで `astra.datamover` 設定APIリソース。に設定すると `true`、の数 `backendConnections` これは、大容量ボリュームをAzureコンテナにバックアップする場合に使用される容量が増加します。1TB~4TBのボリュームでは、128個の接続が使用されます。4TBを超えるボリュームでは、512のバックエンド接続が使用されます。
 
 
 
+[[30-may-2023-23-05]]
 == 2023年5月30日（23.05）
 
 このリリースでは、REST APIに対する一部の更新が含まれています。
 
 
 
+[[selective-restore-operations]]
 === 選択的なリストア処理
 
 デスティネーションストレージクラスは、リストア処理またはクローン処理の実行時に選択できます。
 
 
 
+[[enable-dynamic-anf-pools-for-self-managed-clusters]]
 === 自己管理型クラスタ向けに動的ANFプールを有効化
 
 ANFストレージバックエンドを備えたプライベートオンプレミスクラスタで管理対象アプリケーションをバックアップする場合、サブスクリプションIDを指定して動的なANFプール機能を有効にできるようになりました。を参照してください link:../workflows_infra/wf_enable_anf_dyn_pools.html["動的なANFプールを有効化"] を参照してください。
 
 
 
+[[25-april-2023-23-04]]
 == 2023年4月25日（23.04）
 
 このリリースでは、REST APIに対する一部の更新が含まれています。
 
 
 
+[[selective-restore-operations]]
 === 選択的なリストア処理
 
 リストア処理中にアプリケーションリソースを選択的に含めるか除外するかを選択できます。これは、特定の名前空間、名前、ラベル、またはGroupVersionKind値に基づくフィルタルールを使用して行われます。
 
 
 
+[[support-for-data-only-applications]]
 === データ専用アプリケーションのサポート
 
 アプリケーション管理のサポートは、データ専用アプリケーションに拡張されました。
 
 
 
+[[17-january-2023-23-01]]
 == 2023年1月17日（23.01）
 
 このリリースには、REST APIのマイナーアップデートが含まれています。
 
 
 
+[[enhanced-execution-hooks-functionality-with-filters]]
 === 強化された実行フック機能とフィルタ
 
 実行フックを使用するときに、フックが一致するコンテナを制御するフィルタを追加できるようになりました。1つの実行フックに対して複数のフィルタを作成すると、それらは論理AND演算子と結合されます。実行フックごとに最大10個のアクティブフィルタを定義できます。
 
 
 
+[[22-november-2022-22-11]]
 == 2022年11月22日（22.11）
 
 このリリースでは、REST APIの拡張と更新に加え、ネームスペースとLDAPのサポートが強化されています。
 
 
 
+[[new-and-enhanced-astra-resources]]
 === Astra の新しいリソース
 
 新しいリソースタイプとして、*apiResource*、*LDAPGroup*、*ldapuser*、*task*の4つが追加されました。また、既存のリソースとエンドポイントがいくつか拡張されています。
 
 
 
+[[monitoring-support-for-long-running-tasks]]
 === 長時間のタスクの監視サポート
 
 新しいタスクエンドポイントは、管理タスクリソースへのアクセスを提供し、内部の長時間実行タスクのステータスを表示するために使用できます。
 
 
 
+[[enhanced-namespace-usage-scenarios]]
 === ネームスペース使用シナリオの強化
 
 複数のネームスペースにまたがるアプリケーションと、ネームスペース修飾リソースに関連付けられたクラスタリソースのサポートが追加されました。
 
 
 
+[[expanded-cloud-subscriptions]]
 === クラウドサブスクリプションの拡張
 
 各クラウドプロバイダに対して複数のアカウントサブスクリプションを追加できるようになりました。
 
 
 
+[[additional-workflows]]
 === 追加のワークフロー
 
 Astra Control REST APIを説明するワークフローが追加されました。を参照してください link:../workflows_infra/workflows_infra_before.html["インフラワークフロー"] および link:../workflows/workflows_before.html["管理ワークフロー"] を参照してください。
@@ -194,24 +222,28 @@ Astra Control REST APIを説明するワークフローが追加されました�
 
 
 
+[[10-august-2022-22-08]]
 == 2022年8月10日（22.08）
 
 このリリースでは、 REST API の拡張と更新に加え、セキュリティと管理に関する高度な機能が実装されています。
 
 
 
+[[new-and-enhanced-astra-resources]]
 === Astra の新しいリソース
 
 3つの新しいリソースタイプ、* Certificate *、* Group *、* AppMirror *が追加されました。また、いくつかの既存リソースのバージョンも更新されています。
 
 
 
+[[ldap-authentication]]
 === LDAP 認証
 
 必要に応じて、Astra Control Centerを構成してLDAPサーバーと統合し、選択したAstraユーザーを認証することができます。を参照してください link:../workflows_infra/ldap_prepare.html["LDAP の設定"] を参照してください。
 
 
 
+[[enhanced-execution-hook]]
 === 拡張実行フック
 
 実行フックのサポートは、Astra Control 21.12リリースで追加されました。既存のスナップショット前およびスナップショット後の実行フックに加えて、22.08リリースで次の種類の実行フックを構成できるようになりました。
@@ -225,6 +257,7 @@ Astra Controlでは、複数の実行フックに同じスクリプトを使用�
 
 
 
+[[application-replication-using-snapmirror]]
 === SnapMirrorを使用したアプリケーションのレプリケーション
 
 NetApp SnapMirrorテクノロジを使用して、クラスタ間でデータやアプリケーションの変更をレプリケートできるようになりました。この拡張機能を使用すると、ビジネス継続性およびリカバリ機能を向上させることができます。
@@ -235,36 +268,42 @@ NetApp SnapMirrorテクノロジを使用して、クラスタ間でデータや
 
 
 
+[[26-april-2022-22-04]]
 == 2022 年 4 月 26 日（ 2004 年 4 月 22 日）
 
 このリリースでは、 REST API の拡張と更新に加え、セキュリティと管理に関する高度な機能が実装されています。
 
 
 
+[[new-and-enhanced-astra-resources]]
 === Astra の新しいリソース
 
 2 つの新しいリソースタイプが追加されました。 * パッケージ * と * アップグレード * です。また、いくつかの既存リソースのバージョンもアップグレードされています。
 
 
 
+[[enhanced-rbac-with-namespace-granularity]]
 === ネームスペース単位で強化された RBAC
 
 ロールを関連付けられたユーザにバインドする場合は、ユーザがアクセスできるネームスペースを制限できます。詳しくは、 * Role Binding API * のリファレンスおよびを参照してください link:../additional/rbac.html["RBAC セキュリティ"] を参照してください。
 
 
 
+[[bucket-removal]]
 === バケットの取り外し
 
 不要になったバケットや、正常に機能していないバケットは削除できます。
 
 
 
+[[support-for-cloud-volumes-ontap]]
 === Cloud Volumes ONTAP のサポート
 
 Cloud Volumes ONTAP がストレージバックエンドとしてサポートされるようになりました。
 
 
 
+[[additional-product-enhancements]]
 === その他の機能強化
 
 2 つの Astra Control 製品の実装には、次のような機能強化が追加されています。
@@ -283,24 +322,28 @@ Astra Control Center および Astra Control Service のドキュメントサイ
 
 
 
+[[14-december-2021-21-12]]
 == 2021 年 12 月 14 日（ 21.12 ）
 
 このリリースでは、 REST API の拡張に加え、今後のリリース更新で Astra Control の進化をサポートするためのドキュメント構造の変更が追加されています。
 
 
 
+[[separate-astra-automation-documentation-for-each-release-of-astra-control]]
 === Astra Control の各リリースに対応した、別個の Astra Automation のドキュメント
 
 Astra Control の各リリースには、特定のリリースの機能に合わせて拡張およびカスタマイズされた独自の REST API が含まれています。Astra Control REST API の各リリースのドキュメントが、関連する GitHub コンテンツリポジトリに加え、独自の専用 Web サイトで入手できるようになりました。メインのドキュメントサイト https://docs.netapp.com/us-en/astra-automation/["Astra Control Automation の略"^] 最新リリースのドキュメントは必ず含まれています。を参照してください link:../aa-earlier-versions.html["旧バージョンの Astra Control Automation のドキュメント"] 以前のリリースについては、を参照してください。
 
 
 
+[[expansion-of-the-rest-resource-types]]
 === REST リソースタイプの拡張
 
 REST リソースタイプの数は、実行フックとストレージバックエンドを重視して拡張が続けられています。新しいリソースには、アカウント、実行フック、フックソース、実行フックオーバーライド、クラスタノード、 管理対象のストレージバックエンド、ネームスペース、ストレージデバイス、およびストレージノード。を参照してください link:../endpoints/resources.html["リソース"] を参照してください。
 
 
 
+[[netapp-astra-control-python-sdk]]
 === NetApp Astra Control Python SDK
 
 NetApp Astra Control Python SDK は、 Astra Control 環境用の自動化コードを簡単に開発できるようにするオープンソースパッケージです。中核となるのは Astra SDK で、 REST API 呼び出しの複雑さを抽象化する一連のクラスが含まれています。また、 Python クラスをラッピングして抽象化することで、特定の管理タスクを実行するツールキットスクリプトもあります。を参照してください link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] を参照してください。
@@ -311,24 +354,28 @@ NetApp Astra Control Python SDK は、 Astra Control 環境用の自動化コー
 
 
 
+[[5-august-2021-21-08]]
 == 2021 年 8 月 5 日（ 21.08 ）
 
 このリリースには、新しい Astra 導入モデルの導入と REST API のメジャー拡張が含まれています。
 
 
 
+[[astra-control-center-deployment-model]]
 === Astra Control Center 導入モデル
 
 このリリースには、パブリッククラウドサービスとして提供される既存の Astra Control Service に加えて、 Astra Control Center オンプレミス導入モデルも含まれています。Astra Control Center をサイトにインストールして、ローカルの Kubernetes 環境を管理できます。2 つの Astra Control 導入モデルは同じ REST API を共有しますが、ドキュメントで必要とされるわずかな違いがあります。
 
 
 
+[[expansion-of-the-rest-resource-types]]
 === REST リソースタイプの拡張
 
 Astra Control REST API からアクセス可能なリソースの数が大幅に増え、多くの新しいリソースがオンプレミスの Astra Control Center の基盤となりました。新しいリソースには、 ASUP 、使用権、機能、ライセンス、設定、 サブスクリプション、バケット、クラウド、クラスタ、管理対象クラスタ、 ストレージバックエンド、およびストレージクラス。を参照してください link:../endpoints/resources.html["リソース"] を参照してください。
 
 
 
+[[additional-endpoints-supporting-an-astra-deployment]]
 === Astra 環境をサポートする追加のエンドポイント
 
 REST リソースの拡張に加えて、 Astra Control 環境をサポートするための新しい API エンドポイントがいくつか追加されました。
@@ -343,12 +390,14 @@ OpenMetrics のサポート:: OpenMetrics エンドポイントは、 OpenMetric
 
 
 
+[[15-april-2021-21-04]]
 == 2021 年 4 月 15 日（ 21.04 ）
 
 このリリースには、次の新機能と機能拡張が含まれています。
 
 
 
+[[introduction-of-the-rest-api]]
 === REST API の導入
 
 Astra Control REST API は、 Astra Control Service と組み合わせて使用できます。REST テクノロジと現在のベストプラクティスに基づいて作成されています。この API は、 Astra 環境を自動化するための基盤となり、次の機能とメリットが含まれています。

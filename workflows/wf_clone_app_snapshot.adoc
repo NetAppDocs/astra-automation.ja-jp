@@ -18,6 +18,7 @@ Snapshotからクローニングして新しいアプリケーションを作成
 
 
 
+[[before-you-begin]]
 == 作業を開始する前に
 
 このワークフローについては、次の点に注意してください。
@@ -31,18 +32,21 @@ NOTE: アプリケーションを別のクラスタにクローニングする�
 
 
 
+[[step-1-select-the-app-to-clone]]
 == 手順1：クローニングするアプリケーションを選択
 
 ワークフローを実行 link:wf_list_man_apps.html["アプリを表示します"] をクリックし、クローニングするアプリケーションを選択します。アプリケーションのクローニングに使用される REST 呼び出しには、いくつかのリソース値が必要です。
 
 
 
+[[step-2-select-the-snapshot-to-use]]
 == 手順2：使用するSnapshotを選択する
 
 ワークフローを実行 link:wf_list_snapshots.html["Snapshot を一覧表示します"] をクリックし、使用する Snapshot を選択します。
 
 
 
+[[step-3-clone-the-app]]
 == ステップ3：アプリケーションのクローンを作成する
 
 次の REST API 呼び出しを実行します。

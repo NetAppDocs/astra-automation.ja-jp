@@ -7,6 +7,7 @@ summary: 新しいサブスクリプションを作成する
 ---
 = 新しいサブスクリプションを作成する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions`#
@@ -15,6 +16,7 @@ summary: 新しいサブスクリプションを作成する
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -31,6 +33,7 @@ summary: 新しいサブスクリプションを作成する
 |===
 
 
+[[request-body]]
 == 要求の本文
 
 作成される Subscription API リソースの希望値を指定します。
@@ -148,6 +151,7 @@ summary: 新しいサブスクリプションを作成する
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -347,6 +351,7 @@ Status: 201, Returns the newly created subscription resource in the JSON respons
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -392,6 +397,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -442,6 +448,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -492,6 +499,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -537,6 +545,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -582,11 +591,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[paymentAddress]]
 [role="api-collapsible-fifth-title"]
 paymentAddress
 
@@ -650,6 +661,7 @@ ISO 3166 Alpha-2で規定されている、郵便住所に関連付けられた�
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -665,6 +677,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -697,6 +710,7 @@ type_astra_metadata_update
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -714,6 +728,7 @@ invalidParams
 クエリパラメータが無効な理由
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

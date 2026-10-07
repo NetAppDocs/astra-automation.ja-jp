@@ -7,6 +7,7 @@ summary: Astra API（ACC）LDAPグループエンドポイント
 ---
 = Astra API（ACC）LDAPグループエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 LDAP グループ API は、設定された LDAP サーバ内の LDAP グループへの読み取り専用アクセスを提供します。

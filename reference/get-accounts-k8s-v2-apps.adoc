@@ -7,6 +7,7 @@ summary: すべてのアプリを一覧表示
 ---
 = すべてのアプリを一覧表示
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps`#
@@ -15,6 +16,7 @@ summary: すべてのアプリを一覧表示
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -68,6 +70,7 @@ OpenAPI の例：「field eq 'value'」
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -117,6 +120,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -162,6 +166,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -212,6 +217,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -257,6 +263,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -302,20 +309,25 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[targetSchema]]
 [role="api-collapsible-fifth-title"]
 targetSchema
 
+[[accept-post]]
 [role="api-collapsible-fifth-title"]
 accept-post
 
+[[accept-put]]
 [role="api-collapsible-fifth-title"]
 accept-put
 
+[[hints]]
 [role="api-collapsible-fifth-title"]
 ヒント
 
@@ -343,6 +355,7 @@ accept-put
 | accept-put | link:#accept-put["accept-put"] | False  a| 
 
 |===
+[[type_astra_link]]
 [role="api-collapsible-fifth-title"]
 type_astra_link
 
@@ -374,6 +387,7 @@ type_astra_link
 | ヒント | link:#hints["ヒント"] | False  a| 
 
 |===
+[[GVK]]
 [role="api-collapsible-fifth-title"]
 GVK
 
@@ -410,6 +424,7 @@ Kubernetesによって割り当てられたバージョン識別子を含むJSON
 
 
 |===
+[[clusterScopedResources]]
 [role="api-collapsible-fifth-title"]
 clusterScopedResources
 
@@ -433,6 +448,7 @@ Kubernetesのグループ/バージョン/種類を含むJSONオブジェクト�
 
 
 |===
+[[namespaceScopedResources]]
 [role="api-collapsible-fifth-title"]
 namespaceScopedResources
 
@@ -464,6 +480,7 @@ namespaceScopedResources
 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -479,9 +496,11 @@ type_astra_stateTransition
 | - | array[string] | True  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -505,6 +524,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
 
 |===
+[[namespaceMapping]]
 [role="api-collapsible-fifth-title"]
 namespaceMapping
 
@@ -532,6 +552,7 @@ namespaceMapping
 
 
 |===
+[[storageClassMapping]]
 [role="api-collapsible-fifth-title"]
 storageClassMapping
 
@@ -560,6 +581,7 @@ storageClassMapping
 
 
 |===
+[[GVKN]]
 [role="api-collapsible-fifth-title"]
 GVKN
 
@@ -619,6 +641,7 @@ Kubernetesによって割り当てられた種類識別子を含むJSON文字列
 
 
 |===
+[[restoreFilter]]
 [role="api-collapsible-fifth-title"]
 restoreFilter
 
@@ -638,6 +661,7 @@ restoreFilter
 選択的復元時にフィルタリングするリソースを記述するJSONオブジェクトのJSON配列。指定されたすべてのフィルタフィールドが対応するリソースフィールドと一致する場合、そのリソースは単一のGVKNフィルタ要素に一致します。配列であるフィルタフィールド（例えば、名前空間や名前）は、その要素のいずれかが対応するリソースフィールドと一致する場合に一致します。labelSelectorsフィールドでは、すべてのセレクタが一致する必要があります。GVKNフィルタオブジェクトの配列内のいずれかのフィルタに一致するリソースは、resourceSelectionCriteriaの値に基づいて復元に含まれるか除外されます。空のGVKNオブジェクトを指定すると、検証エラーが発生します。
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -653,6 +677,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -685,6 +710,7 @@ type_astra_metadata_update
 | modifiedBy | string | False  a| 
 
 |===
+[[app_2_2_get_response_body]]
 [role="api-collapsible-fifth-title"]
 app_2.2_get_response_body
 
@@ -918,6 +944,7 @@ JSONオブジェクトのJSON配列。各JSONオブジェクトは、リスト�
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -953,6 +980,7 @@ type_astra_metadata_list
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

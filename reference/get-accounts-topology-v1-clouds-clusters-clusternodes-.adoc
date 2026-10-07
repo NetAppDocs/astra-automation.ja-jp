@@ -7,6 +7,7 @@ summary: クラウドのクラスタノードを取得する
 ---
 = クラウドのクラスタノードを取得する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/clusterNodes/{clusterNode_id}`#
@@ -15,6 +16,7 @@ JSONレスポンスボディに格納されているクラスタノードAPIリ�
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -46,6 +48,7 @@ JSONレスポンスボディに格納されているクラスタノードAPIリ�
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -250,6 +253,7 @@ JSONオブジェクトのJSON配列。各JSONオブジェクトには、ノー�
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -295,6 +299,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -345,6 +350,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -390,6 +396,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -435,11 +442,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[labels]]
 [role="api-collapsible-fifth-title"]
 ラベル
 
@@ -467,6 +476,7 @@ Status: 404, Not found
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -482,6 +492,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -514,6 +525,7 @@ type_astra_metadata
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

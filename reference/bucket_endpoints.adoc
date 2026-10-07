@@ -7,6 +7,7 @@ summary: Astra API（ACC）バケットエンドポイント
 ---
 = Astra API（ACC）バケットエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Bucket API は、Astra でアプリケーションのバックアップを保存するために使用されるバケットへのアクセスを提供します。

@@ -7,6 +7,7 @@ summary: Astra API（ACC）実行フックエンドポイント
 ---
 = Astra API（ACC）実行フックエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 実行フックAPIを使用すると、実行フックを簡単に管理できます。実行フックには、追加の設定情報とフックソースリソースへの参照が含まれています。

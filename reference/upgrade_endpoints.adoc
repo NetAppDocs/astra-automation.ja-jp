@@ -7,6 +7,7 @@ summary: Astra API（ACC）アップグレードエンドポイント
 ---
 = Astra API（ACC）アップグレードエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Upgrade App APIは、アップグレード対象となるソフトウェアコンポーネントへのアクセスと、アップグレードの開始機能を提供します。アップグレードの提供状況は、Packages APIに登録されているパッケージに基づいて決定されます。

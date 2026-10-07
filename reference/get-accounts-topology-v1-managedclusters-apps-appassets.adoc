@@ -7,6 +7,7 @@ summary: 管理対象クラスタのアプリケーションアセットを一�
 ---
 = 管理対象クラスタのアプリケーションアセットを一覧表示する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/apps/{app_id}/appAssets`#
@@ -15,6 +16,7 @@ summary: 管理対象クラスタのアプリケーションアセットを一�
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -62,6 +64,7 @@ OpenAPI の例："2"
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -117,6 +120,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -162,6 +166,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -207,6 +212,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -252,6 +258,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -297,11 +304,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[GVK]]
 [role="api-collapsible-fifth-title"]
 GVK
 
@@ -338,11 +347,13 @@ Kubernetesによって割り当てられたバージョン識別子を含むJSON
 
 
 |===
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 type_json
 
 Kubernetesリソース定義の全内容を含むJSONオブジェクト。
 
+[[labels]]
 [role="api-collapsible-fifth-title"]
 ラベル
 
@@ -370,6 +381,7 @@ Kubernetesリソース定義の全内容を含むJSONオブジェクト。
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -385,6 +397,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -417,6 +430,7 @@ type_astra_metadata
 | modifiedBy | string | False  a| 
 
 |===
+[[appAsset_1_1_get_response_body]]
 [role="api-collapsible-fifth-title"]
 appAsset_1.1_get_response_body
 
@@ -518,6 +532,7 @@ Kubernetesによって割り当てられた名前空間を含むJSON文字列。
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -553,6 +568,7 @@ type_astra_metadata_list
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

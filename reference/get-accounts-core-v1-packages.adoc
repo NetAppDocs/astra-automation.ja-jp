@@ -7,6 +7,7 @@ summary: すべてのパッケージを一覧表示
 ---
 = すべてのパッケージを一覧表示
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
@@ -15,6 +16,7 @@ summary: すべてのパッケージを一覧表示
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -77,6 +79,7 @@ OpenAPI の例："2"
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -128,6 +131,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -173,6 +177,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -223,6 +228,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -268,6 +274,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -313,11 +320,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -333,9 +342,11 @@ type_astra_stateTransition
 | - | array[string] | True  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -359,6 +370,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
 
 |===
+[[dependsOnImages]]
 [role="api-collapsible-fifth-title"]
 dependsOnImages
 
@@ -393,6 +405,7 @@ Docker イメージ名を含む JSON 文字列。定義値は次のとおりで�
 
 
 |===
+[[images]]
 [role="api-collapsible-fifth-title"]
 画像
 
@@ -440,6 +453,7 @@ Docker イメージ名を含む JSON 文字列。定義値は次のとおりで�
 現在のイメージをインストールまたはアップグレードするために必要なイメージを記述するJSONオブジェクトのJSON配列。
 
 |===
+[[dependsOnComponents]]
 [role="api-collapsible-fifth-title"]
 dependsOnComponents
 
@@ -463,6 +477,7 @@ dependsOnComponents
 現在のイメージをインストールするために必要なコンポーネントのバージョンを定義するJSON文字列のJSON配列。
 
 |===
+[[artifacts]]
 [role="api-collapsible-fifth-title"]
 アーティファクト
 
@@ -512,6 +527,7 @@ dependsOnComponents
 現在のイメージをインストール/アップグレードするために必要なインストール済みコンポーネントを記述するJSONオブジェクトのJSON配列。
 
 |===
+[[files]]
 [role="api-collapsible-fifth-title"]
 files
 
@@ -554,6 +570,7 @@ files
 
 
 |===
+[[upgradableVersions]]
 [role="api-collapsible-fifth-title"]
 upgradableVersions
 
@@ -579,6 +596,7 @@ upgradableVersions
 
 
 |===
+[[dependencies]]
 [role="api-collapsible-fifth-title"]
 依存関係
 
@@ -613,6 +631,7 @@ upgradableVersions
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -628,6 +647,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -660,6 +680,7 @@ type_astra_metadata
 | modifiedBy | string | False  a| 
 
 |===
+[[package_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 package_1.0_get_response_body
 
@@ -794,6 +815,7 @@ JSONオブジェクトのJSON配列。各オブジェクトは、このパッケ
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -829,6 +851,7 @@ type_astra_metadata_list
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

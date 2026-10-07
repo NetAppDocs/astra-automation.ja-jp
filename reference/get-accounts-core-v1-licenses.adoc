@@ -7,6 +7,7 @@ summary: すべてのライセンスを一覧表示
 ---
 = すべてのライセンスを一覧表示
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses`#
@@ -15,6 +16,7 @@ summary: すべてのライセンスを一覧表示
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -68,6 +70,7 @@ OpenAPI の例：「field eq 'value'」
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -115,6 +118,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -160,6 +164,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -210,6 +215,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -255,6 +261,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -300,11 +307,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[addons]]
 [role="api-collapsible-fifth-title"]
 アドオン
 
@@ -352,6 +361,7 @@ Status: 404, Not found
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -367,6 +377,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -399,6 +410,7 @@ type_astra_metadata_update
 | modifiedBy | string | False  a| 
 
 |===
+[[license_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 license_1.0_get_response_body
 
@@ -551,6 +563,7 @@ NetAppライセンスシステムから取得したライセンスJSONのbase64�
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -586,6 +599,7 @@ type_astra_metadata_list
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

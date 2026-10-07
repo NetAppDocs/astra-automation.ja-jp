@@ -7,6 +7,7 @@ summary: ユーザーを取得する
 ---
 = ユーザーを取得する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}`#
@@ -15,6 +16,7 @@ JSON レスポンスボディに格納された User API リソースを返し�
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -36,6 +38,7 @@ JSON レスポンスボディに格納された User API リソースを返し�
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -225,6 +228,7 @@ idAuth識別子のコンテキストを示すJSON文字列。定義された値�
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -270,6 +274,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -320,6 +325,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -365,6 +371,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -410,11 +417,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[postalAddress]]
 [role="api-collapsible-fifth-title"]
 postalAddress
 
@@ -478,6 +487,7 @@ ISO 3166 Alpha-2で規定されている、郵便住所に関連付けられた�
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -493,6 +503,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -525,6 +536,7 @@ type_astra_metadata_update
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

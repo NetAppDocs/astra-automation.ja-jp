@@ -7,6 +7,7 @@ summary: アプリの新しいスケジュールを作成する
 ---
 = アプリの新しいスケジュールを作成する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules`#
@@ -15,6 +16,7 @@ summary: アプリの新しいスケジュールを作成する
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -36,6 +38,7 @@ summary: アプリの新しいスケジュールを作成する
 |===
 
 
+[[request-body]]
 == 要求の本文
 
 作成する Schedule API リソースの希望値を示します。
@@ -196,6 +199,7 @@ RFC-5545 セクション 3.8.5.3 を含む JSON 文字列。再帰ルール。DT
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -373,6 +377,7 @@ RFC-5545 セクション 3.8.5.3 を含む JSON 文字列。再帰ルール。DT
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -418,6 +423,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -468,6 +474,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -513,6 +520,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -558,6 +566,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -603,11 +612,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -623,6 +634,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -655,6 +667,7 @@ type_astra_metadata_update
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -672,6 +685,7 @@ invalidParams
 クエリパラメータが無効な理由
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

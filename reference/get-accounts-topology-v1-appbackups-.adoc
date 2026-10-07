@@ -7,6 +7,7 @@ summary: アプリケーションのバックアップを取得する
 ---
 = アプリケーションのバックアップを取得する
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
@@ -15,6 +16,7 @@ JSON レスポンス ボディに格納された Application Backup API リソ�
 
 
 
+[[parameters]]
 == パラメータ
 
 [cols="5*"]
@@ -36,6 +38,7 @@ JSON レスポンス ボディに格納された Application Backup API リソ�
 |===
 
 
+[[response]]
 == 応答
 
 [source]
@@ -211,6 +214,7 @@ JSON文字列のJSON配列。各文字列は、アプリケーションのバッ
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -256,6 +260,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -306,6 +311,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -351,6 +357,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 応答
 
 [source]
@@ -396,6 +403,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == エラー
 
 [source]
@@ -441,14 +449,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 用語の意味
 
 .定義を参照
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -472,6 +483,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | False  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -487,6 +499,7 @@ type_astra_label
 | Value | string | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -519,6 +532,7 @@ type_astra_metadata
 | modifiedBy | string | False  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

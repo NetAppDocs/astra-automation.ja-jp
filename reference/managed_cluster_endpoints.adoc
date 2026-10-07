@@ -7,6 +7,7 @@ summary: Astra API（ACC）で管理されるクラスタエンドポイント
 ---
 = Astra API（ACC）で管理されるクラスタエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Managed Cluster APIは、管理対象のKubernetesクラスターを表します。

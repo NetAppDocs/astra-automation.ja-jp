@@ -7,6 +7,7 @@ summary: Astra API（ACC）アカウントエンドポイント
 ---
 = Astra API（ACC）アカウントエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 アカウント API は、マルチテナントシステムにおける分離されたテナントを表します。

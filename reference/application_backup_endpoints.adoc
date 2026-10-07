@@ -7,6 +7,7 @@ summary: Astra API（ACC）アプリケーションバックアップエンド�
 ---
 = Astra API（ACC）アプリケーションバックアップエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 アプリケーションバックアップAPIを使用すると、ユーザーは管理対象アプリケーションのバックアップを作成および表示できます。

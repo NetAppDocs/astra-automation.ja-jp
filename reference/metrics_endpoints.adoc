@@ -7,6 +7,7 @@ summary: Astra API（ACC）メトリクスエンドポイント
 ---
 = Astra API（ACC）メトリクスエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 メトリクスAPIは、特定のアカウントに関連付けられたメトリクスを表します。

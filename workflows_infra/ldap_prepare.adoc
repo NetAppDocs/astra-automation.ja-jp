@@ -23,6 +23,7 @@ summary: 必要に応じて、Astra Control CenterをLightweight Directory Acces
 
 
 
+[[overview-of-the-implementation-process]]
 == 実装プロセスの概要
 
 大まかには、Astraユーザに認証を提供するためにLDAPサーバを設定するためには、いくつかの手順を実行する必要があります。
@@ -39,6 +40,7 @@ NOTE: 以下に示す手順は順序どおりですが、場合によっては�
 
 
 
+[[requirements-and-limitations]]
 == 要件および制限事項
 
 認証にLDAPを使用するようにAstraを設定する前に、制限事項や設定オプションなど、ネットアップが提供する基本的な設定を確認しておく必要があります。

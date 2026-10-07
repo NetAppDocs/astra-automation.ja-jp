@@ -7,6 +7,7 @@ summary: Astra API（ACC）パッケージエンドポイント
 ---
 = Astra API（ACC）パッケージエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 パッケージAPIは、インストール可能なソフトウェアパッケージを表します。

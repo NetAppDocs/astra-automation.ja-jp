@@ -18,6 +18,7 @@ summary: 診断とデバッグに使用できる Astra Control REST API には�
 
 
 
+[[api-resources]]
 == API リソース
 
 API リソースからは、診断情報とサポート情報を提供する Astra 機能がいくつか提供されています。

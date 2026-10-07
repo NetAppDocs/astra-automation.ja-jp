@@ -18,6 +18,7 @@ Astra Control REST APIは、HTTPおよび関連パラメータを使用して、
 
 
 
+[[api-transactions-and-the-crud-model]]
 == API トランザクションと CRUD モデル
 
 Astra Control REST API は、明確に定義された操作と状態の移行を伴うトランザクションモデルを実装します。
@@ -38,6 +39,7 @@ Astra Control REST API で使用できる各リソースインスタンスとコ
 
 
 
+[[http-methods]]
 == HTTP メソッド
 
 次の表に、 API でサポートされる HTTP メソッドまたは動詞を示します。
@@ -60,6 +62,7 @@ Astra Control REST API で使用できる各リソースインスタンスとコ
 |===
 
 
+[[request-and-response-headers]]
 == 要求と応答のヘッダー
 
 次の表に、 Astra Control REST API で使用される HTTP ヘッダーを示します。
@@ -97,6 +100,7 @@ NOTE: を参照してください https://www.rfc-editor.org/rfc/rfc7232.txt["RF
 |===
 
 
+[[query-parameters]]
 == クエリパラメータ
 
 リソースコレクションでは、次のクエリパラメータを使用できます。を参照してください link:../additional/work_with_collections.html["コレクションを操作する"] を参照してください。
@@ -125,6 +129,7 @@ NOTE: を参照してください https://www.rfc-editor.org/rfc/rfc7232.txt["RF
 |===
 
 
+[[http-status-codes]]
 == HTTP ステータスコード
 
 Astra Control REST API で使用される HTTP ステータスコードを次に示します。

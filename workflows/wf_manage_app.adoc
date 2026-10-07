@@ -18,18 +18,21 @@ summary: 特定のネームスペースですでにAstraが認識しているア
 
 
 
+[[step-1-select-the-namespace]]
 == 手順1：ネームスペースを選択する
 
 ワークフローを実行 link:../workflows/wf_list_namespaces.html["ネームスペースを表示します"] ネームスペースを選択します。
 
 
 
+[[step-2-select-the-cluster]]
 == 手順2：クラスタを選択する
 
 ワークフローを実行 link:../workflows_infra/wf_list_clusters.html["クラスタをリストします"] をクリックし、クラスタを選択します。
 
 
 
+[[step-3-manage-the-application]]
 == ステップ3：アプリケーションを管理する
 
 アプリケーションを管理するために次のREST API呼び出しを実行します。

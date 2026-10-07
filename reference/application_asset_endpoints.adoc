@@ -7,6 +7,7 @@ summary: Astra API（ACC）アプリケーションアセットエンドポイ�
 ---
 = Astra API（ACC）アプリケーションアセットエンドポイント
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Application Asset APIは、アプリケーションの管理に使用される状態情報の内部コレクションへのアクセスを提供します。
